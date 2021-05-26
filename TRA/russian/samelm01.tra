@@ -1,9 +1,9 @@
-@0    = ~Greetings, old friend, 'tis good to see thee and mine eldest daughter here and in good health.~
+@0    = ~НП: Приветствую, старый друг, приятно видеть здесь тебя и мою старшую дочь в добром здравии.~
 @1    = ~Elminster?~
-@2    = ~I observed thine progress and received report as well from Qilandrha these days. I should have watched over thee even more closely as Gorion had been right in his judgement of thee.~
-@3    = ~As right as thou, Sandrah, my heart. Me, I should have done more than merely issue warnings about thine fate.~
-@4    = ~Father, you have aided <CHARNAME> as you could, same as I did. In the end nobody can take the responsibility and the required decisions out of <CHARNAME>'s hands, neither you nor me, not even the gods should they attempt it.~
-@5    = ~Thou speakest with the wisdom that should be mine, daughter. 'tis true what thou sayest and it is thine chosen role to counsel in the hours that are ahead.~
-@6    = ~Both of your daughters will be at <CHARNAME>'s side in the crucial hour.~
-@7    = ~At thine side, <CHARNAME>, or in your way should thine final verdict fail - Sandrah and Qilandrha are part of thine fate as thou arth part of theirs. I hope dearly Gorion hath not misjudged thee.~
-@8    = ~I count on the loyalty of my companions as only with their aid I have come as far as this.~
+@2    = ~НП: Я наблюдал за твоим прогрессом и в эти дни получил отчет от Киландры. Я должен был следить за тобой еще внимательнее, поскольку Горион был прав в своем суждении о тебе.~
+@3    = ~НП: Как и ты, Сандра, мое сердце. Я должен был сделать больше, чем просто предупредить о твоей судьбе.~
+@4    = ~НП: Отец, ты помог<CHARNAME> как вы могли, так же, как и я. В конце концов, никто не может снять с себя ответственность и необходимые решения.<CHARNAME> руки, ни ты, ни я, ни даже боги, если они попытаются это сделать.~
+@5    = ~НП: Ты говоришь с мудростью, которая должна быть моей, дочь. То, что ты говоришь, правда, и твоя избранная роль - давать советы в предстоящие часы.~
+@6    = ~НП: Обе твои дочери будут в<CHARNAME> на стороне в решающий час.~
+@7    = ~НП: На твоей стороне,<CHARNAME> , или на вашем пути, если ваш окончательный вердикт не удастся - Сандра и Киландра являются частью твоей судьбы, как ты частью их. Я очень надеюсь, что Горион не ошибся в тебе.~
+@8    = ~НП: Я рассчитываю на верность своих товарищей, поскольку только с их помощью я дошел до этого.~

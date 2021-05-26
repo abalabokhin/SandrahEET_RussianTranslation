@@ -1,6 +1,6 @@
-@0    = ~Ah, there you are, <CHARNAME>, time to pay your quota to Renal, hihi.~
-@1    = ~I do not owe anything to Renal any more, *Jester*. You seem to be unaware that things have changed a bit around here. ~
-@2    = ~I do not owe anything to the Shadow Thieves, *Jester*. You seem to be unaware that things have changed a bit around here. ~
-@3    = ~Why does nobody ever tell the messenger such things. What's up?~
-@4    = ~Renal has no means any more to make demands here, just in case you haven't heard yet. This guild is under my control and mine alone. You better leave immediately before things get painful for you.~
-@5    = ~This had better be no bluff, <CHARNAME>. If I find out you lied, you will regret it.~
+@0    = ~НП: Ах вот ты где<CHARNAME> , пора отдать квоту Renal, привет.~
+@1    = ~НП: Я больше ничем не должен Реналу, * Шут *. Вы, кажется, не подозреваете, что здесь все немного изменилось.~
+@2    = ~НП: Я ничем не должен Теневым Ворам, * Шут *. Вы, кажется, не подозреваете, что здесь все немного изменилось.~
+@3    = ~НП: Почему никто никогда не говорит посланнику такие вещи? Как дела?~
+@4    = ~НП: У Renal больше нет возможности предъявлять здесь требования, на случай, если вы еще не слышали. Эта гильдия находится под моим контролем и только мной. Тебе лучше уйти немедленно, пока тебе не стало больно.~
+@5    = ~НП: Лучше не блефовать,<CHARNAME> . Если я узнаю, что ты солгал, ты пожалеешь об этом.~

@@ -1,8 +1,8 @@
-@0    = ~We have found and eliminated a terrific force of slave traders in that compound over there. The sword was there and the monk you mentioned is defeated.~
-@1    = ~In some way that is good news, the thief has found his fate and the sword taken from him. ~
-@2    = ~As we are a well equipped troupe I cannot imagine our leader <CHARNAME> to withhold your item. May I ask you for any information you may provide us about that slaver organisation in return.~
-@3    = ~As much as I am grateful for your kind words, mylady priestess, I am utterly sad to disappoint you. I was just following the trail of the thief to this installation. I could not get inside all by myself. I have seen guarded groups come in and out, the traffic of large cargo boxes as well but I have been warded off by the guards every time before I could get close enough to find out what is really going on. Now that you mention slave trade, my observations begin to make sense, but I know no more.~
-@4    = ~I believe you, Yikari, I am sure you would tell us everything if you knew more. (Sigh) It was just my silly hope that we could get more information to deal those slavers of Athkatla another blow.~
-@5    = ~Excuse me, is that sword... Celestial Fury? And you would be <CHARNAME>?~
-@6    = ~Yes. Who are you and what do you want?~
-@7    = ~Maybe... Who are you?~
+@0    = ~НП: Мы нашли и уничтожили огромную армию работорговцев в том районе. Меч был там, и упомянутый вами монах побежден.~
+@1    = ~НП: В каком-то смысле это хорошая новость, вор нашел свою судьбу и отнял у него меч.~
+@2    = ~НП: Поскольку мы - хорошо оснащенная труппа, я не могу представить себе нашего лидера.<CHARNAME> удержать ваш предмет. Могу я попросить у вас любую информацию, которую вы можете предоставить нам об этой работорговле в ответ.~
+@3    = ~НП: Как бы я ни был благодарен за ваши добрые слова, миледи жрица, мне очень грустно разочаровывать вас. Я просто шел по следу вора к этой установке. Я не мог попасть внутрь один. Я видел, как входили и выходили охраняемые группы, а также движение больших грузовых ящиков, но каждый раз меня отталкивала охрана, прежде чем я мог подойти достаточно близко, чтобы узнать, что происходит на самом деле. Теперь, когда вы упомянули работорговлю, мои наблюдения начинают обретать смысл, но больше я ничего не знаю.~
+@4    = ~НП: Я верю тебе, Йикари, я уверен, что ты рассказал бы нам все, если бы знал больше. (Вздох) Это была просто моя глупая надежда, что мы сможем получить больше информации, чтобы нанести этим работорговцам Аткатлы еще один удар.~
+@5    = ~НП: Простите, это меч ... Небесная ярость? И ты был бы<CHARNAME> ?~
+@6    = ~НП: Да. Кто ты и чего хочешь?~
+@7    = ~НП: Может быть ... Ты кто?~

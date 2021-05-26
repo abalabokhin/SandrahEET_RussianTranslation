@@ -1,7 +1,7 @@
-@0    = ~You have nowhere to go from here yet.~
-@1    = ~By AO's verdict make sure you really want to leave Celestia. You will not be able to return until your mission is completed.~
-@2    = ~Wait, I need to equip myself for the trip first.~
-@3    = ~Take us to the Temple of Mystra.~
-@4    = ~Take us to Clan Orc's Land.~
-@5    = ~Always at your service, God <CHARNAME>.~
-@6    = ~As you wish, God <CHARNAME>.~
+@0    = ~НП: Вам пока некуда идти.~
+@1    = ~НП: Судя по вердикту АО, убедитесь, что вы действительно хотите покинуть Селестию. Вы не сможете вернуться, пока ваша миссия не будет завершена.~
+@2    = ~НП: Подождите, мне нужно сначала подготовиться к поездке.~
+@3    = ~НП: Отведи нас в Храм Мистры.~
+@4    = ~НП: Отведи нас в Землю клана Орков.~
+@5    = ~НП: Всегда к вашим услугам, Бог<CHARNAME> .~
+@6    = ~НП: Как хочешь, бог<CHARNAME> .~
