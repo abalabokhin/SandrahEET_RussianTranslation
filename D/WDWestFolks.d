@@ -1,0 +1,202 @@
+BEGIN CVwdwauk
+IF~AreaCheck("CVRoan")~THEN BEGIN WelcomeN
+SAY@0
+IF~~THEN REPLY@1GOTO WelcomeN1
+END
+
+IF~~THEN BEGIN  WelcomeN1
+SAY@2
+IF~~THEN REPLY@3GOTO Service2
+IF~Global("WDFishermen","GLOBAL",2) GlobalGT("KatDef","GLOBAL",1)~THEN REPLY@4GOTO AmbYes
+IF~Global("WDFishermen","GLOBAL",2) GlobalLT("KatDef","GLOBAL",2)~THEN REPLY@4GOTO AmbNo
+END
+
+IF~NumTimesTalkedTo(0)!AreaCheck("CVRoan")~THEN BEGIN Welcome
+SAY@5
+IF~~THEN REPLY@6GOTO Welcome1
+END
+
+IF~~THEN BEGIN Welcome1
+SAY@7
+IF~~THEN REPLY@8GOTO ComeB
+IF~GlobalGT("KatDef","GLOBAL",1)~THEN REPLY@9GOTO Reward
+IF~~THEN REPLY@10GOTO Service2
+END
+
+IF~~THEN BEGIN Service2
+SAY@11
+IF~~THEN DO~StartStore("govwau01",LastTalkedToBy(Myself))~EXIT
+END
+
+IF~~THEN BEGIN  ComeB
+SAY@12
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN  Reward
+SAY@13
+IF~~THEN DO~SetGlobal("GaveRew","LOCALS",1) GiveItemCreate("CVCoin",Player1,1,0,0)~EXIT
+END
+
+IF~~THEN BEGIN  Service
+SAY@14
+IF~~THEN DO~StartStore("CVWDWauk",LastTalkedToBy(Myself))~EXIT
+END
+
+IF~NumTimesTalkedToGT(0)~THEN BEGIN Welcome2
+SAY@15
+IF~GlobalGT("KatDef","GLOBAL",1) Global("GaveRew","LOCALS",0)~THEN REPLY@16GOTO Reward
+IF~~THEN REPLY@10GOTO Service
+IF~Global("WDFishermen","GLOBAL",2) GlobalGT("KatDef","GLOBAL",1)~THEN REPLY@4GOTO AmbYes
+IF~Global("WDFishermen","GLOBAL",2) GlobalLT("KatDef","GLOBAL",2)~THEN REPLY@4GOTO AmbNo
+END
+
+IF~~THEN BEGIN  AmbNo
+SAY@17
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN  AmbYes
+SAY@18
+=@19
+IF~~THEN REPLY@20GOTO AmbYes2
+IF~~THEN REPLY@21GOTO AmbYes2
+END
+
+CHAIN
+IF~~THEN CVwdwauk AmbYes2
+@22
+DO~SetGlobal("WDFishermen","GLOBAL",3)~
+==CVSandrJ@23
+==CVwdwauk@24
+==CVSandrJ@25
+==CVwdwauk@26
+END
+++@27EXIT
+++@28EXIT
+++@29EXIT
+
+
+BEGIN CVWDWAS
+IF WEIGHT #-3~AreaCheck("CVROA2") Global("Kathint","LOCALS",0)~THEN BEGIN Kathint
+SAY@30
+IF~~THEN REPLY@31GOTO Kathint2
+IF~~THEN REPLY@32GOTO Kathint2
+IF~~THEN REPLY@33GOTO Kathint2
+END
+
+IF~~THEN BEGIN Kathint2
+SAY@34
+IF~~THEN DO ~SetGlobal("Kathint","LOCALS",1)SetDialog("WDWATCH")~EXIT
+END
+
+IF~!AreaCheck("CVROA2") ~THEN BEGIN Outland
+SAY@35
+IF~~THEN DO~SetDialog("WDWATCH")~EXIT
+END
+
+BEGIN  CVWDBar7
+
+IF~AreaCheck("CVROA7")~THEN BEGIN Fest1
+SAY@36
+IF~~THEN REPLY@37GOTO Fest2
+IF~~THEN REPLY@38GOTO Fest2
+IF~~THEN REPLY@39GOTO Fest2
+IF~Global("SanRTFPlot1","GLOBAL",6)~THEN REPLY@40GOTO Fest6
+END
+
+IF~~THEN BEGIN Fest2
+SAY@41
+IF~OR(4)PartyHasItem("Sanbrc") PartyHasItem("AGshld01") PartyHasItem("Imofurc") PartyHasItem("Blunpoi") Global("GaveKey","CVROA7",0)~THEN GOTO Fest3
+IF~!PartyHasItem("Sanbrc") !PartyHasItem("AGshld01") !PartyHasItem("Imofurc") !PartyHasItem("Blunpoi")~THEN GOTO Fest4
+IF~!Global("GaveKey","CVROA7",0)~THEN GOTO Fest4
+END
+
+IF~~THEN BEGIN Fest3
+SAY@42
+IF~~THEN REPLY@43DO~SetGlobal("GaveKey","CVROA7",1) GiveItemCreate("WDKEY7",Player1,1,0,0) ~GOTO Fest4
+IF~~THEN REPLY@44GOTO Fest4
+IF~~THEN REPLY@45GOTO Fest4
+END
+
+IF~~THEN BEGIN Fest4
+SAY@46
+IF~~THEN REPLY@47EXIT
+IF~~THEN REPLY@48EXIT
+IF~~THEN REPLY@49GOTO Fest5
+IF~~THEN REPLY@50GOTO Fest5
+
+END
+
+IF~~THEN BEGIN Fest5
+SAY@51
+IF~~THEN DO~StartStore("CVWDBar7",LastTalkedToBy(Myself))~EXIT
+END
+
+IF~~THEN BEGIN Fest6
+SAY@52
+IF~~THEN EXIT
+END
+
+BEGIN CVWDBar4
+IF~NumTimesTalkedTo(0)~THEN BEGIN SanTrain1
+SAY@53
+IF~~THEN REPLY@54DO~IncrementGlobal("Sanpoints","GLOBAL",-1)~GOTO SanTrain2
+IF~~THEN REPLY@55DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXTERN CVSandrJ SanTrain3
+END
+
+IF~~THEN BEGIN SanTrain2
+SAY@56
+IF~~THEN REPLY@57GOTO SanTrain4
+END
+
+IF~~THEN BEGIN SanTrain4
+SAY@58
+IF~~THEN REPLY@59DO~EscapeArea()~EXIT
+IF~~THEN REPLY@60DO~EscapeArea()~EXIT
+IF~~THEN REPLY@61DO~EscapeArea()~EXIT
+END
+
+CHAIN
+IF~~THEN CVSandrJ SanTrain3
+@62
+==CVWDBar4@58DO~EscapeArea()~
+END
+++@63EXIT
+++@60EXIT
+++@61EXIT
+
+BEGIN CVWDSiam
+
+CHAIN
+IF~NumTimesTalkedTo(0)~THEN CVWDSiam SanIlva1
+@64
+==CVSandrJ@65
+==CVWDSiam@66
+==CVSandrJ@67
+==CVWDSiam@68
+==CVSandrJ@69
+==CVWDSiam@70
+==CVSandrJ@71
+==CVWDSiam@72
+=@73DO~EscapeArea()~
+== AJANTJ IF ~InParty("Ajantis") ~THEN @74
+==CVWDSiam IF ~InParty("Ajantis") ~THEN @75
+== AJANTJ IF ~InParty("Ajantis") ~THEN @76EXIT
+
+APPEND MTOWBA
+IF WEIGHT #-3~AreaCheck("CVROA7") RandomNum(3,1)~THEN BEGIN Bar1
+SAY@77
+IF~~THEN EXIT
+END
+
+IF WEIGHT #-3~AreaCheck("CVROA7") RandomNum(3,2)~THEN BEGIN Bar2
+SAY@78
+IF~~THEN EXIT
+END
+
+IF WEIGHT #-3~AreaCheck("CVROA7") RandomNum(3,3) InMyArea("CVSandr")~THEN BEGIN Bar3
+SAY@79
+IF~~THEN EXIT
+END
+END

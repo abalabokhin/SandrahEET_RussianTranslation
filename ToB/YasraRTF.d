@@ -1,0 +1,10 @@
+EXTEND_BOTTOM YASRA25P 1
+IF~InParty("CVSandr") Global("YasraenaJoined","GLOBAL",1) Global("YasUmo5","LOCALS",1)~THEN REPLY@0GOTO YQidr1
+END
+
+APPEND YASRA25P
+IF~~THEN BEGIN YQidr1
+SAY@1
+IF~~THEN DO~SetGlobal("YasraenaJoined","GLOBAL",0) EscapeAreaMove("CVUMO5",1355,1018,11)~EXIT
+END
+END

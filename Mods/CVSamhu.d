@@ -1,0 +1,94 @@
+BEGIN CVSamhu
+
+CHAIN
+IF~NumTimesTalkedTo(0)~THEN CVSAMHU hints
+@0
+==CVSandrJ @1
+==CVSAMHU@2
+==CVSandrJ @3
+==CVSAMHU@4
+==CVSandrJ @5
+END
+++@6+ hints2
+++@7+ hints2
+
+CHAIN
+IF~~THEN CVSAMHU hints2
+@8
+==CVSandrJ @9
+==CVSAMHU@10
+==SHARTJ IF~InParty("SHARTEEL")~THEN@11
+==CVSAMHU IF~InParty("SHARTEEL")~THEN@12
+==SHARTJ IF~InParty("SHARTEEL")~THEN@13
+==CVSAMHU IF~InParty("SHARTEEL")~THEN@14
+==BDCorwiJ IF~InParty("Corwin")~THEN@15
+==CVSAMHU IF~InParty("Corwin")~THEN@16
+==CVSandrJ @17
+==CVSAMHU@18DO~DestroySelf()~EXIT
+
+
+EXTEND_BOTTOM Flam4 3
+  IF ~ PartyHasItem("MISC13L")
+~THEN UNSOLVED_JOURNAL @19GOTO 43
+END
+
+ADD_TRANS_TRIGGER Flam4 8
+~!PartyHasItem("MISC13L")~
+
+EXTEND_BOTTOM Flam4 8
+  IF ~ PartyHasItem("MISC13L") ~THEN REPLY @20GOTO 41
+  END
+
+ADD_TRANS_TRIGGER Flam4 10
+~!PartyHasItem("MISC13L")~
+
+EXTEND_BOTTOM Flam4 10
+  IF ~ PartyHasItem("MISC13L") ~THEN REPLY @21GOTO 40
+  IF ~PartyHasItem("MISC13L")~THEN REPLY  @22GOTO 42
+END
+
+APPEND Flam4
+IF WEIGHT #2
+~ PartyHasItem("MISC13L")
+~THEN BEGIN 39
+  SAY@23
+  IF ~~THEN REPLY @24GOTO 10
+  IF ~~THEN REPLY @25 GOTO 10
+  IF ~~THEN REPLY  @26 GOTO 11
+  IF ~~THEN REPLY @27GOTO 40
+  IF ~Global("X#KivanSamuel","GLOBAL",0) InParty("kivan") InMyArea("kivan") !StateCheck("kivan",CD_STATE_NOTVALID)~THEN DO ~SetGlobal("X#KivanSamuel","GLOBAL",1)~EXTERN ~KIVANJ~218
+IF~InParty("jaheira") InMyArea("jaheira") StateCheck("jaheira",CD_STATE_NOTVALID)~THEN EXTERN ~BJAHEI~294
+END
+
+IF~~THEN BEGIN 40
+SAY@28
+  IF ~~THEN DO ~TakePartyItem("MISC13L") ReputationInc(-2) IncrementGlobal("Sanpoints","GLOBAL",-7)
+GivePartyGold(50)
+EraseJournalEntry(106102)
+EraseJournalEntry(106103)
+~SOLVED_JOURNAL  @29 EXIT
+END
+
+IF~~THEN BEGIN 41
+SAY@30
+  IF ~~THEN REPLY @24GOTO 10
+  IF ~~THEN REPLY @25 GOTO 10
+  IF ~~THEN REPLY  @26 GOTO 11
+  IF ~~THEN REPLY @27GOTO 40
+  IF ~Global("X#KivanSamuel","GLOBAL",0) InParty("kivan") InMyArea("kivan") !StateCheck("kivan",CD_STATE_NOTVALID)~THEN DO ~SetGlobal("X#KivanSamuel","GLOBAL",1)~EXTERN ~KIVANJ~218
+IF~InParty("jaheira") InMyArea("jaheira") StateCheck("jaheira",CD_STATE_NOTVALID)~THEN EXTERN ~BJAHEI~294
+END
+
+IF~~THEN BEGIN 42
+SAY@31
+IF~~THEN DO~EscapeAreaDestroy(15) AddexperienceParty(900)~EXIT
+END
+
+IF ~~THEN BEGIN 43
+  SAY @32
+  IF ~~THEN REPLY@33GOTO 11
+  IF ~~THEN REPLY  @25GOTO 10
+  IF ~~THEN REPLY @26 GOTO 11
+  IF ~~THEN REPLY @27GOTO 40
+END
+END

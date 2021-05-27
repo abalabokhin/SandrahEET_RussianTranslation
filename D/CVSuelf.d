@@ -1,0 +1,12 @@
+BEGIN CVSUELF
+
+CHAIN
+IF~Global("SanSuElfHeal","GLOBAL",2)~ THEN CVSUELF Thank
+@0
+DO~SetGlobal("SanSuElfHeal","GLOBAL",3)~
+==CVSandrJ@1
+==CVSUELF@2
+==CVSandrJ@3
+==CVSUELF@4
+==CVSandrJ@5
+==CVSUELF@6EXIT

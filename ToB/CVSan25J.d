@@ -1,0 +1,987 @@
+BEGIN CVSan25J
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",16) ~THEN BEGIN SanPCInit16
+SAY @0
+IF~~THEN REPLY@1EXIT
+IF~AreaCheck("ar4500") Global("LeavingPocketPlane","AR4500",0) Global("SanPoPla","LOCALS",0)GlobalLT("BeginChallenge1","GLOBAL",9) ~THEN REPLY@2GOTO SanPoPla1
+IF~GlobalGT("BeginChallenge1","GLOBAL",9) GlobalLT("SanPoPla","LOCALS",2)~THEN REPLY@2GOTO SanPoPla4
+IF~!AreaCheck("ar4500") Global("SanPoPla","LOCALS",2)~THEN REPLY@3DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanPoPla10
+IF~InParty("Sarevok") GlobalGT("SanSarev","GLOBAL",8) Global("SarevPid","LOCALS",0)~THEN REPLY@4GOTO SanSarevPid1
+IF~Global("SanKhalBlood","GLOBAL",13) Global("Chapter","Global",20)~THEN REPLY@5GOTO SanHeriMyst7
+IF~Global("SanKhalBlood","GLOBAL",12) Global("Chapter","Global",20)~THEN REPLY@6GOTO SanHeriMyst1
+IF~Global("SanKhalBlood","GLOBAL",14) Global("Chapter","Global",20)~THEN REPLY@7GOTO SanHeriMyst13
+IF ~RandomNum(5,1)~THEN REPLY@8GOTO SanLongPid11
+IF~Global("Talos25R","GLOBAL",3) GlobalLT("SanGodInvolve","GLOBAL",3)~THEN REPLY@9DO~SetGlobal("Talos25R","GLOBAL",4)IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanMinglGod1
+IF ~RandomNum(5,2)~THEN REPLY@8GOTO SanLongPid12
+IF ~RandomNum(5,3)~THEN REPLY@8GOTO SanLongPid13
+IF ~RandomNum(5,4)~THEN REPLY@8GOTO SanLongPid14
+IF ~RandomNum(5,5)~THEN REPLY@8GOTO SanLongPid15
+IF~Global("SanMystApToB","GLOBAL",4) Global("SanCyrInvolve","LOCALS",0)~THEN REPLY@10GOTO SanCyricwar1
+IF~Global("CVAR3001","GLOBAL",1) Global("CVAR3020","GLOBAL",0) Global("WhoImpr","LOCALS",0)~THEN REPLY@11DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanWKStory1
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) AreaType(FOREST)  ~THEN REPLY@12GOTO SanAcArF25
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) !AreaType(FOREST)  ~THEN REPLY@12GOTO SanAcArNF25
+IF~PartyHasItem("plot04j") AreaCheck("Ar3017") Range("Belljar",12)~THEN REPLY@13DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanOpenLum1
+IF~PartyHasItem("plot04j") AreaCheck("Ar3017") !Range("Belljar",12)~THEN REPLY@13DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanOpenLum3
+IF~Global("CVGodag","GLOBAL",13) !Global("San25ChiQuest","GLOBAL",0)~THEN REPLY@14DO~SetGlobal("CVGodag","GLOBAL",14)~GOTO GodagTob1
+IF~~THEN REPLY@15GOTO SanHamCltob
+IF~~THEN REPLY@16EXIT
+END
+
+IF~~THEN BEGIN GodagTob1
+SAY@17
+IF~~THEN REPLY@18GOTO GodagTob2
+IF~~THEN REPLY@19GOTO GodagTob2
+END
+
+IF~~THEN BEGIN GodagTob2
+SAY@20
+IF~~THEN REPLY@21GOTO GodagTob3
+IF~~THEN REPLY@22GOTO GodagTob3
+IF~~THEN REPLY@23GOTO GodagTob3
+END
+
+IF~~THEN BEGIN GodagTob3
+SAY@24
+IF~~THEN REPLY@25GOTO GodagTob4
+IF~~THEN REPLY@26GOTO GodagTob4
+END
+
+IF~~THEN BEGIN GodagTob4
+SAY@27
+IF~~THEN REPLY@28GOTO GodagTob5
+END
+
+IF~~THEN BEGIN GodagTob5
+SAY@29
+IF~~THEN REPLY@30GOTO GodagTob6
+IF~~THEN REPLY@31GOTO GodagTob6
+END
+
+IF~~THEN BEGIN GodagTob6
+SAY@32
+IF~~THEN REPLY@33GOTO GodagTob7
+IF~~THEN REPLY@34GOTO GodagTob7
+END
+
+IF~~THEN BEGIN GodagTob7
+SAY@35
+=@36
+IF~~THEN REPLY@37DO~AddexperienceParty(15000)IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+IF~~THEN REPLY@38DO~AddexperienceParty(15000) IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+END
+
+IF~~THEN BEGIN SanHamCltob
+SAY@39
+IF~~THEN DO~ReallyForceSpellRES("SanHamCL",Myself)~EXIT
+END
+
+IF~~THEN BEGIN SanOpenLum1
+SAY@40
+=@41
+IF~~THEN REPLY@42EXIT
+IF~~THEN REPLY@43GOTO SanOpenLum2
+END
+
+IF~~THEN BEGIN SanOpenLum2
+SAY@44
+=@45
+IF~~THEN DO~EraseJournalEntry(63824)
+SetGlobal("StairButton","GLOBAL",1)
+SetGlobal("circle","GLOBAL",0)
+SetGlobal("square","GLOBAL",0)
+SetGlobal("triangle","GLOBAL",0)
+SetGlobal("red","GLOBAL",0)
+SetGlobal("blue","GLOBAL",0)
+SetGlobal("green","GLOBAL",0)
+SetGlobal("short","GLOBAL",0)
+SetGlobal("medium","GLOBAL",0)
+SetGlobal("long","GLOBAL",0)
+SetGlobal("counter","GLOBAL",0)
+AddXP2DA("PLOT6D")~EXIT
+END
+
+IF~~THEN BEGIN SanOpenLum3
+SAY@46
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN SanAcArF25
+SAY @47
+=@48
+IF~~THEN DO~StartCutSceneMode()
+SmallWait(4)
+ForceSpell(Myself,CLERIC_SPIRITUAL_HAMMER)
+SmallWait(4)
+GiveItemCreate("arow04",Player1,80,0,0)
+EndCutSceneMode()
+SetGlobal("SanDesTroll","LOCALS",5) ~EXIT
+END
+
+IF~~THEN BEGIN SanAcArNF25
+SAY @49
+IF~~THEN REPLY@50DO~SetGlobal("SanDesTroll","LOCALS",3) ~EXIT
+END
+
+IF~Global("SanDesTroll","LOCALS",4)~THEN BEGIN SanAcArNF225
+SAY@51
+IF~~THEN REPLY@52DO~SetGlobal("SanDesTroll","LOCALS",2)~EXIT
+IF~~THEN REPLY@53 GOTO SanAcArF25
+END
+
+IF~~THEN BEGIN  SanWKStory1
+SAY@54
+IF~~THEN REPLY@55GOTO SanWKStory2
+IF~~THEN REPLY@56GOTO SanWKStory2
+END
+
+IF~~THEN BEGIN  SanWKStory2
+SAY@57
+=@58
+IF~~THEN REPLY@59DO~SetGlobal("WhoImpr","LOCALS",1)~EXIT
+END
+
+IF~~THEN BEGIN SanMinglGod1
+SAY@60
+IF~~THEN REPLY@61GOTO SanMinglGod2
+IF~~THEN REPLY@62GOTO SanMinglGod2
+IF~~THEN REPLY@63GOTO SanMinglGod2
+END
+
+IF~~THEN BEGIN SanMinglGod2
+SAY@64
+IF~~THEN REPLY@65GOTO SanMinglGod3
+END
+
+IF~~THEN BEGIN SanMinglGod3
+SAY@66
+=@67
+IF~~THEN REPLY@68GOTO SanMinglGod4
+IF~~THEN REPLY@69GOTO SanMinglGod4
+END
+
+IF~~THEN BEGIN SanMinglGod4
+SAY@70
+=@71
+IF~~THEN REPLY@72EXIT
+IF~~THEN REPLY@73EXIT
+IF~~THEN REPLY@74EXIT
+END
+
+IF~~THEN BEGIN SanCyricwar1
+SAY@75
+IF~~THEN REPLY@76GOTO SanCyricwar2
+IF~~THEN REPLY@77GOTO SanCyricwar2
+END
+
+IF~~THEN BEGIN SanCyricwar2
+SAY@78
+IF~~THEN REPLY@79DO~SetGlobal("SanCyrInvolve","LOCALS",1)~GOTO SanCyricwar3
+END
+
+IF~~THEN BEGIN SanCyricwar3
+SAY@80
+IF~~THEN REPLY@81EXIT
+IF~~THEN REPLY @82EXIT
+IF~~THEN REPLY@83EXIT
+END
+
+IF~~THEN BEGIN SanLongPid11
+SAY@84
+IF~~THEN REPLY@85EXIT
+IF~~THEN REPLY@86EXIT
+IF~~THEN REPLY@87EXIT
+END
+
+IF~~THEN BEGIN SanLongPid12
+SAY @88
+IF~~THEN REPLY@85EXIT
+IF~~THEN REPLY@86EXIT
+IF~~THEN REPLY@87EXIT
+END
+
+IF~~THEN BEGIN SanLongPid13
+SAY @89
+IF~~THEN REPLY@85EXIT
+IF~~THEN REPLY@86EXIT
+IF~~THEN REPLY@87EXIT
+END
+
+IF~~THEN BEGIN SanLongPid14
+SAY @90
+IF~~THEN REPLY@85EXIT
+IF~~THEN REPLY@86EXIT
+IF~~THEN REPLY@87EXIT
+END
+
+IF~~THEN BEGIN SanLongPid15
+SAY @91
+IF~~THEN REPLY@85EXIT
+IF~~THEN REPLY@86EXIT
+IF~~THEN REPLY@87EXIT
+END
+
+
+IF~~THEN BEGIN SanSarevPid1
+SAY@92
+IF~~THEN REPLY @93GOTO SanSarevPid2
+IF~~THEN REPLY @94GOTO SanSarevPid2
+END
+
+IF~~THEN BEGIN SanSarevPid2
+SAY@95
+IF~~THEN REPLY @96DO ~SetGlobal("SarevPid","LOCALS",1)~GOTO SanSarevPid3
+END
+
+IF~~THEN BEGIN SanSarevPid3
+SAY@97
+IF~~THEN REPLY @98GOTO SanSarevPid4
+IF~~THEN REPLY @99GOTO SanSarevPid4
+END
+
+IF~~THEN BEGIN SanSarevPid4
+SAY@100
+=@101
+IF~~THEN REPLY @102GOTO SanSarevPid5
+END
+
+IF~~THEN BEGIN SanSarevPid5
+SAY@103
+IF~~THEN REPLY @104EXIT
+IF~~THEN REPLY @105EXIT
+END
+
+IF~~THEN BEGIN SanPoPla1
+SAY@106
+IF~~THEN REPLY @107GOTO SanPoPla2
+IF~~THEN REPLY @108GOTO SanPoPla3
+END
+
+IF~~THEN BEGIN SanPoPla2
+SAY@109
+IF~~THEN REPLY @110DO~SetGlobal("SanPoPla","LOCALS",1)~EXIT
+IF~~THEN REPLY @111GOTO SanPoPla3
+END
+
+IF~~THEN BEGIN SanPoPla3
+SAY@112
+IF~~THEN DO~SetGlobal("SanPoPla","LOCALS",1)~EXIT
+END
+
+IF~~THEN BEGIN SanPoPla4
+SAY@113
+IF~~THEN REPLY@114DO~SetGlobal("SanPoPla","LOCALS",2)~GOTO SanPoPla5
+IF~~THEN REPLY@115DO~SetGlobal("SanPoPla","LOCALS",2)~GOTO SanPoPla5
+END
+
+IF~~THEN BEGIN SanPoPla5
+SAY@116
+IF~~THEN REPLY@117GOTO SanPoPla6
+IF~~THEN REPLY@118GOTO SanPoPla6
+END
+
+IF~~THEN BEGIN SanPoPla6
+SAY@119
+IF~~THEN REPLY@120GOTO SanPoPla7
+IF~~THEN REPLY@121 GOTO SanPoPla7
+END
+
+IF~~THEN BEGIN SanPoPla7
+SAY@122
+IF~~THEN REPLY@123GOTO SanPoPla8
+IF~~THEN REPLY@124GOTO SanPoPla8
+END
+
+IF~~THEN BEGIN SanPoPla8
+SAY@125
+IF~~THEN REPLY@126GOTO SanPoPla9
+IF~~THEN REPLY@127GOTO SanPoPla9
+END
+
+IF~~THEN BEGIN SanPoPla9
+SAY@128
+IF~~THEN REPLY@129EXIT
+END
+
+IF~~THEN BEGIN SanPoPla10
+SAY@130
+IF~~THEN REPLY@131GOTO SanPoPla11
+END
+
+IF~~THEN BEGIN SanPoPla11
+SAY@132
+IF~~THEN REPLY@133GOTO SanPoPla12
+IF~~THEN REPLY@134GOTO SanPoPla12
+END
+
+IF~~THEN BEGIN SanPoPla12
+SAY@135
+IF~~THEN REPLY@136DO~SetGlobal("SanPoPla","LOCALS",3)~EXIT
+IF~~THEN REPLY@137DO~SetGlobal("SanPoPla","LOCALS",3)~EXIT
+IF~~THEN REPLY@138DO~SetGlobal("SanPoPla","LOCALS",3)~EXIT
+END
+
+IF~Global("SanSerBha","GLOBAL",3)~THEN BEGIN SanTraitAssu1
+SAY@139
+IF ~~THEN REPLY@140GOTO SanTraitAssu2
+IF ~~THEN REPLY@141GOTO SanTraitAssu2
+END
+
+IF~~THEN BEGIN SanTraitAssu2
+SAY@142
+IF ~~THEN REPLY@143DO~SetGlobal("SanSerBha","GLOBAL",4)~GOTO SanTraitAssu3
+END
+
+IF~~THEN BEGIN SanTraitAssu3
+SAY@144
+IF ~~THEN REPLY@145GOTO SanTraitAssu4
+IF ~~THEN REPLY@146GOTO SanTraitAssu5
+END
+
+IF~~THEN BEGIN SanTraitAssu4
+SAY@147
+IF ~~THEN REPLY@148EXIT
+IF ~~THEN REPLY@149GOTO SanTraitAssu7
+END
+
+IF~~THEN BEGIN SanTraitAssu5
+SAY@150
+IF ~~THEN REPLY@148EXIT
+IF ~~THEN REPLY@151GOTO SanTraitAssu6
+END
+
+IF~~THEN BEGIN SanTraitAssu6
+SAY@147
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN SanTraitAssu7
+SAY@150
+IF ~~THEN REPLY@148EXIT
+END
+
+IF~Global("SanDoubtKhalTOB","LOCALS",1)!Global("SanRompa","Global",2)~THEN BEGIN DoubtMothPC1
+SAY @152
+IF~~THEN REPLY@153GOTO DoubtMothPC2
+IF~~THEN REPLY@154GOTO DoubtMothPC2
+IF~~THEN REPLY@155GOTO DoubtMothPC2a
+END
+
+IF~Global("SanDoubtKhalTOB","LOCALS",1)Global("SanRompa","Global",2)~THEN BEGIN DoubtMothPC1c
+SAY @156
+IF~~THEN REPLY@153GOTO DoubtMothPC2
+IF~~THEN REPLY@154GOTO DoubtMothPC2
+IF~~THEN REPLY@155GOTO DoubtMothPC2a
+END
+
+IF~~THEN BEGIN DoubtMothPC2a
+SAY@157
+IF~~THEN GOTO DoubtMothPC2
+END
+
+IF~~THEN BEGIN DoubtMothPC2
+SAY@158
+IF~~THEN REPLY@159DO~SetGlobal("SanDoubtKhalTOB","LOCALS",2)~GOTO DoubtMothPC3
+END
+
+IF~~THEN BEGIN DoubtMothPC3
+SAY@160
+=@161
+IF~Global("SanRomPath","GLOBAL",1)~THEN REPLY@162GOTO DoubtMothPC4
+IF~Global("SanRomPath","GLOBAL",2)~THEN REPLY@163GOTO DoubtMothPC4
+END
+
+IF~~THEN BEGIN DoubtMothPC4
+SAY@164
+IF~~THEN REPLY@62GOTO DoubtMothPC5
+IF~~THEN REPLY@165GOTO DoubtMothPC5
+IF~~THEN REPLY@166GOTO DoubtMothPC5
+END
+
+IF~~THEN BEGIN DoubtMothPC5
+SAY@167
+IF~~THEN REPLY@168GOTO DoubtMothPC6
+IF~~THEN REPLY@169GOTO DoubtMothPC6
+END
+
+IF~~THEN BEGIN DoubtMothPC6
+SAY@170
+IF~~THEN REPLY@171GOTO DoubtMothPC7
+IF~~THEN REPLY@172GOTO DoubtMothPC7
+IF~~THEN REPLY@173GOTO DoubtMothPC7
+END
+
+IF~~THEN BEGIN DoubtMothPC7
+SAY@174
+IF~~THEN REPLY@175GOTO DoubtMothPC8
+IF~!Global("SanRompa","Global",2)~THEN REPLY@176GOTO DoubtMothPC8
+IF~!Global("SanRompa","Global",2)~THEN REPLY@177GOTO DoubtMothPC8
+IF~Global("SanRompa","Global",2)~THEN REPLY@176GOTO DoubtMothPC8a
+IF~Global("SanRompa","Global",2)~THEN REPLY@177GOTO DoubtMothPC8a
+END
+
+IF~~THEN BEGIN DoubtMothPC8
+SAY@178
+IF~~THEN DO ~IncrementGlobal("Sanpoints","GLOBAL",1)StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~EXIT
+END
+
+IF~~THEN BEGIN DoubtMothPC8a
+SAY@179
+IF~~THEN DO ~IncrementGlobal("Sanpoints","GLOBAL",1)StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~EXIT
+END
+
+//Watcher's Keep
+
+IF~Global("SanChoices","ar6400",2)~THEN BEGIN SanYagChoic1
+SAY@180
+IF ~~THEN REPLY@181GOTO SanYagChoic2
+IF~InParty("LRIrenic")~THEN REPLY@182GOTO SanIrProp
+IF ~~THEN REPLY@183GOTO SanYagChoic2
+END
+
+IF~~THEN BEGIN SanIrProp
+SAY@184
+IF~~THEN REPLY@185GOTO SanYagChoic2
+IF~~THEN REPLY@186GOTO SanYagChoic2
+END
+
+IF~~THEN BEGIN SanYagChoic2
+SAY@187
+IF ~~THEN REPLY@188DO~SetGlobal("SanChoices","ar6400",3)~GOTO SanYagChoic3
+END
+
+IF~~THEN BEGIN SanYagChoic3
+SAY@189
+IF ~~THEN REPLY@190DO~RevealAreaOnMap("ar3000")~EXIT
+END
+
+IF~Global("SanMadJou","LOCALS",1)~THEN BEGIN SanLabymap1
+SAY@191
+IF~~THEN REPLY@192GOTO SanLabymap2
+IF~~THEN REPLY@193GOTO SanLabymap2
+END
+
+IF~~THEN BEGIN SanLabymap2
+SAY@194
+=@195
+IF~~THEN REPLY@196DO~SetGlobal("SanMadJou","LOCALS",2)~
+EXIT
+END
+
+IF~Global("SanDream25","LOCALS",1)~THEN BEGIN SanSleephell1
+SAY@197
+IF~~THEN REPLY@198GOTO SanSleephell2
+IF~~THEN REPLY@199GOTO SanSleephell2
+END
+
+IF~~THEN BEGIN SanSleephell2
+SAY@200
+=@201
+=@202
+IF~~THEN REPLY@203GOTO SanSleephell3
+END
+
+IF~~THEN BEGIN SanSleephell3
+SAY@204
+IF~~THEN DO~SetGlobal("SanDream25","LOCALS",2) RestParty()~EXIT
+END
+
+IF~Global("SanDream25","LOCALS",2)~THEN BEGIN SanSleephell4
+SAY@205
+IF~Global("SanNitePh","LOCALS",3)~THEN REPLY@206GOTO SanSleephell5
+IF~~THEN REPLY@207DO ~SetGlobal("SanDream25","LOCALS",3)~EXIT
+IF~Global("SanNitePh","LOCALS",4)~THEN REPLY@208GOTO SanSleephell5
+END
+
+IF~~THEN BEGIN SanSleephell5
+SAY@209
+IF~~THEN DO ~SetGlobal("SanDream25","LOCALS",3)~EXIT
+END
+
+//Gorion Wraith
+IF ~Global("SanGoriWraith","Global",2) ~THEN BEGIN Sangoriwr1
+SAY@210
+IF~~THEN REPLY@211GOTO Sangoriwr2
+IF~~THEN REPLY@212GOTO Sangoriwr2
+IF~~THEN REPLY@213GOTO Sangoriwr2
+END
+
+IF~~THEN BEGIN Sangoriwr2
+SAY@214
+IF~~THEN REPLY@215DO~SetGlobal("SanGoriWraith","Global",3) ~EXIT
+END
+
+//Nyalee
+IF~Global("SanTempGard","ar5202",1)~THEN BEGIN SanGarWD1
+SAY@216
+IF~~THEN REPLY@217GOTO SanGarWD2
+IF~~THEN REPLY@218GOTO SanGarWD2
+END
+
+IF~~THEN BEGIN SanGarWD2
+SAY@219
+IF~~THEN REPLY@220
+GOTO SanGarWD3
+END
+
+IF~~THEN BEGIN SanGarWD3
+SAY@221
+IF~~THEN DO~SetGlobal("SanTempGard","ar5202",2)~EXIT
+END
+
+//Dead Monk
+IF~Global("SanMonkD","ar6002",1)~THEN BEGIN Bazmonk1
+SAY@222
+IF~~THEN REPLY@223GOTO Bazmonk2
+IF~~THEN REPLY@224GOTO Bazmonk2
+END
+
+IF~~THEN BEGIN Bazmonk2
+SAY@225
+IF~~THEN REPLY@226DO~SetGlobal("SanMonkD","ar6002",2)~EXIT
+END
+
+IF~~THEN BEGIN SanHeriMyst1
+SAY@227
+IF~~THEN REPLY@228GOTO SanHeriMyst2
+END
+
+IF~~THEN BEGIN SanHeriMyst2
+SAY@229
+IF~~THEN REPLY@230GOTO SanHeriMyst3
+IF~~THEN REPLY@231GOTO SanHeriMyst3
+END
+
+IF~~THEN BEGIN SanHeriMyst3
+SAY@232
+IF~~THEN REPLY@233GOTO SanHeriMyst5
+END
+
+IF~~THEN BEGIN SanHeriMyst5
+SAY@234
+=@235
+IF~~THEN REPLY@236GOTO SanHeriMyst6
+END
+
+IF~~THEN BEGIN SanHeriMyst6
+SAY@237
+=@238
+IF~~THEN REPLY@239DO~SetGlobal("SanKhalBlood","GLOBAL",13)~EXIT
+IF~~THEN REPLY@240DO~SetGlobal("SanKhalBlood","GLOBAL",14)~GOTO SanHeriMyst7
+END
+
+IF~~THEN BEGIN SanHeriMyst7
+SAY@241
+IF~~THEN REPLY@242GOTO SanHeriMyst8
+END
+
+IF~~THEN BEGIN SanHeriMyst8
+SAY@243
+IF~~THEN REPLY@244GOTO SanHeriMyst9
+END
+
+IF~~THEN BEGIN SanHeriMyst9
+SAY@245
+IF~~THEN REPLY@246GOTO SanHeriMyst10
+END
+
+IF~~THEN BEGIN SanHeriMyst10
+SAY@247
+IF~~THEN REPLY@248GOTO SanHeriMyst11
+END
+
+IF~~THEN BEGIN SanHeriMyst11
+SAY@249
+IF~~THEN REPLY@250GOTO SanHeriMyst12
+IF~~THEN REPLY@251GOTO SanHeriMyst12
+IF~~THEN REPLY@252 GOTO SanHeriMyst12
+END
+
+IF~~THEN BEGIN SanHeriMyst12
+SAY@253
+IF~~THEN DO~SetGlobal("SanKhalBlood","GLOBAL",14)~EXIT
+END
+
+IF~~THEN BEGIN SanHeriMyst13
+SAY@254
+=@255
+=@256
+IF~~THEN REPLY@257DO~SetGlobal("SanKhalBlood","GLOBAL",15)~GOTO SanHeriMyst14
+IF~~THEN REPLY@258DO~SetGlobal("SanKhalBlood","GLOBAL",15)~GOTO SanHeriMyst14
+END
+
+IF~~THEN BEGIN SanHeriMyst14
+SAY@259
+IF~~THEN REPLY@260GOTO SanHeriMyst17
+IF~~THEN REPLY@261GOTO SanHeriMyst16
+IF~~THEN REPLY@262GOTO SanHeriMyst15
+END
+
+IF~~THEN BEGIN SanHeriMyst15
+SAY@263
+IF~~THEN REPLY@264EXIT
+END
+
+IF~~THEN BEGIN SanHeriMyst16
+SAY@265
+IF~~THEN REPLY@264EXIT
+END
+
+IF~~THEN BEGIN SanHeriMyst17
+SAY@263
+IF~~THEN REPLY@266EXIT
+END
+
+
+//Sandrah's TOB Quest
+
+IF~Global("San25ChiQuest","GLOBAL",1) ~THEN BEGIN SanWronassumpt1
+SAY@267
+IF~~THEN REPLY@268DO~SetGlobal("San25ChiQuest","GLOBAL",3) ~GOTO SanWronassumpt2
+END
+
+IF~~THEN BEGIN SanWronassumpt2
+SAY@269
+IF~~THEN REPLY@270GOTO SanWronassumpt3
+IF~~THEN REPLY@271GOTO SanWronassumpt4
+IF~~THEN REPLY@272GOTO SanWronassumpt4
+END
+
+IF~~THEN BEGIN SanWronassumpt3
+SAY@273
+IF~~THEN REPLY@272GOTO SanWronassumpt5
+IF~~THEN REPLY@271GOTO SanWronassumpt5
+END
+
+IF~~THEN BEGIN SanWronassumpt4
+SAY@273
+IF~~THEN REPLY@271GOTO SanWronassumpt5
+IF~~THEN REPLY@274GOTO SanWronassumpt5
+END
+
+IF~~THEN BEGIN SanWronassumpt5
+SAY@275
+=@276
+IF~~THEN REPLY@277GOTO SanWronassumpt6
+IF~~THEN REPLY@278GOTO SanWronassumpt6
+END
+
+IF~~THEN BEGIN SanWronassumpt6
+SAY@279
+IF~~THEN REPLY@280GOTO SanWronassumpt7
+END
+
+IF~~THEN BEGIN SanWronassumpt7
+SAY@281
+IF~~THEN REPLY@282GOTO SanWronassumpt8
+END
+
+IF~~THEN BEGIN SanWronassumpt8
+SAY@283
+IF~~THEN REPLY@284GOTO SanWronassumpt9
+IF~~THEN REPLY@285GOTO SanWronassumpt9
+END
+
+IF~~THEN BEGIN SanWronassumpt9
+SAY@286
+IF~~THEN REPLY@287GOTO SanWronassumpt10
+END
+
+IF~~THEN BEGIN SanWronassumpt10
+SAY@288
+IF~~THEN REPLY@289EXIT
+IF~~THEN REPLY@290EXIT
+IF~~THEN REPLY@291EXIT
+END
+
+IF~Global("San25ChiQuest","GLOBAL",5) ~THEN BEGIN SanQuestForce
+SAY@292
+IF~~THEN REPLY@293DO~SetGlobal("SANWDho","GLOBAL",1) SetGlobal("San25ChiQuest","GLOBAL",6)~EXIT
+IF~~THEN REPLY@294DO~SetGlobal("SANWDho","GLOBAL",1) SetGlobal("San25ChiQuest","GLOBAL",6)~EXIT
+IF~~THEN REPLY@295DO~SetGlobal("SANWDho","GLOBAL",1) SetGlobal("San25ChiQuest","GLOBAL",6)~EXIT
+END
+
+IF~Global("San25ChiQuest","GLOBAL",9)~THEN BEGIN SanWantsSeeQi1
+SAY@296
+IF~~THEN REPLY@297GOTO SanWantsSeeQi2
+IF~~THEN REPLY@298GOTO SanWantsSeeQi2
+IF~~THEN REPLY@299GOTO SanWantsSeeQi2
+END
+
+IF~~THEN BEGIN SanWantsSeeQi2
+SAY@300
+IF~~THEN REPLY@301 GOTO SanWantsSeeQi3
+IF~~THEN REPLY@302GOTO SanWantsSeeQi5
+END
+
+IF~~THEN BEGIN SanWantsSeeQi3
+SAY@303
+IF~~THEN REPLY@304GOTO SanWantsSeeQi4
+IF~~THEN REPLY@302GOTO SanWantsSeeQi5
+END
+
+IF~~THEN BEGIN SanWantsSeeQi4
+SAY@305
+IF~~THEN DO~ActionOverride("CVSandr",LeaveParty()) ActionOverride("CVSandr",EscapeArea())
+SetGlobal("SandrahSummoned","GLOBAL",2) SetGlobal("SandrahJoined","GLOBAL",25) ClearAllActions()
+FadeToColor([30.0],0)
+CutSceneId(Player1)
+RestorePartyLocations()
+EndCutSceneMode()
+FadeFromColor([30.0],0)~EXIT
+END
+
+IF~~THEN BEGIN SanWantsSeeQi5
+SAY@306
+IF~~THEN REPLY@307DO~SetGlobal("San25ChiQuest","GLOBAL",10)~GOTO SanWantsSeeQi6
+IF~~THEN REPLY@308DO~SetGlobal("San25ChiQuest","GLOBAL",10)~GOTO SanWantsSeeQi6
+IF~~THEN REPLY@309GOTO SanWantsSeeQi7
+END
+
+IF~~THEN BEGIN SanWantsSeeQi6
+SAY@310
+IF~~THEN REPLY@311EXIT
+END
+
+IF~~THEN BEGIN SanWantsSeeQi7
+SAY@312
+IF~~THEN DO~ActionOverride("CVSandr",LeaveParty()) ActionOverride("CVSandr",EscapeArea())
+SetGlobal("SandrahSummoned","GLOBAL",2) SetGlobal("SandrahJoined","GLOBAL",25) ClearAllActions()
+FadeToColor([30.0],0)
+CutSceneId(Player1)
+RestorePartyLocations()
+EndCutSceneMode()
+FadeFromColor([30.0],0)~EXIT
+END
+
+IF~Global("San25ChiQuest","GLOBAL",12)~THEN BEGIN SanWantsSeeQi8
+SAY@313
+IF~~THEN REPLY@314GOTO SanWantsSeeQi9
+IF~Global("CVUmo1","GLOBAL",1)~THEN REPLY@315GOTO SanWantsSeeQi9
+IF~!Global("CVUmo1","GLOBAL",1)~THEN REPLY@316GOTO SanWantsSeeQi9
+END
+
+IF~~THEN BEGIN SanWantsSeeQi9
+SAY@317
+IF~~THEN REPLY@318GOTO SanWantsSeeQi10
+IF~~THEN REPLY@319GOTO SanWantsSeeQi10
+IF~~THEN REPLY@320GOTO SanWantsSeeQi10
+END
+
+IF~~THEN BEGIN SanWantsSeeQi10
+SAY@321
+=@322
+IF~~THEN REPLY@323DO~SetGlobal("San25ChiQuest","GLOBAL",13)~GOTO SanWantsSeeQi11
+END
+
+IF~~THEN BEGIN SanWantsSeeQi11
+SAY@324
+=@325
+IF~~THEN REPLY@326GOTO SanWantsSeeQi12
+END
+
+IF~~THEN BEGIN SanWantsSeeQi12
+SAY@327
+IF~!InParty("Sola") ~THEN EXIT
+IF~InParty("Sola")~THEN DO~SetGlobal("SanSolUM1","GLOBAL",1)~EXIT
+END
+
+// Shar-Teel's second child
+IF~Global("SanSharInt","GLOBAL",38)~THEN BEGIN SanShSecCh1
+SAY@328
+IF~~THEN REPLY@329GOTO SanShSecCh2
+IF~~THEN REPLY@330GOTO SanShSecCh2
+IF~~THEN REPLY@331GOTO SanShSecCh2
+END
+
+IF~~THEN BEGIN SanShSecCh2
+SAY@332
+IF~~THEN REPLY@333GOTO SanShSecCh3
+END
+
+IF~~THEN BEGIN SanShSecCh3
+SAY@334
+IF~~THEN REPLY@335GOTO SanShSecCh4
+END
+
+IF~~THEN BEGIN SanShSecCh4
+SAY@336
+IF~~THEN DO~SetGlobal("SanSharInt","GLOBAL",39) ~EXIT
+END
+
+IF~Global("SanWhichWay","ar4500",1)~THEN BEGIN EvilPrincFin1
+SAY@337
+IF~~THEN REPLY@338GOTO EvilPrincFin2
+IF~~THEN REPLY@339 GOTO EvilPrincFin2
+END
+
+IF~~THEN BEGIN EvilPrincFin2
+SAY@340
+IF~~THEN REPLY@341GOTO EvilPrincFin3
+IF~~THEN REPLY@342GOTO EvilPrincFin3
+END
+
+IF~~THEN BEGIN EvilPrincFin3
+SAY@343
+=@344
+IF~Alignment(Player1,MASK_EVIL)~THEN REPLY@345DO~SetGlobal("SanWhichWay","ar4500",2)~GOTO EvilPrincFin4
+IF~!Alignment(Player1,MASK_EVIL)~THEN REPLY@345DO~SetGlobal("SanWhichWay","ar4500",2)~GOTO EvilPrincFin8
+END
+
+IF~~THEN BEGIN EvilPrincFin4
+SAY@346
+=@347
+=@348
+IF~~THEN REPLY@349GOTO EvilPrincFin5
+IF~~THEN REPLY@350GOTO EvilPrincFin5
+IF~~THEN REPLY@351GOTO EvilPrincFin6
+END
+
+IF~~THEN BEGIN EvilPrincFin8
+SAY@346
+=@347
+=@348
+IF~~THEN REPLY@349GOTO EvilPrincFin9
+IF~~THEN REPLY@350GOTO EvilPrincFin9
+IF~~THEN REPLY@351GOTO EvilPrincFin10
+END
+
+IF~~THEN BEGIN EvilPrincFin5
+SAY@352
+IF~~THEN GOTO EvilPrincFin6
+END
+
+IF~~THEN BEGIN EvilPrincFin9
+SAY@352
+IF~~THEN GOTO EvilPrincFin10
+END
+
+IF~~THEN BEGIN EvilPrincFin6
+SAY@353
+=@354
+IF~~THEN REPLY@355EXIT
+IF~~THEN REPLY@356EXIT
+IF~~THEN REPLY@357DO~ChangeAlignment(Player1,CHAOTIC_NEUTRAL)SetGlobal("PPEvilChoices","GLOBAL",0) SetGlobal("PPGoodChoices","GLOBAL",1) SetGlobal("ConvinceBalth","GLOBAL",4) ~EXIT
+IF~~THEN REPLY@358EXIT
+IF~~THEN REPLY@359DO~ChangeAlignment(Player1,CHAOTIC_NEUTRAL)SetGlobal("PPEvilChoices","GLOBAL",0) SetGlobal("PPGoodChoices","GLOBAL",1) SetGlobal("ConvinceBalth","GLOBAL",4) ~EXIT
+END
+
+IF~~THEN BEGIN EvilPrincFin10
+SAY@353
+=@354
+IF~~THEN REPLY@355EXIT
+IF~~THEN REPLY@356EXIT
+IF~~THEN REPLY@357DO~SetGlobal("ConvinceBalth","GLOBAL",4)~EXIT
+IF~~THEN REPLY@358EXIT
+IF~~THEN REPLY@359DO~SetGlobal("ConvinceBalth","GLOBAL",4)~EXIT
+END
+
+//Sided with Balthasar
+CHAIN
+IF~Global("SanSidedBalt","LOCALS",1)~THEN CVSan25J WithBalt1
+@360
+DO~SetGlobal("SanSidedBalt","LOCALS",2)~
+==IF_FILE_EXISTS BLK#IYL IF~InParty("Iylos")~THEN@361
+==CVSan25J IF~InParty("Iylos")~THEN@362
+==IF_FILE_EXISTS BLK#IYL IF~InParty("Iylos")~THEN@363
+==CVSan25J IF~InParty("Iylos")~THEN@364
+END
+++@365+ WithBalt2
+
+CHAIN
+IF~~THEN CVSan25J WithBalt2
+@366EXIT
+
+//Bad Ending
+CHAIN
+IF~Global("StartEndBios","cvrtf1",9)~THEN CVSan25J SanBadEnd
+@367
+DO~SetGlobal("StartEndBios","cvrtf1",10)~
+== sanmyst@368
+==CVQidr@369
+==Elminsa@370DO~ClearAllActions() StartCutSceneMode() StartCutScene("cut233s4") ~EXIT
+
+CHAIN
+IF~Global("SanAfterJon","GLOBAL",8)~THEN CVSan25J AloundoToB1
+@371
+DO~SetGlobal("SanAfterJon","GLOBAL",9)~
+==IF_FILE_EXISTS BSAREV25 IF~InParty("Sarevok")~THEN@372
+==IF_FILE_EXISTS BJonel25 IF~!InParty("Sarevok") InParty("LRIrenic")~THEN@372
+==CVSan25J IF~!InParty("Sarevok") !InParty("LRIrenic")~THEN@372
+==CVSan25J@373
+END
+++@374+ AloundoToB2
+++@375+ AloundoToB2
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB2
+@376
+END
+++@377+ AloundoToB3
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB3
+@378
+END
+++@379+ AloundoToB4
+++@380+ AloundoToB5
+++@381+ AloundoToB6
+++@382+ AloundoToB7
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB4
+@383
+END
+++@384+ AloundoToB6
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB5
+@385
+END
+++@382+ AloundoToB7
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB6
+@386
+END
+++@387+ AloundoToB7
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB7
+@388
+END
+++@389+ AloundoToB8
+++@390+ AloundoToB8
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB8
+@391
+END
+++@392+ AloundoToB9
+++@393+ AloundoToB9
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB9
+@394
+END
+++@395+ AloundoToB10
+++@396+ AloundoToB10
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB10
+@397
+END
+++@398+ AloundoToB11
+++@399+ AloundoToB11
+
+CHAIN
+IF~~THEN CVSan25J AloundoToB11
+@400
+=@401EXIT
+
+I_C_T Hgwra01 18 SanGoriWraith
+==HGwra01 IF~InParty("CVSandr")~THEN @402
+==CVSan25J IF~InParty("CVSandr")~THEN @403
+==HGwra01 IF~InParty("CVSandr")~THEN @404
+==CVSan25J IF~InParty("CVSandr")~THEN @405
+END
+

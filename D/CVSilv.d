@@ -1,0 +1,89 @@
+BEGIN CVSILV
+
+CHAIN
+IF~GlobalGT("SanKhalBlood","GLOBAL",8)~THEN CVSILV Wanderers2
+@0
+EXIT
+
+CHAIN
+IF~Global("SanKhalBlood","GLOBAL",8)~THEN CVSILV Wanderers1
+@1
+DO~SetGlobal("SanKhalBlood","GLOBAL",9)~
+==CVSANDRJ@2
+==CVSILV @3
+==CVSANDRJ@4
+==CVSILV @5
+END
+++@6+ Wanderers3
+IF~InParty("Imoen2")~THEN REPLY@7+ Wanderers7
+++@8+ Wanderers4
+
+CHAIN
+IF~~THEN CVSILV Wanderers3
+@9
+==CVSANDRJ@10
+==CVSILV @11
+==CVSANDRJ@12
+=@13
+==CVSILV @14
+==CVSANDRJ@15
+==CVSILV @16
+==CVSANDRJ@17
+==CVSILV @18
+==CVSANDRJ@19
+==CVSILV @20
+END
+++@21+ Wanderers8
+
+CHAIN
+IF~~THEN CVSILV Wanderers4
+@22
+=@23
+END
+++@24EXIT
+IF~InParty("Imoen2")~THEN REPLY@7+ Wanderers7
+++@6+ Wanderers6
+
+CHAIN
+IF~~THEN CVSILV Wanderers5
+@25
+==CVSANDRJ@26
+==CVSILV @27
+EXIT
+
+CHAIN
+IF~~THEN CVSILV Wanderers6
+@9
+==CVSANDRJ@28
+==CVSILV @11
+==CVSANDRJ@12
+=@13
+==CVSILV @14
+==CVSANDRJ@15
+==CVSILV @16
+==CVSANDRJ@17
+==CVSILV @29
+==CVSANDRJ@19
+==CVSILV @20
+END
+++@21EXIT
+
+CHAIN
+IF~~THEN CVSILV Wanderers7
+@30
+==BIMOEN2@31
+== CVSILV @32
+==BIMOEN2@33
+== CVSILV @34
+END
+++@24EXIT
+++@8+ Wanderers4
+
+CHAIN
+IF~~THEN CVSILV Wanderers8
+@35
+END
+++@8+ Wanderers4
+IF~InParty("Imoen2")~THEN REPLY@7+ Wanderers7
+++@24EXIT
+

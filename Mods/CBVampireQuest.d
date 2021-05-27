@@ -1,0 +1,72 @@
+APPEND CVSandrJ
+
+IF~Global("SanVSQHint","LOCALS",1)~THEN BEGIN SanHintFarm1
+SAY@0
+IF~~THEN REPLY@1DO~SetGlobal("SanVSQHint","LOCALS",2) ~GOTO SanHintFarm3
+IF~~THEN REPLY@2DO~SetGlobal("SanVSQHint","LOCALS",2) ~GOTO SanHintFarm2
+END
+
+IF~~THEN BEGIN SanHintFarm2
+SAY@3
+IF~~THEN REPLY@4EXIT
+IF~~THEN REPLY@5EXIT
+END
+
+IF~~THEN BEGIN SanHintFarm3
+SAY@6
+IF~~THEN REPLY@4EXIT
+IF~~THEN REPLY@5EXIT
+END
+
+IF WEIGHT #-1~IsGabber(Player1) Global("SanCBVampsQ","LOCALS",1) ~THEN BEGIN SanVampCounsl1
+SAY@7
+IF~~THEN REPLY@8DO~IncrementGlobal("Sanpoints","GLOBAL",-3) SetGlobal("SanCBVampsQ","LOCALS",2)~EXIT
+IF~~THEN REPLY@9DO~IncrementGlobal("Sanpoints","GLOBAL",3)SetGlobal("SanCBVampsQ","LOCALS",2)~GOTO SanVampCounsl2
+IF~~THEN REPLY@10DO~SetGlobal("SanCBVampsQ","LOCALS",2)IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanVampCounsl2
+END
+
+IF~~THEN BEGIN SanVampCounsl2
+SAY@11
+IF~~THEN REPLY@12GOTO SanVampCounsl3
+IF~~THEN REPLY@13GOTO SanVampCounsl3
+END
+
+IF~~THEN BEGIN SanVampCounsl3
+SAY@14
+=@15
+IF~~THEN REPLY@16GOTO SanVampCounsl4
+END
+
+IF~~THEN BEGIN SanVampCounsl4
+SAY@17
+IF~~THEN REPLY@18GOTO SanVampCounsl5
+IF~~THEN REPLY@19GOTO SanVampCounsl5
+END
+
+IF~~THEN BEGIN SanVampCounsl5
+SAY@20
+IF~~THEN REPLY@21 GOTO SanVampCounsl6
+IF~~THEN REPLY@22GOTO SanVampCounsl6
+END
+
+IF~~THEN BEGIN SanVampCounsl6
+SAY@23
+IF~~THEN REPLY@24EXIT
+IF~~THEN REPLY@25EXIT
+END
+
+IF~Global("SanCBVampsQ","LOCALS",3)~THEN BEGIN  SanVampCounsl7
+SAY@26
+IF~~THEN REPLY@27DO~Addexperienceparty(15750)SetGlobal("SanCBVampsQ","LOCALS",4)~EXIT
+END
+END
+
+ADD_TRANS_ACTION CBRNCMAN BEGIN 50 END BEGIN 0 END ~ActionOverride("CVSandr",SetGlobal("SanCBVampsQ","LOCALS",1))~
+
+
+
+
+
+
+
+

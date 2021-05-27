@@ -1,0 +1,116 @@
+APPEND BSANDR
+
+IF~Global("SanEdwinBG2","GLOBAL",1)~THEN BEGIN SanBG2EdMeetAgain1
+SAY@0
+IF~~THEN REPLY@1DO~SetGlobal("SanEdwinBG2","GLOBAL",3)~GOTO  SanBG2EdMeetAgain2
+IF~~THEN REPLY@2DO~SetGlobal("SanEdwinBG2","GLOBAL",3)~GOTO  SanBG2EdMeetAgain2
+IF~~THEN REPLY@3DO~SetGlobal("SanEdwinBG2","GLOBAL",3)~GOTO  SanBG2EdMeetAgain2
+END
+
+IF~~THEN BEGIN SanBG2EdMeetAgain2
+SAY@4
+IF~~THEN REPLY@5GOTO  SanBG2EdMeetAgain4
+IF~~THEN REPLY@6DO~IncrementGlobal("Sanpoints","GLOBAL",2)~EXIT
+IF~~THEN REPLY@7GOTO  SanBG2EdMeetAgain3
+END
+
+IF~~THEN BEGIN SanBG2EdMeetAgain3
+SAY@8
+IF~~THEN DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+END
+
+IF~~THEN BEGIN SanBG2EdMeetAgain4
+SAY@9
+IF~~THEN DO~IncrementGlobal("Sanpoints","GLOBAL",-2)~EXIT
+END
+
+IF~Global("SanEdwinBG2","GLOBAL",2)~THEN BEGIN SanBG2EdMeet1
+SAY@0
+IF~~THEN REPLY@1DO~SetGlobal("SanEdwinBG2","GLOBAL",3)~GOTO  SanBG2EdMeet2
+IF~~THEN REPLY@10DO~SetGlobal("SanEdwinBG2","GLOBAL",3)~GOTO  SanBG2EdMeet2
+IF~~THEN REPLY@3DO~SetGlobal("SanEdwinBG2","GLOBAL",3)~GOTO  SanBG2EdMeet2
+END
+
+IF~~THEN BEGIN SanBG2EdMeet2
+SAY@11
+IF~~THEN REPLY@12GOTO  SanBG2EdMeet4
+IF~~THEN REPLY@13DO~IncrementGlobal("Sanpoints","GLOBAL",2)~EXIT
+IF~~THEN REPLY@14GOTO  SanBG2EdMeet3
+END
+
+IF~~THEN BEGIN SanBG2EdMeet3
+SAY@8
+IF~~THEN DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+END
+
+IF~~THEN BEGIN SanBG2EdMeet4
+SAY@9
+IF~~THEN DO~IncrementGlobal("Sanpoints","GLOBAL",-2)~EXIT
+END
+
+IF~Global("SanEdPaper","LOCALS",1)~THEN BEGIN EdPaper1
+SAY@15
+IF~~THEN REPLY@16GOTO EdPaper2
+IF~~THEN REPLY@17GOTO EdPaper3
+IF~~THEN REPLY@18GOTO EdPaper4
+END
+
+IF~~THEN BEGIN EdPaper2
+SAY@19
+IF~~THEN REPLY@20GOTO EdPaper5
+IF~~THEN REPLY@21DO~SetGlobal("SanEdPaper","LOCALS",2)~EXIT
+END
+
+IF~~THEN BEGIN EdPaper3
+SAY@22
+IF~~THEN REPLY@20GOTO EdPaper5
+IF~~THEN REPLY@23DO~SetGlobal("SanEdPaper","LOCALS",2)~EXIT
+END
+
+IF~~THEN BEGIN EdPaper4
+SAY@22
+IF~~THEN REPLY@20GOTO EdPaper5
+IF~~THEN REPLY@24DO~SetGlobal("SanEdPaper","LOCALS",2)~EXIT
+END
+
+IF~~THEN BEGIN EdPaper5
+SAY@25
+IF~~THEN REPLY@26GOTO EdPaper6
+END
+
+IF~~THEN BEGIN EdPaper6
+SAY@27
+IF~~THEN REPLY@28GOTO EdPaper7
+END
+
+IF~~THEN BEGIN EdPaper7
+SAY@29
+IF~~THEN REPLY@30DO~SetGlobal("SanEdPaper","LOCALS",2)~EXIT
+END
+
+END
+
+INTERJECT_COPY_TRANS EDWIN 4 SanBG2EdMeet
+== EDWIN IF ~InParty("CVSandr") GlobalGT("SanEdAnts","GLOBAL",1)~THEN @31END
+
+CHAIN
+IF WEIGHT #-7~Global("SanNetScrl","LOCALS",1)~THEN Bedwin SanKnows
+@32
+DO~SetGlobal("SanNetScrl","LOCALS",2)~
+==BSandr@33
+==Bedwin@34
+==BSandr@35
+=@36
+==Bedwin@37
+==BSandr@38EXIT
+
+CHAIN
+IF WEIGHT #-7~Global("SanNetScrl","LOCALS",3)~THEN Bedwin SanKnows2
+@39
+DO~SetGlobal("SanNetScrl","LOCALS",4)~
+==BSandr@40
+==Bedwin@41
+==BSandr@42
+==Bedwin@43
+==BSandr@44
+==Bedwin@45EXIT

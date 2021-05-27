@@ -1,0 +1,47 @@
+BEGIN SANSUWL
+
+
+CHAIN
+IF ~Global("SanSuBH","GLOBAL",1)~THEN SANSUWL SuBH1
+@0
+DO ~SetGlobal("SanSuBH","GLOBAL",2) RealSetGlobalTimer("BloomwT","GLOBAL",6000)~
+== IF_FILE_EXISTS BSUFINCH IF~InParty("Sufinch") ~THEN @1
+== BSANDR IF ~!InParty("Sufinch") ~THEN @2
+== SANSUWL @3
+== IF_FILE_EXISTS BSUFINCH IF~InParty("Sufinch") ~THEN @4
+== BSANDR IF ~!InParty("Sufinch") ~THEN @5
+END
+++ @6+ SuBH12
+++ @7+ SuBH13
+++ @8+ SuBH12
+
+CHAIN
+IF ~~THEN SANSUWL SuBH12
+@9
+== IF_FILE_EXISTS BSUFINCH IF~InParty("Sufinch") ~THEN @10
+== BSANDR IF~!InParty("Sufinch") ~THEN @11
+END
+++ @12+ SuBH13
+++ @13+ SuBH13
+
+
+CHAIN
+IF ~~THEN SANSUWL SuBH13
+@14
+END
+++ @15  + SuBH14
+++ @16+ SuBH14
+
+CHAIN
+IF ~~THEN SANSUWL SuBH14
+@17EXIT
+  
+CHAIN
+IF ~Global("SanSuBH","GLOBAL",6)~THEN SANSUWL SuBH20
+@18
+DO ~SetGlobal("SanSuBH","GLOBAL",7)~
+== BSANDR @19
+== SANSUWL @20
+END
+++ @21EXIT
+

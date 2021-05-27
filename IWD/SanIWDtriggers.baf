@@ -1,0 +1,213 @@
+IF
+Global("SanBGForIWD","Global",1) 
+GlobalLT("Chapter","Global",7)
+AreaCheck("iw1000")
+Global("HowNoSan","iw1000",0)
+THEN
+RESPONSE #100
+SetGlobal("HowNoSan","iw1000",1)
+HideAreaOnMap("id9100")
+END
+
+IF
+Global("SanIDW1","Global",0)
+AreaCheck("id1006")
+Delay(12)
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",1)
+SetGlobal("HOW_COMPLETED","GLOBAL",9)
+END
+
+IF
+AreaCheck("id3501")
+Global("SanIDW1","Global",2)
+PartyHasItem("holysym")
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",3)
+END
+
+IF
+AreaCheck("id3601")
+Global("SanIDW1","Global",4)
+OR(3)
+See("Container 11")
+See("Container 10")
+See("Container 12")
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",5)
+END
+
+IF
+GlobalGT("SPRITE_IS_DEADTalonite","GLOBAL",4)
+AreaCheck("id4002")
+Global("SanIDW1","Global",6)
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",7)
+END
+
+IF
+Global("ULt_Talk","GLOBAL",2)
+Global("SanIDW1","Global",8)
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",9)
+END
+
+IF
+Global("D5_Girl_Move_Loc","GLOBAL",1)
+Global("SanIDW1","Global",10)
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",11)
+END
+
+IF
+AreaCheck("id2100")
+See("kaoroge")
+GlobalLT("SanIDW1","Global",13)
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",13)
+END
+
+IF
+GlobalLT("SanIDW1","Global",15)
+AreaCheck("id5000")
+Delay(12)
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",15)
+END
+
+IF
+GlobalLT("SanIDW1","Global",17)
+AreaCheck("id6002")
+OR(3)
+See("drowspe")
+See("drowvan")
+See("Symbol Table")
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",17)
+END
+
+IF
+Global("SanIWDRWiz","Global",1)
+PartyHasItem("Notekri")
+!Global("Saablic_Quest","Global",0)
+THEN
+RESPONSE #100
+SetGlobal("SanIWDRWiz","Global",2)
+END
+
+IF
+GlobalLT("SanIDW1","Global",19)
+AreaCheck("id8008")
+Delay(18)
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",19)
+END
+
+IF
+GlobalLT("SanIDW1","Global",21)
+AreaCheck("id1100")
+Delay(18)
+THEN
+RESPONSE #100
+SetGlobal("SanIDW1","Global",21)
+END
+
+IF
+OR(15)
+Global("SanIDW1","Global",1)
+Global("SanIDW1","Global",3)
+Global("SanIDW1","Global",5)
+Global("SanIDW1","Global",7)
+Global("SanIDW1","Global",9)
+Global("SanIDW1","Global",11)
+Global("SanIDW1","Global",13)
+Global("SanIDW1","Global",15)
+Global("SanIDW1","Global",17)
+Global("SanIWDRWiz","Global",2)
+Global("SanIDW1","Global",19)
+Global("SanIDW1","Global",21)
+Global("IwdHWPlot","LOCALS",1)
+Global("SanHowPlot","Global",1)
+Global("SanIWDIronSearch","Global",3)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+CombatCounter(0)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogueNoSet("CVSandr")
+END
+
+//Heart of Winter
+IF
+GlobalGT("ScarMission","GLOBAL",0)
+InParty("CVSandr")
+Global("SanHOWScar","Global",0)
+OR(2)
+Global("HOW_COMPLETED","GLOBAL",9)
+Global("HOW_COMPLETED","GLOBAL",0)
+OR(8)
+AreaCheck("BG0105")
+AreaCheck("BG0102")
+AreaCheck("BG0103")
+AreaCheck("BG0116")
+AreaCheck("BG0119")
+AreaCheck("BG0706")
+AreaCheck("BG0114")
+AreaCheck("BG0165")
+THEN
+RESPONSE #100
+SetGlobal("SanHOWScar","Global",1)
+CreateCreatureObjectOffset("Scar",Myself,[100.100])
+Wait(2)
+ActionOverride("Scar",MoveToObject("CVSandr"))
+ActionOverride("Scar",Dialog("Scar"))
+END
+
+IF
+Global("Know_Assassin","GLOBAL",2)
+Global("Know_Baldemar","GLOBAL",1)
+AreaCheck("id9100")
+Global("IwdHWPlot","LOCALS",0)
+Delay(12)
+THEN
+RESPONSE #100
+SetGlobal("IwdHWPlot","LOCALS",1)
+END
+
+IF
+Global("SanIWDIronSearch","Global",2)
+AreaCheck("id9400")
+OR(2)
+PartyHasItem("wylfins")
+See("Wylfdene's Tomb")
+!See("WVirgin")
+CombatCounter(0)
+!See([ENEMY])
+THEN
+RESPONSE #100
+SetGlobal("SanIWDIronSearch","Global",3)
+END
+
+IF
+Global("SanHOWScar","Global",3)
+AreaCheck("BG1100")
+OR(2)
+Global("SanIWDIronSearch","Global",8)
+Global("SanIWDIronSearchP","Global",1)
+THEN
+RESPONSE #100
+SetGlobal("SanHOWScar","Global",4)
+END

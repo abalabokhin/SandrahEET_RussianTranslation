@@ -1,0 +1,50 @@
+APPEND CBROLFSB
+END
+
+CHAIN
+IF~Global("SanShauRSure","GLOBAL",1)~THEN CBROLFSB RolfShau1
+@0
+DO~SetGlobal("SanShauRSure","GLOBAL",2)~
+==CVSHAUJ@1
+== CBROLFSB@2
+==CVSHAUJ@3
+== CBROLFSB@4
+==BSANDR@5
+== CBROLFSB@6
+END
+++@7+ RolfShau2
+++@8+ RolfShau2
+
+CHAIN
+IF~~THEN CBROLFSB RolfShau2
+@9
+==CVSHAUJ@10
+== CBROLFSB@11
+==BSANDR@12
+==CVSHAUJ@13
+== CBROLFSB@14
+==CVSHAUJ@15
+== CBROLFSB@16
+==CVSHAUJ@17
+==BSANDR@18
+==BMINSC IF~InParty("Minsc")~THEN@19
+== CBROLFSB@20DO~ChangeEnemyAlly(Myself,NEUTRAL) GiveItemCreate("cbrolfsw","CVShau",1,0,0)  EscapeAreaMove("cvsha3",857,927,12)~
+==CVSHAUJ@21
+END
+++@22EXIT
+
+CHAIN 
+IF~Global("RolfJoin","cvsha3",1)~THEN CBROLFSB RolfShauJoin1
+@23
+DO~SetGlobal("RolfJoin","cvsha3",2)~
+==CVSHAUJ@24
+== CBROLFSB@25
+==BSANDR@26
+== CBROLFSB@27
+=@28
+==BSANDR@29
+==CVSHAUJ@30DO~GiveItem("cbrolfsw","CBROLFSB")~
+== CBROLFSB@31
+=@32
+==CVSHAUJ@33
+== CBROLFSB@34EXIT

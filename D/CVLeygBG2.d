@@ -1,0 +1,21 @@
+APPEND CVLEYG
+END
+
+CHAIN
+IF~Global("SanWDTemplWi","GLOBAL",11)~THEN CVLEYG SanRetHero
+@0
+DO~SetGlobal("SanWDTemplWi","GLOBAL",12)~
+==BSANDR@1
+==CVLEYG@2
+==BSANDR@3
+==CVLEYG@4
+==BSANDR@5
+==CVLEYG@6
+==BSANDR@7
+==CVLEYG@8
+==BSANDR@9
+==CVLEYG@10
+==BSANDR IF ~Global("SanRomPath","GLOBAL",1) ~THEN@11
+==BSANDR IF ~Global("SanRomPath","GLOBAL",2) ~THEN@12
+==CVLEYG@13
+= @14DO~EscapeAreaDestroy(60)~EXIT

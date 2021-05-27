@@ -1,0 +1,90 @@
+APPEND BSANDR
+END
+
+CHAIN
+IF~~THEN BSANDR ImoHealedReun
+@0
+DO~SetGlobal("SanHealImo","GLOBAL",8) RealSetGlobalTimer("SanImoNashIntT","GLOBAL",600)~
+==BIMOEN2@1
+== BSANDR@2
+==BIMOEN2@3
+== BSANDR@4
+==BIMOEN2@5
+== BSANDR@6
+==BIMOEN2@7
+== BSANDR@8EXIT
+
+
+CHAIN
+IF~Global("SanHealImo","GLOBAL",9)~THEN BSANDR ImoHealedReun2
+@9
+DO~SetGlobal("SanHealImo","GLOBAL",10) RealSetGlobalTimer("SanImoNashIntT","GLOBAL",600) RealSetGlobalTimer("SanCloeInterv","LOCALS",300)~
+==BIMOEN2@10
+== BSANDR@11
+==BIMOEN2@12
+== BSANDR@13
+==BIMOEN2@14
+== BSANDR@15
+==BIMOEN2@16
+== BSANDR@17
+==BIMOEN2@18
+== BSANDR@19
+==BIMOEN2@20EXIT
+
+CHAIN
+IF~Global("SanHealImo","GLOBAL",12)~THEN BSANDR ImoHealedMessy
+@21
+DO~SetGlobal("SanHealImo","GLOBAL",13) RealSetGlobalTimer("SanImoNashIntT","GLOBAL",1600) ~
+==BIMOEN2@22
+== BSANDR@23
+==BIMOEN2@24
+== BSANDR@25
+==BIMOEN2@26
+== BSANDR@27
+==BIMOEN2@28
+== BSANDR@29
+==BIMOEN2@30
+== BSANDR@31
+==BIMOEN2@32
+== BSANDR@33
+==BIMOEN2@34
+== BSANDR@35
+==BIMOEN2@36
+== BSANDR@37
+==BIMOEN2@38
+== BSANDR@39
+==BIMOEN2@40EXIT
+
+CHAIN
+IF~Global("SanHealImo","GLOBAL",15)~THEN BSANDR ImoHealedMessy
+@41
+DO~SetGlobal("SanHealImo","GLOBAL",16) RealSetGlobalTimer("SanImoNashIntT","GLOBAL",1600) ~
+==BIMOEN2@42
+== BSANDR@43
+==BIMOEN2@44
+=@45
+=@46
+== BSANDR@47
+==BIMOEN2@48
+== BSANDR@49EXIT
+
+
+//__________APPENDS__________________//
+
+APPEND BIMOEN2
+IF WEIGHT #-10 ~Global("SanHealImo","GLOBAL",7)~THEN BEGIN SanHealImo
+SAY @50
+IF~~THEN EXTERN BSANDR ImoHealedReun
+END
+END
+
+INTERJECT Imoen2 25 SanSendWD
+==CVSandrJ IF~InParty("CVSandr") GlobalGT("SanImoRetWD","GLOBAL",3)~ THEN @51
+END
+++@52+SandSendWD2
+
+CHAIN
+IF~~THEN IMOEN2 SandSendWD2
+@53
+==CVSandrJ @54
+==Imoen2@55DO ~SetGlobal("KickedOut","LOCALS",1) SetDialogue("IMOENP_") EscapeAreaMove("cvebs1",318,220,12)~EXIT

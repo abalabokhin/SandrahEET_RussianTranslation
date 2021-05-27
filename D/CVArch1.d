@@ -1,0 +1,36 @@
+BEGIN CVARCH1
+
+CHAIN
+IF~IsGabber([PC])~THEN CVARCH1 Records
+@0
+== CVARCH1 IF~InParty("RChloe")~THEN@1
+== IF_FILE_EXISTS RChloeJ IF~InParty("RChloe")~THEN@2
+== CVARCH1@3EXIT
+
+BEGIN CVARCH2
+CHAIN
+IF~IsGabber([PC])~THEN CVARCH2 Records2
+@0
+=@3EXIT
+
+BEGIN CVARCH3
+CHAIN
+IF~IsGabber([PC])~THEN CVARCH3 Records3
+@0
+== CVARCH3 IF~InParty("Imoen2")~THEN@4
+== IMOEN2J IF~InParty("Imoen2")~THEN@5
+== CVARCH3@3EXIT
+
+BEGIN CVARCH4
+CHAIN
+IF~IsGabber([PC])~THEN CVARCH4 Records4
+@0
+=@3EXIT
+
+BEGIN CVARCH6
+CHAIN
+IF~IsGabber([PC])~THEN CVARCH6 Records6
+@0
+== CVARCH6 IF~InParty("Viconia")~THEN@6
+== ViconiJ IF~InParty("Viconia")~THEN@7
+== CVARCH6@3EXIT

@@ -1,0 +1,34 @@
+CHAIN
+IF WEIGHT #-4~Global("SanMiriB","LOCALS",1)~THEN BCMGMIRI Bore1
+@0
+DO~SetGlobal("SanMiriB","LOCALS",2)~
+==BSandr@1
+==BCMGMIRI@2
+==BSandr@3
+==BCMGMIRI@4
+==BSandr@5
+==BCMGMIRI@6
+==BSandr@7EXIT
+
+CHAIN
+IF WEIGHT #-4~Global("SanMiriB","LOCALS",3)~THEN BCMGMIRI Bore2
+@8
+DO~SetGlobal("SanMiriB","LOCALS",4)~
+==BSandr@9
+==BCMGMIRI@10
+==BSandr@11
+==BCMGMIRI@12
+==BSandr@13
+==BCMGMIRI@14
+==BSandr@15
+==BCMGMIRI@16EXIT
+
+CHAIN
+IF WEIGHT #-4~Global("SanMiriB2","LOCALS",3)~THEN BCMGMIRI Bore2
+@17
+DO~SetGlobal("SanMiriB2","LOCALS",4)~
+==BSandr@18
+==BCMGMIRI@19
+==BSandr@20
+==BCMGMIRI@21EXIT
+

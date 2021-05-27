@@ -1,0 +1,24 @@
+BEGIN CVREVI
+
+IF ~Global("OrcPrison","GLOBAL",31) ~THEN BEGIN ImoRevi1
+SAY @0
+IF~~THEN REPLY @1GOTO ImoRevi2
+IF~~THEN REPLY @2GOTO ImoRevi2
+END
+
+IF~~THEN BEGIN  ImoRevi2
+SAY @3
+IF ~~THEN REPLY @4GOTO ImoRevi3
+IF~~THEN REPLY @5DO ~SetGlobal("OrcPrison","GLOBAL",32)~EXIT
+END
+
+IF~~THEN BEGIN  ImoRevi3
+SAY @6
+IF ~~THEN DO ~SetGlobal("OrcPrison","GLOBAL",32)~EXIT
+END
+
+IF ~GlobalGT("OrcPrison","GLOBAL",31) AreaCheck("BG3320") ~THEN BEGIN ImoRevi4
+SAY @7
+IF~~THEN EXIT
+END
+

@@ -1,0 +1,40 @@
+BEGIN CVCatCe
+
+
+CHAIN
+IF~Global("SanCerndLT","GLOBAL",1)~THEN CVCatCe SanFind1
+@0
+DO~SetGlobal("SanCerndLT","GLOBAL",2)~
+== BSANDR@1
+==BCERND@2
+== BSANDR@3DO~ReallyForceSpell("CVCATCE",CLERIC_CURE_MEDIUM_WOUNDS)~
+END
+++@4+ SanFind2
+++@5+ SanFind2
+
+CHAIN
+IF~~THEN CVCatCe SanFind2
+@6
+==BCERND@7
+== BSANDR@8
+==BCERND@9
+== BSANDR@10
+==BCERND@11
+== BSANDR@12
+==Pellig@13
+==CVCatCe@14
+EXIT
+
+CHAIN
+IF~Global("SanCerndLT","GLOBAL",5)~THEN CVCatCe SanFind3
+@15
+DO~SetGlobal("SanCerndLT","GLOBAL",6)~
+==BCERND@16
+== BSANDR@17
+==Pellig@18
+==BCERND@19
+== BSANDR@20
+==BCERND@21
+== BSANDR@22
+==BCERND@23
+==CVCatCe@14DO~MoveToPointNoInterrupt([0.0])~EXIT

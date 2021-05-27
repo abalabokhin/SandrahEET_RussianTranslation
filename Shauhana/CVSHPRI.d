@@ -1,0 +1,103 @@
+BEGIN CVSHPRI
+
+IF~AreaCheck("CVSh12")~THEN BEGIN showdown1
+SAY@0
+=@1
+IF~~THEN DO~ReallyForceSpell(Myself,DRYAD_TELEPORT)~EXIT
+END
+
+CHAIN
+IF ~Global("SanGothSwFound","GLOBAL",5)~THEN  CVSHPRI NorWoo1
+@2
+DO ~SetGlobal("SanGothSwFound","GLOBAL",6)~
+== BSANDR @3
+== CVSHPRI@4
+== BSANDR @5
+== CVSHPRI@6
+END
+++ @7+  NorWoo3
+IF ~Dead("NTGGHOT1")~THEN REPLY@8+ NorWoo2
+
+CHAIN 
+IF ~~THEN  CVSHPRI NorWoo2
+@9
+== BSANDR @10
+== CVSHPRI@11
+EXIT
+
+CHAIN
+IF ~~THEN  CVSHPRI NorWoo3
+@12
+== BSANDR @13
+== CVSHPRI@14
+== BSANDR @15
+END
+++ @16+ NorWoo4
+
+CHAIN
+IF ~~THEN  CVSHPRI NorWoo4
+@17
+== BSANDR @10
+== CVSHPRI@11
+EXIT
+
+
+
+CHAIN 
+IF ~Global("SanShauOrcStaff","GLOBAL",4)~THEN  CVSHPRI ShRet
+@18
+DO ~SetGlobal("SanShauOrcStaff","GLOBAL",5)~
+== CVSHAUJ @19
+== BSANDR @20
+== CVSHPRI@21
+== BSANDR @22
+== CVSHPRI@23
+== CVSHAUJ @24
+== CVSHPRI@25
+EXIT
+
+CHAIN
+IF ~Global("SanShauOrcStaff","GLOBAL",8)~THEN  CVSHPRI ShRet2
+@26
+DO ~SetGlobal("SanShauOrcStaff","GLOBAL",9)~
+== CVSHAUJ @27
+== CVSHPRI@28
+== CVSHAUJ @29
+== CVSHPRI@30
+END
+++ @31+ ShRet3
+
+CHAIN
+IF~~THEN  CVSHPRI ShRet3
+@32
+== CVSHAUJ @33
+== BSANDR @34
+== CVSHAUJ @35
+== BSANDR @36
+END
+++ @37+ ShRet4
+
+CHAIN
+IF~~THEN  CVSHPRI ShRet4
+@38
+== CVSHAUJ @39
+== BSANDR @40
+== CVSHAUJ @41
+== BSANDR @42
+== CVSHAUJ @43
+END
+++ @44+ ShRet5
+
+CHAIN
+IF~~THEN  CVSHPRI ShRet5
+@45
+== BSANDR @46
+== CVSHAUJ @47
+END
+++ @48
+EXIT
+
+CHAIN
+IF ~Global("SanShauOrcStaff","GLOBAL",12)~THEN  CVSHPRI ShRet20
+@49
+DO ~SetGlobal("SanShauOrcStaff","GLOBAL",13)~EXIT

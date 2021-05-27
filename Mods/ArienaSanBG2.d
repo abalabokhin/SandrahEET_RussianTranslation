@@ -1,0 +1,79 @@
+APPEND MWBarn
+IF WEIGHT #-13~Global("MWleaveShau","GLOBAL",2)~THEN BEGIN GoClan1
+SAY@0
+IF~~THEN REPLY@1GOTO GoClan2
+IF~~THEN REPLY@2GOTO GoClan2
+IF~~THEN REPLY@3GOTO GoClan2
+IF~~THEN REPLY@4GOTO GoClan2
+END
+
+IF~~THEN BEGIN GoClan2
+SAY@5
+=@6
+IF~~THEN REPLY@7DO~SetGlobal("MWleaveShau","GLOBAL",3)~GOTO GoClan3
+END
+
+IF~~THEN BEGIN GoClan3
+SAY@8
+=@9
+=@10
+IF~~THEN DO~SetGlobal("ArienaJoined","LOCALS",0) SetLeavePartyDialogFile() LeaveParty() EscapeAreaMove("CVSh15",831,1004,6)~EXIT
+END
+END
+
+APPEND MWArnP
+IF WEIGHT #-5~Global("ArienaJoined","LOCALS",0) Global("MWleaveShau","GLOBAL",3)~THEN BEGIN AtClan1
+SAY@11
+IF~~THEN REPLY@12GOTO AtClan2
+IF~~THEN REPLY@13GOTO AtClan3
+END
+
+IF~~THEN BEGIN AtClan2
+SAY@14
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN AtClan3
+SAY@15
+IF~~THEN DO~SetGlobal("MWleaveShau","GLOBAL",4) SetGlobal("ArienaJoined","LOCALS",1)JoinParty() ~EXIT
+END
+END
+
+CHAIN
+IF WEIGHT #-11~Global("SanHealMWA","GLOBAL",3)~THEN MWBarn SanHeal1
+@16
+DO~SetGlobal("SanHealMWA","GLOBAL",4)~
+==BSandr@17
+== MWBarn@18EXIT
+
+CHAIN
+IF WEIGHT #-12~Global("SanHealMWA","GLOBAL",6)~THEN MWBarn Sanfight
+@19
+DO~SetGlobal("SanHealMWA","GLOBAL",7)~
+==BSandr@20
+== MWBarn@21
+==BSandr@22
+== MWBarn@23
+==BSandr@24
+== MWBarn@25EXIT
+
+EXTEND_BOTTOM MWARNJ 37
+IF ~InParty("CVSandr") ~THEN REPLY@26EXTERN CVSandrJ MWArAAsi
+END
+
+CHAIN
+IF~~THEN CVSandrJ MWArAAsi
+@27
+==MWarnJ@28
+==CVSandrJ@29
+==MWarnJ@30
+==CVSandrJ@31
+==MWarnJ@32
+==CVSandrJ@33
+==MWarnJ@34
+==CVSandrJ@35
+==MWarnJ@36
+=@37
+END
+++@38EXTERN MWarnJ 42
+++@39EXTERN MWarnJ 40

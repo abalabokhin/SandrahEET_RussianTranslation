@@ -1,0 +1,33 @@
+IF
+Global("Sanswitch","ar4000",0)
+InPartyAllowDead("CVsandr")
+THEN
+RESPONSE #100
+ActionOverride("CVSandr",ChangeAIScript("CVSan25",OVERRIDE))
+SetGlobal("Sanswitch","ar4000",1)
+Continue()
+END
+
+IF
+Global("HaiassSoA","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("HaiassSoA","GLOBAL",0)
+END
+
+IF
+Global("CVar4000","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("CVar4000","GLOBAL",1)
+END
+
+IF
+Global("TurnDay","AR4000",0)
+GlobalLT("Chapter","GLOBAL",20)
+Global("MoveChapter","ar4000",0)
+THEN
+RESPONSE #100
+SetGlobal("MoveChapter","ar4000",1)
+SetGlobal("Chapter","GLOBAL",20)
+END

@@ -1,0 +1,28 @@
+BEGIN CVLeavMC
+
+IF~Global("SanBeginRTF","GLOBAL",0)~THEN BEGIN 4
+SAY@0
+IF~~THEN DO~DestroySelf()~EXIT
+END
+
+IF~GlobalGT("SanBeginRTF","GLOBAL",0)~THEN BEGIN 0
+SAY@1
+IF~~THEN REPLY@2GOTO 1
+IF~~THEN REPLY@3GOTO 2
+IF~~THEN REPLY@4GOTO 3
+END
+
+IF~~THEN BEGIN 1
+SAY@5
+IF~~THEN DO~DestroySelf()~EXIT
+END
+
+IF~~THEN BEGIN 2
+SAY@6
+IF~~THEN DO~SetGlobal("K#DISABLE_PC_CAN_DIE","GLOBAL",1) ClearAllActions()StartCutSceneMode() StartCutScene("CVcut303")~EXIT
+END
+
+IF~~THEN BEGIN 3
+SAY@6
+IF~~THEN DO~SetGlobal("K#DISABLE_PC_CAN_DIE","GLOBAL",1) ClearAllActions()StartCutSceneMode() StartCutScene("CVcut302")~EXIT
+END

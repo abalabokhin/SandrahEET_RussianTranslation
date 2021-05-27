@@ -1,0 +1,6369 @@
+BEGIN CVSANDRJ
+
+// Healing Scrolls
+IF ~Global("SanhealScrl","GLOBAL",1) ~THEN BEGIN SanhealScrl
+SAY @0
+IF~~THEN REPLY @1 DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanhealScrl2
+IF~~THEN REPLY @2GOTO SanhealScrl2
+IF~~THEN REPLY @3GOTO SanhealScrl2
+END
+
+IF~~THEN BEGIN SanhealScrl2
+SAY @4
+IF~~THEN REPLY @5DO ~SetGlobal("SanhealScrl","GLOBAL",2)~EXIT
+IF~CheckStatLT(Player1,10,INT)~THEN REPLY @6DO ~SetGlobal("SanhealScrl","GLOBAL",2)~EXIT
+IF~~THEN REPLY @7DO ~SetGlobal("SanhealScrl","GLOBAL",2)IncrementGlobal("Sanpoints","GLOBAL",-1)~EXIT
+END
+
+IF ~Global("BG1FlirtHeal","LOCALS",1) ~THEN BEGIN SanFlirtHeal11
+SAY @8
+IF~~THEN REPLY @9DO ~SetGlobal("BG1FlirtHeal","LOCALS",2)~GOTO SanFlirtHeal12
+END
+
+IF~~THEN BEGIN SanFlirtHeal12
+SAY@10
+IF~~THEN REPLY@11GOTO SanFlirtHeal13
+IF~~THEN REPLY@12GOTO SanFlirtHeal13
+END
+
+IF~~THEN BEGIN SanFlirtHeal13
+SAY@13
+IF~~THEN REPLY@14DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+IF~~THEN REPLY@15DO~IncrementGlobal("Sanpoints","GLOBAL",-1)~EXIT
+IF~~THEN REPLY@16EXIT
+END
+
+// Rescue Fallen
+IF ~Global("SanResurAva","GLOBAL",1)~THEN BEGIN SanRessur1
+SAY @17
+IF  ~~THEN REPLY @18DO ~RealSetGlobalTimer("SanResurAvaInterv","GLOBAL",1600)~GOTO GenRess
+IF~OR(3) HaveSpellParty(CLERIC_RESURRECTION) HaveSpellParty(CLERIC_MASS_RAISE_DEAD) HaveSpellRES("SPJA01") ~THEN REPLY @19DO~SetGlobal("SanResurAva","GLOBAL",3) RealSetGlobalTimer("SanResurAvaInterv","GLOBAL",1600)~EXIT
+IF ~~THEN REPLY @20DO~SetGlobal("SanResurAva","GLOBAL",3) RealSetGlobalTimer("SanResurAvaInterv","GLOBAL",1600)~ EXIT
+IF~~THEN REPLY @21DO~SetGlobal("SanResurAva","GLOBAL",3) RealSetGlobalTimer("SanResurAvaInterv","GLOBAL",1600)~EXIT
+IF~~THEN REPLY @22DO~SetGlobal("SanResurAva","GLOBAL",3) RealSetGlobalTimer("SanResurAvaInterv","GLOBAL",1600)AddXPObject(Player1,-500)~GOTO GenRess
+IF~~THEN REPLY@23DO~IncrementGlobal("Sanpoints","GLOBAL",-1)SetGlobal("SanResurAva","GLOBAL",4) ~EXIT
+END
+
+IF~~THEN BEGIN GenRess
+SAY @24
+IF ~~THEN REPLY @25DO~SetGlobal("SanResurAva","GLOBAL",3) RealSetGlobalTimer("SanResurAvaInterv","GLOBAL",1600)~EXIT
+IF~Dead("Imoen2") InPartyAllowDead("Imoen2")~THEN REPLY @26GOTO ImoRess
+IF ~Dead("Khalid") InPartyAllowDead("Khalid")~THEN REPLY @27GOTO KhalRess
+IF ~Dead("Jaheira") InPartyAllowDead("Jaheira")~THEN REPLY @28GOTO JahRess
+IF ~Dead("Viconia") InPartyAllowDead("Viconia")~THEN REPLY @29GOTO VicoRess
+IF ~Dead("Coran") InPartyAllowDead("Coran")~THEN REPLY @30GOTO CoranRess
+IF ~Dead("p#Kivan") InPartyAllowDead("p#Kivan") ~THEN REPLY @30GOTO KivanRess2
+IF ~Dead("Kivan") InPartyAllowDead("Kivan")~THEN REPLY @30GOTO KivanRess
+IF ~Dead("Sharteel") InPartyAllowDead("Sharteel")~THEN REPLY @31GOTO SharRess
+IF ~Dead("Dynaheir") InPartyAllowDead("Dynaheir")~THEN REPLY @32GOTO DynaRess
+IF ~Dead("Minsc")InPartyAllowDead("Minsc") ~THEN REPLY @33GOTO MinscRess
+IF ~Dead("Ajantis") InPartyAllowDead("Ajantis")~THEN REPLY @34GOTO AjanRess
+IF ~Dead("Garrick") InPartyAllowDead("Garrick")~THEN REPLY @35GOTO GarrRess
+IF ~Dead("Branwen") InPartyAllowDead("Branwen")~THEN REPLY @36GOTO BranRess
+IF ~Dead("Xan") InPartyAllowDead("Xan")~THEN REPLY @37GOTO XanRess
+IF ~Dead("J#Indi") InPartyAllowDead("J#Indi")~THEN REPLY @38GOTO IndiRess
+IF ~Dead("faldorn") InPartyAllowDead("faldorn")~THEN REPLY @39GOTO FaldoRess
+IF ~Dead("CVJenlig") InPartyAllowDead("CVJenlig")~THEN REPLY @40GOTO JenliRess
+IF ~Dead("Sufinch") InPartyAllowDead("sufinch")~THEN REPLY @41GOTO FinkRess
+IF ~Dead("ACBre") InPartyAllowDead("acbre")~THEN REPLY @42GOTO BregRess
+IF ~Dead("B!GAVIN") InPartyAllowDead("B!Gavin")~THEN REPLY @43GOTO GavRess
+IF ~Dead("k-rose") InPartyAllowDead("k-rose")~THEN REPLY @44GOTO RoseRess
+IF ~Dead("Edwin") InPartyAllowDead("Edwin")~THEN REPLY @45GOTO EdwRess
+IF ~Dead("Eldoth") InPartyAllowDead("Eldoth")~THEN REPLY @46GOTO EldoRess
+IF ~Dead("F_Drizzt") InPartyAllowDead("F_Drizzt")~THEN REPLY @47GOTO DrizRess1
+IF ~Dead("Driz2") InPartyAllowDead("Driz2")~THEN REPLY @47GOTO DrizRess2
+IF ~Dead("RChloe") InPartyAllowDead("RChloe")~THEN REPLY @48GOTO ChloeRess
+IF ~Dead("Yasraena") InPartyAllowDead("Yasraena")~THEN REPLY @49GOTO YasRess
+IF ~Dead("kagain") InPartyAllowDead("kagain")~THEN REPLY @50GOTO KagRess
+IF ~Dead("CVShau") ~THEN REPLY @51GOTO ShauRess
+IF~Dead("Saerileth") InPartyAllowDead("Saerileth")~THEN REPLY @52GOTO SaerRess
+IF~Dead("Safana") InPartyAllowDead("Safana")~THEN REPLY @53GOTO SafaRess
+IF~Dead("Nalia")InPartyAllowDead("Nalia")~THEN REPLY @54GOTO NaliRess
+IF~Dead("t2val")InPartyAllowDead("t2val")~THEN REPLY @55GOTO ValeRess
+IF~Dead("v#1whi")InPartyAllowDead("v#1whi")~THEN REPLY @56GOTO WhitRess
+IF~Dead("rh#isra")InPartyAllowDead("rh#isra")~THEN REPLY @57GOTO IsraRess
+IF~Dead("neera")InPartyAllowDead("neera")~THEN REPLY @58GOTO NeeraRess
+IF~Dead("Rasaad")InPartyAllowDead("rasaad")~THEN REPLY @59GOTO RasaadRess
+IF~Dead("C0Sirene")InPartyAllowDead("C0Sirene") RandomNum(2,1)~THEN REPLY @60GOTO SirenRess
+IF~Dead("C0Sirene")InPartyAllowDead("C0Sirene") RandomNum(2,2)~THEN REPLY @60GOTO RescNoPoss
+IF~Dead("Tenya")InPartyAllowDead("Tenya")~THEN REPLY @61GOTO TenyaRess
+IF~~THEN REPLY @62GOTO RescNoPoss
+END
+
+IF~~THEN BEGIN  RescNoPoss
+SAY @63
+IF~~THEN DO~SetGlobal("SanResurAva","GLOBAL",3) RealSetGlobalTimer("SanResurAvaInterv","GLOBAL",1600)~EXIT
+END
+
+IF~~THEN BEGIN SirenRess
+SAY @64
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",350) ApplySpell("C0Sirene",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN TenyaRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("tenya",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN ValeRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("t2val",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN RasaadRess
+SAY @66
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("rasaad",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN WhitRess
+SAY @67
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("v#1whi",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN IsraRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("rh#isra",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN NeeraRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("neera",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN KagRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("kagain",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN JenliRess
+SAY @68
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",400) ApplySpell("CVJenlig",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN NaliRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Nalia",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN SafaRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Safana",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN SaerRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Saerileth",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN ChloeRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("RChloe",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN YasRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Yasraena",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN ShauRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("CVShau",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN DrizRess1
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("F_Drizzt",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN DrizRess2
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Driz2",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN EdwRess
+SAY @69
+=@65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",500) ApplySpell("Edwin",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN EldoRess
+SAY @70
+=@65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",500) ApplySpell("Eldoth",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN RoseRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("k-rose",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN GavRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("B!GAVIN",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN BregRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("ACBre",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN FinkRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Sufinch",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN IndiRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("J#Indi",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN XanRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Xan",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN BranRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Branwen",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN MinscRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Minsc",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN GarrRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Garrick",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN AjanRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Ajantis",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN DynaRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Dynaheir",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN SharRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Sharteel",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN KivanRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Kivan",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN KivanRess2
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("p#Kivan",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN CoranRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Coran",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN ImoRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Imoen2",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN KhalRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Khalid",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN JahRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Jaheira",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN VicoRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",300) ApplySpell("Viconia",CLERIC_RAISE_DEAD)~EXIT
+END
+
+IF~~THEN BEGIN FaldoRess
+SAY @65
+IF~~THEN DO ~SetGlobal("SanResurAva","GLOBAL",2) AddXPObject("CVSandr",200) ApplySpell("Faldorn",CLERIC_RAISE_DEAD)~EXIT
+END
+
+// Dungeon Talks
+
+IF~Global("SanDungtalk","GLOBAL",1)~THEN BEGIN SanDungFi1
+SAY@71
+IF ~~THEN REPLY@72DO ~SetGlobal("SanDungtalk","GLOBAL",2)RealSetGlobalTimer("SanDungtalkInt","GLOBAL",7200)~GOTO SanDungFi2
+IF ~~THEN REPLY@73DO ~SetGlobal("SanDungtalk","GLOBAL",2)RealSetGlobalTimer("SanDungtalkInt","GLOBAL",7200)~GOTO SanDungFi2
+END
+
+IF~~THEN BEGIN SanDungFi2
+SAY @74
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY@75DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanDungFi3
+IF~Global("SanRomPath","GLOBAL",2)~THEN REPLY @76DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanDungFi4
+IF~Global("SanRomPath","GLOBAL",1)~THEN REPLY @77DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanDungFi4
+IF ~~THEN REPLY@78GOTO SanDungFi5
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY@75DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanDungFi6
+IF~~THEN REPLY@79EXIT
+END
+
+IF~~THEN BEGIN SanDungFi3
+SAY @80
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN SanDungFi4
+SAY @81
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN SanDungFi5
+SAY @82
+IF ~~THEN REPLY@83EXIT
+IF ~~THEN REPLY@84DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+IF ~~THEN REPLY@85EXIT
+END
+
+IF~~THEN BEGIN SanDungFi6
+SAY @86
+IF~~THEN EXIT
+END
+
+IF~Global("SanDungtalk","GLOBAL",3)~THEN BEGIN SanDungFi11
+SAY@87
+IF ~~THEN REPLY@88DO~SetGlobal("SanDungtalk","GLOBAL",4) RealSetGlobalTimer("SanDungtalkInt","GLOBAL",7200)~GOTO SanDungFi12
+IF~~THEN REPLY@89DO~SetGlobal("SanDungtalk","GLOBAL",4) RealSetGlobalTimer("SanDungtalkInt","GLOBAL",7200)~GOTO SanDungFi12
+END
+
+IF ~~THEN BEGIN SanDungFi12
+SAY @90
+IF~~THEN REPLY@91GOTO SanDung13
+IF~~THEN REPLY@92GOTO SanDung13
+IF~~THEN REPLY@93GOTO SanDung13
+IF~~THEN REPLY@94DO~IncrementGlobal("Sanpoints","GLOBAL",-1)~GOTO SanDung13
+END
+
+IF~~THEN BEGIN SanDung13
+SAY@95
+IF ~~THEN REPLY@96EXIT
+IF ~~THEN REPLY@97EXIT
+END
+
+//Centeol
+
+IF ~Global("CentPC","GLOBAL",1)~THEN BEGIN PCJonCenteol
+SAY@98
+IF~~THEN REPLY @99 GOTO PCJonCenteol1
+IF~~THEN REPLY @100GOTO PCJonCenteol1
+IF~~THEN REPLY @101GOTO PCJonCenteol1
+END
+
+IF ~~THEN BEGIN PCJonCenteol1
+SAY @102
+IF~~THEN REPLY @103 GOTO PCJonCenteol2
+IF~~THEN REPLY @104 GOTO PCJonCenteol2
+END
+
+IF ~~THEN BEGIN PCJonCenteol2
+SAY @105
+IF~~THEN REPLY @106DO ~SetGlobal("CentPC","GLOBAL",2) SetGlobal("SanSpokeCent","LOCALS",1)~EXIT
+END
+
+//Talos
+IF~Global("SantalosDec","GLOBAL",13)~THEN BEGIN Talosvisit1
+SAY@107
+IF~~THEN REPLY@108DO~SetGlobal("SantalosDec","GLOBAL",14)~GOTO Talosvisit2
+IF~~THEN REPLY@109DO~SetGlobal("SantalosDec","GLOBAL",14)~GOTO Talosvisit3
+END
+
+IF~~THEN BEGIN Talosvisit2
+SAY@110
+IF~~THEN REPLY@111EXIT
+IF~~THEN REPLY@112DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+IF~~THEN REPLY@113EXIT
+END
+
+IF~~THEN BEGIN Talosvisit3
+SAY@114
+IF~~THEN REPLY@111EXIT
+IF~~THEN REPLY@112DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+END
+
+IF~~THEN BEGIN Talosvisit4
+SAY@107
+IF~~THEN REPLY@108DO~SetGlobal("SantalosDec","GLOBAL",14)~GOTO Talosvisit2
+IF~~THEN REPLY@109DO~SetGlobal("SantalosDec","GLOBAL",14)~GOTO Talosvisit3
+END
+
+IF~Global("SanBHTalos","GLOBAL",2)~THEN BEGIN TalosvisitBH1
+SAY@115
+IF~~THEN REPLY@116DO~SetGlobal("SanBHTalos","GLOBAL",3) AddexperienceParty(1100)~GOTO TalosvisitBH2
+END
+
+IF~~THEN BEGIN TalosvisitBH2
+SAY@117
+IF~~THEN REPLY@118EXIT
+IF~~THEN REPLY@119EXIT
+IF~~THEN REPLY@120EXIT
+END
+
+IF~Global("SanNWTalV","GLOBAL",3)~THEN BEGIN Talosvisitbg1end
+SAY@121
+IF~~THEN REPLY@122DO~SetGlobal("SanNWTalV","GLOBAL",4)~EXIT
+IF~~THEN REPLY@123DO~SetGlobal("SanNWTalV","GLOBAL",4)~EXIT
+IF~~THEN REPLY@124DO~SetGlobal("SanNWTalV","GLOBAL",4)~EXIT
+END
+
+//Bassilius
+IF~Global("SanBassil","BG3700",1) ~THEN BEGIN Bassil1
+SAY@125
+IF~~THEN REPLY@126GOTO Bassil2
+IF~~THEN REPLY@127GOTO Bassil2
+END
+
+IF~~THEN BEGIN Bassil2
+SAY@128
+IF~~THEN REPLY@129DO~SetGlobal("SanBassil","BG3700",2)~EXIT
+IF~~THEN REPLY@130DO~SetGlobal("SanBassil","BG3700",2)~EXIT
+END
+
+
+//Duergar at Friendly Arm
+
+IF ~Global("DuerFAInn","GLOBAL",1)~THEN BEGIN DuerFAInn
+SAY@131
+IF ~GlobalLT("SandrahMorningTalk","GLOBAL",7)~THEN REPLY @132DO ~SetGlobal("DuerFAInn","GLOBAL",2)~EXIT
+IF ~GlobalGT("SandrahMorningTalk","GLOBAL",6)~THEN REPLY @133DO ~SetGlobal("DuerFAInn","GLOBAL",2) ~EXIT
+IF ~~THEN REPLY @134EXIT
+END
+
+// Book of Unknowing
+
+IF ~Global("SanSuUnKnBo","GLOBAL",1) !InParty("Sufinch") ~THEN BEGIN SaBoUnkn
+SAY@135
+IF ~~THEN REPLY @136DO ~SetGlobal("SanSuUnKnBo","GLOBAL",2) ~
+GOTO  SaBoUnkn2
+END
+
+IF~~THEN BEGIN SaBoUnkn2
+SAY @137
+IF ~~THEN REPLY@138GOTO  SaBoUnkn3
+END
+
+IF~~THEN BEGIN SaBoUnkn3
+SAY @139
+IF~~THEN EXIT
+END
+
+//Gorion's Dagger
+IF~Global("CVGodag","GLOBAL",2)~THEN BEGIN  Godag1
+SAY@140
+IF~~THEN REPLY@141GOTO Godag2
+IF~~THEN REPLY@142GOTO Godag2
+END
+
+IF~~THEN BEGIN Godag2
+SAY@143
+IF~~THEN REPLY@144DO~SetGlobal("CVGodag","GLOBAL",3)~GOTO Godag3
+END
+
+IF~~THEN BEGIN Godag3
+SAY@145
+IF~~THEN REPLY@146GOTO Godag4
+END
+
+IF~~THEN BEGIN Godag4
+SAY@147
+IF~~THEN REPLY@148EXIT
+IF~~THEN REPLY@149EXIT
+IF~~THEN REPLY@150EXIT
+END
+
+IF~Global("CVGodag","GLOBAL",5)~THEN BEGIN  Godag5
+SAY@151
+IF~~THEN REPLY@152DO~SetGlobal("CVGodag","GLOBAL",6)~GOTO Godag6
+END
+
+IF~~THEN BEGIN Godag6
+SAY@153
+=@154
+=@155
+IF~~THEN REPLY@156GOTO Godag7
+IF~~THEN REPLY@157GOTO Godag7
+IF~~THEN REPLY@158GOTO Godag7
+IF~~THEN REPLY@159GOTO Godag7
+END
+
+IF~~THEN BEGIN Godag7
+SAY@160
+IF~~THEN REPLY@161GOTO Godag8
+IF~~THEN REPLY@162 GOTO Godag8
+END
+
+IF~~THEN BEGIN Godag8
+SAY@163
+=@164
+=@165
+IF~~THEN REPLY@166GOTO Godag9
+END
+
+IF~~THEN BEGIN Godag9
+SAY@167
+IF~~THEN DO~AddexperienceParty(1100)~EXIT
+END
+
+
+// The Vault
+IF ~Global("PriestGondVault","GLOBAL",2) ~THEN BEGIN SanVault1
+SAY @168
+IF ~~THEN REPLY @169GOTO SanVault2
+IF ~~THEN REPLY @170GOTO SanVault2
+END
+
+IF ~~THEN BEGIN SanVault2
+SAY @171
+IF ~~THEN REPLY @172GOTO SanVault3
+END
+
+IF ~~THEN BEGIN SanVault3
+SAY @173
+IF~~THEN DO ~SetGlobal("PriestGondVault","GLOBAL",3)~EXIT
+END
+
+IF ~Global("TheVaultSentry","GLOBAL",2) ~THEN BEGIN SanVault20
+SAY @174
+IF~~THEN REPLY @175 GOTO SanVault21
+IF~~THEN REPLY @176DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanVault21
+END
+
+IF ~~THEN BEGIN SanVault21
+SAY @177
+IF~~THEN DO ~AddexperienceParty(350) SetGlobal("TheVaultSentry","GLOBAL",3) ~EXIT
+END
+
+//Xvart Village
+IF ~Global("SanXvarVil","GLOBAL",4)~THEN BEGIN SanXvart1
+SAY @178
+IF ~~THEN REPLY @179GOTO SanXvart2
+IF~~THEN REPLY @180GOTO SanXvart2
+END
+
+IF~~ THEN BEGIN  SanXvart2
+SAY @181
+IF ~~THEN REPLY @182DO ~SetGlobal("SanXvarVil","GLOBAL",5)~GOTO SanXvart3
+END
+
+IF~~ THEN BEGIN  SanXvart3
+SAY @183
+IF ~~THEN REPLY @184DO ~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanXvart4
+IF ~~THEN REPLY @185GOTO SanXvart4
+END
+
+IF~~ THEN BEGIN  SanXvart4
+SAY @186
+=@187
+IF ~~THEN REPLY @188GOTO SanXvart5
+IF ~~THEN REPLY @189GOTO SanXvart5
+END
+
+IF~~THEN BEGIN SanXvart5
+SAY@190
+IF ~~THEN REPLY @191DO~IncrementGlobal("Sanpoints","GLOBAL",2)~EXIT
+IF ~~THEN REPLY @192DO~IncrementGlobal("Sanpoints","GLOBAL",-1)~EXIT
+END
+
+//Ogre Ambush at Candlekeep
+
+IF~Global("SanCandlOgr","LOCALS",1)~THEN BEGIN SarvArrog
+SAY@193
+IF~~THEN REPLY @194DO~SetGlobal("SanCandlOgr","LOCALS",2)~GOTO SarvArrog2
+IF~~THEN REPLY @195DO~SetGlobal("SanCandlOgr","LOCALS",2)~GOTO SarvArrog2
+END
+
+IF~~THEN BEGIN SarvArrog2
+SAY@196
+IF~~THEN REPLY @197DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+IF~~THEN REPLY @198DO~IncrementGlobal("Sanpoints","GLOBAL",3)~EXIT
+IF~~THEN REPLY @199DO~IncrementGlobal("Sanpoints","GLOBAL",-13)~GOTO SarvArrog3
+END
+
+IF~~THEN BEGIN SarvArrog3
+SAY@200
+IF~~THEN REPLY @201GOTO SarvArrog4
+IF~~THEN REPLY @202GOTO SarvArrog4
+END
+
+IF~~THEN BEGIN SarvArrog4
+SAY@203
+IF ~~THEN DO ~AddXPObject("CVSandr",12600)~EXIT
+END
+
+IF~Global("Sanitems","BG2615",2)~THEN BEGIN SanAlaugrav1
+SAY@204
+IF~~THEN REPLY@205GOTO SanAlaugrav2
+IF~~THEN REPLY@206GOTO SanAlaugrav2
+END
+
+IF~~THEN BEGIN SanAlaugrav2
+SAY@207
+IF~~THEN REPLY@208DO~SetGlobal("Sanitems","BG2615",3) AddexperienceParty(3500)~EXIT
+END
+
+// DSOTSC Underworld
+
+IF ~Global("SanDSOTSCUW","GLOBAL",1)~THEN BEGIN SwCoaUW1
+SAY @209
+IF ~~THEN REPLY @210DO ~SetGlobal("SanDSOTSCUW","GLOBAL",2) ~EXIT
+IF ~~THEN REPLY @211DO ~SetGlobal("SanDSOTSCUW","GLOBAL",2) IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SwCoaUW2
+END
+
+IF ~~THEN BEGIN SwCoaUW2
+SAY @212
+IF ~~THEN REPLY @213GOTO SwCoaUW3
+END
+
+IF ~~THEN BEGIN SwCoaUW3
+SAY @214
+IF ~~THEN REPLY @215GOTO SwCoaUW4
+IF ~~THEN REPLY @216GOTO SwCoaUW4
+END
+
+IF ~~THEN BEGIN SwCoaUW4
+SAY @217
+IF ~~THEN REPLY @218GOTO SwCoaUW5
+IF ~~THEN REPLY @219GOTO SwCoaUW5
+IF ~~THEN REPLY @220EXIT
+END
+
+IF ~~THEN BEGIN SwCoaUW5
+SAY @221
+IF ~~THEN REPLY @222GOTO SwCoaUW6
+END
+
+IF ~~THEN BEGIN SwCoaUW6
+SAY @223
+IF ~~THEN REPLY @224GOTO SwCoaUW7
+IF ~~THEN REPLY @225GOTO SwCoaUW7
+END
+
+IF ~~THEN BEGIN SwCoaUW7
+SAY @226
+IF ~~THEN REPLY @227GOTO SwCoaUW8
+IF ~!InParty("yeslick")~THEN REPLY @228EXIT
+IF ~!InParty("yeslick")~THEN REPLY @229EXIT
+IF ~InParty("yeslick")~THEN REPLY @228EXTERN BYESLI SwCoaUWY1
+END
+
+IF ~~THEN BEGIN SwCoaUW8
+SAY @230
+IF ~!InParty("yeslick")~THEN REPLY @228EXIT
+IF ~!InParty("yeslick")~THEN REPLY @229EXIT
+IF ~InParty("yeslick")~THEN REPLY @228EXTERN BYESLI SwCoaUWY1
+END
+
+IF ~Global("SanDSOTSCUW","GLOBAL",3)~THEN BEGIN SwCoaUW21
+SAY @231
+IF ~~THEN REPLY @232GOTO SwCoaUW22
+IF ~~THEN REPLY @233GOTO SwCoaUW22
+END
+
+IF ~~THEN BEGIN SwCoaUW22
+SAY @234
+IF ~~THEN REPLY @235GOTO SwCoaUW23
+END
+
+IF ~~THEN BEGIN SwCoaUW23
+SAY @236
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @237DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SwCoaUW24
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @237DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SwCoaUW25
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @238DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SwCoaUW24
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @238DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SwCoaUW25
+END
+
+IF ~~THEN BEGIN SwCoaUW24
+SAY @239
+IF ~~THEN DO ~SetGlobal("SanDSOTSCUW","GLOBAL",4)~EXIT
+END
+
+IF ~~THEN BEGIN SwCoaUW25
+SAY @240
+IF ~~THEN DO ~SetGlobal("SanDSOTSCUW","GLOBAL",4)~EXIT
+END
+
+IF ~Global("SanDSOTSCUW","GLOBAL",5)~THEN BEGIN SwCoaUW31
+SAY @241
+IF ~~THEN REPLY @242DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SwCoaUW32
+IF ~~THEN REPLY @243GOTO SwCoaUW32
+END
+
+IF ~~THEN BEGIN SwCoaUW32
+SAY @244
+IF ~~THEN REPLY @245GOTO SwCoaUW33
+END
+
+IF ~~THEN BEGIN SwCoaUW33
+SAY @246
+IF ~~THEN REPLY @247GOTO SwCoaUW34
+IF ~~THEN REPLY @248GOTO SwCoaUW34
+END
+
+IF ~~THEN BEGIN SwCoaUW34
+SAY @249
+IF ~~THEN REPLY @250GOTO SwCoaUW35
+IF ~~THEN REPLY @251 GOTO SwCoaUW35
+END
+
+IF ~~THEN BEGIN SwCoaUW35
+SAY @252
+IF ~InParty("Viconia") ~THEN DO ~SetGlobal("SanDSOTSCUW","GLOBAL",6)~EXIT
+IF ~!InParty("Viconia") ~THEN DO ~SetGlobal("SanDSOTSCUW","GLOBAL",7)~GOTO SwCoaUW36
+END
+
+IF ~~THEN BEGIN SwCoaUW36
+SAY @253
+IF ~~THEN REPLY @254DO ~AddexperienceParty(2500) ~EXIT
+END
+
+IF ~Global("SanDSOTSCUW","GLOBAL",8)~THEN BEGIN SwCoaUW41
+SAY @255
+IF ~~THEN REPLY @256GOTO SwCoaUW42
+END
+
+IF ~~THEN BEGIN SwCoaUW42
+SAY @257
+IF ~~THEN REPLY @258GOTO SwCoaUW43
+IF ~~THEN REPLY @259GOTO SwCoaUW43
+END
+
+IF ~~THEN BEGIN SwCoaUW43
+SAY @260
+IF ~~THEN REPLY @261DO ~SetGlobal("SanDSOTSCUW","GLOBAL",9)~EXIT
+END
+
+IF ~Global("SanDSOTSCUW","GLOBAL",10)~THEN BEGIN SwCoaUW50
+SAY @262
+IF~~THEN REPLY @263GOTO SwCoaUW51
+IF~~THEN REPLY @264GOTO SwCoaUW51
+END
+
+IF ~~THEN BEGIN SwCoaUW51
+SAY @265
+IF~~THEN REPLY @266DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SwCoaUW52
+IF ~~THEN REPLY @267GOTO SwCoaUW52
+END
+
+IF ~~THEN BEGIN SwCoaUW52
+SAY @268
+IF~~THEN REPLY @269GOTO SwCoaUW53
+END
+
+IF ~~THEN BEGIN SwCoaUW53
+SAY @270
+IF~~THEN REPLY @271GOTO SwCoaUW54
+IF~~THEN REPLY @272GOTO SwCoaUW54
+END
+
+IF ~~THEN BEGIN SwCoaUW54
+SAY  @273
+IF~~THEN REPLY @274DO ~SetGlobal("SanDSOTSCUW","GLOBAL",11)~
+EXIT
+END
+
+IF ~Global("SanDSOTSCUW","GLOBAL",13)~THEN BEGIN SwCoaUW60
+SAY @275
+IF~~THEN REPLY @276GOTO SwCoaUW61
+IF~~THEN REPLY @277DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SwCoaUW61
+END
+
+IF ~~THEN BEGIN SwCoaUW61
+SAY  @278
+IF~~THEN REPLY @279DO ~SetGlobal("SanDSOTSCUW","GLOBAL",14)~EXIT
+END
+
+
+
+//Infiltrate bandit camp
+IF ~Global("SanBadDir","GLOBAL",1)~THEN BEGIN SanBadDir10
+SAY @280
+IF~~THEN REPLY @281DO ~SetGlobal("SanBadDir","GLOBAL",2)~GOTO SanBadDir11
+IF~~THEN REPLY @282DO ~SetGlobal("SanBadDir","GLOBAL",2)~GOTO SanBadDir11
+END
+
+IF~~THEN BEGIN SanBadDir11
+SAY @283
+IF~~THEN REPLY @284DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanBadDir13
+IF~~THEN REPLY@285DO~IncrementGlobal("Sanpoints","GLOBAL",-1)~GOTO SanBadDir12
+IF~~THEN REPLY @286DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBadDir13
+END
+
+IF~~THEN BEGIN SanBadDir12
+SAY@287
+IF~~THEN REPLY @288GOTO SanBadDir13
+IF~~THEN REPLY @289GOTO SanBadDir13
+END
+
+IF~~THEN BEGIN SanBadDir13
+SAY@290
+IF~~THEN REPLY @291GOTO SanBadDir14
+END
+
+IF~~THEN BEGIN SanBadDir14
+SAY @292
+IF~~THEN REPLY @293DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+IF~~THEN REPLY @294DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+IF~~THEN REPLY @295EXIT
+IF~~THEN REPLY @296EXIT
+END
+
+IF ~Global("SanSareHi3","LOCALS",1)~THEN BEGIN SanSareHi30
+SAY @297
+IF ~~THEN REPLY @298GOTO  SanSareHi31
+IF~~THEN REPLY @299GOTO SanSareHi32
+END
+
+IF ~~THEN BEGIN SanSareHi31
+SAY @300
+IF~~THEN REPLY @301GOTO SanSareHi33
+END
+
+IF ~~THEN BEGIN SanSareHi32
+SAY @302
+IF~~THEN REPLY @303GOTO  SanSareHi31
+IF~~THEN REPLY @301GOTO SanSareHi33
+END
+
+IF ~~THEN BEGIN SanSareHi33
+SAY @304
+IF~~THEN REPLY @305GOTO  SanSareHi34
+END
+
+IF ~~THEN BEGIN SanSareHi34
+SAY @306
+IF~~THEN REPLY @307DO ~AddexperienceParty(550) SetGlobal("SanSareHi3","LOCALS",2)~EXIT
+END
+
+// Desert Trolls
+IF~Global("SanDesTroll","LOCALS",1)~THEN BEGIN DesertTrollAdvice1
+SAY@308
+IF~~THEN REPLY @309DO~SetGlobal("SanDesTroll","LOCALS",2)~GOTO DesertTrollAdvice2
+IF~~THEN REPLY @310DO~SetGlobal("SanDesTroll","LOCALS",2)~GOTO DesertTrollAdvice2
+END 
+
+IF~~THEN BEGIN DesertTrollAdvice2
+SAY@311
+IF~~THEN DO ~GiveItemCreate("arow04",Player1,40,0,0) GiveItemCreate("arow04","CVSandr",50,0,0) DialogInterrupt(FALSE)~EXIT
+END
+
+// Find Cloakwood Mines
+IF ~Global("SANIMONASHINT","GLOBAL",18)~THEN BEGIN SanMinBo1
+SAY @312
+IF~~THEN REPLY @313GOTO SanMinBo2
+IF~~THEN REPLY @314GOTO SanMinBo2
+END
+
+IF~~THEN BEGIN SanMinBo2
+SAY @315
+IF~~THEN REPLY @316DO ~SetGlobal("SANIMONASHINT","GLOBAL",19)~GOTO SanMinBo3
+END
+
+IF~~THEN BEGIN SanMinBo3
+SAY @317
+IF~~THEN REPLY @318GOTO SanMinBo4
+END
+
+IF~~THEN BEGIN SanMinBo4
+SAY @319
+= @320
+=@321
+IF~~THEN REPLY @322GOTO SanMinBo5
+END
+
+IF~~THEN BEGIN SanMinBo5
+SAY @323
+IF~~THEN REPLY @324GOTO SanMinBo7
+IF~~THEN REPLY @325DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanMinBo6
+END
+
+IF~~THEN BEGIN SanMinBo6
+SAY @326
+IF~~THEN REPLY @327GOTO SanMinBo7
+END
+
+IF~~THEN BEGIN SanMinBo7
+SAY @328
+IF ~~THEN EXIT
+END
+
+
+//In Sandrah's Room First Night
+
+IF ~Global("Santlove","GLOBAL",4)~THEN BEGIN SanFirstN1SI
+SAY @329
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @330DO ~SetGlobal("Santlove","GLOBAL",5) SetGlobal("SanFirNigh","LOCALS",1)~GOTO SanFirstN2m
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @330DO ~SetGlobal("Santlove","GLOBAL",5) SetGlobal("SanFirNigh","LOCALS",1)~GOTO SanFirstN2f
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @331DO ~SetGlobal("Santlove","GLOBAL",5) SetGlobal("SanFirNigh","LOCALS",1)~GOTO SanFirstN2m
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @331DO ~SetGlobal("Santlove","GLOBAL",5) SetGlobal("SanFirNigh","LOCALS",1)~GOTO SanFirstN2f
+END
+
+IF ~Global("Santlove","GLOBAL",6)~THEN BEGIN AfterFN1
+SAY @332
+IF~~THEN REPLY @333GOTO AfterFN2
+IF~~THEN REPLY @334GOTO AfterFN2
+IF~~THEN REPLY @335GOTO AfterFN2No
+END
+
+IF~~THEN BEGIN  AfterFN2
+SAY @336
+IF~~THEN REPLY @337DO ~SetGlobal("Santlove","GLOBAL",7)~GOTO AfterFN3
+END
+
+IF~~THEN BEGIN  AfterFN2No
+SAY @336
+IF~~THEN REPLY @338DO ~SetGlobal("Santlove","GLOBAL",7)~GOTO AfterFN3No
+END
+
+IF~~THEN BEGIN  AfterFN3
+SAY @339
+= @340
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN  AfterFN3No
+SAY @341
+= @340
+IF~~THEN EXIT
+END
+
+//Excavation on Sword Coast
+
+IF~Global("SanIdolTake","GLOBAL",1)~THEN BEGIN TakIdl1
+SAY @342
+IF~~THEN REPLY@343GOTO TakIdl2
+END
+
+IF~~THEN BEGIN  TakIdl2
+SAY @344
+IF~~THEN REPLY@345GOTO TakIdl3
+END
+
+IF~~THEN BEGIN  TakIdl3
+SAY @346
+IF~~THEN REPLY @347GOTO TakIdl4
+IF~~THEN REPLY @348DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO TakIdl4
+END
+
+IF~~THEN BEGIN  TakIdl4
+SAY @349
+= @350
+IF~~THEN DO~SetGlobal("SanIdolTake","GLOBAL",2)~EXIT
+END
+
+//Vampire Revenge
+IF ~Global("SanIdolTake","GLOBAL",3)~VaRevF1
+SAY @351
+IF~~THEN REPLY @352GOTO VaRevF2
+IF~~THEN REPLY @353GOTO VaRevF2
+END
+
+IF~~THEN BEGIN VaRevF2
+SAY @354
+IF ~~THEN REPLY@355DO~SetGlobal("SanIdolTake","GLOBAL",4)~EXIT
+IF ~~THEN REPLY@356DO~SetGlobal("SanIdolTake","GLOBAL",4)~EXIT
+END
+
+IF ~Global("SanIdolTake","GLOBAL",5)~THEN BEGIN VaRevF3
+SAY @357
+IF ~OR(2) PartyHasItem("sw1h19") PartyHasItem("SW1HVAM") ~THEN REPLY@358GOTO VaRevF4
+IF ~!PartyHasItem("sw1h19") !PartyHasItem("SW1HVAM")~THEN REPLY@359GOTO VaRevF4
+END
+
+IF ~~THEN BEGIN VaRevF4
+SAY @360
+IF ~~THEN REPLY@361DO ~SetGlobal("SanIdolTake","GLOBAL",6)~EXIT
+END
+
+// Sandrah Coran Return
+IF~Global("SanCorbabe","GLOBAL",10)~THEN BEGIN SanWantCorB1
+SAY @362
+IF~~THEN REPLY @363GOTO  SanWantCorB2
+IF~~THEN REPLY @364GOTO  SanWantCorB3
+IF~~THEN REPLY @365DO~SetGlobal("SanCorbabe","GLOBAL",11)~EXIT
+END
+
+IF~~THEN BEGIN SanWantCorB2
+SAY @366
+IF~~THEN REPLY @367DO~SetGlobal("SanCorbabe","GLOBAL",11)~EXIT
+END
+
+IF~~THEN BEGIN SanWantCorB3
+SAY @368
+IF~~THEN REPLY @369DO~SetGlobal("SanCorbabe","GLOBAL",11)~EXIT
+END
+
+// Sandrah Xan Relationship
+
+IF ~Global("SanXanPC","GLOBAL",1)~THEN BEGIN SanXanPC10
+SAY@370
+IF~~THEN REPLY @371DO ~ SetGlobal("SanXanPC","GLOBAL",2)~EXIT
+IF~~THEN REPLY @372GOTO SanXanPC11
+END
+
+IF~~THEN BEGIN SanXanPC11
+SAY @373
+IF~~THEN REPLY @374DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanXanPC12
+IF~~THEN REPLY @375DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanXanPC13
+END
+
+IF~~THEN BEGIN SanXanPC12
+SAY @376
+IF~~THEN REPLY @377GOTO SanXanPC13
+END
+
+IF~~THEN BEGIN SanXanPC13
+SAY @378
+IF~~THEN REPLY@379GOTO SanXanPC14
+END
+
+IF~~THEN BEGIN SanXanPC14
+SAY @380
+IF~~THEN REPLY@381GOTO SanXanPC15
+IF~~THEN REPLY@382GOTO SanXanPC15
+END
+
+IF~~THEN BEGIN SanXanPC15
+SAY @383
+IF~~THEN REPLY @384DO ~ SetGlobal("SanXanPC","GLOBAL",3)~EXIT
+IF~~THEN REPLY @385DO ~ SetGlobal("SanXanPC","GLOBAL",3)~EXIT
+IF~~THEN REPLY @386DO ~ SetGlobal("SanXanPC","GLOBAL",3)~EXIT
+IF~~THEN REPLY @387DO ~ SetGlobal("SanXanPC","GLOBAL",3)~EXIT
+END
+
+//Haeball
+IF~Global("9001Fi","GLOBAL",2)~ THEN BEGIN HeabAft1
+SAY @388
+IF~~THEN REPLY @389DO ~SetGlobal("9001Fi","GLOBAL",3)~GOTO HeabAft2
+END
+
+IF~~ THEN BEGIN HeabAft2
+SAY @390
+IF~~THEN REPLY @391GOTO HeabAft3
+END
+
+IF~~ THEN BEGIN HeabAft3
+SAY @392
+IF~~THEN REPLY @393EXIT
+IF~~THEN REPLY @394DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+END
+
+IF ~Global("9001Fi","GLOBAL",4)~THEN BEGIN HaebCorps1
+SAY @395
+IF ~~THEN REPLY @396GOTO HaebCorps2
+IF ~~THEN REPLY @397GOTO HaebCorps3
+END
+
+IF ~~THEN BEGIN HaebCorps2
+SAY@398
+IF ~~THEN REPLY @399DO ~SetGlobal("9001Fi","GLOBAL",5)~EXIT
+IF ~~THEN REPLY @400DO ~SetGlobal("9001Fi","GLOBAL",5)~EXIT
+END
+
+IF ~~THEN BEGIN HaebCorps3
+SAY@401
+IF ~~THEN REPLY @399DO ~SetGlobal("9001Fi","GLOBAL",5)~EXIT
+IF ~~THEN REPLY @400DO ~SetGlobal("9001Fi","GLOBAL",5)~EXIT
+END
+
+IF~~THEN BEGIN SanHasItms2
+SAY @402
+IF~~THEN REPLY @403GOTO SanHasItms3
+END
+
+IF~~THEN BEGIN SanHasItms3
+SAY@404
+IF~~THEN EXIT
+END
+
+IF ~Global("SanFDGGoth","GLOBAL",1) ~THEN BEGIN SanGhotalBG1
+SAY @405
+IF ~~THEN REPLY@406GOTO SanGhotalBG12
+IF ~~THEN REPLY@407GOTO SanGhotalBG12
+END
+
+IF~~ THEN BEGIN SanGhotalBG12
+SAY @408
+= @409
+= @410
+IF ~~THEN REPLY@411GOTO SanGhotalBG13
+IF~~THEN REPLY @412GOTO SanGhotalBG13
+END
+
+IF~~ THEN BEGIN SanGhotalBG13
+SAY @413
+IF ~~THEN REPLY@414GOTO SanGhotalBG14
+END
+
+IF~~ THEN BEGIN SanGhotalBG14
+SAY @415
+IF ~~THEN REPLY@416GOTO SanGhotalBG15
+END
+
+IF~~ THEN BEGIN SanGhotalBG15
+SAY @417
+IF ~~THEN REPLY@418DO ~SetGlobal("SanFDGGoth","GLOBAL",2)~EXIT
+END
+
+IF ~Global("SanNTFalseWarn","LOCALS",1)~THEN BEGIN SanWarnNTPb
+SAY @419
+IF ~~THEN REPLY@420DO~SetGlobal("SanNTFalseWarn","LOCALS",2)~GOTO SanWarnNTPc
+END
+ 
+IF ~~THEN BEGIN SanWarnNTPc
+SAY @421
+IF ~GlobalGT("SanFDGGoth","GLOBAL",1)~THEN REPLY@422EXIT
+IF ~Global("9001Fi","GLOBAL",3)~THEN REPLY@423EXIT
+IF~~THEN REPLY@424EXIT
+END
+
+IF ~Global("SanOrcCKey","LOCALS",1)~THEN BEGIN SanOrcCKey1
+SAY @425
+IF~~THEN REPLY@426GOTO SanOrcCKey2
+IF ~~THEN REPLY @427GOTO SanOrcCKey3
+END
+
+IF ~~THEN BEGIN SanOrcCKey2
+SAY @428
+IF~~THEN REPLY @429GOTO SanOrcCKey4
+END
+
+IF ~~THEN BEGIN SanOrcCKey3
+SAY@430
+IF~~THEN REPLY @429GOTO SanOrcCKey4
+END
+
+IF ~~THEN BEGIN SanOrcCKey4
+SAY@431
+IF~~THEN DO ~SetGlobal("SanOrcCKey","LOCALS",2)~EXIT
+END
+
+IF ~Global("SanKnowsHasdId","GLOBAL",3)~THEN BEGIN SanKnowsHasdIdT1
+SAY @432
+IF~~THEN REPLY @433DO ~SetGlobal("SanKnowsHasdId","GLOBAL",4)~GOTO SanKnowsHasdIdT2
+END
+
+IF ~~THEN BEGIN SanKnowsHasdIdT2
+SAY @434
+IF ~~THEN REPLY @435EXIT
+IF ~~THEN REPLY @436EXIT
+END
+
+IF ~Global("SanKnowsHasdId","GLOBAL",5)~THEN BEGIN SanKnowsHasdId11
+SAY @437
+IF ~~THEN REPLY @438DO ~SetGlobal("SanKnowsHasdId","GLOBAL",6)~EXIT
+END
+
+IF~Global("SanGothSwFound","GLOBAL",1) ~THEN BEGIN SanGoth60
+SAY @439
+IF ~~THEN REPLY@440GOTO SanGoth61
+IF ~~THEN REPLY@441GOTO SanGoth61
+END
+
+IF~~THEN BEGIN SanGoth61
+SAY@442
+=@443
+IF ~~THEN REPLY@444GOTO SanGoth62
+IF ~~THEN REPLY@445GOTO SanGoth63
+END
+
+IF~~THEN BEGIN SanGoth62
+SAY @446
+IF ~~THEN REPLY@447GOTO SanGoth63
+END
+
+IF~~THEN BEGIN SanGoth63
+SAY @448
+IF ~~THEN REPLY@449GOTO SanGoth65
+IF ~~THEN REPLY@450GOTO SanGoth64
+END
+
+IF~~THEN BEGIN SanGoth64
+SAY @451
+IF~~THEN REPLY @452GOTO SanGoth65
+END
+
+IF~~THEN BEGIN SanGoth65
+SAY @453
+IF~~THEN DO ~SetGlobal("SanGothSwFound","GLOBAL",4) AddexperienceParty(1300)~EXIT
+END
+
+IF~Global("SanGothSwFound","GLOBAL",3) ~THEN BEGIN SanGoth70
+SAY @439
+IF ~~THEN REPLY@440GOTO SanGoth71
+IF ~~THEN REPLY@454GOTO SanGoth71
+END
+
+IF~~THEN BEGIN SanGoth71
+SAY@442
+IF ~~THEN REPLY@444DO ~SetGlobal("SanGothSwFound","GLOBAL",4) AddexperienceParty(1800)~EXIT
+END
+
+// Fabio1
+
+IF~Global("SanFab2","GLOBAL",2) ~THEN BEGIN SanFab2
+SAY @455
+IF ~~THEN REPLY @456DO ~SetGlobal("SanFab2","GLOBAL",3)~GOTO SanFab2b
+END
+
+IF~~THEN BEGIN SanFab2b
+SAY @457
+IF ~~THEN REPLY @458EXIT
+IF ~~THEN REPLY @459EXIT
+END
+
+// Done Nashkel Mines
+IF ~Global("SanThruNasM","GLOBAL",1) ~THEN BEGIN OutNashM1
+SAY @460
+IF~~THEN REPLY @461DO ~SetGlobal("SanThruNasM","GLOBAL",2) ~GOTO OutNashM2
+IF ~~THEN REPLY @462DO ~SetGlobal("SanThruNasM","GLOBAL",2) ~GOTO OutNashM2
+END
+
+IF~~THEN BEGIN OutNashM2
+SAY @463
+IF~!InParty("Branwen")~THEN REPLY @464GOTO OutNashM3
+IF~InParty("Branwen")~THEN REPLY @464GOTO OutNashM4
+END
+
+IF~~THEN BEGIN OutNashM3
+SAY @465
+IF~~THEN REPLY @466EXIT
+END
+
+IF~~THEN BEGIN OutNashM4
+SAY @467
+IF~~THEN EXTERN BRANWJ TranzRevBG
+END
+
+// G'axir the Seer
+IF ~Global("HelpGaxir","GLOBAL",2) ~THEN BEGIN UCHint1
+SAY @468
+IF ~~THEN REPLY @469GOTO  UCHint2
+IF ~~THEN REPLY @470GOTO UCHint2
+IF ~~THEN REPLY @471GOTO UCHint2
+END
+
+IF ~~THEN BEGIN UCHint2
+SAY @472
+IF~~THEN REPLY @473DO ~SetGlobal("HelpGaxir","GLOBAL",3) ~GOTO UCHint3
+END
+
+IF ~~THEN BEGIN UCHint3
+SAY @474
+IF~~THEN REPLY @475GOTO UCHint4
+END
+
+IF ~~THEN BEGIN UCHint4
+SAY @476
+IF ~~THEN REPLY@477GOTO UCHint5
+IF ~~THEN REPLY @478GOTO UCHint5
+END
+
+IF ~~THEN BEGIN UCHint5
+SAY @479
+IF ~~THEN REPLY @480GOTO UCHint6
+END
+
+IF ~~THEN BEGIN UCHint6
+SAY @481
+IF ~~THEN EXIT 
+END
+
+
+// First Winski Meeting
+
+IF ~Global("WinskApp1","GLOBAL",5)~THEN BEGIN Winsk1Dis
+SAY @482
+IF~~THEN REPLY @483GOTO Winsk1Dis2
+IF~~THEN REPLY @484GOTO Winsk1Dis2
+END
+
+IF~~THEN BEGIN Winsk1Dis2
+SAY @485
+IF~~THEN REPLY @486GOTO Winsk1Dis3
+IF~~THEN REPLY @487GOTO Winsk1Dis3
+END
+
+IF~~THEN BEGIN Winsk1Dis3
+SAY @488
+= @489
+IF ~~THEN REPLY @490GOTO Winsk1Dis4
+END
+
+IF~~THEN BEGIN Winsk1Dis4
+SAY @491
+= @492
+IF~~THEN REPLY @493GOTO Winsk1Dis5
+IF ~~THEN REPLY @494GOTO Winsk1Dis5
+END
+
+IF ~~THEN BEGIN Winsk1Dis5
+SAY @495
+IF~~THEN REPLY @496GOTO Winsk1Dis6
+END
+
+IF ~~THEN BEGIN Winsk1Dis6
+SAY @497
+= @498
+IF ~~THEN REPLY @499EXTERN CVSANDRJ Winsk1Dis7
+END
+
+//  Othlor Scout
+IF ~Global("SanOrDiId","GLOBAL",2) ~THEN BEGIN SanOrDiId1
+SAY @500
+IF ~~THEN REPLY @501GOTO SanOrDiId2
+IF ~~THEN REPLY @502GOTO SanOrDiId2
+END
+
+IF ~~THEN BEGIN SanOrDiId2
+SAY @503
+IF~~THEN REPLY @504DO ~SetGlobal("SanOrDiId","GLOBAL",3)~EXIT
+IF~~THEN REPLY @505GOTO SanOrDiId3
+IF~~THEN REPLY @506GOTO SanOrDiId3
+END
+
+IF ~~THEN BEGIN SanOrDiId3
+SAY @507
+= @508
+= @509
+= @510
+IF~GlobalGT("WinskApp1","GLOBAL",5) ~THEN REPLY @511GOTO SanOrDiId4
+IF~GlobalLT("WinskApp1","GLOBAL",5) ~THEN REPLY @512GOTO SanOrDiId4
+END
+
+IF ~~THEN BEGIN SanOrDiId4
+SAY @513
+= @514
+IF ~PartyHasItem("Sanwi1") ~THEN REPLY @515DO ~RealSetGlobalTimer("WiItemR","GLOBAL",800) SetGlobal("SanOrDiId","GLOBAL",4)~EXIT
+IF ~PartyHasItem("Sanwi1") GlobalGT("WinskApp1","GLOBAL",5)~THEN REPLY @516DO ~RealSetGlobalTimer("WiItemR","GLOBAL",800) SetGlobal("SanOrDiId","GLOBAL",4)~EXIT
+IF ~~THEN REPLY @517DO ~RealSetGlobalTimer("WiItemR","GLOBAL",800) SetGlobal("SanOrDiId","GLOBAL",4)~EXIT
+END
+
+// Found all cloth pieces
+
+IF ~Global("Formedcloth","GLOBAL",2) ~THEN BEGIN  Formedcloth10
+SAY @518
+IF~~THEN REPLY@519DO ~SetGlobal("Formedcloth","GLOBAL",3) AddJournalEntry(@600238,QUEST)~GOTO Formedcloth11
+IF~~THEN REPLY@520DO ~SetGlobal("Formedcloth","GLOBAL",3) AddJournalEntry(@600238,QUEST)~GOTO Formedcloth11
+END
+
+IF~~THEN BEGIN  Formedcloth11
+SAY @521
+IF~~THEN REPLY@522EXIT
+IF~~THEN REPLY@523EXIT
+IF~~THEN REPLY@524EXIT
+END
+
+IF ~Global("Formedcloth","GLOBAL",6) Global("SanRomPath","GLOBAL",1)~THEN BEGIN Formedcloth20
+SAY @525
+IF~~THEN REPLY @526GOTO Formedcloth21
+IF~~THEN REPLY @527GOTO Formedcloth21
+END
+
+IF~~THEN BEGIN Formedcloth21
+SAY@528
+IF~~THEN REPLY@529DO~SetGlobal("Formedcloth","GLOBAL",7)~EXIT
+IF~~THEN REPLY@530DO~SetGlobal("Formedcloth","GLOBAL",7)~EXIT
+END
+
+IF ~Global("Formedcloth","GLOBAL",6) Global("SanRomPath","GLOBAL",2)~THEN BEGIN Formedcloth30
+SAY @525
+IF~~THEN REPLY @531GOTO Formedcloth21
+IF~~THEN REPLY @532GOTO Formedcloth31
+END
+
+IF~~THEN BEGIN Formedcloth31
+SAY@528
+IF~~THEN REPLY@529DO~SetGlobal("Formedcloth","GLOBAL",7)~EXIT
+IF~~THEN REPLY@530DO~SetGlobal("Formedcloth","GLOBAL",7)~EXIT
+END
+
+// BG1 Dream1
+
+IF ~Global("SanBG1DreamReact","GLOBAL",1)~THEN BEGIN DreamReact1
+SAY @533
+IF~~THEN REPLY @534GOTO DreamReact11
+END
+
+IF~~THEN BEGIN DreamReact11
+SAY @535
+IF~~THEN REPLY @536GOTO DreamReact12
+IF~~THEN REPLY @537GOTO DreamReact13
+END
+
+IF~~THEN BEGIN DreamReact12
+SAY @538
+IF~~THEN REPLY @539DO ~SetGlobal("SanBG1DreamReact","GLOBAL",2)~EXIT
+IF~~THEN REPLY @540DO ~SetGlobal("SanBG1DreamReact","GLOBAL",2)~EXIT
+IF~~THEN REPLY @541DO ~SetGlobal("SanBG1DreamReact","GLOBAL",2)~EXIT
+END
+
+IF~~THEN BEGIN DreamReact13
+SAY @542
+IF~~THEN REPLY @543DO ~SetGlobal("SanBG1DreamReact","GLOBAL",2)~ EXIT
+IF~~THEN REPLY @539DO ~SetGlobal("SanBG1DreamReact","GLOBAL",2)~EXIT
+IF~~THEN REPLY @540DO ~SetGlobal("SanBG1DreamReact","GLOBAL",2)~EXIT
+IF~~THEN REPLY @541DO ~SetGlobal("SanBG1DreamReact","GLOBAL",2)~EXIT
+IF~~THEN REPLY @544DO ~SetGlobal("SanBG1DreamReact","GLOBAL",2)~EXIT
+END
+
+// BG1 Dream2
+
+IF ~Global("SanBG1DreamReact","GLOBAL",3) ~THEN BEGIN DreamReact2
+SAY @545
+IF~~THEN REPLY @546GOTO DreamReact22
+END
+
+IF ~~THEN BEGIN DreamReact22
+SAY @547
+IF~~THEN REPLY @548GOTO DreamReact23
+IF~~THEN REPLY @549GOTO DreamReact23
+END
+
+IF ~~THEN BEGIN DreamReact23
+SAY @550
+IF~~THEN REPLY @551GOTO DreamReact24
+IF~~THEN REPLY @552GOTO DreamReact25
+IF~~THEN REPLY @553GOTO DreamReact25
+END
+
+IF ~~THEN BEGIN DreamReact24
+SAY @554
+IF~~THEN REPLY @555DO ~SetGlobal("SanBG1DreamReact","GLOBAL",4)~EXIT
+IF~~THEN REPLY @556DO ~SetGlobal("SanBG1DreamReact","GLOBAL",4)~EXIT
+END
+
+IF ~~THEN BEGIN DreamReact25
+SAY @557
+IF~~THEN REPLY @558DO ~SetGlobal("SanBG1DreamReact","GLOBAL",4)~EXIT
+IF~~THEN REPLY @559DO ~SetGlobal("SanBG1DreamReact","GLOBAL",4)~EXIT
+END
+
+// Found Second Cloth
+
+IF ~Global("SanHasTWOP","GLOBAL",2) ~THEN BEGIN Twop1
+SAY @560
+IF~~THEN REPLY @561GOTO Twop2
+IF~~THEN REPLY @562GOTO Twop2
+END
+
+IF ~~THEN BEGIN Twop2
+SAY @563
+IF~~THEN REPLY @564GOTO Twop3
+IF~~THEN REPLY @565GOTO Twop3
+END
+
+IF ~~THEN BEGIN Twop3
+SAY @566
+IF~~THEN REPLY @567GOTO Twop4
+IF~GlobalGT("Mothdream1","GLOBAL",1)~THEN REPLY@568 GOTO Twop5
+END
+
+IF ~~THEN BEGIN Twop4
+SAY @569
+IF ~~THEN DO ~SetGlobal("SanHasTWOP","GLOBAL",3) RealSetGlobalTimer("WiItemR","GLOBAL",3000) ~EXIT
+END
+
+IF ~~THEN BEGIN Twop5
+SAY @570
+IF~~THEN REPLY @571GOTO Twop6
+END
+
+IF ~~THEN BEGIN Twop6
+SAY @572
+IF ~~THEN REPLY @573 GOTO Twop7
+IF~~THEN REPLY @574GOTO Twop7
+END
+
+IF~~THEN BEGIN  Twop7
+SAY @575
+IF ~~THEN REPLY @576DO ~SetGlobal("SanHasTWOP","GLOBAL",3) RealSetGlobalTimer("WiItemR","GLOBAL",3000) ~EXIT
+IF ~~THEN REPLY @577DO ~SetGlobal("SanHasTWOP","GLOBAL",3) RealSetGlobalTimer("WiItemR","GLOBAL",3000) ~EXIT
+END
+
+IF ~Global("SanChildH","GLOBAL",4)~THEN BEGIN Twop21
+SAY @578
+IF~~THEN REPLY @579 GOTO Twop22
+IF~~THEN REPLY @580GOTO Twop22
+END
+
+IF~~THEN BEGIN Twop22
+SAY @581
+IF~~THEN REPLY @582DO ~SetGlobal("SanChildH","GLOBAL",5)~EXIT
+END
+
+// Sandrah Leaves PC with Branwen
+
+IF ~Global("SanLeaveBran","GLOBAL",1) ~THEN BEGIN SanLeave41
+SAY @583
+= @584
+IF~~THEN REPLY @585GOTO SanLeave42
+IF~~THEN REPLY @586GOTO SanLeave42
+END
+
+IF~~THEN BEGIN SanLeave42
+SAY @587
+IF ~~THEN DO ~SetGlobal("SanLeaveBran","GLOBAL",2)SetGlobal("SandrahJoined","GLOBAL",4)LeaveParty() EscapeAreaMove("BG3402",270,497,0)~EXIT
+END
+
+// PC loves Branwen
+
+IF ~Global("SanBranDec","GLOBAL",2) ~THEN BEGIN SanBranDec1
+SAY @588
+IF ~~THEN REPLY @589GOTO SanBranDec2
+IF ~~THEN REPLY @590GOTO SanBranDec2
+IF ~~THEN REPLY @591GOTO SanBranDec2
+END
+
+IF ~~THEN BEGIN SanBranDec2
+SAY @592
+IF ~~THEN REPLY @593DO ~SetGlobal("SanBranDec","GLOBAL",3) ~GOTO SanBranDec3
+END
+
+IF ~~THEN BEGIN SanBranDec3
+SAY @594
+IF ~~THEN REPLY@595GOTO SanBranDec4
+IF ~~THEN REPLY@596GOTO SanBranDec4
+IF ~~THEN REPLY@597 GOTO SanBranDec4
+END
+
+IF ~~THEN BEGIN SanBranDec4
+SAY @598
+IF ~~THEN REPLY@599GOTO SanBranDec5
+END
+
+IF ~~THEN BEGIN SanBranDec5
+SAY @600
+IF~~THEN EXIT
+END
+
+//Nashkel Mines Revisited
+
+IF~Global("SanDrow","BG5403",2)~THEN BEGIN MetQidrNahHint
+SAY@601
+IF~~THEN REPLY@602DO~IncrementGlobal("Sanpoints","GLOBAL",1) SetGlobal("SanDrow","BG5403",3)~EXIT
+IF~~THEN REPLY@603DO~IncrementGlobal("Sanpoints","GLOBAL",-1) SetGlobal("SanDrow","BG5403",3)~EXIT
+END
+
+IF~OR(2) Global("SanQuiNash","BG5404",4) Global("SanQuiNash","BG1903",4)~THEN BEGIN MetQidrNah1
+SAY@604
+IF~~THEN REPLY@605DO~SetGlobal("SanQuiNash","BG5404",5) SetGlobal("SanQuiNash","BG1903",5)~GOTO MetQidrNah2
+END
+
+IF~~THEN BEGIN MetQidrNah2
+SAY@606
+=@607
+IF~~THEN REPLY@608GOTO
+MetQidrNah3
+IF~AreaCheck("BG5404")~THEN REPLY@609GOTO MetQidrNah4
+IF~AreaCheck("BG1903")~THEN REPLY@610GOTO MetQidrNah4
+END
+
+IF~~THEN BEGIN MetQidrNah3
+SAY@611
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN MetQidrNah4
+SAY@612
+IF~~THEN EXIT
+END
+
+//Warn of Edwin
+IF ~Global("WarnEd","GLOBAL",1)~THEN BEGIN WarnEd1
+SAY @613
+IF~~THEN REPLY @614GOTO WarnEd2
+IF~~THEN REPLY @615GOTO WarnEd2
+END
+
+IF~~THEN BEGIN WarnEd2
+SAY@616
+IF ~~THEN REPLY @617DO ~SetGlobal("WarnEd","GLOBAL",2)~EXIT
+END
+
+//Fireplain Hut
+IF ~Global("SanLoveHut","GLOBAL",2)~THEN BEGIN firehut1
+SAY @618
+IF~~THEN REPLY @619DO~SetGlobal("SanLoveHut","GLOBAL",3)~EXIT
+IF~~THEN REPLY @620DO~SetGlobal("SanLoveHut","GLOBAL",3)~EXIT
+IF~~THEN REPLY @621DO~SetGlobal("SanLoveHut","GLOBAL",3)~EXIT
+END
+
+IF~Global("SaOgmaIn","GLOBAL",5)~THEN BEGIN firehut2
+SAY@622
+IF~~THEN REPLY@623DO ~SetGlobal("SaOgmaIn","GLOBAL",6)~GOTO firehut3
+IF~~THEN REPLY@624DO ~SetGlobal("SaOgmaIn","GLOBAL",6)~GOTO firehut4
+IF~~THEN REPLY@625DO ~SetGlobal("SaOgmaIn","GLOBAL",6)~GOTO firehut5
+END
+
+IF~~THEN BEGIN firehut3
+SAY @626
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN firehut4
+SAY @627
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN firehut5
+SAY @628
+IF~~THEN EXIT
+END
+
+IF ~Global("SaOgmaIn","GLOBAL",8)~THEN BEGIN firehut88
+SAY @629
+IF ~~THEN REPLY @630DO ~SetGlobal("SaOgmaIn","GLOBAL",9)~EXIT
+IF ~~THEN REPLY @631GOTO firehut89
+IF ~~THEN REPLY @632DO ~SetGlobal("SaOgmaIn","GLOBAL",9)~EXIT
+END
+
+IF ~~THEN BEGIN firehut89
+SAY @633
+IF~~THEN REPLY@634DO ~SetGlobal("SaOgmaIn","GLOBAL",9)~EXIT
+END
+
+//Sunsplash
+
+IF~Global("SanSplash","GLOBAL",1)~THEN BEGIN Sunsplash
+SAY @635
+IF~~THEN DO ~SetGlobal("SanSplash","GLOBAL",2) SaveGame(0)~EXIT
+END
+
+IF~Global("SanSplash","GLOBAL",5) AreaCheck("CVSPLA")~THEN BEGIN SunsplashE
+SAY @636
+= @637
+= @638
+IF ~~THEN DO ~SetGlobal("SanSplash","GLOBAL",6)~EXIT
+END
+
+IF ~IsGabber(Player1) Global("SanSplash","GLOBAL",6) AreaCheck("CVSPLA") ~THEN BEGIN SunsplashR
+SAY @639
+IF~~THEN REPLY @640 EXIT
+IF~~THEN REPLY @641DO ~SetGlobal("SanSplash","GLOBAL",7)~EXIT
+END
+
+// Shandalar
+
+IF ~Global("ShanIsl","GLOBAL",1)~THEN BEGIN ShanMys1
+SAY@642
+IF ~~THEN REPLY @643GOTO ShanMys2
+IF ~~THEN REPLY @644GOTO ShanMys2
+END
+
+IF ~~THEN BEGIN ShanMys2
+SAY @645
+= @646
+IF ~~THEN REPLY @647GOTO ShanMys3
+IF ~~THEN REPLY @648 GOTO ShanMys3
+END
+
+IF ~~THEN BEGIN ShanMys3
+SAY @649
+IF~~THEN REPLY @650GOTO ShanMys4
+END
+
+IF~~THEN BEGIN ShanMys4
+SAY@651
+= @652
+= @653
+IF ~~THEN REPLY @654GOTO ShanMys5
+END
+
+IF~~THEN BEGIN ShanMys5
+SAY @655
+IF ~~THEN REPLY @656DO ~SetGlobal("ShanIsl","GLOBAL",2)~EXIT
+IF ~~THEN REPLY @657DO ~SetGlobal("ShanIsl","GLOBAL",2) IncrementGlobal("sanpoints","Global",-1)~EXIT
+END
+
+
+// First travel to Waterdeep
+IF ~Global("RoadFound","GLOBAL",1)~THEN BEGIN WDRoadTrav
+SAY @658
+IF~~THEN REPLY @659GOTO WDTravl1
+IF~~THEN REPLY @660GOTO WDTrav1Lat
+END
+
+IF ~~THEN BEGIN  WDTravl1
+SAY @661
+= @662
+IF ~~THEN DO ~
+SetGlobal("RoadFound","GLOBAL",3) ~EXIT
+END
+
+IF ~~THEN BEGIN  WDTrav1Lat
+SAY @663
+= @664
+IF ~~THEN DO ~SetGlobal("RoadFound","GLOBAL",2) ~EXIT
+END
+
+IF~Global("WDIntrotalk","LOCALS",1)~THEN BEGIN FirstWDIntro1
+SAY@665
+IF~~THEN REPLY@666DO~SetGlobal("WDIntrotalk","LOCALS",2)~GOTO FirstWDIntroO
+IF~~THEN REPLY@667GOTO FirstWDIntro2
+IF~~THEN REPLY@668DO~SetGlobal("WDIntrotalk","LOCALS",3)~GOTO FirstWDIntro2
+END
+
+IF~~THEN BEGIN FirstWDIntro2
+SAY@669
+IF~~THEN REPLY@670DO~SetGlobal("WDIntrotalk","LOCALS",3)~GOTO FirstWDIntroO
+IF~~THEN REPLY@671GOTO FirstWDIntroG
+IF~~THEN REPLY@672GOTO FirstWDIntro3
+END
+
+IF~~THEN BEGIN FirstWDIntroG
+SAY@673
+=@674
+IF~~THEN REPLY@670DO~SetGlobal("WDIntrotalk","LOCALS",3)~GOTO FirstWDIntroO
+IF~~THEN REPLY@672GOTO FirstWDIntro3
+END
+
+IF~~THEN BEGIN FirstWDIntroO
+SAY@675
+IF~~THEN EXIT
+END
+
+IF ~Global("Katcut","GLOBAL",8)~THEN BEGIN WDniteRoom
+SAY @676
+IF~GlobalLT("Santlove","GLOBAL",4)~THEN REPLY @677DO ~SetGlobal("Katcut","GLOBAL",9) ~GOTO WDniteRoom2
+IF~GlobalGT("Santlove","GLOBAL",3)~THEN REPLY @677DO ~SetGlobal("Katcut","GLOBAL",9) ~EXIT
+END
+
+IF ~~THEN BEGIN WDniteRoom2
+SAY @678
+= @679
+IF~~THEN REPLY @680EXIT
+IF~~THEN REPLY @681EXIT
+IF~~THEN REPLY @682EXIT
+END
+
+
+
+// PC not met Elminster for Narquest
+
+IF ~Global("SanNarQnotElm","GLOBAL",1) ~THEN BEGIN SanNarQnotElm1
+SAY @683
+= @684
+IF ~~THEN REPLY @685GOTO  NarQnotElm
+IF ~~THEN REPLY @686GOTO NarQnotElm
+IF ~~THEN REPLY @687GOTO NarQnotElm
+END
+
+IF ~~THEN BEGIN  NarQnotElm
+SAY @688
+= @689
+= @690
+IF ~~THEN DO ~
+   CreateVisualEffectObject("SPDIMNDR","CVSandr")
+   SetGlobal("SanNarQnotElm","GLOBAL",2)
+   SetGlobal("SandrahJoined","GLOBAL",5) 
+   LeaveParty()
+   SetGlobal("ElminGaveNarQ","GLOBAL",4)
+   AddJournalEntry(@60072,INFO)
+   ActionOverride("CVSandr",EscapeAreaObjectMove("BG3402","Tran3001a",270,497,0))~
+EXIT
+END
+
+
+// PC Guesses Elminster Daughter
+IF ~Global("PCTalkElmDaughter","GLOBAL",1) ~THEN BEGIN WhoFather
+SAY @691
+= @692
+IF ~~THEN REPLY @693GOTO WhoFather2
+END
+
+IF ~~THEN BEGIN WhoFather2
+SAY @694
+IF ~~THEN REPLY @695GOTO WhoFather3
+IF ~~THEN REPLY @696GOTO WhoFatherShy
+IF ~~THEN REPLY @697GOTO WhoFatherShy
+END
+
+IF ~~THEN BEGIN WhoFatherShy
+SAY @698
+IF ~~THEN REPLY @699 GOTO WhoFather3
+END
+
+IF ~~THEN BEGIN WhoFather3
+SAY @700
+IF ~~THEN REPLY @701DO ~SetGlobal("PCKnowsElmDaughter","GLOBAL",1) SetGlobal("PCTalkElmDaughter","GLOBAL",2)RealSetGlobalTimer("NarQMess","GLOBAL",3800)~GOTO WhoFather4
+END
+
+IF ~~THEN BEGIN WhoFather4
+SAY @203
+= @702
+= @703
+IF ~~THEN REPLY @704 GOTO WhoFather5
+IF ~~THEN REPLY @705GOTO WhoFather5
+IF ~~THEN REPLY @706GOTO WhoFather5
+IF ~~THEN REPLY @707 GOTO WhoFather5
+END
+
+IF ~~THEN BEGIN WhoFather5
+SAY @708
+= @709
+IF ~~THEN REPLY @710GOTO WhoFather6
+END
+
+IF ~~THEN BEGIN WhoFather6
+SAY @711
+= @712
+= @713
+IF~~THEN REPLY @714GOTO WhoFather7
+IF~~THEN REPLY @715GOTO WhoFather7
+IF~~THEN REPLY @716GOTO WhoFather7
+END
+
+IF ~~THEN BEGIN WhoFather7
+SAY @717
+= @718
+IF ~~THEN REPLY @719DO ~
+StartCutSceneMode()
+                SmallWait(4)
+		FadeToColor([20.0],0)
+		Wait(4)
+		FadeFromColor([20.0],0)
+                EndCutSceneMode()
+		SaveGame(0)~EXIT
+IF ~~THEN REPLY @720DO ~
+StartCutSceneMode()
+                SmallWait(4)
+		FadeToColor([20.0],0)
+		Wait(4)
+		FadeFromColor([20.0],0)
+                EndCutSceneMode()
+		SaveGame(0)
+~EXIT
+IF ~~THEN REPLY @721DO ~
+StartCutSceneMode()
+                SmallWait(4)
+		FadeToColor([20.0],0)
+		Wait(4)
+		FadeFromColor([20.0],0)
+                EndCutSceneMode()
+		SaveGame(0)
+~EXIT
+END
+
+// Tarnesh Attack
+
+IF ~Global("Tarded","GLOBAL",1) AreaCheck("bg2300") ~THEN BEGIN BountyHu
+SAY @722
+IF~~THEN REPLY @723GOTO BountyHu2
+END
+
+IF~~THEN BEGIN BountyHu2
+SAY @724
+IF ~InParty("Imoen2") ~THEN EXTERN Bimoen BountyHu3
+IF ~!InParty("Imoen2") ~THEN GOTO BountyHu4
+END
+
+IF~~THEN BEGIN BountyHu4
+SAY @725
+IF ~~THEN REPLY @726GOTO BountyHu5
+IF ~~THEN REPLY @727GOTO BountyHu5
+END
+
+IF~~THEN BEGIN BountyHu5
+SAY @728
+= @729
+IF ~~THEN REPLY @730DO ~SetGlobal("Tarded","GLOBAL",2)~EXIT
+END
+
+/*Imoen Still not in Party Reminder*/
+
+IF ~Global("Imoreminder","GLOBAL",3)~THEN BEGIN ReturnToImo
+SAY @731
+= @732
+IF ~~THEN DO ~SetGlobal("Imoreminder","GLOBAL",4)~EXIT
+END
+
+IF ~Global("Imoreminder","GLOBAL",5)~THEN BEGIN ReturndToImo
+SAY@733
+IF ~InParty("imoen2")~THEN EXTERN Bimoen IntroImoS2
+END
+
+IF ~~ReturndToImo2
+SAY @734IF ~~THEN DO ~SetGlobal("Imoreminder","GLOBAL",6) ~EXTERN Bimoen IntroImoN2
+END
+
+//Found Belt of Gender
+
+IF ~Global("SanBeltGen","GLOBAL",1)~THEN BEGIN SanBeltGen
+SAY @735
+IF ~~THEN REPLY @736GOTO SanBook1
+END
+
+IF ~~THEN BEGIN SanBook1
+SAY @737
+IF ~~THEN REPLY @738DO ~SetGlobal("SanBeltGen","GLOBAL",2)~EXIT
+IF ~~THEN REPLY @739DO ~SetGlobal("SanBeltGen","GLOBAL",2)~EXIT
+END
+
+// Find the second Demon Cave
+IF~Global("PixieHint","GLOBAL",2) ~THEN BEGIN PixieHint
+SAY @740
+IF ~~THEN REPLY @741DO ~SetGlobal("PixieHint","GLOBAL",3)~EXIT
+IF ~~THEN REPLY @742DO ~SetGlobal("PixieHint","GLOBAL",3)~EXIT
+IF ~~THEN REPLY @743DO ~SetGlobal("PixieHint","GLOBAL",3)~EXIT
+END
+
+IF~Global("NotWFall","GLOBAL",1) ~THEN BEGIN NotWFallAgain
+SAY @744
+IF ~~THEN REPLY @745DO ~SetGlobal("NotWFall","GLOBAL",2)~EXIT
+IF ~~THEN REPLY @746GOTO Catkill2
+END
+
+IF ~~THEN BEGIN Catkill2
+SAY @747
+IF ~~THEN REPLY @748DO ~SetGlobal("NotWFall","GLOBAL",2)~ EXIT
+END
+
+// In Baldur's Gate
+
+IF ~Global("SaBalCarn","GLOBAL",1)~THEN BEGIN BaldMaekt1
+SAY @749
+IF~PartyHasItem("sw1h19")~THEN REPLY@750GOTO BaldMaekt12
+IF~~THEN REPLY@751GOTO BaldMaekt13
+IF~!PartyHasItem("sw1h19")~THEN REPLY@750GOTO BaldMaekt14
+END
+
+IF ~~THEN BEGIN BaldMaekt12
+SAY @752
+IF~~THEN REPLY@753DO ~SetGlobal("SaBalCarn","GLOBAL",2)~EXTERN CVSANDRJ BaldMaekt15
+END
+                     
+IF ~~THEN BEGIN BaldMaekt13
+SAY @754
+IF~~THEN REPLY@755DO ~SetGlobal("SaBalCarn","GLOBAL",2)~EXTERN CVSANDRJ BaldMaekt15
+END
+                     
+IF ~~THEN BEGIN BaldMaekt14
+SAY @756
+IF~~THEN REPLY@753DO ~SetGlobal("SaBalCarn","GLOBAL",2)~EXTERN CVSANDRJ BaldMaekt15
+END
+
+IF~Global("SanSecrt","BG0300",2)~THEN BEGIN SanWallPass1
+SAY@757
+IF~~THEN REPLY@758DO~SetGlobal("SanSecrt","BG0300",3)~GOTO SanWallPass2
+IF~~THEN REPLY@759DO~SetGlobal("SanSecrt","BG0300",3)~GOTO SanWallPass2
+END
+
+IF~~THEN BEGIN SanWallPass2
+SAY@760
+=@761
+IF~~THEN REPLY@762EXIT
+END
+
+IF~Global("HalItems","BG0153",2)~THEN BEGIN SanMagtrav1
+SAY@763
+IF~~THEN REPLY@764GOTO SanMagtrav2
+IF~~THEN REPLY@765GOTO SanMagtrav2
+IF~~THEN REPLY@766GOTO SanMagtrav2
+END
+
+IF~~THEN BEGIN SanMagtrav2
+SAY@767
+=@768
+IF~~THEN REPLY@769DO~SetGlobal("HalItems","BG0153",3)~GOTO SanMagtrav3
+IF~~THEN REPLY@770DO~SetGlobal("HalItems","BG0153",3)~EXIT
+END
+
+IF~~THEN BEGIN SanMagtrav3
+SAY@771
+=@772
+IF~~THEN REPLY@773EXIT
+END
+
+IF ~Global("SanIrThr","LOCALS",1)~THEN BEGIN SanIrThrSar1
+SAY @774
+IF~~THEN REPLY @775GOTO SanIrThrSar2
+END
+
+IF ~~THEN BEGIN SanIrThrSar2
+SAY @776
+IF~~THEN REPLY @777DO~SetGlobal("SanIrThr","LOCALS",2)~EXIT
+END
+
+IF ~Global("SanIrThr","LOCALS",3)~THEN BEGIN SanIrThrSar3
+SAY@778
+IF~~THEN REPLY @779GOTO SanIrThrSar4
+IF~~THEN REPLY @778GOTO SanIrThrSar4
+END
+
+IF ~~THEN BEGIN SanIrThrSar4
+SAY@780
+IF~~THEN REPLY @781DO~SetGlobal("SanIrThr","LOCALS",4)~EXIT
+IF~~THEN REPLY @782DO~SetGlobal("SanIrThr","LOCALS",4)~EXIT
+END
+
+IF ~Global("SanIrThr","LOCALS",5)~THEN BEGIN SanIrTRetCC1
+SAY @783
+IF ~~THEN REPLY @784GOTO SanIrTRetCC2
+IF ~~THEN REPLY @785GOTO SanIrTRetCC2
+END
+
+IF~~THEN BEGIN SanIrTRetCC2
+SAY @786
+IF ~~THEN REPLY @787DO~SetGlobal("SanIrThr","LOCALS",6)~GOTO SanIrTRetCC3
+END
+
+IF~~THEN BEGIN SanIrTRetCC3
+SAY @788
+IF ~~THEN REPLY @789GOTO SanIrTRetCC4
+END
+
+IF~~THEN BEGIN SanIrTRetCC4
+SAY @790
+IF ~~THEN REPLY @791GOTO SanIrTRetCC5
+IF ~~THEN REPLY @792GOTO SanIrTRetCC5
+IF ~~THEN REPLY @793GOTO SanIrTRetCC5
+END
+
+IF~~THEN BEGIN SanIrTRetCC5
+SAY @794
+= @795
+= @796
+= @797
+IF ~~THEN REPLY @798DO ~AddexperienceParty(2800)~GOTO SanIrTRetCC6
+END
+
+IF~~THEN BEGIN SanIrTRetCC6
+SAY @799
+IF ~~THEN REPLY @800GOTO SanIrTRetCC7
+IF ~~THEN REPLY @801GOTO SanIrTRetCC7
+END
+
+IF~~THEN BEGIN SanIrTRetCC7
+SAY @802
+IF ~~THEN REPLY @803GOTO SanIrTRetCC8
+IF ~~THEN REPLY @804 GOTO SanIrTRetCC8
+END
+
+IF~~THEN BEGIN SanIrTRetCC8
+SAY @805
+IF ~~THEN REPLY @806EXIT
+END
+
+IF~Global("SanTelscp","LOCALS",1) ~THEN BEGIN SantelTheft1
+SAY @807
+IF ~~THEN REPLY @808DO ~SetGlobal("SanTelscp","LOCALS",2)~GOTO  SantelTheft2
+IF ~~THEN REPLY @809DO ~SetGlobal("SanTelscp","LOCALS",2)~GOTO  SantelTheft3
+IF ~~THEN REPLY @810DO ~SetGlobal("SanTelscp","LOCALS",2)~GOTO  SantelTheft4
+END
+
+
+IF~~THEN BEGIN SantelTheft2
+SAY @811
+IF~~THEN REPLY @812DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+IF~~THEN REPLY @813DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+END
+
+IF~~THEN BEGIN SantelTheft3
+SAY @814
+IF ~~THEN DO~IncrementGlobal("Sanpoints","GLOBAL",-1)~EXIT
+END
+
+IF~~THEN BEGIN SantelTheft4
+SAY @815
+IF~Global("SanRomPath","GLOBAL",1)~THEN REPLY @816EXIT
+IF~Global("SanRomPath","GLOBAL",2)~THEN REPLY @817EXIT
+IF~~THEN REPLY @818EXIT
+IF~~THEN REPLY @819DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+END
+
+IF~Global("SanTelscp","LOCALS",3)~THEN BEGIN SanSigStrgze1
+SAY@820
+IF~~THEN REPLY @821DO~SetGlobal("SanTelscp","LOCALS",4)~GOTO SanSigStrgze2
+END
+
+IF~~THEN BEGIN SanSigStrgze2
+SAY@822
+IF~~THEN REPLY @823GOTO SanSigStrgze3
+IF~~THEN REPLY @824GOTO SanSigStrgze4
+END
+
+IF~~THEN BEGIN SanSigStrgze3
+SAY@825
+=@826
+IF~~THEN REPLY @827GOTO SanSigStrgze4
+END
+
+IF~~THEN BEGIN SanSigStrgze4
+SAY@828
+IF~~THEN REPLY@829GOTO SanSigStrgze5
+END
+
+IF~~THEN BEGIN SanSigStrgze5
+SAY@830
+IF~~THEN REPLY@831GOTO SanSigStrgze6
+END
+
+IF~~THEN BEGIN SanSigStrgze6
+SAY @832
+IF~~THEN REPLY@833
+EXIT
+END
+
+// Shauhana Preview
+
+IF ~Global("SanBG1ShauPrev","GLOBAL",1)~THEN BEGIN ShauPrevInGate1
+SAY @834
+IF ~~THEN REPLY @835GOTO ShauPrevInGate2
+IF ~~THEN REPLY @836GOTO ShauPrevInGate2
+END
+
+IF~~THEN BEGIN ShauPrevInGate2
+SAY @837
+IF~~THEN DO ~SetGlobal("SanBG1ShauPrev","GLOBAL",2)~EXIT
+END
+
+IF~Global("SanBG1ShauPrev","GLOBAL",6)~THEN BEGIN ShauPrevInGate3
+SAY @838
+IF ~~THEN REPLY @839GOTO ShauPrevInGate4
+IF ~~THEN REPLY @840GOTO ShauPrevInGate4
+END
+
+IF~~THEN BEGIN ShauPrevInGate4
+SAY @841
+IF~~THEN REPLY @842GOTO ShauPrevInGate5
+END
+
+IF~~THEN BEGIN ShauPrevInGate5
+SAY @843
+IF~~THEN DO ~SetGlobal("SanBG1ShauPrev","GLOBAL",7) AddJournalEntry(@60700,QUEST)~EXIT
+END
+
+IF~Global("SanTamoko","LOCALS",1)~THEN BEGIN SanTamoko1
+SAY @844
+IF ~~THEN REPLY @845DO~SetGlobal("SanTamoko","LOCALS",2)~GOTO SanTamoko2
+END
+
+IF ~~THEN BEGIN SanTamoko2
+SAY @846
+IF ~~THEN REPLY @847GOTO SanTamoko3
+IF ~~THEN REPLY @848GOTO SanTamoko3
+END
+
+IF ~~THEN BEGIN SanTamoko3
+SAY @849
+IF ~~THEN REPLY @850GOTO SanTamoko4
+END
+
+IF ~~THEN BEGIN SanTamoko4
+SAY @851
+IF ~~THEN REPLY @852GOTO  SanTamoko5
+IF ~~THEN REPLY @853GOTO  SanTamoko5
+END
+
+IF ~~THEN BEGIN SanTamoko5
+SAY @854
+IF ~~THEN REPLY @855GOTO  SanTamoko6
+IF ~~THEN REPLY @856GOTO  SanTamoko6
+IF ~~THEN REPLY @857 GOTO  SanTamoko6
+IF ~~THEN REPLY @858EXIT
+END
+
+IF ~~THEN BEGIN SanTamoko6
+SAY @859
+IF ~~THEN REPLY @860EXIT
+IF ~~THEN REPLY @858EXIT
+END
+
+
+// Umberlee's bowl
+IF ~Global("Umbowl","GLOBAL",1) ~THEN BEGIN Umbowl
+SAY @861
+IF~~THEN REPLY @862GOTO Umbowl2
+IF~~THEN REPLY @863GOTO Umbowl2
+END
+
+IF ~~THEN BEGIN Umbowl2
+SAY @864
+IF ~~THEN REPLY @865DO ~SetGlobal("Umbowl","GLOBAL",2)~EXIT
+IF ~~THEN REPLY @866GOTO Umbowl3
+END
+
+IF ~~THEN BEGIN Umbowl3
+SAY @867
+IF~~THEN DO ~SetGlobal("Umbowl","GLOBAL",2)~EXIT
+END
+
+// Nashkel Iron
+IF ~Global("SaNasIro","GLOBAL",1) ~THEN BEGIN SaNasIro1
+SAY @868
+IF~~THEN REPLY @869DO ~SetGlobal("SaNasIro","GLOBAL",2)~EXIT
+IF~~THEN REPLY @870DO ~SetGlobal("SaNasIro","GLOBAL",2)~EXIT
+END
+
+
+//Find Branwen
+
+IF ~Global("SanBranSearchRem","GLOBAL",2) ~THEN BEGIN GetPetScr1
+SAY @871
+IF ~~THEN REPLY @872DO~SetGlobal("C#BE_SpawnBrage","GLOBAL",7)~GOTO GetPetScr2
+IF ~~THEN REPLY @873DO~SetGlobal("C#BE_SpawnBrage","GLOBAL",7)~GOTO GetPetScr2
+END
+
+IF ~~THEN BEGIN GetPetScr2
+SAY @874
+= @875
+ = @876
+IF ~~THEN REPLY @877GOTO GetPetScrNo
+IF ~~THEN REPLY @878 GOTO GetPetScrInf
+END
+
+IF ~~THEN BEGIN GetPetScrNo
+SAY @879
+IF ~~THEN REPLY @880 GOTO GetPetScrInf
+IF ~~THEN REPLY @881 GOTO GetPetScrInf
+END
+
+IF ~~THEN BEGIN GetPetScrInf
+SAY @882
+= @883
+IF ~PartyHasItem("SCRLPET")~THEN REPLY@884DO ~SetGlobal("SanBranSearchRem","GLOBAL",3) AddJournalEntry(@60011,QUEST) ~EXIT
+IF~!PartyHasItem("SCRLPET")~THEN REPLY @885
+DO ~SetGlobal("SanBranSearchRem","GLOBAL",3) AddJournalEntry(@60011,QUEST) ~EXIT
+END
+
+IF ~Global("SanBranSearchRem","GLOBAL",4)~THEN BEGIN PetScrCar1
+SAY @886
+IF~~THEN REPLY @887 GOTO PetScrCar2
+IF~~THEN REPLY @888GOTO PetScrCar3
+END
+
+IF ~~THEN BEGIN PetScrCar2
+SAY @889
+IF ~~THEN REPLY @890GOTO PetScrCar3
+END
+
+IF ~~THEN BEGIN PetScrCar3
+SAY @891
+IF ~!PartyHasItem("SCRLPET")~THEN REPLY @892GOTO PetScrCar4
+IF ~PartyHasItem("SCRLPET")~THEN REPLY @893DO ~SetGlobal("SanBranSearchRem","GLOBAL",5)~EXIT
+END
+
+IF ~~THEN BEGIN PetScrCar4
+SAY @894
+IF ~~THEN REPLY @895DO ~SetGlobal("SanBranSearchRem","GLOBAL",5)~EXIT
+END
+
+//PIDs while getting to know
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",0)~THEN BEGIN SanPCInit1
+SAY @896
+IF ~~THEN REPLY @897DO ~SetGlobal("SanPidPack","GLOBAL",2)~EXIT
+IF ~~THEN REPLY @898DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO Nice1
+IF ~~THEN REPLY @899DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO StandardComp
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF~~THEN BEGIN SanHamCl
+SAY@902
+IF~~THEN DO~ReallyForceSpellRES("SanHamCL",Myself)~EXIT
+END
+
+IF ~~THEN BEGIN Nice1
+SAY @903
+IF ~~THEN DO ~SetGlobal("SanPidPack","GLOBAL",3)~EXIT
+END
+
+IF ~~THEN BEGIN StandardComp
+SAY @904
+IF ~~THEN DO ~SetGlobal("SanPidPack","GLOBAL",3)~EXIT
+END
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",2) ~THEN BEGIN SanPCInit2
+SAY @905
+IF ~~THEN REPLY @898GOTO Nice2
+IF ~~THEN REPLY @899GOTO StandardComp2
+IF ~Global("SanAtGor","LOCALS",0)~THEN REPLY @906GOTO GorionSite
+IF~Global("SanNoMage","LOCALS",0)~THEN REPLY@907GOTO SanNoMage1
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF ~~THEN BEGIN StandardComp2
+SAY @908
+IF ~~THEN DO ~SetGlobal("SanPidPack","GLOBAL",3)~EXIT
+END
+
+IF ~~THEN BEGIN Nice2
+SAY @903
+IF ~~THEN DO ~SetGlobal("SanPidPack","GLOBAL",3)~EXIT
+END
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",3) ~THEN BEGIN SanPCInit3
+SAY @909
+IF ~~THEN REPLY @910GOTO SanWater
+IF ~Global("SanAtGor","LOCALS",0)~THEN REPLY @906GOTO GorionSite
+IF~Global("SanNoMage","LOCALS",0)~THEN REPLY@907GOTO SanNoMage1
+IF~Global("SanResurAva","GLOBAL",4)~THEN REPLY@911DO~SetGlobal("SanResurAva","GLOBAL",0)~EXIT
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF~~THEN BEGIN SanNoMage1
+SAY@912
+IF~~THEN REPLY@913DO~SetGlobal("SanNoMage","LOCALS",1)IncrementGlobal("Sanpoints","Global",1)~EXIT
+IF~~THEN REPLY@914DO~SetGlobal("SanNoMage","LOCALS",1)IncrementGlobal("Sanpoints","Global",-1)~EXIT
+END
+
+IF ~~THEN BEGIN SanWater
+SAY @915
+IF ~~THEN REPLY @916GOTO NoSnob
+IF ~~THEN REPLY @917GOTO NoSnob
+END
+
+IF ~~THEN BEGIN NoSnob
+SAY @918
+= @919
+IF ~~THEN DO ~SetGlobal("SanPidPack","GLOBAL",5)~EXIT
+END
+
+IF ~~THEN BEGIN GorionSite
+SAY @920
+IF ~~THEN REPLY @921DO~SetGlobal("SanAtGor","LOCALS",1) ~GOTO SanCryptic
+END
+
+IF ~~THEN BEGIN SanCryptic
+SAY @922
+IF ~~THEN REPLY @923 GOTO SanWater
+END
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",5) ~THEN BEGIN SanPCInit5
+SAY @924
+IF ~~THEN REPLY @925EXIT
+IF ~GlobalGT("Sprite_is_DeadBandit","GLOBAL",25) Global("SanFiSkills","LOCALS",0) ~THEN REPLY @926DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanFiSkills
+IF ~AreaType(FOREST) TimeOfDay(DAY) Global("SanStrBe","LOCALS",0) ~THEN REPLY @927DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanStrBe
+IF ~Global("SanOrDiId","GLOBAL",3) ~THEN REPLY @928DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO UlDarT
+IF ~OR(2) Global("TORKIONNEEDYOU","GLOBAL",1) Global("NTTorkionNeedYou","Global",1) !PartyHasItem("Misc48") Global("SanTorq","LOCALS",0) ~THEN REPLY @929DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanTorq1
+IF ~Global("SanAtGor","LOCALS",0)~THEN REPLY @906GOTO GorionSite
+IF~Global("SanNoMage","LOCALS",0)~THEN REPLY@907GOTO SanNoMage1
+IF ~GlobalGT("Santiax","LOCALS",3) Global("SantiaxPC","LOCALS",0)~THEN REPLY @930GOTO SanTiaxPC1
+IF~Global("BHHandSearch","GLOBAL",0) PartyHasItem("BHGHandn") PartyHasItem("BHGHand") ~THEN REPLY@931GOTO BHGHand
+IF~GlobalGT("RoadFound","GLOBAL",1) AreaCheck("bg2300") PartyHasItem("SanMap") ~THEN REPLY @932DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO WDTravl1
+IF ~Global("SanNarQ","GLOBAL",7) !Global("SanWDHi","GLOBAL",2) Global("SanVisWD","LOCALS",0)~THEN REPLY@933DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanVisWD
+IF ~Global("SanNarQ","GLOBAL",7) Global("SanWDHi","GLOBAL",2) Global("SanVisWDFA","LOCALS",0)~THEN REPLY@934DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanVisWDFA
+IF~Global("Drizztfight","GLOBAL",1) !InParty("Branwen") GlobalLT("SanDrizzt","GLOBAL",3) Global("SanFiSkills","LOCALS",0)~THEN REPLY @935GOTO SanKnoDrizPC1
+IF~~THEN REPLY@936GOTO StopRom
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",2) Global("SanCorFem","LOCALS",0)~THEN REPLY @937GOTO SanCorFem1
+IF ~Global("SanBreBa","GLOBAL",2) ~THEN REPLY @938DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBreCon1
+IF ~Global("SanWoodSt","LOCALS",2) AreaType(DUNGEON) ~THEN REPLY @939GOTO SanMkStake5
+IF ~GlobalGT("Cowscroll","GLOBAL",9) Global("EdCursGon","LOCALS",0) ~THEN REPLY @940DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO EdCursGon1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",1) Global("SanCorMale","LOCALS",0)~THEN REPLY @937GOTO SanCorMal1
+IF ~Global("BHQuestaccept","GLOBAL",3) Global("SanAskBH1","LOCALS",0) ~THEN REPLY @941DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanAskBH11
+IF~Global("SanVsTalos","GLOBAL",1) Global("Talostlk","LOCALS",0)~THEN REPLY @942GOTO SanTalosF1
+IF~Global("WDIntrotalk","LOCALS",2)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro3
+IF~Global("WDIntrotalk","LOCALS",3)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro2
+IF~Global("SanResurAva","GLOBAL",4)~THEN REPLY@911DO~SetGlobal("SanResurAva","GLOBAL",0)~EXIT
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF~~THEN BEGIN SanKnoDrizPC1
+SAY@944
+IF~~THEN REPLY @945GOTO SanKnoDrizPC2
+IF~~THEN REPLY @946GOTO SanKnoDrizPC2
+END
+
+IF~~THEN BEGIN SanKnoDrizPC2
+SAY @947
+IF~~THEN REPLY @948GOTO SanFiSkills
+IF~~THEN REPLY @949GOTO SanFiSkills
+IF~~THEN REPLY @950DO~IncrementGlobal("Sanpoints","Global",-1)~EXIT
+IF~~THEN REPLY @951EXIT
+
+END
+
+IF~~THEN BEGIN SanCorFem1
+SAY@952
+IF~~THEN REPLY@953DO ~SetGlobal("SanCorFem","LOCALS",1)~GOTO SanCorFem2
+END
+
+IF ~~THEN BEGIN SanCorFem2
+SAY @954
+IF~~THEN REPLY@955GOTO SanCorFem3
+IF~~THEN REPLY@956GOTO SanCorFem3
+IF~~THEN REPLY@957GOTO SanCorFem3
+END
+
+IF ~~THEN BEGIN SanCorFem3
+SAY @958
+IF~~THEN REPLY@959GOTO SanCorFem4
+IF~~THEN REPLY@960GOTO SanCorFem4
+END
+
+IF ~~THEN BEGIN SanCorFem4
+SAY @961
+IF~~THEN REPLY@962EXIT
+IF~~THEN REPLY@963EXIT
+IF~~THEN REPLY@964EXIT
+END
+
+IF~~THEN BEGIN SanCorMal1
+SAY@965
+IF~~THEN REPLY@966DO ~SetGlobal("SanCorMale","LOCALS",1)~GOTO SanCorMal2
+END
+
+IF ~~THEN BEGIN SanCorMal2
+SAY @967
+IF~~THEN REPLY@955GOTO SanCorMal3
+IF~~THEN REPLY@968GOTO SanCorMal3
+IF~~THEN REPLY@969GOTO SanCorMal3
+END
+
+IF ~~THEN BEGIN SanCorMal3
+SAY @970
+IF~~THEN REPLY@971GOTO SanCorMal4
+IF~~THEN REPLY@960GOTO SanCorMal4
+IF~~THEN REPLY@972EXIT
+END
+
+IF ~~THEN BEGIN SanCorMal4
+SAY @973
+IF~~THEN REPLY@974EXIT
+IF~~THEN REPLY@975EXIT
+IF~~THEN REPLY@964EXIT
+END
+
+IF~~THEN BEGIN  SanAskBH11
+SAY @976
+IF~~THEN REPLY @977 GOTO SanAskBH12
+IF~~THEN REPLY @978GOTO SanAskBH13
+END
+
+IF~~THEN BEGIN  SanAskBH12
+SAY @979
+IF ~~THEN REPLY @980DO ~SetGlobal("SanAskBH1","LOCALS",1)~EXIT
+END
+
+IF~~THEN BEGIN  SanAskBH13
+SAY @981
+IF ~~THEN REPLY @980DO ~SetGlobal("SanAskBH1","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN SanTorq1
+SAY @982
+IF ~~THEN REPLY @983 GOTO SanTorq2
+IF ~~THEN REPLY @984GOTO SanTorq2
+END
+
+IF ~~THEN BEGIN SanTorq2
+SAY @985
+IF ~~THEN REPLY @986GOTO SanTorq3
+END
+
+IF ~~THEN BEGIN SanTorq3
+SAY @987
+IF ~~THEN REPLY @988GOTO SanTorq4
+END
+
+IF ~~THEN BEGIN SanTorq4
+SAY @989
+IF~~THEN REPLY@990DO ~SetGlobal("SanTorq","LOCALS",1) ~EXIT
+END
+
+IF ~~THEN BEGIN UlDarT
+SAY @503
+IF~~THEN REPLY @505GOTO SanOrDiId3
+END
+
+IF ~~THEN BEGIN SanFiSkills
+SAY @991
+IF ~~THEN REPLY @992DO ~SetGlobal("SanFiSkills","LOCALS",1)~GOTO SanFiSkills2
+IF ~~THEN REPLY @993DO ~SetGlobal("SanFiSkills","LOCALS",1)~GOTO SanFiSkills2
+END
+
+IF ~~THEN BEGIN SanFiSkills2
+SAY @994
+IF ~~THEN REPLY @995GOTO SanFiSkills3
+END
+
+IF ~~THEN BEGIN SanFiSkills3
+SAY @996
+= @997
+IF ~~THEN REPLY @998GOTO SanFiSkills4
+IF ~~THEN REPLY @999GOTO SanFiSkills4
+END
+
+IF ~~THEN BEGIN SanFiSkills4
+SAY @1000
+= @1001
+IF ~Global("PCKnowsElmDaughter","GLOBAL",1)~THEN REPLY @1002EXIT
+IF ~Global("PCKnowsElmDaughter","GLOBAL",0)~THEN REPLY @1003 EXIT
+END
+
+IF ~~THEN BEGIN SanStrBe
+SAY @1004
+IF~~THEN REPLY @1005GOTO SanStrBe2
+IF~~THEN REPLY @1006GOTO SanStrBe3
+IF~~THEN REPLY @1007DO ~SetGlobal("SanStrBe","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN SanStrBe2
+SAY @1008
+IF~~THEN REPLY @1009GOTO SanStrBe4
+IF ~~THEN REPLY @1010GOTO SanStrBe4
+IF~~THEN REPLY @1007DO ~SetGlobal("SanStrBe","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN SanStrBe3
+SAY@1011
+IF~~THEN REPLY @1012GOTO SanStrBe2
+END
+
+IF ~~THEN BEGIN SanStrBe4
+SAY@1013
+IF ~~THEN REPLY @1014DO ~SetGlobal("SanStrBe","LOCALS",1)~EXIT
+IF ~~THEN REPLY @1015DO ~SetGlobal("SanStrBe","LOCALS",1)~EXIT
+END
+
+IF~~THEN BEGIN StopRom
+SAY@1016
+IF~OR(2) GlobalGT("Kivshil","GLOBAL",7) GlobalGT("PKivshil","GLOBAL",7)OR(2) InParty("Kivan") InParty("P#Kivan")~THEN REPLY@1017GOTO StopRomH
+IF~InParty("Coran")GlobalGT("SanCoran","LOCALS",4) Global("SanRomPath","GLOBAL",1)~THEN REPLY@1018DO~SetGlobal("SanCoran","LOCALS",18)~GOTO StopRomF
+IF~InParty("Coran")GlobalGT("SanCoran","LOCALS",4) Global("SanRomPath","GLOBAL",2)~THEN REPLY@1018GOTO StopRomF
+IF~GlobalGT("SanBooTlk","GLOBAL",3)InParty("Minsc")~THEN REPLY@1019GOTO StopRomH
+IF~GlobalGT("SanGarr1","GLOBAL",5)InParty("Garrick")~THEN REPLY@1020GOTO StopRomF
+IF~GlobalGT("SanXanA","GLOBAL",5) InParty("XAN")~THEN REPLY@1021DO~SetGlobal("SanXanA","GLOBAL",23)~GOTO StopRomF
+IF~InParty("Imoen2")~THEN REPLY@1022GOTO Imoexcuse
+IF~~THEN REPLY@1023EXIT
+END
+
+IF~~THEN BEGIN Imoexcuse
+SAY@1024
+IF~~THEN REPLY@1025DO~IncrementGlobal("Sanpoints","Global",1) ~EXIT
+IF~~THEN REPLY@1026DO~IncrementGlobal("Sanpoints","Global",-1) ~EXIT
+END
+
+IF~~THEN BEGIN StopRomH
+SAY@1027
+IF~~THEN REPLY@1028EXIT
+IF~~THEN REPLY@1029GOTO StopRom2
+IF~~THEN REPLY@1030EXIT
+IF~~THEN REPLY@1031GOTO OneTooMany
+END
+
+IF~~THEN BEGIN StopRomF
+SAY@1032
+IF~~THEN REPLY@1033EXIT
+IF~~THEN REPLY@1034GOTO StopRom2
+IF~~THEN REPLY@1030EXIT
+IF~~THEN REPLY@1035EXIT
+IF~~THEN REPLY@1036GOTO OneTooMany
+END
+
+IF~~THEN BEGIN StopRom2
+SAY@1037
+IF~~THEN DO~IncrementGlobal("SanStopIt","LOCALS",1)~EXIT
+END
+
+IF~Global("SanStopIt","LOCALS",3)~THEN BEGIN OneTooMany
+SAY@1038
+=@1039
+IF~~THEN DO~SetGlobal("SanStopIt","LOCALS",4) SetGlobal("Sandrahjoined","Global",83)LeaveParty() EscapeAreaDestroy(90)~EXIT
+END
+
+//PIDs after LT1  Pack 6 or 36
+
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",36) ~THEN BEGIN SanPCInit36
+SAY @1040
+IF ~~THEN REPLY @1041DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO LoveStarts36
+IF ~~THEN REPLY @1042DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO ManySecrets36
+END
+
+IF ~~THEN BEGIN LoveStarts36
+SAY @1043
+IF ~~THEN REPLY @1044DO ~SetGlobal("SanPidPack","GLOBAL",8) SetGlobal("SanBranSearch","GLOBAL",6)~EXIT
+END
+
+IF ~~THEN BEGIN ManySecrets36
+SAY @1045
+= @1046
+IF ~~THEN REPLY @1047GOTO LoveStarts36
+IF ~~THEN REPLY @1048GOTO LoveStarts36
+IF ~~THEN REPLY @1049DO ~SetGlobal("SanPidPack","GLOBAL",8) ~EXIT
+END
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",6) ~THEN BEGIN SanPCInit6
+SAY @1040
+IF ~~THEN REPLY @1041DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO LoveStarts
+IF ~~THEN REPLY @1042DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO ManySecrets
+IF ~~THEN REPLY @1050DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO ColdFeet
+END
+
+IF ~~THEN BEGIN LoveStarts
+SAY @1043
+IF ~~THEN REPLY @1051DO ~SetGlobal("SanPidPack","GLOBAL",8) ~EXIT
+END
+
+IF ~~THEN BEGIN ManySecrets
+SAY @1052
+= @1046
+IF ~~THEN REPLY @1047GOTO LoveStarts
+IF ~~THEN REPLY @1048GOTO LoveStarts
+IF ~~THEN REPLY @1049DO ~SetGlobal("SanPidPack","GLOBAL",8) ~EXIT
+END
+
+IF ~~THEN BEGIN ColdFeet
+SAY @1053
+IF ~~THEN REPLY @1054GOTO LoveStarts
+IF ~~THEN REPLY @1055DO ~SetGlobal("SanPidPack","GLOBAL",7) SetGlobal("SanBranRepl","GLOBAL",1)RealSetGlobalTimer("PIDSulk","LOCALS",5000)~EXIT
+END
+
+// PID Pack 8
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",7) ~THEN BEGIN SanPCInit7
+SAY @1056
+IF ~OR(2) Global("TORKIONNEEDYOU","GLOBAL",1) Global("NTTorkionNeedYou","Global",1) !PartyHasItem("Misc48") Global("SanTorq","LOCALS",0) ~THEN REPLY @929GOTO SanTorq1
+IF ~Global("BHQuestaccept","GLOBAL",3) Global("SanAskBH1","LOCALS",0) ~THEN REPLY @941DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanAskBH11
+IF~Global("SantalosDec","GLOBAL",10)~THEN REPLY@1057GOTO Talosvisit4
+IF ~GlobalGT("Santiax","LOCALS",3) Global("SantiaxPC","LOCALS",0)~THEN REPLY @930GOTO SanTiaxPC1
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArF
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) !AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArNF
+IF~Global("BHHandSearch","GLOBAL",0) PartyHasItem("BHGHandn") PartyHasItem("BHGHand") ~THEN REPLY@931GOTO BHGHand
+IF~GlobalGT("RoadFound","GLOBAL",1) AreaCheck("bg2300") PartyHasItem("SanMap") ~THEN REPLY @932DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO WDTravl1
+IF ~Global("SanNarQ","GLOBAL",7) !Global("SanWDHi","GLOBAL",2) Global("SanVisWD","LOCALS",0)~THEN REPLY@933DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanVisWD
+IF~~THEN REPLY@936GOTO StopRom
+IF ~Global("SanNarQ","GLOBAL",7) Global("SanWDHi","GLOBAL",2) Global("SanVisWDFA","LOCALS",0)~THEN REPLY@934DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanVisWDFA
+IF ~Global("SanBreBa","GLOBAL",2) ~THEN REPLY @938DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBreCon1
+IF~PartyHasItem("SW1H19") Global("TheVaultVamp","GLOBAL",2) !See([ENEMY]) CombatCounter(0)~THEN REPLY@1059GOTO SanvaultSum
+IF ~Global("SanWoodSt","LOCALS",2) AreaType(DUNGEON) ~THEN REPLY @939GOTO SanMkStake5
+IF ~RealGlobalTimerExpired("PIDSulk","LOCALS")~THEN REPLY @1060DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO ManySecrets36
+IF~Global("SanVsTalos","GLOBAL",1) Global("Talostlk","LOCALS",0)~THEN REPLY @942GOTO SanTalosF1
+IF~Global("WDIntrotalk","LOCALS",2)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro3
+IF~Global("WDIntrotalk","LOCALS",3)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro2
+IF ~GlobalLT("SanPidPack","GLOBAL",8)~THEN REPLY @1049DO ~SetGlobal("SanPidPack","GLOBAL",8) ~EXIT
+IF~Global("SanResurAva","GLOBAL",4)~THEN REPLY@911DO~SetGlobal("SanResurAva","GLOBAL",0)~EXIT
+IF ~~THEN REPLY @1061EXIT
+IF~~THEN REPLY@900GOTO SanHamCl
+END
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",8) ~THEN BEGIN SanPCInit8
+SAY @1062
+IF ~Global("PCKnowsElmDaughter","GLOBAL",1)~THEN REPLY @1063DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO Candlevisit
+IF ~Global("SanOrDiId","GLOBAL",3) ~THEN REPLY @928DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO UlDarT
+IF ~OR(2) Global("TORKIONNEEDYOU","GLOBAL",1) Global("NTTorkionNeedYou","Global",1) !PartyHasItem("Misc48") Global("SanTorq","LOCALS",0) ~THEN REPLY @1064DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanTorq1
+IF~Global("SantalosDec","GLOBAL",10)~THEN REPLY@1057GOTO Talosvisit4
+IF ~GlobalGT("Santiax","LOCALS",3) Global("SantiaxPC","LOCALS",0)~THEN REPLY @930GOTO SanTiaxPC1
+IF ~Global("SaOgmaIn","GLOBAL",6) AreaCheck("CVWOHA") ~ THEN REPLY @1065DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanloveHut1
+IF~Global("BHHandSearch","GLOBAL",0) PartyHasItem("BHGHandn") PartyHasItem("BHGHand") ~THEN REPLY@931GOTO BHGHand
+IF~Global("Drizztfight","GLOBAL",1) !InParty("Branwen") GlobalLT("SanDrizzt","GLOBAL",3) Global("SanFiSkills","LOCALS",0)~THEN REPLY @935GOTO SanKnoDrizPC1
+IF~~THEN REPLY@936GOTO StopRom
+IF ~Global("BHQuestaccept","GLOBAL",3) Global("SanAskBH1","LOCALS",0) ~THEN REPLY @941DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanAskBH11
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArF
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) !AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArNF
+IF~PartyHasItem("SW1H19") Global("TheVaultVamp","GLOBAL",2) !See([ENEMY]) CombatCounter(0)~THEN REPLY@1066GOTO SanvaultSum
+IF~GlobalGT("Santiax","LOCALS",3)Global("SanTiaHealQ","LOCALS",0)~THEN REPLY@1067GOTO SanTiaHel1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",1) Global("SanCorMale","LOCALS",0)~THEN REPLY @937GOTO SanCorMal1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",2) Global("SanCorFem","LOCALS",0)~THEN REPLY @937GOTO SanCorFem1
+IF ~GlobalGT("SanSharInt","GLOBAL",11) Global("SanSharCon","LOCALS",0) ~THEN REPLY @1068DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanSharCon1
+IF ~Global("SanWoodSt","LOCALS",2) AreaType(DUNGEON)~THEN REPLY @939GOTO SanMkStake5
+IF ~GlobalGT("SanBooTlk","GLOBAL",5) Global("MinskFlow","LOCALS",0) ~THEN REPLY @1069DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO MinscFlow1
+IF ~Global("SanBreBa","GLOBAL",2) ~THEN REPLY @938DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBreCon1
+IF ~GlobalGT("Cowscroll","GLOBAL",9) Global("EdCursGon","LOCALS",0) ~THEN REPLY @940DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO EdCursGon1
+IF~Global("SanVsTalos","GLOBAL",1) Global("Talostlk","LOCALS",0)~THEN REPLY @942GOTO SanTalosF1
+IF ~Global("PCKnowsElmDaughter","GLOBAL",1) Global("SanElmInf1","LOCALS",0) GlobalGT("Chapter","GLOBAL",2) ~THEN REPLY @1070DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanElmInf11
+IF ~Global("Godtalk","LOCALS",0) !AreaType(DUNGEON)~THEN REPLY @1071DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanGodtalk1
+IF~Global("WDIntrotalk","LOCALS",2)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro3
+IF~Global("WDIntrotalk","LOCALS",3)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro2
+IF~Global("SanResurAva","GLOBAL",4)~THEN REPLY@911DO~SetGlobal("SanResurAva","GLOBAL",0)~EXIT
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF~~THEN BEGIN SanAcArF
+SAY @1072
+=@1073
+IF~~THEN DO~StartCutSceneMode()
+SmallWait(4)
+ForceSpell(Myself,CLERIC_SPIRITUAL_HAMMER)
+SmallWait(4)
+GiveItemCreate("arow04",Player1,80,0,0)
+EndCutSceneMode()
+SetGlobal("SanDesTroll","LOCALS",5) ~EXIT
+END
+
+IF~~THEN BEGIN SanAcArNF
+SAY @1074
+IF~~THEN REPLY@1075DO~SetGlobal("SanDesTroll","LOCALS",3) ~EXIT
+END
+
+IF~Global("SanDesTroll","LOCALS",4)~THEN BEGIN SanAcArNF2
+SAY@1076
+IF~~THEN REPLY@1077DO~SetGlobal("SanDesTroll","LOCALS",2)~EXIT
+IF~~THEN REPLY@1078 GOTO SanAcArF
+END
+
+
+IF~~THEN BEGIN SanloveHut1
+SAY @1079
+IF~~THEN REPLY@1080GOTO SanloveHut2
+END
+
+IF~~THEN BEGIN SanloveHut2
+SAY @1081
+= @1082
+IF~~THEN REPLY @1083DO~SetGlobal("SaOgmaIn","GLOBAL",7) RestParty()~EXIT
+IF~~THEN REPLY @1084DO~SetGlobal("SaOgmaIn","GLOBAL",7) RestParty()~EXIT
+END
+
+IF~~THEN BEGIN  SanElmInf11
+SAY @1085
+IF ~~THEN REPLY @1086GOTO SanElmInf12
+IF~~THEN REPLY @1087GOTO SanElmInf12
+IF~~THEN REPLY@1088DO~IncrementGlobal("Sanpoints","GLOBAL",-1)~GOTO SanElmInf12b
+END
+
+IF~~THEN BEGIN  SanElmInf12b
+SAY@1089
+=@1090
+IF~~THEN REPLY @1091GOTO SanElmInf13
+IF~~THEN REPLY @1092GOTO SanElmInf14
+END
+
+IF~~THEN BEGIN  SanElmInf12
+SAY @1093
+IF~~THEN REPLY @1091GOTO SanElmInf13
+IF~~THEN REPLY @1092GOTO SanElmInf14
+END
+
+IF~~THEN BEGIN  SanElmInf13
+SAY @1094
+IF ~~THEN REPLY@1095GOTO SanElmInf14
+END
+
+IF~~THEN BEGIN  SanElmInf14
+SAY @1096
+IF~~THEN REPLY@1097GOTO SanElmInf15
+END
+
+IF~~THEN BEGIN  SanElmInf15
+SAY @1098
+IF~~THEN REPLY @1099DO ~SetGlobal("SanElmInf1","LOCALS",1)~GOTO SanElmInf16
+END
+
+IF~~THEN BEGIN  SanElmInf16
+SAY @1100
+IF~~THEN REPLY @1101EXIT
+IF~~THEN REPLY @1102EXIT
+END
+
+IF~~THEN BEGIN SanSharCon1
+SAY @1103
+IF~~THEN REPLY @1104GOTO SanSharCon2
+END
+
+IF~~THEN BEGIN SanSharCon2
+SAY @1105
+IF~~THEN REPLY @1106GOTO SanSharCon3
+END
+
+IF~~THEN BEGIN SanSharCon3
+SAY @1107
+IF~~THEN REPLY @1108GOTO SanSharCon4
+IF~~THEN REPLY @1109GOTO SanSharCon4
+END
+
+IF~~THEN BEGIN SanSharCon4
+SAY @1110
+IF~~THEN REPLY @1111GOTO SanSharCon5
+IF~~THEN REPLY @1112GOTO SanSharCon5
+IF~~THEN REPLY @1113GOTO SanSharCon5
+END
+
+IF~~THEN BEGIN SanSharCon5
+SAY @1114
+IF ~~THEN DO ~SetGlobal("SanSharCon","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN Candlevisit
+SAY @1115
+= @1116
+= @1117
+= @1118
+IF ~~THEN REPLY @1119GOTO Shard1
+END
+
+IF ~~THEN BEGIN Shard1
+SAY @1120
+= @1121
+IF ~~THEN REPLY @1122GOTO Shard2
+END
+
+IF ~~THEN BEGIN Shard2
+SAY @1123
+= @1124
+= @1125
+= @1126
+= @1127
+IF ~~THEN REPLY @1128GOTO Shard3
+END
+
+IF ~~THEN BEGIN Shard3
+SAY @1129
+IF ~~THEN REPLY @1130GOTO Shard4
+IF ~~THEN REPLY @1131GOTO Shard4
+END
+
+IF ~~THEN BEGIN Shard4
+SAY @1132
+IF ~~THEN REPLY @1133DO ~SetGlobal("SanPidPack","GLOBAL",9) ~EXIT
+IF ~~THEN REPLY @1134DO ~SetGlobal("SanPidPack","GLOBAL",9) ~EXIT
+IF ~~THEN REPLY @1135DO ~SetGlobal("SanPidPack","GLOBAL",9) ~EXIT
+END
+
+// PIDs for Romance early
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",9) ~THEN BEGIN SanPCInit9
+SAY @1136
+IF ~Global("Santlove","GLOBAL",4) Global("SanFirNigh","LOCALS",0) ~THEN REPLY @1137DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanFirstN1
+IF~~THEN REPLY @1138EXIT
+IF~AreaType(FOREST) Global("Pid9Ankl","LOCALS",0)~THEN REPLY @1139DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO Pid9Ankl
+IF ~GlobalGT("Mothdream1","GLOBAL",6) Global("SammomQ","LOCALS",0) AreaType(OUTDOOR)~THEN REPLY @1140DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SammomQ1
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArF
+IF~Global("SanPCGay","LOCALS",0)~THEN REPLY@1141DO~SetGlobal("SanPCGay","LOCALS",1)~GOTO SanGay
+IF~Global("SantalosDec","GLOBAL",10)~THEN REPLY@1057GOTO Talosvisit4
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) !AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArNF
+IF~Global("BHHandSearch","GLOBAL",0) PartyHasItem("BHGHandn") PartyHasItem("BHGHand") ~THEN REPLY@931GOTO BHGHand
+IF~GlobalGT("Santiax","LOCALS",3)Global("SanTiaHealQ","LOCALS",0)~THEN REPLY@1067GOTO SanTiaHel1
+IF~Global("Drizztfight","GLOBAL",1) !InParty("Branwen") GlobalLT("SanDrizzt","GLOBAL",3) Global("SanFiSkills","LOCALS",0)~THEN REPLY @935GOTO SanKnoDrizPC1
+IF ~GlobalGT("Santiax","LOCALS",3) Global("SantiaxPC","LOCALS",0)~THEN REPLY @930GOTO SanTiaxPC1
+IF~Global("ChartQuest","GLOBAL",1)GlobalGT("CalDone","GLOBAL",0)Global("SanMendas","LOCALS",0)~THEN REPLY @1142GOTO SanMendas1
+IF ~Global("rainbFav","LOCALS",0) ~THEN REPLY @1143DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO rainbFav1
+IF~~THEN REPLY@936GOTO StopRom
+IF ~GlobalGT("SanBooTlk","GLOBAL",5) Global("MinskFlow","LOCALS",0) ~THEN REPLY @1069DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO MinscFlow1
+IF~PartyHasItem("SW1H19") Global("TheVaultVamp","GLOBAL",2) !See([ENEMY]) CombatCounter(0)~THEN REPLY@1066GOTO SanvaultSum
+IF~Global("SanVsTalos","GLOBAL",1) Global("Talostlk","LOCALS",0)~THEN REPLY @942GOTO SanTalosF1
+IF~Global("SanXanPC","GLOBAL",2)~THEN REPLY@1144DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanXanPC13
+IF ~GlobalGT("Mothdream1","GLOBAL",6) Global("SammomQ","LOCALS",1)~THEN REPLY @1145DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SammomQ6
+IF ~GlobalGT("SanWDTempleRha","GLOBAL",0) GlobalGT("SanWDTempleHint","GLOBAL",1) Global("SanWDRespect","LOCALS",0)~THEN REPLY @1146GOTO SanWDRespct1
+IF ~Global("SanWDRespect","LOCALS",1)~THEN REPLY @1147GOTO SanWDRespct5
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",1) Global("SanCorMale","LOCALS",0)~THEN REPLY @937GOTO SanCorMal1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",2) Global("SanCorFem","LOCALS",0)~THEN REPLY @937GOTO SanCorFem1
+IF ~Global("SanBreBa","GLOBAL",2) ~THEN REPLY @938DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBreCon1
+IF~Global("SanEdLoveBoy","LOCALS",2)~THEN REPLY @1148DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanEdLoveBoy20
+IF ~Global("Godtalk","LOCALS",0) !AreaType(DUNGEON)~THEN REPLY @1071DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanGodtalk1
+IF ~Global("SanRomPath","GLOBAL",1) AreaType(OUTDOOR) Global("ShirtM","LOCALS",0)~THEN REPLY @1149DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO ShirtM
+IF ~Global("SanWoodSt","LOCALS",2) AreaType(DUNGEON)~THEN REPLY @939GOTO SanMkStake5
+IF ~Global("SanRomPath","GLOBAL",2)AreaType(OUTDOOR) TimeOfDay(DAY) Global("ShirtF","LOCALS",0)~THEN REPLY @1149DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO ShirtF
+IF ~Global("FavSpell","LOCALS",0)~THEN REPLY @1150DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO FavSpell1
+IF ~GlobalGT("Cowscroll","GLOBAL",9) Global("EdCursGon","LOCALS",0) ~THEN REPLY @940DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO EdCursGon1
+IF ~GlobalGT("SanSharInt","GLOBAL",11) Global("SanSharCon","LOCALS",0) ~THEN REPLY @1068DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanSharCon1
+IF~~THEN REPLY @1151EXIT
+IF~AreaType(OUTDOOR) Global("Sanhairdo","LOCALS",0) ~THEN REPLY@1152DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO Sanhairdo1
+IF ~PartyHasItem("SanParc") Global("SanParcPid","LOCALS",0) ~THEN REPLY@1153DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanParcPid
+IF ~Global("SaOgmaIn","GLOBAL",6) AreaCheck("CVWOHA") ~ THEN REPLY @1065DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanloveHut1
+IF~GlobalGT("SanNarQ","GLOBAL",6) !AreaType(OUTDOOR) Global("SanAdveFa","LOCALS",0) !AreaType(DUNGEON) ~THEN REPLY @1154DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanAdvenE1
+IF~GlobalGT("RoadFound","GLOBAL",1) AreaCheck("bg2300") PartyHasItem("SanMap") ~THEN REPLY @932DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO WDTravl1
+IF ~Global("SanNarQ","GLOBAL",7) !Global("SanWDHi","GLOBAL",2) Global("SanVisWD","LOCALS",0)~THEN REPLY@933DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanVisWD
+IF ~Global("SanNarQ","GLOBAL",7) Global("SanWDHi","GLOBAL",2) Global("SanVisWDFA","LOCALS",0)~THEN REPLY@934DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanVisWDFA
+IF ~Global("SanOrDiId","GLOBAL",3) ~THEN REPLY @928DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO UlDarT
+IF~Global("WDIntrotalk","LOCALS",2)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro3
+IF~Global("WDIntrotalk","LOCALS",3)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro2
+IF ~OR(2) Global("TORKIONNEEDYOU","GLOBAL",1) Global("NTTorkionNeedYou","Global",1) !PartyHasItem("Misc48") Global("SanTorq","LOCALS",0) ~THEN REPLY @1064DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanTorq1
+IF ~Global("SanBranDec","GLOBAL",5)~THEN REPLY @1155DO~IncrementGlobal("Sanpoints","GLOBAL",4)~GOTO BranLeft1
+IF ~Global("BHQuestaccept","GLOBAL",3) Global("SanAskBH1","LOCALS",0) ~THEN REPLY @941DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanAskBH11
+IF ~Global("SanPCGavInt","GLOBAL",1) Global("SanPCGavT","LOCALS",0) ~THEN REPLY @1156DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanPCGavT1
+IF ~Global("PCKnowsElmDaughter","GLOBAL",1) Global("SanElmInf1","LOCALS",0) GlobalGT("Chapter","GLOBAL",2) ~THEN REPLY @1070DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanElmInf11
+IF ~GlobalLT("PidLock","LOCALS",2) ~THEN REPLY @1157DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO Pidlock2
+IF~Global("SanResurAva","GLOBAL",4)~THEN REPLY@911DO~SetGlobal("SanResurAva","GLOBAL",0)~EXIT
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF~~THEN BEGIN SanGay
+SAY@1158
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN SanMendas1
+SAY@1159
+IF ~~THEN REPLY @1160DO~SetGlobal("SanMendas","LOCALS",1)~GOTO SanMendas2
+END
+
+IF~~THEN BEGIN SanMendas2
+SAY@1161
+=@1162
+IF ~~THEN REPLY @1163GOTO SanMendas3
+END
+
+IF~~THEN BEGIN SanMendas3
+SAY@1164
+IF ~~THEN REPLY @1165GOTO SanMendas4
+END
+
+IF~~THEN BEGIN SanMendas4
+SAY@1166
+IF~~THEN REPLY@1167EXIT
+IF~~THEN REPLY@1168EXIT
+IF~~THEN REPLY@1169EXIT
+END
+
+
+IF ~~THEN BEGIN  rainbFav1
+SAY @1170
+IF ~~THEN REPLY @1171 GOTO rainbFav2
+IF ~~THEN REPLY @1172GOTO rainbFav2
+END
+
+IF ~~THEN BEGIN  rainbFav2
+SAY @1173
+IF ~~THEN REPLY @1174GOTO rainbFav3
+IF ~~THEN REPLY @1175GOTO rainbFav3
+END
+
+IF ~~THEN BEGIN  rainbFav3
+SAY @1176
+IF ~~THEN REPLY @1177GOTO rainbFav4
+END
+
+IF ~~THEN BEGIN  rainbFav4
+SAY @1178
+=@1179
+IF ~~THEN REPLY @1180DO ~SetGlobal("rainbFav","LOCALS",1)~EXIT
+IF ~~THEN REPLY @1181DO ~SetGlobal("rainbFav","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN SanMkStake5
+SAY@1182
+IF~~THEN DO~
+ForceSpell(Myself,CLERIC_SPIRITUAL_HAMMER)
+GiveItemCreate("misc6w",Player1,2,0,0)
+SetGlobal("SanWoodSt","LOCALS",3)
+RealSetGlobalTimer("SanWoodStRep","LOCALS",600)~EXIT
+END
+
+IF ~~THEN BEGIN SanEdLoveBoy20
+SAY @1183
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @1184GOTO SanEdLoveBoy21
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @1184GOTO SanEdLoveBoy22
+END
+
+IF ~~THEN BEGIN SanEdLoveBoy21
+SAY @1185
+IF ~~THEN REPLY @1186DO ~SetGlobal("SanEdLoveBoy","LOCALS",3)~GOTO SanEdLoveBoy23
+END
+
+IF ~~THEN BEGIN SanEdLoveBoy22
+SAY @1187
+IF ~~THEN REPLY @1186DO ~SetGlobal("SanEdLoveBoy","LOCALS",3)~GOTO SanEdLoveBoy24
+END
+
+IF ~~THEN BEGIN SanEdLoveBoy23
+SAY @1188
+IF~~THEN REPLY @1189EXIT
+IF~~THEN REPLY @1190EXIT
+END
+
+IF ~~THEN BEGIN SanEdLoveBoy24
+SAY @1191
+IF~~THEN REPLY @1192EXIT
+IF~~THEN REPLY @1190EXIT
+END
+
+IF ~~THEN BEGIN Sanhairdo1
+SAY @1193
+IF~~THEN REPLY @1194GOTO Sanhairdo2
+IF~~THEN REPLY@1195GOTO Sanhairdo2
+END
+
+IF~~THEN BEGIN Sanhairdo2
+SAY @1196
+IF~~THEN REPLY @1197GOTO Sanhairdo3
+IF~~THEN REPLY @1198GOTO Sanhairdo3
+IF~~THEN REPLY @1199GOTO Sanhairdo3
+IF~~THEN REPLY @1200GOTO Sanhairdo3
+END
+
+IF~~THEN BEGIN Sanhairdo3
+SAY @1201
+IF~~THEN REPLY @1202DO ~SetGlobal("Sanhairdo","LOCALS",1)~EXIT
+IF~Global("Sanrompath","GLOBAL",1)~THEN REPLY @1203DO ~SetGlobal("Sanhairdo","LOCALS",1)~EXIT
+IF~Global("Sanrompath","GLOBAL",2)~THEN REPLY @1204DO ~SetGlobal("Sanhairdo","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN Pidlock2
+SAY @1205
+IF~Global("SanRomPath","GLOBAL",1)~THEN REPLY @1206 GOTO Pidlock3M
+IF~Global("SanRomPath","GLOBAL",2)~THEN REPLY @1206GOTO Pidlock3F
+IF ~~THEN REPLY @1207GOTO Pidlock3
+END
+
+IF~~THEN BEGIN  Pidlock3M
+SAY@1208
+IF~~THEN REPLY @1209DO~IncrementGlobal("PidLock","LOCALS",1) CreateVisualEffectObject("SPFLESHS",Player1)~EXIT
+END
+
+IF~~THEN BEGIN  Pidlock3F
+SAY@1208
+IF~~THEN REPLY @1210DO~IncrementGlobal("PidLock","LOCALS",1) CreateVisualEffectObject("SPFLESHS",Player1)~EXIT
+END
+
+
+IF~~THEN BEGIN  Pidlock3
+SAY @1211
+IF~~THEN REPLY @1212DO~IncrementGlobal("PidLock","LOCALS",1)~EXIT
+IF~~THEN REPLY @1213DO~IncrementGlobal("PidLock","LOCALS",1)~EXIT
+END
+
+IF~~THEN BEGIN  SanPCGavT1
+SAY @1214
+IF ~~THEN REPLY @1215GOTO SanPCGavT2
+IF ~~THEN REPLY @1216GOTO SanPCGavT2
+END
+
+IF~~THEN BEGIN  SanPCGavT2
+SAY @1217
+= @1218
+IF ~~THEN REPLY @1219DO ~SetGlobal("SanPCGavT","LOCALS",1) ~GOTO SanPCGavT3
+END
+
+IF~~THEN BEGIN  SanPCGavT3
+SAY @1220
+IF~~THEN REPLY @1221GOTO SanPCGavT4
+END
+
+IF~~THEN BEGIN  SanPCGavT4
+SAY @1222
+IF~~THEN REPLY @1223 GOTO SanPCGavT5
+IF~~THEN REPLY @1224GOTO SanPCGavT5
+END
+
+IF~~THEN BEGIN  SanPCGavT5
+SAY @1225
+IF~~THEN REPLY @1226EXIT
+IF~~THEN REPLY @1227GOTO SanPCGavT7
+END
+
+IF~~THEN BEGIN  SanPCGavT7
+ SAY @1228
+IF~~THEN EXIT
+END
+
+IF ~~THEN BEGIN SanFirstN1
+SAY @329
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @330DO ~SetGlobal("Santlove","GLOBAL",5) SetGlobal("SanFirNigh","LOCALS",1)~GOTO SanFirstN2m
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @330DO ~SetGlobal("Santlove","GLOBAL",5) SetGlobal("SanFirNigh","LOCALS",1)~GOTO SanFirstN2f
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @331DO ~SetGlobal("Santlove","GLOBAL",5) SetGlobal("SanFirNigh","LOCALS",1)~GOTO SanFirstN2m
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @331DO ~SetGlobal("Santlove","GLOBAL",5) SetGlobal("SanFirNigh","LOCALS",1)~GOTO SanFirstN2f
+END
+
+IF ~~THEN BEGIN SanFirstN2m
+SAY @1229
+IF~~THEN REPLY@1230GOTO SanFirstN3m
+IF~~THEN REPLY@1231GOTO SanFirstN3h
+IF~~THEN REPLY@1232GOTO SanFirstN3q
+IF~~THEN REPLY@1233GOTO SanFirstN3q
+END
+
+IF~~THEN BEGIN  SanFirstN3m
+SAY @1234
+IF~~THEN REPLY @1235 GOTO SanFirstN3q
+IF~~THEN REPLY @1236GOTO SanFirstN3q
+END
+
+IF~~THEN BEGIN  SanFirstN3h
+SAY @1237
+=@1238
+IF~~THEN REPLY @1239 GOTO SanFirstN3q
+IF~~THEN REPLY @1240GOTO SanFirstN3m
+END
+
+IF~~THEN BEGIN  SanFirstN3q
+SAY @1241
+IF~~THEN REPLY @1242GOTO SanFirtsBed
+IF~~THEN REPLY @1243
+GOTO SanFirtsBed
+END
+
+IF ~~THEN BEGIN SanFirstN2f 
+SAY @1229
+IF~~THEN REPLY@1244GOTO  SanFirstN3f
+IF~~THEN REPLY@1245GOTO SanFirstN3f
+IF~~THEN REPLY@1233GOTO SanFirstN3f
+END
+
+
+IF ~~THEN BEGIN SanFirstN3f
+SAY@1238
+= @1246
+IF~~THEN REPLY @1247GOTO SanFirstN4f
+IF~~THEN REPLY @1248GOTO  SanFirstN4f
+END
+
+IF~~THEN BEGIN  SanFirstN4f
+SAY @1249
+=@1250
+IF~~THEN REPLY @1235 GOTO SanFirtsBed
+IF~~THEN REPLY @1236GOTO SanFirtsBed
+END
+
+IF~~THEN BEGIN SanFirtsBed
+SAY @1251
+= @1252
+= @1253
+IF~~THEN DO ~StartMovie("Restinn")~EXIT
+END
+
+
+IF ~~THEN BEGIN SanAdvenE1
+SAY @1254
+IF ~~THEN REPLY @1255GOTO SanAdvenE2
+END
+
+IF ~~THEN BEGIN SanAdvenE2
+SAY @1256
+= @1257
+IF ~~THEN REPLY @1258GOTO SanAdvenE3
+IF ~~THEN REPLY @1259GOTO SanAdvenE3
+END  
+
+IF ~~THEN BEGIN SanAdvenE3
+SAY @1260
+IF ~~THEN REPLY @1261GOTO SanAdvenE4
+IF ~~THEN REPLY @1262GOTO SanAdvenE4
+END
+
+IF ~~THEN BEGIN SanAdvenE4
+SAY @1263
+= @1264
+IF ~~THEN REPLY @1265DO ~SetGlobal("SanAdveFa","LOCALS",1)~EXIT
+IF ~~THEN REPLY @1266DO ~SetGlobal("SanAdveFa","LOCALS",1)~EXIT
+END
+
+IF~~THEN BEGIN SanVisWDFA
+SAY @1267
+IF ~~THEN REPLY @933DO ~SetGlobal("SanVisWDFA","LOCALS",1)~GOTO SanVisWD
+END
+
+
+IF~~THEN BEGIN SanVisWD
+SAY @1268
+= @1269
+IF ~~THEN REPLY @1270DO ~SetGlobal("SanVisWD","LOCALS",1)~GOTO SanVisWD2
+IF ~~THEN REPLY @1271DO ~SetGlobal("SanVisWD","LOCALS",1) ~GOTO SanVisWD2
+IF ~~THEN REPLY @1272DO ~SetGlobal("SanVisWD","LOCALS",1) IncrementGlobal("Sanpoints","GLOBAL",-1)~GOTO SanVisWD2
+END
+
+IF~~THEN BEGIN SanVisWD2
+SAY @1273
+IF ~~THEN REPLY @1274GOTO SanVisWD3
+IF ~~THEN REPLY @1275GOTO SanVisWD3
+END
+
+IF~~THEN BEGIN  SanVisWD3
+SAY @1276
+IF ~~THEN REPLY @1277 GOTO SanVisWD4
+IF ~~THEN REPLY @1278GOTO SanVisWD4
+IF ~~THEN REPLY @1279GOTO SanVisWD4
+END
+
+IF~~THEN BEGIN SanVisWD4
+SAY @1280
+IF ~!Global("SanWDHi","GLOBAL",2)~THEN REPLY @1281GOTO SanVisWD5
+IF ~Global("SanWDHi","GLOBAL",2)~THEN REPLY @1281GOTO SanVisWD6
+END
+
+IF~~THEN BEGIN SanVisWD5
+SAY @1282
+IF ~~THEN REPLY @1283DO ~AddJournalEntry(@60132,QUEST) SetGlobal("SanMapFAI","GLOBAL",1) ~EXIT
+END
+
+IF~~THEN BEGIN SanVisWD6
+SAY @1284
+IF ~~THEN REPLY @1285DO ~AddJournalEntry(@60132,QUEST) SetGlobal("SanMapFAI","GLOBAL",1) ~EXIT
+IF ~~THEN REPLY @1286DO ~AddJournalEntry(@60132,QUEST) SetGlobal("SanMapFAI","GLOBAL",1) ~EXIT
+END
+
+IF ~~THEN BEGIN Pid9Ankl
+SAY @1287
+IF~~THEN REPLY @1288GOTO Pid9AnklS
+IF~~THEN REPLY @1289GOTO Pid9AnkL
+IF~~THEN REPLY @1290GOTO Pid9AnklS
+END
+
+IF ~~THEN BEGIN Pid9AnklS
+SAY @1291
+IF~~THEN REPLY @1292GOTO Pid9AnkL
+IF~~THEN REPLY @1293GOTO Pid9AnkE
+END
+
+IF ~~THEN BEGIN Pid9AnkE
+SAY @1294IF ~~THEN DO ~SetGlobal("Pid9Ankl","LOCALS",1) ~EXIT
+END
+
+IF ~~THEN BEGIN Pid9AnkL
+SAY @1295
+IF ~~THEN REPLY @1296GOTO Pid9AnkL2
+END
+
+IF ~~THEN BEGIN Pid9AnkL2
+SAY @1297
+= @1298
+IF ~~THEN DO ~SetGlobal("Pid9AnklCmt","LOCALS",1)~EXTERN CVSANDRJ Pid9AnklComnts
+END
+
+IF ~~THEN BEGIN SammomQ1
+SAY @1299
+IF ~~THEN REPLY @1300GOTO SammomQ2
+IF ~~THEN REPLY @1301GOTO SammomQ2
+END
+
+IF ~~THEN BEGIN SammomQ2
+SAY @1302
+IF~~THEN REPLY @1303GOTO SammomQ3
+IF~~THEN REPLY @1304GOTO SammomQ3
+END
+
+IF ~~THEN BEGIN SammomQ3
+SAY @1305
+= @1306
+IF~~THEN REPLY @1307GOTO SammomQ4
+IF~~THEN REPLY @1308GOTO SammomQ4
+END
+
+IF ~~THEN BEGIN SammomQ4
+SAY @1309
+IF~~THEN REPLY @1310DO ~SetGlobal("SammomQ","LOCALS",1) StartRainNow() TakePartyItem("Sanport") DestroyItem("Sanport")~EXIT
+END
+
+IF ~~THEN BEGIN SammomQ6
+SAY @1311
+= @1312
+IF~~THEN REPLY @1313GOTO SammomQ7
+IF~~THEN REPLY @1314DO~IncrementGlobal("Sanpoints","GLOBAL",-1)~GOTO SammomQ7
+END
+
+IF ~~THEN BEGIN SammomQ7
+SAY @1315
+=@1316
+IF~~THEN REPLY @1317GOTO SammomQ8
+END
+
+IF ~~THEN BEGIN SammomQ8
+SAY @1318
+IF ~~THEN DO ~SetGlobal("SammomQ","LOCALS",2) ~EXIT
+END
+
+IF ~~THEN BEGIN ShirtM
+SAY @1319
+IF~~THEN REPLY @1320GOTO ShirtM2
+IF~~THEN REPLY @1321GOTO ShirtM3
+END
+
+IF ~~THEN BEGIN ShirtM2
+SAY @1322
+IF~~THEN REPLY @1323DO ~SetGlobal("ShirtM","LOCALS",1)~EXIT
+IF~~THEN REPLY @1324DO ~SetGlobal("ShirtM","LOCALS",1)~EXIT 
+IF~~THEN REPLY @1325EXIT
+END
+
+IF ~~THEN BEGIN ShirtM3
+SAY @1326
+IF~~THEN REPLY @1327DO ~SetGlobal("ShirtM","LOCALS",1)~EXIT
+IF~~THEN REPLY @1328DO ~SetGlobal("ShirtM","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN ShirtF
+SAY @1329
+IF~~THEN REPLY @1330GOTO  ShirtF2
+IF~~THEN REPLY @1331
+GOTO  ShirtF2
+IF~~THEN REPLY @1328DO ~SetGlobal("ShirtF","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN ShirtF2
+SAY @1332
+= @1333
+IF~~THEN REPLY @1334GOTO ShirtF3
+IF~~THEN REPLY @1335GOTO ShirtF3
+END
+
+IF ~~THEN BEGIN ShirtF3
+SAY @1336
+=@1337
+IF~~THEN REPLY @1338DO ~SetGlobal("ShirtF","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN FavSpell1
+SAY @1339
+IF~~THEN REPLY @1340GOTO FavSpell2
+IF~~THEN REPLY @1341GOTO FavSpell2
+END
+
+IF ~~THEN BEGIN FavSpell2
+SAY @1342
+IF ~~THEN DO ~SetGlobal("FavSpell","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN SanParcPid
+SAY @1343
+IF ~~THEN REPLY @1344GOTO SanParcPid2
+IF ~~THEN REPLY @1345GOTO  SanParcPid2
+END
+
+IF ~~THEN BEGIN SanParcPid2
+SAY @1346
+IF ~~THEN REPLY @1347GOTO SanParcPid3
+IF ~~THEN REPLY @1348GOTO SanParcPid3
+END
+
+IF ~~THEN BEGIN SanParcPid3
+SAY@1349
+=@1350
+IF ~~THEN REPLY @1351GOTO SanParcPid4
+END
+
+IF ~~THEN BEGIN SanParcPid4
+SAY @1352
+IF ~~THEN REPLY @1353GOTO SanParcPid5
+END
+  
+IF ~~THEN BEGIN SanParcPid5
+SAY @1354
+IF~~THEN REPLY @1355DO ~SetGlobal("SanParcPid","LOCALS",1)~GOTO SanParcPid6
+IF~~THEN REPLY @1356DO ~SetGlobal("SanParcPid","LOCALS",1)~GOTO SanParcPid6
+END
+  
+IF ~~THEN BEGIN SanParcPid6
+SAY @1357
+IF~~THEN REPLY @1358EXIT
+END
+
+IF ~Global("SaOgmaIn","GLOBAL",6) ~THEN BEGIN SanLoveHutself
+SAY @1359
+IF ~~THEN REPLY @1065GOTO SanloveHut1
+END
+
+IF~Global("Sanbehbast","LOCALS",1)~THEN BEGIN Sanbast1
+SAY@1360
+IF ~~THEN REPLY @1361+ Sanbast2
+IF ~~THEN REPLY @1362+ Sanbast2
+END
+
+IF~~THEN BEGIN Sanbast2
+SAY@1363
+++@1364+ Sanbast3
+++@1365+ Sanbast3
+END
+
+IF~~THEN BEGIN Sanbast3
+SAY@1366
+IF~~THEN DO~SetGlobal("Sanbehbast","LOCALS",2)RealSetGlobalTimer("SanFlirTi","GLOBAL",3000)~EXIT
+END
+
+IF~Global("Sanbehbast","LOCALS",3)~THEN BEGIN Sanbast4
+SAY@1367
+IF ~~THEN REPLY @1368GOTO  Sanbast5
+IF ~~THEN REPLY @1369GOTO  Sanbast5
+END
+
+IF~~THEN BEGIN Sanbast5
+SAY@1370
+=@1371
+IF ~~THEN REPLY @1372DO~SetGlobal("Sanbehbast","LOCALS",4)~GOTO  Sanbast6
+END
+
+IF~~THEN BEGIN Sanbast6
+SAY@1373
+=@1374
+IF~~THEN DO~SetGlobal("Sandrahjoined","Global",83)LeaveParty() EscapeAreaDestroy(90)~EXIT
+END
+
+// PID Package 10
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",10) ~THEN BEGIN SanPCInit10
+SAY @1375
+IF ~Global("BHQuestaccept","GLOBAL",3) Global("SanAskBH1","LOCALS",0) ~THEN REPLY @941DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanAskBH11
+IF~Global("Drizztfight","GLOBAL",1) !InParty("Branwen") GlobalLT("SanDrizzt","GLOBAL",3) Global("SanFiSkills","LOCALS",0)~THEN REPLY @935GOTO SanKnoDrizPC1
+IF ~GlobalGT("SanWDTemplWi","GLOBAL",8) Global("SanTmplHealL","LOCALS",0) ~THEN REPLY @1376GOTO SanTmplHeal1
+IF ~GlobalGT("SanSharInt","GLOBAL",11) Global("SanSharCon","LOCALS",0) ~THEN REPLY @1068DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanSharCon1
+IF~GlobalGT("Santiax","LOCALS",3)Global("SanTiaHealQ","LOCALS",0)~THEN REPLY@1067GOTO SanTiaHel1
+IF ~GlobalGT("Santiax","LOCALS",3) Global("SantiaxPC","LOCALS",0)~THEN REPLY @930GOTO SanTiaxPC1
+IF~Global("CVGodag","GLOBAL",7)~THEN REPLY@1377DO~SetGlobal("CVGodag","GLOBAL",8)~GOTO Godag11
+IF~GlobalGT("RoadFound","GLOBAL",1) AreaCheck("bg2300") PartyHasItem("SanMap") ~THEN REPLY @932DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO WDTravl1
+IF ~Global("SanNarQ","GLOBAL",7) !Global("SanWDHi","GLOBAL",2) Global("SanVisWD","LOCALS",0)~THEN REPLY@933DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanVisWD
+IF ~Global("SanNarQ","GLOBAL",7) Global("SanWDHi","GLOBAL",2) Global("SanVisWDFA","LOCALS",0)~THEN REPLY@934DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanVisWDFA
+IF~Global("SantalosDec","GLOBAL",10)~THEN REPLY@1057GOTO Talosvisit4
+IF~~THEN REPLY @1138EXIT
+IF ~Global("Gorlet","LOCALS",0) GlobalGT("Formedcloth","GLOBAL",7)~THEN REPLY @1378DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO GorLet1
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArF
+IF~Global("BHHandSearch","GLOBAL",0) PartyHasItem("BHGHandn") PartyHasItem("BHGHand") ~THEN REPLY@931GOTO BHGHand
+IF~Global("SanVsTalos","GLOBAL",1) Global("Talostlk","LOCALS",0)~THEN REPLY @942GOTO SanTalosF1
+IF~~THEN REPLY@936GOTO StopRom
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) !AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArNF
+IF~Global("SanRompa","Global",0)~THEN REPLY @1379GOTO RomClari1
+IF ~Global("SanOnBalduIsl","GLOBAL",1)~THEN REPLY @1380DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO WWIsl1
+IF~PartyHasItem("SW1H19") Global("TheVaultVamp","GLOBAL",2) !See([ENEMY]) CombatCounter(0)~THEN REPLY@1066GOTO SanvaultSum
+IF ~GlobalGT("SanWDTempleRha","GLOBAL",0) GlobalGT("SanWDTempleHint","GLOBAL",1) Global("SanWDRespect","LOCALS",0)~THEN REPLY @1146GOTO SanWDRespct1
+IF ~Global("SanWDRespect","LOCALS",1)~THEN REPLY @1147GOTO SanWDRespct5
+IF ~Global("SanWoodSt","LOCALS",2) AreaType(DUNGEON)~THEN REPLY @939GOTO SanMkStake5
+IF~AreaType(FOREST) Global("Pid9Ankl","LOCALS",0)~THEN REPLY @1139DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO Pid9Ankl
+IF ~GlobalGT("Mothdream1","GLOBAL",6) Global("SammomQ","LOCALS",0) AreaType(OUTDOOR)~THEN REPLY @1140DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SammomQ1
+IF ~GlobalLT("PidLock","LOCALS",2) ~THEN REPLY @1157DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO Pidlock2
+IF ~GlobalGT("Cowscroll","GLOBAL",9) Global("EdCursGon","LOCALS",0) ~THEN REPLY @940DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO EdCursGon1
+IF~Global("WDIntrotalk","LOCALS",2)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro3
+IF~Global("WDIntrotalk","LOCALS",3)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro2
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",1) Global("SanCorMale","LOCALS",0)~THEN REPLY @937GOTO SanCorMal1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",2) Global("SanCorFem","LOCALS",0)~THEN REPLY @937GOTO SanCorFem1
+IF~Global("SanXanPC","GLOBAL",2)InParty("XAN") ~THEN REPLY@1144DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanXanPC13
+IF ~Global("SanBreBa","GLOBAL",2) ~THEN REPLY @938DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBreCon1
+IF ~Global("SanBranDec","GLOBAL",5)~THEN REPLY @1155DO~IncrementGlobal("Sanpoints","GLOBAL",4)~GOTO BranLeft1
+IF ~Global("X#XALOVETALK","GLOBAL",39) InParty("XAN") Global("Xanrever","LOCALS",0) ~THEN REPLY @1381DO~IncrementGlobal("Sanpoints","GLOBAL",4)~GOTO Xanrevery1
+IF~Global("ChartQuest","GLOBAL",1)GlobalGT("CalDone","GLOBAL",0)Global("SanMendas","LOCALS",0)~THEN REPLY @1142GOTO SanMendas1
+IF ~GlobalGT("Mothdream1","GLOBAL",6) Global("SammomQ","LOCALS",1)~THEN REPLY @1145DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SammomQ6
+IF ~Global("SanBhaalRev","LOCALS",0) Global("SammomQ","LOCALS",2)~THEN REPLY @1382DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanBhaalRev1
+IF ~Global("SanRomPath","GLOBAL",1) AreaType(OUTDOOR) Global("ShirtM","LOCALS",0)~THEN REPLY @1149DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO ShirtM
+IF ~GlobalGT("SanBooTlk","GLOBAL",5) Global("MinskFlow","LOCALS",0) ~THEN REPLY @1069DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO MinscFlow1
+IF ~Global("Godtalk","LOCALS",0) !AreaType(DUNGEON)~THEN REPLY @1071DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanGodtalk1
+IF~Global("SanEdLoveBoy","LOCALS",2)~THEN REPLY @1148DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanEdLoveBoy20
+IF ~Global("PCKnowsElmDaughter","GLOBAL",1) Global("SanElmInf1","LOCALS",0) GlobalGT("Chapter","GLOBAL",2) ~THEN REPLY @1070DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanElmInf11
+IF ~Global("SanRomPath","GLOBAL",2)AreaType(OUTDOOR) TimeOfDay(DAY) Global("ShirtF","LOCALS",0)~THEN REPLY @1149DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO ShirtF
+IF ~Global("FavSpell","LOCALS",0)~THEN REPLY @1150DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO FavSpell1
+IF ~Global("SaOgmaIn","GLOBAL",6) AreaCheck("CVWOHA") ~ THEN REPLY @1065DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanloveHut1
+IF~~THEN REPLY @1151EXIT
+IF ~PartyHasItem("SanParc") Global("SanParcPid","LOCALS",0) ~THEN REPLY@1153DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanParcPid
+IF~GlobalGT("SanNarQ","GLOBAL",6) !AreaType(OUTDOOR) Global("SanAdveFa","LOCALS",0) !AreaType(DUNGEON) ~THEN REPLY @1154DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanAdvenE1
+IF ~Global("SanOrDiId","GLOBAL",3) ~THEN REPLY @928DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO UlDarT
+IF ~OR(2) Global("TORKIONNEEDYOU","GLOBAL",1) Global("NTTorkionNeedYou","Global",1) !PartyHasItem("Misc48") Global("SanTorq","LOCALS",0) ~THEN REPLY @1064DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanTorq1
+IF ~!AreaType(DUNGEON) ~THEN REPLY @1383GOTO SanNight2Inv
+IF ~AreaType(CITY) GlobalLT("SanBuySweet1","LOCALS",2) ~THEN REPLY @1384DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanBuySweet11
+IF ~Global("SanPCGavInt","GLOBAL",1) Global("SanPCGavT","LOCALS",0) ~THEN REPLY @1156DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanPCGavT1
+IF~AreaType(OUTDOOR) Global("Sanhairdo","LOCALS",0)~THEN REPLY@1385DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO Sanhairdo1
+IF ~Global("Formedcloth","GLOBAL",9) ~THEN REPLY @1386DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO PidBhaal10
+IF ~Global("Formedcloth","GLOBAL",10)~THEN REPLY @1387GOTO PidBhaal13
+IF ~Global("XanDecide","GLOBAL",3) InParty("Xan")~THEN REPLY @1388DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO Xanchos1
+IF ~Global("rainbFav","LOCALS",0) ~THEN REPLY @1143DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO rainbFav1
+IF~Global("SanResurAva","GLOBAL",4)~THEN REPLY@911DO~SetGlobal("SanResurAva","GLOBAL",0)~EXIT
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF ~~THEN BEGIN Xanchos1
+SAY @1389
+IF ~~THEN REPLY @1390GOTO Xanchos2
+IF ~~THEN REPLY @1391GOTO Xanchos2
+END
+
+IF ~~THEN BEGIN Xanchos2
+SAY @1392
+IF~~THEN REPLY @1393GOTO Xanchos3
+END
+
+IF ~~THEN BEGIN Xanchos3
+SAY @1394
+IF ~~THEN REPLY @1395GOTO Xanchos4
+END
+
+IF ~~THEN BEGIN Xanchos4
+SAY @1396
+IF ~~THEN REPLY @1397DO ~SetGlobal("XanDecide","GLOBAL",4)~EXIT
+IF ~~THEN REPLY @1398DO ~SetGlobal("XanDecide","GLOBAL",4)~EXIT
+END
+
+IF ~~THEN BEGIN  RomClari1
+SAY@1399
+=@1400
+IF ~~THEN REPLY @1401GOTO RomClari3
+IF ~~THEN REPLY @1402GOTO RomClari2
+END
+
+IF ~~THEN BEGIN  RomClari2
+SAY@1403
+IF~~THEN EXIT
+END
+
+IF ~~THEN BEGIN  RomClari3
+SAY@1404
+IF ~~THEN REPLY @1405GOTO RomClari4
+IF ~~THEN REPLY @1406GOTO RomClari4
+END
+
+IF ~~THEN BEGIN  RomClari4
+SAY@1407
+IF ~~THEN REPLY @1408 GOTO RomClari5
+IF ~~THEN REPLY @1409GOTO RomClari6
+IF ~~THEN REPLY @1410GOTO RomClari6
+END
+
+IF ~~THEN BEGIN  RomClari5
+SAY@1411
+=@1412
+IF~~THEN DO ~SetGlobal("SanRompa","Global",1) SetGlobal("Sandrahjoined","Global",83)LeaveParty() EscapeAreaDestroy(90)~EXIT
+END
+
+IF ~~THEN BEGIN  RomClari6
+SAY@1413
+=@1412
+=@1414
+IF~~THEN DO~SetGlobal("SanRompa","Global",2) RunAwayFrom(Player1,60)~EXIT
+END
+ 
+IF ~~THEN BEGIN GorLet1
+SAY @1415
+IF ~PartyHasItem("SCRL3Z")~THEN REPLY @1416GOTO GorLet2
+IF ~!PartyHasItem("SCRL3Z")~THEN REPLY @1417GOTO GorLet3
+END
+
+IF ~~THEN BEGIN GorLet2
+SAY @1418
+IF~~THEN REPLY @1419GOTO GorLet4
+END
+
+IF ~~THEN BEGIN GorLet3
+SAY @1420
+IF~~THEN REPLY @1421GOTO GorLet4
+END
+
+IF ~~THEN BEGIN GorLet4
+SAY @1422
+IF ~~THEN REPLY @1423DO ~SetGlobal("Gorlet","LOCALS",1)~GOTO GorLet5
+IF ~~THEN REPLY @1424DO ~SetGlobal("Gorlet","LOCALS",1)~GOTO GorLet5
+END
+
+IF ~~THEN BEGIN GorLet5
+SAY @1425
+IF~~THEN REPLY @1426GOTO GorLet6
+IF~~THEN REPLY @1427GOTO GorLet6
+END
+
+IF ~~THEN BEGIN GorLet6
+SAY @1428
+IF~GlobalGT("OrcPrison","GLOBAL",9)~THEN REPLY @1429GOTO GorLet7
+IF~~THEN REPLY @1430GOTO GorLet8
+IF~~THEN REPLY @1431GOTO GorLet8
+END
+
+IF ~~THEN BEGIN GorLet7
+SAY@1432
+= @1433
+IF~~THEN REPLY@1434EXIT
+IF~~THEN REPLY @1435EXIT
+END
+
+IF ~~THEN BEGIN GorLet8
+SAY @1436
+= @1433
+IF~~THEN REPLY@1434EXIT
+IF~~THEN REPLY @1435EXIT
+END
+
+IF ~~THEN BEGIN WWIsl1
+SAY @1437
+IF~~THEN REPLY @1438GOTO WWIsl2
+IF~~THEN REPLY @1439GOTO WWIsl2
+END
+
+IF ~~THEN BEGIN WWIsl2
+SAY @1440
+IF~~THEN REPLY @1441GOTO WWIsl3
+END
+
+IF ~~THEN BEGIN WWIsl3
+SAY @1442
+IF~Global("ItemWerDag","GLOBAL",1)!PartyHasItem("dagg09")~THEN REPLY @1443EXIT
+IF~Global("ItemWerDag","GLOBAL",1)PartyHasItem("dagg09")~THEN REPLY @1444EXIT
+IF~!Global("ItemWerDag","GLOBAL",1)~THEN REPLY @1445EXIT
+END
+
+IF~~THEN BEGIN SanBhaalRev1
+SAY @1446
+=@1447
+IF ~~THEN REPLY @1448DO~SetGlobal("SanBhaalRev","LOCALS",1) ~GOTO SanBhaalRev2
+END
+
+IF~~THEN BEGIN SanBhaalRev2
+SAY @1449
+IF ~~THEN REPLY @1450GOTO SanBhaalRev3
+END
+
+IF~~THEN BEGIN SanBhaalRev3
+SAY @1451
+IF ~~THEN REPLY @1452GOTO SanBhaalRev4
+END
+
+IF~~THEN BEGIN SanBhaalRev4
+SAY @1453
+IF ~~THEN REPLY @1454GOTO SanBhaalRev5
+END
+
+IF~~THEN BEGIN SanBhaalRev5
+SAY @1455
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN  PidBhaal10
+SAY @1456
+IF ~~THEN REPLY@1457GOTO PidBhaal11
+IF ~~THEN REPLY@1458GOTO PidBhaal11
+IF ~~THEN REPLY@1459GOTO PidBhaal11
+END
+
+IF~~THEN BEGIN  PidBhaal11
+SAY @1460
+IF ~~THEN REPLY@1461GOTO PidBhaal12
+IF ~~THEN REPLY@1462GOTO PidBhaal12
+END
+
+IF~~THEN BEGIN  PidBhaal12
+SAY @1463
+IF ~~THEN REPLY @1464GOTO PidBhaal13
+IF ~~THEN REPLY @1465DO ~SetGlobal("Formedcloth","GLOBAL",10) ~EXIT
+END
+
+IF~~THEN BEGIN  PidBhaal13
+SAY @1466
+= @1467
+=@1468
+IF ~~THEN REPLY @1469DO ~SetGlobal("Formedcloth","GLOBAL",11)~GOTO PidBhaal14
+IF ~~THEN REPLY @1470DO ~SetGlobal("Formedcloth","GLOBAL",11)~GOTO PidBhaal14
+END
+
+IF~~THEN BEGIN  PidBhaal14
+SAY@1471
+IF ~~THEN REPLY @1472GOTO PidBhaal15
+IF ~~THEN REPLY @1473GOTO PidBhaal15
+END
+
+IF~~THEN BEGIN  PidBhaal15
+SAY@1474
+= @1475
+IF ~~THEN REPLY @1476GOTO  PidBhaal16
+END
+
+IF~~THEN BEGIN  PidBhaal16
+SAY@1477
+= @1478
+= @1479
+= @1480
+IF ~~THEN REPLY @1481GOTO  PidBhaal17
+IF ~~THEN REPLY @1482GOTO  PidBhaal17
+IF ~~THEN REPLY @1483GOTO  PidBhaal17
+END
+
+IF~~THEN BEGIN  PidBhaal17
+SAY@1484
+IF~~THEN REPLY @1485EXIT
+IF~~THEN REPLY @1486EXIT
+END
+
+
+IF~~THEN BEGIN SanGodtalk1
+SAY @1487
+IF~~THEN REPLY @1488 GOTO SanGodtalk2
+IF~~THEN REPLY @1489GOTO SanGodtalk2
+END
+
+IF~~THEN BEGIN SanGodtalk2
+SAY @1490
+IF~~THEN REPLY@1491GOTO SanGodtalk3
+IF~~THEN REPLY@1492GOTO SanGodtalk3
+IF~~THEN REPLY@1493GOTO SanGodtalk3
+END
+
+IF~~THEN BEGIN SanGodtalk3
+SAY @1494
+= @1495
+IF~~THEN REPLY @1496GOTO  SanGodtalk4
+IF~~THEN REPLY@1493GOTO SanGodtalk4
+END
+
+IF~~THEN BEGIN SanGodtalk4
+SAY @1497
+IF~~THEN REPLY @1498DO ~SetGlobal("Godtalk","LOCALS",1)~EXIT
+IF~~THEN REPLY @1499DO ~SetGlobal("Godtalk","LOCALS",1)~EXIT
+END
+
+IF~~THEN BEGIN SanNight2Inv
+SAY @1500
+IF ~~THEN REPLY @1501GOTO SanNight2InvGr
+IF~~THEN REPLY @1502EXIT
+END
+
+IF~~THEN BEGIN SanNight2InvGr
+SAY @1503
+IF~Global("SanRomPath","GLOBAL",1)~THEN REPLY@1504EXIT
+IF~Global("SanRomPath","GLOBAL",2)~THEN REPLY@1505EXIT
+END
+
+IF~~THEN BEGIN SanBuySweet11
+SAY @1506
+IF~~THEN REPLY @1507DO ~IncrementGlobal("SanBuySweet1","LOCALS",1)~GOTO SanBuySweet12
+IF~~THEN REPLY @1508DO ~IncrementGlobal("SanBuySweet1","LOCALS",1)~GOTO SanBuySweet13
+IF~~THEN REPLY @1509DO ~IncrementGlobal("SanBuySweet1","LOCALS",1)~GOTO SanBuySweet14
+END
+
+IF~~THEN BEGIN SanBuySweet12
+SAY @1510
+ = @1511
+IF~~THEN EXIT
+END
+ 
+IF~~THEN BEGIN SanBuySweet13
+SAY @1512
+IF ~~THEN REPLY @1513GOTO SanBuySweet15
+END
+ 
+IF~~THEN BEGIN SanBuySweet14
+SAY @1514
+IF ~~THEN REPLY@1515GOTO SanBuySweet16
+END
+
+IF~~THEN BEGIN SanBuySweet15
+SAY @1516
+IF~~THEN REPLY @1517EXIT
+END
+
+IF~~THEN BEGIN SanBuySweet16
+SAY @1518
+IF ~~THEN REPLY @1519EXIT
+END
+
+IF ~~THEN BEGIN Xanrevery1
+SAY@1520
+IF ~~THEN REPLY @1521GOTO Xanrevery2
+END
+
+IF ~~THEN BEGIN Xanrevery2
+SAY @1522
+IF ~Race(Player1,ELF) ~THEN REPLY @1523GOTO Xanrevery3
+IF ~Race(Player1,HALF_ELF) ~THEN REPLY @1523GOTO Xanrevery4
+END
+
+IF ~~THEN BEGIN Xanrevery3
+SAY @1524
+IF ~~THEN REPLY @1525GOTO Xanrevery5
+IF ~~THEN REPLY @1526GOTO Xanrevery5
+END
+
+IF ~~THEN BEGIN Xanrevery4
+SAY @1527
+IF ~~THEN REPLY @1525GOTO Xanrevery5
+IF ~~THEN REPLY @1526GOTO Xanrevery5
+END
+
+IF ~~THEN BEGIN Xanrevery5
+SAY @1528
+IF ~~THEN REPLY @1529DO~SetGlobal("Xanrever","LOCALS",1)~EXIT
+IF ~~THEN REPLY @1530DO~SetGlobal("Xanrever","LOCALS",1)~EXIT
+END
+
+// PID Package 11
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",11) ~THEN BEGIN SanPCInit11
+SAY @1531
+IF ~GlobalGT("SanWDTemplWi","GLOBAL",8) Global("SanTmplHealL","LOCALS",0) ~THEN REPLY @1376GOTO SanTmplHeal1
+IF ~GlobalGT("SanSharInt","GLOBAL",11) Global("SanSharCon","LOCALS",0) ~THEN REPLY @1068DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanSharCon1
+IF ~GlobalGT("Santiax","LOCALS",3) Global("SantiaxPC","LOCALS",0)~THEN REPLY @930GOTO SanTiaxPC1
+IF~Global("CVGodag","GLOBAL",7)~THEN REPLY@1377DO~SetGlobal("CVGodag","GLOBAL",8)~GOTO Godag11
+IF ~RandomNum(3,1)~THEN REPLY@1532GOTO LoveSnak1
+IF ~RandomNum(3,2)~THEN REPLY@1532GOTO LoveSnak2
+IF ~RandomNum(3,3)~THEN REPLY@1532GOTO LoveSnak3
+IF~~THEN REPLY @1533EXIT
+IF ~Global("Gorlet","LOCALS",0) GlobalGT("Formedcloth","GLOBAL",7)~THEN REPLY @1378DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO GorLet1
+IF~Global("Drizztfight","GLOBAL",1) !InParty("Branwen") GlobalLT("SanDrizzt","GLOBAL",3) Global("SanFiSkills","LOCALS",0)~THEN REPLY @935GOTO SanKnoDrizPC1
+IF ~GlobalGT("Sprite_is_DeadBandit","GLOBAL",25) Global("SanFiSkills","LOCALS",0) ~THEN REPLY @926DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanFiSkills
+IF~Global("ChartQuest","GLOBAL",1)GlobalGT("CalDone","GLOBAL",0)Global("SanMendas","LOCALS",0)~THEN REPLY @1142GOTO SanMendas1
+IF~GlobalGT("RoadFound","GLOBAL",1) AreaCheck("bg2300") PartyHasItem("SanMap") ~THEN REPLY @932DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO WDTravl1
+IF ~Global("SanNarQ","GLOBAL",7) !Global("SanWDHi","GLOBAL",2) Global("SanVisWD","LOCALS",0)~THEN REPLY@933DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanVisWD
+IF~~THEN REPLY@936GOTO StopRom
+IF ~Global("SanNarQ","GLOBAL",7) Global("SanWDHi","GLOBAL",2) Global("SanVisWDFA","LOCALS",0)~THEN REPLY@934DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanVisWDFA
+IF~GlobalGT("Santiax","LOCALS",3)Global("SanTiaHealQ","LOCALS",0)~THEN REPLY@1067GOTO SanTiaHel1
+IF ~GlobalGT("SanWDTempleRha","GLOBAL",0) GlobalGT("SanWDTempleHint","GLOBAL",1) Global("SanWDRespect","LOCALS",0)~THEN REPLY @1146GOTO SanWDRespct1
+IF ~Global("SanWDRespect","LOCALS",1)~THEN REPLY @1147GOTO SanWDRespct5
+IF~Global("BHHandSearch","GLOBAL",0) PartyHasItem("BHGHandn") PartyHasItem("BHGHand") ~THEN REPLY@931GOTO BHGHand
+IF~Global("SantalosDec","GLOBAL",10)~THEN REPLY@1057GOTO Talosvisit4
+IF~Global("SanVsTalos","GLOBAL",1) Global("Talostlk","LOCALS",0)~THEN REPLY @942GOTO SanTalosF1
+IF~Global("SanEdLoveBoy","LOCALS",2)~THEN REPLY @1148DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanEdLoveBoy20
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArF
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) !AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArNF
+IF ~GlobalGT("Mothdream1","GLOBAL",6) Global("SammomQ","LOCALS",0) AreaType(OUTDOOR)~THEN REPLY @1140DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SammomQ1
+IF ~Global("SanNobility","LOCALS",0) AreaType(CITY) ~THEN REPLY @1534DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanSociety1
+IF~PartyHasItem("SW1H19") Global("TheVaultVamp","GLOBAL",2) !See([ENEMY]) CombatCounter(0)~THEN REPLY@1059GOTO SanvaultSum
+IF ~GlobalLT("PidLock","LOCALS",2) ~THEN REPLY @1157DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO Pidlock2
+IF ~Global("SanWoodSt","LOCALS",2) AreaType(DUNGEON)~THEN REPLY @939GOTO SanMkStake5
+IF ~Global("SanOnBalduIsl","GLOBAL",1)~THEN REPLY @1380DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO WWIsl1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",1) Global("SanCorMale","LOCALS",0)~THEN REPLY @937GOTO SanCorMal1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",2) Global("SanCorFem","LOCALS",0)~THEN REPLY @937GOTO SanCorFem1
+IF ~GlobalGT("Cowscroll","GLOBAL",9) Global("EdCursGon","LOCALS",0) ~THEN REPLY @940DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO EdCursGon1
+IF ~Global("Formedcloth","GLOBAL",18)~THEN REPLY @1535 DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanImoBhaCon2
+IF ~Global("XanDecide","GLOBAL",3) InParty("Xan")~THEN REPLY @1388DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO Xanchos1
+IF ~Global("SanBreBa","GLOBAL",2) ~THEN REPLY @938DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBreCon1
+IF ~Global("SanBranDec","GLOBAL",5)~THEN REPLY @1155DO~IncrementGlobal("Sanpoints","GLOBAL",4)~GOTO BranLeft1
+IF ~Global("SanPCMarAj1","LOCALS",0) Global("X#AJANTISROMANCEACTIVE","GLOBAL",2)GlobalGT("SanAjanProp2","GLOBAL",2)~THEN REPLY@1536DO~IncrementGlobal("Sanpoints","GLOBAL",4)~GOTO SanMarAj1
+IF ~Global("GithHint","LOCALS",0) Global("SanGithVS","GLOBAL",8)~THEN REPLY @1537DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO GithHint1
+IF ~GlobalGT("SanBooTlk","GLOBAL",5) Global("MinskFlow","LOCALS",0) ~THEN REPLY @1069DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO MinscFlow1
+IF~Global("SanXanPC","GLOBAL",2)InParty("Xan")~THEN REPLY@1144DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanXanPC13
+IF ~GlobalGT("Mothdream1","GLOBAL",6) Global("SammomQ","LOCALS",1)~THEN REPLY @1145DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SammomQ6
+IF ~Global("SanBhaalRev","LOCALS",0) Global("SammomQ","LOCALS",2)~THEN REPLY @1382DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanBhaalRev1
+IF ~Global("Chapter","GLOBAL",5) Dead("Davaeorn") Global("BSHunt1","LOCALS",0)  GlobalGT("WinskApp1","GLOBAL",8)~THEN REPLY @1538DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO BSHunt1
+IF ~Global("SaOgmaIn","GLOBAL",6) AreaCheck("CVWOHA") ~ THEN REPLY @1065DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanloveHut1
+IF~~THEN REPLY @1539EXIT
+IF~InParty("Imoen2") Global("ImoBio1","LOCALS",0) ~THEN REPLY @1540DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO ImoBio1
+IF~GlobalGT("SanNarQ","GLOBAL",6) !AreaType(OUTDOOR) Global("SanAdveFa","LOCALS",0) !AreaType(DUNGEON) ~THEN REPLY @1154DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanAdvenE1
+IF ~Global("X#XALOVETALK","GLOBAL",39) InParty("XAN") Global("Xanrever","LOCALS",0) ~THEN REPLY @1381DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO Xanrevery1
+IF ~Global("SanOrDiId","GLOBAL",3) ~THEN REPLY @928DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO UlDarT
+IF~Global("WDIntrotalk","LOCALS",2)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro3
+IF~Global("WDIntrotalk","LOCALS",3)OR(4)AreaCheck("CVROA2") AreaCheck("CVROA3") AreaCheck("CVElm1") AreaCheck("CVElm4")~THEN REPLY@943 DO~SetGlobal("WDIntrotalk","LOCALS",4)~GOTO FirstWDIntro2
+IF ~OR(2) Global("TORKIONNEEDYOU","GLOBAL",1) Global("NTTorkionNeedYou","Global",1) !PartyHasItem("Misc48") Global("SanTorq","LOCALS",0) ~THEN REPLY @1064DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanTorq1
+IF ~!AreaType(DUNGEON) ~THEN REPLY @1383GOTO SanNight2Inv
+IF ~Global("SanPCGavInt","GLOBAL",1) Global("SanPCGavT","LOCALS",0) ~THEN REPLY @1156DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanPCGavT1
+IF ~TimeOfDay(NIGHT) AreaType(OUTDOOR) Global("NiteMass","LOCALS",0) ~THEN REPLY @1541DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO NiteMass1
+IF ~Global("Formedcloth","GLOBAL",9) ~THEN REPLY @1386DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO PidBhaal10
+IF ~Global("Homesail","GLOBAL",7)~THEN REPLY @1542GOTO ZomHom13
+IF~Global("DimDay","GLOBAL",2) ~THEN REPLY @1543DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanDimDay1
+IF ~Global("Formedcloth","GLOBAL",10)~THEN REPLY @1387GOTO PidBhaal13
+IF ~Global("SanOrDiId","GLOBAL",8) GlobalGT("Formedcloth","GLOBAL",5) ~THEN REPLY @1544DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanWinskApp20
+IF ~Global("SanOrDiId","GLOBAL",8) GlobalLT("Formedcloth","GLOBAL",5) ~THEN REPLY @1544DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanWinskApp30
+IF~Global("SanResurAva","GLOBAL",4)~THEN REPLY@911DO~SetGlobal("SanResurAva","GLOBAL",0)~EXIT
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF~~THEN BEGIN LoveSnak1 
+SAY@1545
+IF~~THEN REPLY@1546EXIT
+END
+
+IF~~THEN BEGIN LoveSnak2
+SAY@1547
+IF~~THEN REPLY@1548EXIT
+END
+
+IF~~THEN BEGIN LoveSnak3
+SAY@1549
+IF~~THEN REPLY@1550EXIT
+END
+
+IF~~THEN BEGIN  SanTmplHeal1
+SAY @1551
+IF~~THEN REPLY @1552DO~SetGlobal("SanTmplHealL","LOCALS",1) ~GOTO SanTmplHeal2
+IF~~THEN REPLY @1553DO~SetGlobal("SanTmplHealL","LOCALS",1) ~GOTO SanTmplHeal2
+END
+
+IF~~THEN BEGIN  SanTmplHeal2
+SAY @1554
+IF~~THEN REPLY @1555GOTO SanTmplHeal3
+IF~~THEN REPLY @1556EXIT
+END
+
+
+IF~~THEN BEGIN  SanTmplHeal3
+SAY @1557
+IF~~THEN REPLY @1558EXIT
+IF~~THEN REPLY @1559EXIT
+END
+
+IF ~~THEN BEGIN  BranLeft1
+SAY @1560
+IF~~THEN REPLY @1561DO ~SetGlobal("SanBranDec","GLOBAL",6)~GOTO BranLeft2
+END
+
+IF ~~THEN BEGIN  BranLeft2
+SAY @1562
+IF ~~THEN REPLY @1563EXIT
+IF ~~THEN REPLY @1564EXIT
+IF ~~THEN REPLY @1565EXIT
+END
+
+IF ~~THEN BEGIN  MinscFlow1
+SAY @1566
+IF ~~THEN REPLY @1567GOTO MinscFlow2
+IF ~~THEN REPLY @1568GOTO MinscFlow2
+END
+
+IF ~~THEN BEGIN  MinscFlow2
+SAY @1569
+IF ~~THEN REPLY @1570GOTO MinscFlow3
+IF ~~THEN REPLY @1571GOTO MinscFlow3
+IF ~~THEN REPLY @1572GOTO MinscFlow4
+END
+
+IF ~~THEN BEGIN  MinscFlow3
+SAY @1573
+IF~~THEN DO ~SetGlobal("MinskFlow","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN  MinscFlow4
+SAY @1574
+IF~~THEN DO ~SetGlobal("MinskFlow","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN  EdCursGon1
+SAY @1575
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @1576GOTO EdCursGon2
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @1577GOTO EdCursGon3
+IF ~~THEN REPLY @1578GOTO EdCursGon4
+IF ~~THEN REPLY @1579GOTO EdCursGon6
+END
+
+IF ~~THEN BEGIN  EdCursGon2
+SAY @1580
+IF ~~THEN REPLY @1581DO ~SetGlobal("EdCursGon","LOCALS",1)~GOTO
+EdCursGon5
+END
+
+IF ~~THEN BEGIN  EdCursGon3
+SAY @1582
+IF ~~THEN REPLY @1581DO ~SetGlobal("EdCursGon","LOCALS",1)~GOTO
+EdCursGon5
+END
+
+IF ~~THEN BEGIN  EdCursGon4
+SAY @1583
+IF ~~THEN REPLY @1581DO ~SetGlobal("EdCursGon","LOCALS",1)~GOTO
+EdCursGon5
+END
+
+IF ~~THEN BEGIN  EdCursGon6
+SAY @1584
+IF ~~THEN REPLY @1585DO ~SetGlobal("EdCursGon","LOCALS",1)~GOTO
+EdCursGon5
+END
+
+IF ~~THEN BEGIN  EdCursGon5
+SAY @1586
+IF ~~THEN REPLY@1587EXIT
+IF~~THEN REPLY@1588EXIT
+IF~~THEN REPLY@1589EXIT
+END
+
+IF~~THEN BEGIN SanTalosF1
+SAY@1590
+IF~~THEN REPLY@1591GOTO SanTalosF2
+IF~~THEN REPLY@1592GOTO SanTalosF2
+END
+
+IF~~THEN BEGIN SanTalosF2
+SAY@1593
+IF~GlobalGT("PCKnowsElmDaughter","GLOBAL",0)~THEN REPLY@1361DO~SetGlobal("Talostlk","LOCALS",1)~GOTO SanTalosF3
+IF~Global("PCKnowsElmDaughter","GLOBAL",0)~THEN REPLY@1361DO~SetGlobal("Talostlk","LOCALS",1)~GOTO SanTalosF3n
+END
+
+IF~~THEN BEGIN SanTalosF3
+SAY@1594
+IF~~THEN REPLY@1595GOTO SanTalosF4
+IF~~THEN REPLY@1596GOTO SanTalosF4
+END
+
+IF~~THEN BEGIN SanTalosF3n
+SAY@1597
+IF~~THEN REPLY@1595GOTO SanTalosF4
+IF~~THEN REPLY@1596GOTO SanTalosF4
+END
+
+IF~~THEN BEGIN SanTalosF4
+SAY@1598
+IF~PartyHasItem("soaitm01")~THEN REPLY@1599EXIT
+IF~~THEN REPLY@1600GOTO SanTalosF5
+IF~~THEN REPLY@1601GOTO SanTalosF5
+END
+
+IF~~THEN BEGIN SanTalosF5
+SAY@1602
+IF~~THEN EXIT
+END
+
+IF ~~THEN BEGIN GithHint1
+SAY @1603
+IF~~THEN REPLY @1604 GOTO GithHint2
+IF~~THEN REPLY @1605GOTO GithHint2
+END
+
+IF ~~THEN BEGIN GithHint2
+SAY @1606
+IF~~THEN REPLY @1607DO ~SetGlobal("GithHint","LOCALS",1)~GOTO GithHint3
+END
+
+IF ~~THEN BEGIN GithHint3
+SAY @1608
+IF ~~THEN REPLY @1609GOTO GithHint4
+IF~Global("SanRomPath","GLOBAL",2)~THEN REPLY @1610GOTO GithHint5
+IF ~~THEN REPLY @1611GOTO GithHint6
+END
+
+IF ~~THEN BEGIN GithHint4
+SAY @1612
+IF ~~THEN REPLY @1613EXIT
+IF~InParty("CVJenlig")~THEN REPLY@1614EXTERN CVJenliJ GithhintJ1
+END
+
+IF ~~THEN BEGIN GithHint5
+SAY @1615
+IF ~~THEN REPLY @1616EXIT
+IF ~~THEN REPLY @1617EXIT
+IF~InParty("CVJenlig")~THEN REPLY@1618EXTERN CVJenliJ GithhintJ1
+END
+
+IF ~~THEN BEGIN GithHint6
+SAY@1619
+IF ~~THEN REPLY @1617EXIT
+IF~InParty("CVJenlig")~THEN REPLY@1618EXTERN CVJenliJ GithhintJ1
+END
+
+IF ~~THEN BEGIN SanBreCon1
+SAY @1620
+IF~~THEN REPLY @1621GOTO SanBreCon2
+IF~~THEN REPLY @1622GOTO SanBreCon2
+IF~~THEN REPLY @1623GOTO SanBreCon2
+END
+
+IF ~~THEN BEGIN SanBreCon2
+SAY @1624
+IF~~THEN REPLY @1625GOTO SanBreCon3
+END
+
+IF ~~THEN BEGIN SanBreCon3
+SAY @1626
+IF~~THEN REPLY @1627GOTO SanBreCon4
+END
+
+IF ~~THEN BEGIN SanBreCon4
+SAY @1628
+IF ~~THEN DO~SetGlobal("SanBreBa","GLOBAL",3)~EXIT
+END
+
+IF ~~THEN BEGIN  SanSociety1
+SAY @1629
+IF~~THEN REPLY @1630DO~SetGlobal("SanNobility","LOCALS",1)~GOTO SanSociety2
+IF~~THEN REPLY @1631DO~SetGlobal("SanNobility","LOCALS",1)~GOTO SanSociety2
+END
+
+IF ~~THEN BEGIN  SanSociety2
+SAY @1632
+IF~~THEN REPLY @1633GOTO SanSociety3
+IF~~THEN REPLY @1634GOTO SanSociety3
+END
+
+IF ~~THEN BEGIN  SanSociety3
+SAY @1635
+IF ~~THEN REPLY @1636GOTO SanSociety4
+END
+
+IF ~~THEN BEGIN  SanSociety4
+SAY @1637
+IF ~~THEN REPLY @1638GOTO SanSociety5
+IF ~~THEN REPLY @1639GOTO SanSociety5b
+IF ~~THEN REPLY @1640GOTO SanSociety5b
+IF ~~THEN REPLY@1641DO~IncrementGlobal("Sanpoints","Global",-2)~EXIT
+END
+
+IF ~~THEN BEGIN  SanSociety5
+SAY @1642
+IF~~THEN EXIT
+END
+
+IF ~~THEN BEGIN  SanSociety5b
+SAY @1643
+IF~~THEN EXIT
+END
+
+IF ~~THEN BEGIN ZomHom13
+SAY @1644
+=@1645
+= @1646
+IF ~~THEN REPLY @1647GOTO ZomHom14
+END
+
+IF ~~THEN BEGIN ZomHom14
+SAY @1648
+IF ~~THEN REPLY @1649GOTO ZomHom15
+END
+
+IF ~~THEN BEGIN ZomHom15
+SAY @1650
+= @1651
+= @1652
+IF ~~THEN REPLY @1653GOTO ZomHom16
+END
+
+IF ~~THEN BEGIN ZomHom16
+SAY @1654
+IF ~~THEN REPLY @1655GOTO ZomHom17
+IF ~~THEN REPLY @1656GOTO ZomHom17
+END
+
+IF ~~THEN BEGIN ZomHom17
+SAY @1657
+IF ~~THEN REPLY @1658GOTO ZomHom18
+END
+
+IF ~~THEN BEGIN ZomHom18
+SAY @1659
+IF ~~THEN REPLY @1660DO~SetGlobal("Homesail","GLOBAL",8)~GOTO ZomHom19
+END
+
+IF ~~THEN BEGIN ZomHom19
+SAY @1661
+IF ~~THEN REPLY @1662EXIT
+IF ~~THEN REPLY @1663EXIT
+IF ~~THEN REPLY @1664EXIT
+END
+
+IF ~~THEN BEGIN BSHunt1
+SAY @1665
+= @1666
+IF ~~THEN REPLY @1667GOTO BSHunt2
+END
+
+IF ~~THEN BEGIN BSHunt2
+SAY @1668
+= @1669
+IF ~~THEN REPLY @1670GOTO BSHunt3
+END
+
+IF ~~THEN BEGIN BSHunt3
+SAY @1671
+IF ~~THEN REPLY @1672GOTO BSHunt4
+END
+
+IF ~~THEN BEGIN BSHunt4
+SAY @1673
+IF ~~THEN REPLY @1674GOTO BSHunt5
+END
+
+IF ~~THEN BEGIN BSHunt5
+SAY @1675
+IF ~~THEN REPLY @1676 GOTO BSHunt6
+END
+
+IF ~~THEN BEGIN BSHunt6
+SAY @1677
+IF ~~THEN REPLY @1678DO ~SetGlobal("BSHunt1","LOCALS",1)~EXIT
+END
+
+
+IF~~THEN BEGIN SanWinskApp20
+SAY @1679
+IF ~~THEN REPLY @1680GOTO SanWinskApp21
+END
+
+IF~~THEN BEGIN SanWinskApp21
+SAY @1681
+IF ~~THEN REPLY @1682GOTO SanWinskApp22
+END
+
+IF~~THEN BEGIN SanWinskApp22
+SAY @1683
+= @1684
+IF ~~THEN REPLY @1685GOTO SanWinskApp23
+IF ~~THEN REPLY @1686GOTO SanWinskApp23
+END
+
+IF~~THEN BEGIN SanWinskApp23
+SAY @1687
+IF ~~THEN REPLY @1688GOTO SanWinskApp24
+END
+
+IF~~THEN BEGIN SanWinskApp24
+SAY @1689
+= @1690
+IF ~~THEN REPLY @1691DO ~SetGlobal("SanOrDiId","GLOBAL",9)~EXIT
+IF ~~THEN REPLY @1692DO ~SetGlobal("SanOrDiId","GLOBAL",9)~EXIT
+END
+
+IF~~THEN BEGIN SanWinskApp30
+SAY @1679
+IF ~~THEN REPLY @1693GOTO SanWinskApp31
+END
+
+IF~~THEN BEGIN SanWinskApp31
+SAY @1694
+IF ~~THEN REPLY @1695GOTO SanWinskApp32
+END
+
+IF~~THEN BEGIN SanWinskApp32
+SAY @1696
+= @1697
+IF ~~THEN REPLY @1685GOTO SanWinskApp33
+IF ~~THEN REPLY @1686GOTO SanWinskApp33
+END
+
+IF~~THEN BEGIN SanWinskApp33
+SAY @1687
+IF ~~THEN REPLY @1698GOTO SanWinskApp34
+END
+
+IF~~THEN BEGIN SanWinskApp34
+SAY @1699
+= @1700
+IF ~~THEN REPLY @1691DO ~SetGlobal("SanOrDiId","GLOBAL",9)~EXIT
+IF ~~THEN REPLY @1692DO ~SetGlobal("SanOrDiId","GLOBAL",9)~EXIT
+END
+
+IF~~THEN BEGIN NiteMass1
+SAY @1701
+IF ~~THEN REPLY @1702GOTO NiteMass3
+IF ~~THEN REPLY @1703GOTO NiteMass2
+IF~~THEN REPLY @1704GOTO NiteMass2
+END
+
+IF ~~THEN BEGIN NiteMass2
+SAY@1705
+IF~~THEN GOTO NiteMass3
+END
+
+IF ~~THEN BEGIN NiteMass3   
+SAY@1706
+IF ~~THEN REPLY @1707GOTO NiteMass4
+IF ~~THEN REPLY @1708GOTO NiteMass4
+END
+
+IF ~~THEN BEGIN NiteMass4
+SAY@1709
+IF ~~THEN REPLY @1710DO ~SetGlobal("NiteMass","LOCALS",1)~GOTO NiteMass5
+IF ~~THEN REPLY @1711DO ~SetGlobal("NiteMass","LOCALS",1)~GOTO NiteMass6
+END
+
+IF ~~THEN BEGIN NiteMass5
+SAY@1712
+IF ~~THEN REPLY @1713DO ~RestParty()~EXIT
+END
+
+IF ~~THEN BEGIN NiteMass6
+SAY@1714
+IF ~~THEN DO ~RestParty()~EXIT
+END
+
+IF ~~THEN BEGIN  SanMarAj1
+SAY@1715
+IF ~~THEN REPLY @1716GOTO SanMarAj2
+IF ~~THEN REPLY @1717GOTO SanMarAj2
+END
+
+IF ~~THEN BEGIN  SanMarAj2
+SAY@1718
+IF~~THEN REPLY @1719DO ~SetGlobal("SanPCMarAj1","LOCALS",1)~GOTO SanMarAj3
+END
+
+IF ~~THEN BEGIN  SanMarAj3
+SAY@1720
+IF~~THEN REPLY @1721GOTO SanMarAj4
+END
+
+IF ~~THEN BEGIN  SanMarAj4
+SAY@1722
+IF~~THEN REPLY @1723GOTO SanMarAj5
+IF~~THEN REPLY @1724GOTO SanMarAj5
+END
+
+IF ~~THEN BEGIN  SanMarAj5
+SAY@1725
+= @1726
+IF~~THEN REPLY @1727GOTO SanMarAj6
+IF~~THEN REPLY @1728GOTO SanMarAj6
+END
+
+IF ~~THEN BEGIN  SanMarAj6
+SAY @1729
+IF~~THEN REPLY @1730EXIT
+END
+
+IF~~THEN BEGIN ImoBio1
+SAY@1731
+IF ~~THEN REPLY @1732GOTO ImoBio2
+IF ~~THEN REPLY @1733GOTO ImoBio2
+END
+
+IF~~THEN BEGIN ImoBio2
+SAY @1734
+IF ~~THEN REPLY @1735 GOTO ImoBio3
+END
+
+IF~~THEN BEGIN ImoBio3
+SAY @1736
+IF ~~THEN REPLY @1737DO ~SetGlobal("ImoBio1","LOCALS",1)~EXIT
+END
+
+IF~~THEN BEGIN SanDimDay1
+SAY @1738
+IF ~~THEN REPLY@1739DO ~SetGlobal("DimDay","GLOBAL",3) ~GOTO SanDimDay2
+END
+
+IF~~THEN BEGIN SanDimDay2
+SAY @1740
+IF ~~THEN REPLY@1741GOTO SanDimDay4
+IF ~~THEN REPLY@1742GOTO SanDimDay3
+END
+
+IF~~THEN BEGIN SanDimDay3
+SAY @1743
+IF ~~THEN REPLY@1744EXIT
+END
+
+IF~~THEN BEGIN SanDimDay4
+SAY @1745
+IF ~~THEN REPLY@1746EXIT
+END
+
+IF~~THEN BEGIN BHGHand
+SAY@1747
+IF~~THEN REPLY@1748EXIT
+IF~~THEN REPLY@1749DO~SetGlobal("BHHandSearch","GLOBAL",2) SetGlobal("BHHandSewerOpen","GLOBAL",1) ~EXIT
+END
+
+
+// PID Package 12 - After candlekeep
+
+IF ~IsGabber(Player1) Global("SanPidPack","GLOBAL",12) ~THEN BEGIN SanPCInit12
+SAY @1750
+IF ~Global("Criminal","GLOBAL",1) ~THEN REPLY @1751DO~IncrementGlobal("Sanpoints","GLOBAL",4)~GOTO Gorlover1
+IF ~AreaType(OUTDOOR) !TimeOfDay(DAY) GlobalLT("SanCampFire","LOCALS",3)~THEN REPLY @1752DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO CampireSc1
+IF~Global("CVGodag","GLOBAL",7)~THEN REPLY@1377DO~SetGlobal("CVGodag","GLOBAL",8)~GOTO Godag11
+IF ~~THEN REPLY @1753EXIT
+IF ~GlobalGT("SanSharInt","GLOBAL",11) Global("SanSharCon","LOCALS",0) ~THEN REPLY @1068DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanSharCon1
+IF ~GlobalGT("Sprite_is_DeadBandit","GLOBAL",25) Global("SanFiSkills","LOCALS",0) ~THEN REPLY @926DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanFiSkills
+IF ~RandomNum(3,1)~THEN REPLY@1532GOTO LoveSnak1
+IF ~RandomNum(3,2)~THEN REPLY@1532GOTO LoveSnak2
+IF ~RandomNum(3,3)~THEN REPLY@1532GOTO LoveSnak3
+IF~Global("ChartQuest","GLOBAL",1)GlobalGT("CalDone","GLOBAL",0)Global("SanMendas","LOCALS",0)~THEN REPLY @1142GOTO SanMendas1
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArF
+IF~Global("SanVsTalos","GLOBAL",1) Global("Talostlk","LOCALS",0)~THEN REPLY @942GOTO SanTalosF1
+IF~Global("SanDesTroll","LOCALS",2) NumItemsPartyLT("arow04",5) !AreaType(FOREST)  ~THEN REPLY@1058GOTO SanAcArNF
+IF~Global("SantalosDec","GLOBAL",10)~THEN REPLY@1057GOTO Talosvisit4
+IF~GlobalGT("Santiax","LOCALS",3)Global("SanTiaHealQ","LOCALS",0)~THEN REPLY@1067GOTO SanTiaHel1
+IF ~GlobalGT("SanWDTempleRha","GLOBAL",0) GlobalGT("SanWDTempleHint","GLOBAL",1) Global("SanWDRespect","LOCALS",0)~THEN REPLY @1146GOTO SanWDRespct1
+IF~~THEN REPLY@936GOTO StopRom
+IF ~GlobalGT("Santiax","LOCALS",3) Global("SantiaxPC","LOCALS",0)~THEN REPLY @930GOTO SanTiaxPC1
+IF~PartyHasItem("SW1H19") Global("TheVaultVamp","GLOBAL",2) !See([ENEMY]) CombatCounter(0)~THEN REPLY@1059GOTO SanvaultSum
+IF~Global("Drizztfight","GLOBAL",1) !InParty("Branwen") GlobalLT("SanDrizzt","GLOBAL",3) Global("SanFiSkills","LOCALS",0)~THEN REPLY @935GOTO SanKnoDrizPC1
+IF ~Global("SanWDRespect","LOCALS",1)~THEN REPLY @1147GOTO SanWDRespct5
+IF ~Global("GithHint","LOCALS",0) Global("SanGithVS","GLOBAL",8)~THEN REPLY @1537DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO GithHint1
+IF~Global("SanEdLoveBoy","LOCALS",2)~THEN REPLY @1148DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanEdLoveBoy20
+IF ~Global("SanMysRise","GLOBAL",2)~THEN REPLY @1754GOTO SanMysSucc1
+IF ~Global("Formedcloth","GLOBAL",10)~THEN REPLY @1387GOTO PidBhaal13
+IF ~Global("SanOrDiId","GLOBAL",8) GlobalGT("Formedcloth","GLOBAL",5) ~THEN REPLY @1544DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanWinskApp20
+IF ~Global("SanOrDiId","GLOBAL",8) GlobalLT("Formedcloth","GLOBAL",5) ~THEN REPLY @1544DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanWinskApp30
+IF ~Global("SanNobility","LOCALS",0) AreaType(CITY) ~THEN REPLY @1755DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanSociety1
+IF ~GlobalLT("PidLock","LOCALS",2) ~THEN REPLY @1157DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO Pidlock2
+IF ~Global("SanOnBalduIsl","GLOBAL",1)~THEN REPLY @1380DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO WWIsl1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",1) Global("SanCorMale","LOCALS",0)~THEN REPLY @937GOTO SanCorMal1
+IF~InParty("Coran") Global("SanRomPath","GLOBAL",2) Global("SanCorFem","LOCALS",0)~THEN REPLY @937GOTO SanCorFem1
+IF ~GlobalGT("Cowscroll","GLOBAL",9) Global("EdCursGon","LOCALS",0) ~THEN REPLY @940DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO EdCursGon1
+IF ~Global("Formedcloth","GLOBAL",18)~THEN REPLY @1535 DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanImoBhaCon2
+IF ~Global("XanDecide","GLOBAL",3) InParty("Xan")~THEN REPLY @1388DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO Xanchos1
+IF ~Global("SanWoodSt","LOCALS",2) AreaType(DUNGEON)~THEN REPLY @939GOTO SanMkStake5
+IF ~Global("SanBreBa","GLOBAL",2) ~THEN REPLY @938DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBreCon1
+IF ~Global("SanBranDec","GLOBAL",5)~THEN REPLY @1155DO~IncrementGlobal("Sanpoints","GLOBAL",4)~GOTO BranLeft1
+IF ~Global("SanPCMarAj1","LOCALS",0) Global("X#AJANTISROMANCEACTIVE","GLOBAL",2)GlobalGT("SanAjanProp2","GLOBAL",2)~THEN REPLY@1536DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanMarAj1
+IF ~GlobalGT("SanBooTlk","GLOBAL",5) Global("MinskFlow","LOCALS",0) ~THEN REPLY @1069DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO MinscFlow1
+IF~Global("SanXanPC","GLOBAL",2)InParty("Xan")~THEN REPLY@1144DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanXanPC13
+IF ~Global("SaOgmaIn","GLOBAL",6) AreaCheck("CVWOHA") ~ THEN REPLY @1065DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanloveHut1
+IF ~Global("X#XALOVETALK","GLOBAL",39) InParty("XAN") Global("Xanrever","LOCALS",0) ~THEN REPLY @1381DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO Xanrevery1
+IF ~OR(2) Global("TORKIONNEEDYOU","GLOBAL",1) Global("NTTorkionNeedYou","Global",1) !PartyHasItem("Misc48") Global("SanTorq","LOCALS",0) ~THEN REPLY @1064DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanTorq1
+IF ~Global("SanPCGavInt","GLOBAL",1) Global("SanPCGavT","LOCALS",0) ~THEN REPLY @1156DO~IncrementGlobal("Sanpoints","GLOBAL",3)~GOTO SanPCGavT1
+IF ~TimeOfDay(NIGHT) AreaType(OUTDOOR) Global("NiteMass","LOCALS",0) ~THEN REPLY @1541DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO NiteMass1
+IF ~Global("Homesail","GLOBAL",7)~THEN REPLY @1542GOTO ZomHom13
+IF~Global("DimDay","GLOBAL",2) ~THEN REPLY @1543DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanDimDay1
+IF ~Global("SanOrDiId","GLOBAL",8) GlobalGT("Formedcloth","GLOBAL",5) ~THEN REPLY @1544DO~IncrementGlobal("Sanpoints","GLOBAL",2)~GOTO SanWinskApp20
+IF ~GlobalLT("Chapter","GLOBAL",13) Global("SanSkieSoDBhaal","GLOBAL",1)~THEN REPLY @1756DO~SetGlobal("SanSkieSoDBhaal","GLOBAL",2)~GOTO Skiebhaal1
+IF ~GlobalGT("SanFlirt","GLOBAL",19) Global("SanMysRise","GLOBAL",3)~THEN REPLY @1757DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanBLine1
+IF~Global("SanDBdoubt","LOCALS",0) GlobalGT("bd_plot","global",169)~THEN REPLY@1758DO~SetGlobal("SanDBdoubt","LOCALS",1)~GOTO SanDBIsShe1
+IF~Global("SanSoDBook","LOCALS",2)~THEN REPLY@1759DO~SetGlobal("SanSoDBook","LOCALS",3)~GOTO SanDBIsShe4
+IF~Global("SanMadele","Global",1)~THEN REPLY@1760GOTO SanMadel1
+IF~GlobalGT("bd_explosives_plot","Global",1) Global("SanLanciedb","Locals",0)~THEN REPLY@1761DO~SetGlobal("SanLanciedb","Locals",1)~GOTO Lancie1
+IF~Global("SanResurAva","GLOBAL",4)~THEN REPLY@911DO~SetGlobal("SanResurAva","GLOBAL",0)~EXIT
+IF~~THEN REPLY@900GOTO SanHamCl
+IF~~THEN REPLY@901EXIT
+END
+
+IF~~THEN BEGIN SanvaultSum
+SAY@1762
+IF~~THEN DO~CreateCreatureObjectDoor("sanvault","CVSandr",0,0,0)~EXIT
+END
+
+IF~~THEN BEGIN Skiebhaal1
+SAY@1763
+IF~~THEN REPLY@1764GOTO Skiebhaal2
+IF~~THEN REPLY@1765GOTO Skiebhaal2
+IF~~THEN REPLY@1766GOTO Skiebhaal2
+END
+
+IF~~THEN BEGIN Skiebhaal2
+SAY@1767
+IF~~THEN EXIT
+END
+
+IF~~THEN BEGIN SanTiaxPC1
+SAY@1768
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY @1769GOTO SanTiaxPC3
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY @1769 GOTO SanTiaxPC2
+END
+
+
+IF~~THEN BEGIN SanTiaxPC2
+SAY@1770
+IF ~~THEN REPLY @1771DO~SetGlobal("SantiaxPC","LOCALS",1) ~EXIT
+IF ~~THEN REPLY @1772DO~SetGlobal("SantiaxPC","LOCALS",1) ~EXIT
+IF ~~THEN REPLY @1773DO~SetGlobal("SantiaxPC","LOCALS",1) ~EXIT
+END
+
+IF~~THEN BEGIN SanTiaxPC3
+SAY@1774
+IF ~~THEN REPLY @1771DO~SetGlobal("SantiaxPC","LOCALS",1) ~EXIT
+IF ~~THEN REPLY @1772DO~SetGlobal("SantiaxPC","LOCALS",1) ~EXIT
+IF ~~THEN REPLY @1773DO~SetGlobal("SantiaxPC","LOCALS",1) ~EXIT
+END
+
+IF~~THEN BEGIN SanBLine1
+SAY@1775
+IF ~~THEN REPLY @1776GOTO SanBLine2
+END
+
+IF~~THEN BEGIN SanBLine2
+SAY@1777
+IF ~~THEN REPLY @1778GOTO SanBLine3
+END
+
+IF~~THEN BEGIN SanBLine3
+SAY@1779
+IF ~~THEN REPLY @1780GOTO SanBLine4
+END
+
+IF~~THEN BEGIN SanBLine4
+SAY@1781
+IF ~~THEN REPLY @1782DO ~SetGlobal("SanMysRise","GLOBAL",4)~GOTO SanBLine5
+END
+
+IF~~THEN BEGIN SanBLine5
+SAY@1783
+IF ~~THEN REPLY @1784EXIT
+IF ~~THEN REPLY @1785EXIT
+IF ~~THEN REPLY @1786EXIT
+END
+
+IF~~THEN BEGIN Godag11
+SAY@1787
+IF ~~THEN REPLY @1788 GOTO Godag12
+IF ~~THEN REPLY @1789GOTO Godag12
+END
+
+IF~~THEN BEGIN Godag12
+SAY@1790
+=@1791
+IF ~~THEN REPLY @1792GOTO Godag13
+IF ~~THEN REPLY @1793GOTO Godag13
+END
+
+IF~~THEN BEGIN Godag13
+SAY@1794
+IF~~THEN REPLY@1795DO~EraseJournalEntry(@60904) Wait(2) AddJournalEntry(@60906,QUEST)~EXIT
+END
+
+IF~~THEN BEGIN SanWDRespct1
+SAY@1796
+IF~~THEN REPLY @1797GOTO  SanWDRespct2
+IF~~THEN REPLY @1798GOTO  SanWDRespct2
+IF~~THEN REPLY @1799GOTO  SanWDRespct2
+END
+
+IF ~~THEN BEGIN SanWDRespct2
+SAY@1800
+IF~~THEN REPLY @1801DO~IncrementGlobal("Sanpoints","GLOBAL",1)~GOTO SanWDRespct3
+IF~~THEN REPLY @1802GOTO SanWDRespct4
+END
+
+IF ~~THEN BEGIN SanWDRespct3
+SAY@1803
+IF~~THEN REPLY @1804DO ~SetGlobal("SanWDRespect","LOCALS",2)~GOTO SanWDRespct5
+IF~~THEN REPLY @1805DO ~SetGlobal("SanWDRespect","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN SanWDRespct4
+SAY@1806
+IF~~THEN REPLY @1804DO ~SetGlobal("SanWDRespect","LOCALS",2)~GOTO SanWDRespct5
+IF~~THEN REPLY @1805DO ~SetGlobal("SanWDRespect","LOCALS",1)~EXIT
+END
+
+IF ~~THEN BEGIN SanWDRespct5
+SAY@1807
+IF~~THEN REPLY @1808GOTO SanWDRespct6
+IF~~THEN REPLY @1809GOTO SanWDRespct6
+END
+
+IF ~~THEN BEGIN SanWDRespct6
+SAY@1810
+=@1811
+IF~~THEN REPLY @1812GOTO SanWDRespct7
+IF~~THEN REPLY @1813GOTO SanWDRespct7
+IF~~THEN REPLY @1814GOTO SanWDRespct7
+END
+
+IF ~~THEN BEGIN SanWDRespct7
+SAY@1815
+IF~~THEN REPLY @1816GOTO SanWDRespct8
+IF~~THEN REPLY@1817DO~IncrementGlobal("Sanpoints","Global",-1)~GOTO SanWDRespct8a
+END
+
+IF~~THEN BEGIN SanWDRespct8a
+SAY@1818
+IF~~THEN GOTO SanWDRespct8
+END
+
+IF ~~THEN BEGIN SanWDRespct8
+SAY@1819
+IF~~THEN REPLY @1820GOTO SanWDRespct9
+END
+
+IF ~~THEN BEGIN SanWDRespct9
+SAY@1821
+= @1822 
+IF~~THEN REPLY @1823
+GOTO SanWDRespct10
+END
+
+IF ~~THEN BEGIN SanWDRespct10
+SAY@1824
+IF~~ THEN REPLY @1825DO ~SetGlobal("SanWDRespect","LOCALS",2)~EXIT
+IF~~ THEN REPLY @1826DO ~SetGlobal("SanWDRespect","LOCALS",2)~EXIT
+END
+
+IF ~~THEN BEGIN CampireSc1
+SAY @1827
+IF ~~THEN REPLY@1828GOTO CampireSc2
+IF ~Global("SanRomPath","GLOBAL",1)~THEN REPLY@1829GOTO CampireSc3
+IF ~Global("SanRomPath","GLOBAL",2)~THEN REPLY@1829GOTO CampireSc4
+IF ~~THEN REPLY @1830GOTO CampireSc5
+END
+
+IF ~~THEN BEGIN CampireSc2
+SAY @1831
+IF ~~THEN REPLY@1832DO ~IncrementGlobal("SanCampFire","LOCALS",1)StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~EXIT
+END
+
+IF ~~THEN BEGIN CampireSc3
+SAY @1833
+IF ~~THEN REPLY@1834DO ~IncrementGlobal("SanCampFire","LOCALS",1)StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~EXIT
+END
+
+IF ~~THEN BEGIN CampireSc4
+SAY @1835
+IF ~~THEN REPLY@1834DO ~IncrementGlobal("SanCampFire","LOCALS",1)StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~EXIT
+END
+
+IF ~~THEN BEGIN CampireSc5
+SAY @1836
+IF ~~THEN REPLY@1837DO ~IncrementGlobal("SanCampFire","LOCALS",1)StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~EXIT
+END
+
+IF~~THEN BEGIN Gorlover1
+SAY @1838
+IF ~~THEN REPLY@1839GOTO Gorlover2
+IF ~~THEN REPLY@1840GOTO Gorlover2
+END
+
+IF ~~THEN BEGIN  Gorlover2
+SAY @1841
+= @1842
+= @1843
+IF ~~THEN REPLY@1844DO~SetGlobal("Criminal","GLOBAL",2)~EXIT
+END
+
+IF ~~THEN BEGIN SanMysSucc1
+SAY @1845
+IF ~~THEN REPLY @1846GOTO SanMysSucc2
+IF ~~THEN REPLY @1847 GOTO SanMysSucc2
+IF ~~THEN REPLY @1848GOTO SanMysSucc2
+END
+
+IF ~~THEN BEGIN SanMysSucc2
+SAY @1849
+= @1850
+IF ~~THEN REPLY @1851GOTO SanMysSucc3
+END
+
+IF ~~THEN BEGIN SanMysSucc3
+SAY @1852
+IF ~~THEN REPLY @1853GOTO SanMysSucc4
+IF ~~THEN REPLY @1854GOTO SanMysSucc4
+END
+
+IF ~~THEN BEGIN SanMysSucc4
+SAY @1855
+IF ~~THEN REPLY @1856GOTO SanMysSucc5
+END
+
+IF ~~THEN BEGIN SanMysSucc5
+SAY @1857
+= @1858
+IF ~~THEN REPLY @1859GOTO SanMysSucc6
+END
+
+IF ~~THEN BEGIN SanMysSucc6
+SAY @1860
+IF ~~THEN REPLY @1861GOTO SanMysSucc7
+END
+
+IF ~~THEN BEGIN SanMysSucc7
+SAY @1862
+IF ~~THEN REPLY @1863GOTO SanMysSucc8
+END
+
+IF ~~THEN BEGIN SanMysSucc8
+SAY @1864
+= @1865
+IF ~~THEN REPLY @1866GOTO SanMysSucc9
+END
+
+IF ~~THEN BEGIN SanMysSucc9
+SAY @1867
+IF ~~THEN REPLY @1868GOTO SanMysSucc10
+END
+
+IF ~~THEN BEGIN SanMysSucc10
+SAY @1869
+IF ~~THEN DO ~SetGlobal("SanMysRise","GLOBAL",3)~EXIT
+END
+
+IF~~THEN BEGIN  SanTiaHel1
+SAY@1870
+IF~~THEN REPLY@1871DO~SetGlobal("SanTiaHealQ","LOCALS",1)~GOTO SanTiaHel2
+IF~~THEN REPLY@1872DO~SetGlobal("SanTiaHealQ","LOCALS",1)~GOTO SanTiaHel3
+END
+
+IF~~THEN BEGIN  SanTiaHel2
+SAY@1873
+IF~~THEN REPLY@1874 GOTO SanTiaHel4
+END
+
+IF~~THEN BEGIN  SanTiaHel3
+SAY@1875
+IF~~THEN REPLY@1876GOTO SanTiaHel2
+IF~~THEN REPLY@1877GOTO SanTiaHel2
+END
+
+
+IF~~THEN BEGIN  SanTiaHel4
+SAY@1878
+IF~~THEN REPLY@1879GOTO SanTiaHel5
+IF~~THEN REPLY@1880GOTO SanTiaHel5
+END
+
+IF~~THEN BEGIN  SanTiaHel5
+SAY@1881
+IF~~THEN REPLY@1882EXIT
+IF~~THEN REPLY@1883EXIT
+END
+
+// Khalindra's Child
+
+IF ~Global("Formedcloth","GLOBAL",13) ~THEN BEGIN KhalChi1
+SAY @1884
+= @1885
+IF ~~THEN REPLY@1886GOTO KhalChi2
+IF~~THEN REPLY@1887GOTO KhalChi3
+IF~~THEN REPLY@1888GOTO KhalChi2
+END
+
+IF~~THEN BEGIN KhalChi2
+SAY@1889
+IF ~~THEN REPLY@1890GOTO KhalChi4
+IF ~~THEN REPLY@1891GOTO KhalChi4a
+END
+
+
+IF~~THEN BEGIN KhalChi3
+SAY @1892
+IF ~~THEN REPLY@1890GOTO KhalChi4
+END
+
+IF~~THEN BEGIN KhalChi4
+SAY @1893
+IF ~~THEN REPLY @1894DO ~SetGlobal("Formedcloth","GLOBAL",14) RealSetGlobalTimer("SandrahMorningTalkTime","GLOBAL",1800)~GOTO KhalChi5
+END
+
+IF~~THEN BEGIN KhalChi4a
+SAY @1895
+IF ~~THEN REPLY @1894DO ~SetGlobal("Formedcloth","GLOBAL",14) RealSetGlobalTimer("SandrahMorningTalkTime","GLOBAL",1800)~GOTO KhalChi5
+END
+
+IF~~THEN BEGIN KhalChi5
+SAY @1896
+IF ~~THEN REPLY@1897GOTO KhalChi6
+IF ~~THEN REPLY@1898GOTO KhalChi6
+END
+
+IF~~THEN BEGIN KhalChi6
+SAY @1899
+IF ~~THEN REPLY@1900GOTO KhalChi7
+END
+
+IF~~THEN BEGIN KhalChi7
+SAY @1901
+IF ~~THEN REPLY@1902EXIT
+IF ~~THEN REPLY@1903EXIT
+END
+
+// Imoen is Bhaalspawn
+
+IF ~Global("Formedcloth","GLOBAL",17)~THEN BEGIN SanImoBhaCon1
+SAY @1904
+IF ~~THEN REPLY @1905DO ~SetGlobal("Formedcloth","GLOBAL",18)~EXIT
+IF ~~THEN REPLY @1906GOTO SanImoBhaCon2
+IF ~~THEN REPLY @1907DO ~SetGlobal("Formedcloth","GLOBAL",18)~EXIT
+END
+
+IF~~THEN BEGIN SanImoBhaCon2
+SAY @1908
+IF ~~THEN REPLY @1909DO ~SetGlobal("Formedcloth","GLOBAL",19)~GOTO SanImoBhaCon3
+END
+
+IF~~THEN BEGIN SanImoBhaCon3
+SAY @1910
+IF ~GlobalLT("OrcPrison","GLOBAL",8)~ THEN REPLY @1911GOTO SanImoBhaCon4
+IF ~GlobalGT("OrcPrison","GLOBAL",8)~ THEN REPLY @1911GOTO SanImoBhaCon5
+END
+
+
+IF~~THEN BEGIN SanImoBhaCon4
+SAY @1912
+IF ~~THEN REPLY @1913GOTO SanImoBhaCon6
+END
+
+IF~~THEN BEGIN SanImoBhaCon5
+SAY @1914
+IF ~~THEN REPLY @1913GOTO SanImoBhaCon6
+END
+
+IF ~~THEN BEGIN SanImoBhaCon6
+SAY @1915
+IF ~GlobalLT("OrcPrison","GLOBAL",8)~THEN REPLY @1916GOTO SanImoBhaCon7
+IF ~GlobalGT("OrcPrison","GLOBAL",8)~THEN REPLY @1917GOTO SanImoBhaCon7
+IF ~GlobalGT("OrcPrison","GLOBAL",8)~THEN REPLY @1918GOTO SanImoBhaCon7
+END
+
+IF ~~THEN BEGIN SanImoBhaCon7
+SAY @1919
+IF ~~THEN REPLY @1920DO~RestParty()~EXIT
+END
+
+//Get out of Naronguth Cave
+
+IF ~Global("NarCavOut","GLOBAL",1) ~THEN BEGIN NarCavOut
+SAY @1921
+IF ~~THEN REPLY @1922GOTO NarShard1
+IF ~~THEN REPLY @1923GOTO NarShard1
+END
+
+IF ~~THEN BEGIN NarShard1
+SAY @1924
+= @1925
+IF ~~THEN REPLY @1926DO ~SetGlobal("NarCavOut","GLOBAL",2) ~GOTO NarPlunder
+IF ~~THEN REPLY @1927DO ~SetGlobal("NarCavOut","GLOBAL",2) ~GOTO NarPlunder
+END
+
+IF ~~THEN BEGIN NarPlunder
+SAY @1928
+IF ~~THEN REPLY @1929EXIT
+END
+
+IF ~Global("NarCavOut","GLOBAL",3) ~THEN BEGIN NarCavLeav
+SAY @1930
+IF ~~THEN REPLY @1931DO ~AddExperienceParty(5700)~GOTO NarShardActiv
+IF ~~THEN REPLY @1932DO ~AddExperienceParty(5700)~GOTO NarShardActiv
+END
+
+IF ~~THEN BEGIN NarShardActiv
+SAY @1933
+= @1934
+= @1935
+IF ~~THEN DO ~ClearAllActions()
+		SmallWait(2)
+		StartCutSceneMode()
+		FadeToColor([30.0],0)
+		Wait(2)
+		ActionOverride(Player1,LeaveAreaLUA("BG5300","",[3800.1600],4))
+		ActionOverride(Player1,LeaveAreaLUA("BG5300","",[3800.1600],0))
+		ActionOverride(Player2,LeaveAreaLUA("BG5300","",[3800.1600],0))
+		ActionOverride(Player3,LeaveAreaLUA("BG5300","",[3800.1600],0))
+		ActionOverride(Player4,LeaveAreaLUA("BG5300","",[3800.1600],0))
+		ActionOverride(Player5,LeaveAreaLUA("BG5300","",[3800.1600],0))
+		ActionOverride(Player6,LeaveAreaLUA("BG5300","",[3800.1600],0))
+                FadeFromColor([30.0],0)
+		EndCutSceneMode()
+                SetGlobal("NarCavOut","GLOBAL",4)~EXIT
+END
+
+IF ~Global("NarCavOut","GLOBAL",5)~THEN BEGIN NarQShardHome
+SAY @1936
+IF ~~THEN REPLY @1937 GOTO QShardHome1
+IF ~~THEN REPLY @1938GOTO QShardHome1
+IF ~~THEN REPLY @1939GOTO QShardHome1
+END
+
+IF ~~THEN BEGIN QShardHome1
+SAY @1940
+IF~~THEN DO ~SetGlobal("NarCavOut","GLOBAL",6)~EXIT
+END
+
+IF~Global("Orcalert","CVROA5",5)~THEN BEGIN WDShaThDis1
+SAY@1941
+IF~~THEN REPLY@1942GOTO WDShaThDis2
+IF~~THEN REPLY@1943GOTO WDShaThDis2
+IF~~THEN REPLY@1944GOTO WDShaThDis2
+END
+
+IF~~THEN BEGIN  WDShaThDis2
+SAY@1945
+IF~~THEN REPLY@1946DO~SetGlobal("Orcalert","CVROA5",6) ~EXIT
+END
+
+IF~~THEN BEGIN SanDBIsShe1
+SAY@1947
+IF~~THEN REPLY@1948GOTO SanDBIsShe2
+IF~~THEN REPLY@1949GOTO SanDBIsShe2
+END
+
+IF~~THEN BEGIN SanDBIsShe2
+SAY@1950
+=@1951
+IF~~THEN REPLY@1952GOTO SanDBIsShe3
+END
+
+IF~~THEN BEGIN SanDBIsShe3
+SAY@1953
+IF~~THEN REPLY@1954EXIT
+IF~~THEN REPLY@1955EXIT
+END
+
+IF~~THEN BEGIN SanDBIsShe4
+SAY@1956
+IF~~THEN REPLY@1957EXIT
+END
+
+IF~~THEN BEGIN SanMadel1
+SAY@1958
+IF~~THEN REPLY@1959GOTO SanMadel2
+IF~~THEN REPLY@1960GOTO SanMadel2
+IF~~THEN REPLY@1961GOTO SanMadel2
+END
+
+IF~~THEN BEGIN SanMadel2
+SAY@1962
+IF~~THEN REPLY@1963GOTO SanMadel3
+IF~~THEN REPLY@1964GOTO SanMadel4
+END
+
+IF~~THEN BEGIN SanMadel3
+SAY@1965
+=@1966
+IF~~THEN DO~SetGlobal("SanMadele","Global",2)~EXIT
+END
+
+IF~~THEN BEGIN SanMadel4
+SAY@1967
+=@1966
+IF~~THEN DO~SetGlobal("SanMadele","Global",2)~EXIT
+END
+
+IF~~THEN BEGIN Lancie1
+SAY@1968
+IF~~THEN REPLY@1969GOTO Lancie2
+IF~~THEN REPLY@1970GOTO Lancie3
+END
+
+IF~~THEN BEGIN Lancie2
+SAY@1971
+IF~~THEN GOTO Lancie3
+END
+
+IF~~THEN BEGIN Lancie3
+SAY@1972
+IF~~THEN REPLY@1973EXIT
+IF~~THEN REPLY@1974EXIT
+IF~~THEN REPLY@1975EXIT
+END
+
+
+//  ENCOUNTERS
+//__________________________________________________________________________________
+
+INTERJECT_COPY_TRANS INNKE2 0 MystHint
+== INNKE2 IF ~!PartyHasItem("GIFTOFM")~THEN @1976DO ~GiveItemCreate("GIFTOFM",Player1,0,0,0)~
+END
+
+// First Elminster encounter
+
+INTERJECT_COPY_TRANS ELMIN1 5 HiddenOne
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1977
+== ELMIN1 IF ~InParty("CVSandr") ~THEN @1978
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1979DO ~IncrementGlobal("ElmHint","GLOBAL",1) ~
+== ELMIN1 IF ~InParty("CVSandr") ~THEN @1980
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1981
+END
+
+
+// Second regular Elminster
+INTERJECT_COPY_TRANS ELMIN2 0 HiddenDau
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1982
+== ELMIN2 IF ~InParty("CVSandr") ~THEN @1983
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1984
+== ELMIN2 IF ~InParty("CVSandr") ~THEN @1985
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1986
+== ELMIN2 IF ~InParty("CVSandr") ~THEN @1987
+== CVSandrJ IF ~InParty("CVSandr") Global("PCKnowsElmDaughter","GLOBAL",0)~THEN @1988
+== CVSandrJ IF ~InParty("CVSandr") Global("PCKnowsElmDaughter","GLOBAL",1)~THEN @1989
+== ELMIN2 IF ~InParty("CVSandr") ~THEN @1990
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1991
+== ELMIN2 IF ~InParty("CVSandr") ~THEN @1992
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1993
+== ELMIN2 IF ~InParty("CVSandr") Global("PCKnowsElmDaughter","GLOBAL",0)~THEN @1994DO ~SetGlobal("PCKnowsElmDaughter","GLOBAL",1) RealSetGlobalTimer("NarQMess","GLOBAL",1800)~
+== ELMIN2 IF ~InParty("CVSandr") Global("PCKnowsElmDaughter","GLOBAL",1)~THEN @1994
+END
+
+// Third regular Elminster
+INTERJECT_COPY_TRANS ELMIN3 0 Dau3
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1995
+END
+
+// Elminster at Baldur's Gate
+INTERJECT_COPY_TRANS ELMIN5 3 DauShield
+== ELMIN5 IF ~InParty("CVSandr")~THEN @1996
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1997
+== ELMIN5 IF ~InParty("CVSandr") ~THEN @1998
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @1999
+== ELMIN5 IF ~InParty("CVSandr") ~THEN @2000
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2001
+== ELMIN5 IF ~InParty("CVSandr") ~THEN @2002
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2003
+== ELMIN5 IF ~InParty("CVSandr") ~THEN @2004DO ~GiveItemCreate("CVMidshi","CVSandr",0,0,0) SetGlobal("SanMidshi","GLOBAL",1)~
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2005
+== ELMIN5 IF ~InParty("CVSandr") ~THEN @2006
+END
+
+// Haiass
+INTERJECT HAIASS 11 SanIntervHaiKick
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2007
+==HAIASS IF ~InParty("CVSandr")~THEN @2008
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2009
+= @2010
+END HAIASS 7
+
+INTERJECT Zeke 0 SanBranThre
+== CVSandrJ IF ~InParty("CVSandr")!InParty("jaheira")Global("X#JaheiraZeke","GLOBAL",0)
+StateCheck("branwen",CD_STATE_NOTVALID) ~THEN @2011
+=@2012
+==ZEKE IF ~InParty("CVSandr")!InParty("jaheira")Global("X#JaheiraZeke","GLOBAL",0)
+StateCheck("branwen",CD_STATE_NOTVALID) ~THEN @2013
+== CVSandrJ IF ~InParty("CVSandr")!InParty("jaheira")Global("X#JaheiraZeke","GLOBAL",0)
+StateCheck("branwen",CD_STATE_NOTVALID) ~THEN @2014
+==ViconJ IF~Global("X#ZEKE0","GLOBAL",0) InParty("viconia")InParty("CVSandr")!InParty("jaheira")Global("X#JaheiraZeke","GLOBAL",0) StateCheck("branwen",CD_STATE_NOTVALID) ~THEN @2015DO~SetGlobal("X#ZEKE0","GLOBAL",1)~
+==ZEKE IF ~InParty("CVSandr")!InParty("jaheira")Global("X#JaheiraZeke","GLOBAL",0)
+StateCheck("branwen",CD_STATE_NOTVALID) ~THEN @2016
+DO~GiveItemCreate("SCRLPET","cvsandr",1,0,0) EscapeAreaDestroy(90)~END Zeke 6
+
+//Khalid + Jaheira at Friendly Arm
+INTERJECT_COPY_TRANS JAHEIR 4 FurtherHint
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2017
+== JAHEIR IF ~InParty("CVSandr")~THEN @2018
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2019
+== JAHEIR IF ~InParty("CVSandr")~THEN @2020
+== KHALID IF ~InParty("CVSandr")~THEN @2021
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2022
+== JAHEIR IF ~InParty("CVSandr")~THEN @2023
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2024DO ~IncrementGlobal("ElmHint","GLOBAL",1) ~
+END
+
+// XZar Montaron encounter
+
+INTERJECT_COPY_TRANS MONTAR 0 SanRoadScum1
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2025
+== Montar IF ~InParty("CVSandr")~THEN @2026
+END
+
+INTERJECT_COPY_TRANS MONTAR 1 SanRoadScum2
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2025
+== Montar IF ~InParty("CVSandr")~THEN @2026
+END
+
+
+//Marl
+INTERJECT_COPY_TRANS MARL 0 CutMarl
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2027
+== MARL IF ~InParty("CVSandr")~THEN @2028DO ~AddexperienceParty(100) EscapeArea() ~
+END
+
+//NOOBER
+INTERJECT NOOBER 4 NobCous
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2029
+== NOOBER IF ~InParty("CVSandr")~THEN @2030
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2031
+END NOOBER San23
+
+CHAIN
+IF~~THEN Noober San23
+@2032
+DO~AddexperienceParty(100) EscapeArea() ~
+==BranwJ IF~Global("X#NOOBER11","GLOBAL",0) IfValidForPartyDialog("branwen") InMyArea("branwen")
+!StateCheck("branwen",CD_STATE_NOTVALID)~THEN@2033
+==Bimoen IF~Global("X#NOOBER11","GLOBAL",0)IfValidForPartyDialog("IMOEN2")InMyArea("IMOEN2")!StateCheck("IMOEN2",CD_STATE_NOTVALID)~THEN@2034EXIT
+
+//Kaishas
+
+INTERJECT KAISH2 12   SanIntKai
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2035
+END  KAISH2 16
+
+//Brage after rescue
+INTERJECT_COPY_TRANS BRAGE 9 SharkT
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2036
+== BRAGE IF ~InParty("CVSandr")~THEN @2037DO ~EscapeArea()~
+END
+
+//Tarnesh Assassin at Friendly Arm
+INTERJECT_COPY_TRANS TARNES 0 BounH
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2038
+== Imoen2_ IF ~InParty("Imoen2")~THEN @2039
+END
+
+// Delsvir Ulgoth Pirate Info
+INTERJECT DELSVIR 1 Pira1
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2040
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2041
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2042
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2043
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2044
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2045
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2046
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2047
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2048
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2049
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2050DO ~SetGlobal("Delsvir","LOCALS",1)~
+END DELSVIR 15
+
+INTERJECT DELSVIR 2 Pira2
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2040
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2041
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2042
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2043
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2044
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2045
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2051
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2047
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2048
+== DELSVIR IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2049
+== CVSandrJ IF ~InParty("CVSandr")GlobalGT("SanSuBH","GLOBAL",18) Global("Delsvir","LOCALS",0)~THEN @2050DO ~SetGlobal("Delsvir","LOCALS",1)~
+END DELSVIR 15
+
+
+// Durlag's Tower
+INTERJECT STONEDL 0 SanAnsw1
+== CVSandrJ IF ~InParty("CVSandr")Global("SanDurlAnsw","BG0515",2) ~THEN @2052
+END STONEDL 1
+
+INTERJECT STONEDL 4 SanAnsw2
+== CVSandrJ IF ~InParty("CVSandr") Global("SanDurlAnsw","BG0515",2)~THEN @2053
+END STONEDL 6
+
+INTERJECT STONEDL 7 SanAnsw3
+== CVSandrJ IF ~InParty("CVSandr")Global("SanDurlAnsw","BG0515",2) ~THEN @2054
+END STONEDL 9
+
+
+// Shar-Teel Initial Fight
+INTERJECT_COPY_TRANS SHARTE 4  SanFight4
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2055
+== SHARTE IF ~InParty("CVSandr") ~THEN @2056
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2057
+== SHARTE IF ~InParty("CVSandr") ~THEN @2058
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2059
+== SHARTE IF ~InParty("CVSandr") ~THEN @2060DO ~
+ChangeAIScript("SHARTEL3",OVERRIDE)
+CreateItem("SHARTHP1",0,0,0)
+ActionOverride("CVSandr",Attack("Sharteel"))
+SetGlobal("SanShartDuel","GLOBAL",1)
+FillSlot(SLOT_AMULET)~
+END
+
+INTERJECT_COPY_TRANS SHARTE 12  SanFight12
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2055
+== SHARTE IF ~InParty("CVSandr") ~THEN @2061
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2062
+== SHARTE IF ~InParty("CVSandr") ~THEN @2058
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2063
+== SHARTE IF ~InParty("CVSandr") ~THEN @2060DO ~
+ChangeAIScript("SHARTEL3",OVERRIDE)
+CreateItem("SHARTHP1",0,0,0)
+ActionOverride("CVSandr",Attack("Sharteel"))
+SetGlobal("SanShartDuel","GLOBAL",1)
+FillSlot(SLOT_AMULET)~
+END
+
+ADD_STATE_TRIGGER ShartJ 2
+~!InParty("CVSandr")~
+
+ADD_STATE_TRIGGER ViconJ 0
+~!InParty("CVSandr")~
+
+//   Firebead     
+INTERJECT_COPY_TRANS FIREBE 1 StrangeScroll1
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2064
+== FIREBE IF ~InParty("CVSandr")~THEN @2065
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2066DO ~IncrementGlobal("ElmHint","GLOBAL",1) ~
+END
+
+INTERJECT_COPY_TRANS FIREBE 6 StrangeScroll2
+== FIREBE IF ~InParty("CVSandr") Global("ElminGaveNarQ","GLOBAL",2) !PartyHasItem("SCRLALZ")~THEN @845
+== CVSandrJ IF ~InParty("CVSandr") Global("ElminGaveNarQ","GLOBAL",2) !PartyHasItem("SCRLALZ")~THEN @2067
+== FIREBE IF ~InParty("CVSandr") Global("ElminGaveNarQ","GLOBAL",2) !PartyHasItem("SCRLALZ")~THEN @2068
+END
+
+
+// Thalantyr
+
+INTERJECT_COPY_TRANS THALAN 2 MagesDaughter1
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2069
+== THALAN IF ~InParty("CVSandr")~THEN @2070
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2071
+== THALAN IF ~InParty("CVSandr")~THEN @2072DO ~IncrementGlobal("ElmHint","GLOBAL",1) ~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2073
+END
+
+// Melicamp
+INTERJECT_COPY_TRANS MELICA 10 MagesDaughter2
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2074
+END
+
+INTERJECT_COPY_TRANS MELICA 23 MagesDaughter3
+== MELICA IF ~InParty("CVSandr")~THEN @2075
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2076
+== MELICA IF ~InParty("CVSandr")~THEN @2077
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2078
+== Bimoen IF  ~InParty("Imoen2") InParty("CVSandr")~THEN @2079
+== THALAN IF ~InParty("CVSandr")~THEN @2080
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2081
+== MELICA IF ~InParty("CVSandr")~THEN @2082
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2083
+END
+
+// Ajantis 1st Meeting
+
+INTERJECT AJANTI 0 WDFriends
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2084
+== AJANTI IF ~InParty("CVSandr")~THEN @2085
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2086
+== AJANTI IF ~InParty("CVSandr")~THEN @2087
+== Bimoen IF ~InParty("Imoen2") InParty("CVSandr")~THEN @2088
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2089
+== AJANTI IF ~InParty("CVSandr")~THEN @2090
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2091
+== AJANTI IF ~InParty("CVSandr")~THEN @2092
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2093
+END AJANTI 5
+
+// Ribbons from Setta
+
+INTERJECT_COPY_TRANS X#Setta 0 SanSetRibbs
+== BMINSC_ IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2094
+== BDynah IF ~InParty("Dynaheir") InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN @2095
+== BMINSC_ IF ~InParty("Dynaheir") InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN @2096
+== BSANDR IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2097
+== BMINSC_ IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2098
+== BSANDR IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2099
+== BMINSC_ IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2100
+= @2101
+== BSANDR IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2102
+== BMINSC_ IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2103
+== X#SETTA IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2104DO ~TakePartyGold(150)~
+== BSANDR IF ~InParty("Minsc") InParty("CVSandr") GlobalGT("SanBooTlk","GLOBAL",3) ~THEN@2105
+==BKIVAN IF~InParty("Kivan")InParty("CVSandr") GlobalGT("Kivshil","GLOBAL",7) ~THEN@2106
+== X#SETTA IF~InParty("Kivan")InParty("CVSandr") GlobalGT("Kivshil","GLOBAL",7) ~THEN@2107DO ~TakePartyGold(50)~
+==BKIVAN  IF~InParty("Kivan")InParty("CVSandr") GlobalGT("Kivshil","GLOBAL",7) ~THEN@2108
+== BSANDR IF~InParty("Kivan")InParty("CVSandr") GlobalGT("Kivshil","GLOBAL",7) ~THEN@2109
+== BXANNN IF ~InParty("Xan") InParty("CVSandr") GlobalGT("SanXanA","GLOBAL",6) ~THEN@2110
+== BSANDR IF ~InParty("Xan") InParty("CVSandr") GlobalGT("SanXanA","GLOBAL",6) ~THEN@2111
+== BXANNN IF ~InParty("Xan") InParty("CVSandr") GlobalGT("SanXanA","GLOBAL",6) ~THEN@2112
+== BSANDR IF ~InParty("Xan") InParty("CVSandr") GlobalGT("SanXanA","GLOBAL",6) ~THEN@2113
+END
+
+// Viconia First Rescue (Sword Coast)
+
+INTERJECT_COPY_TRANS viconi_ 0 SanVicInve
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2114
+END
+
+INTERJECT_COPY_TRANS viconi_ 5 SanVicObli1
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2115DO ~RealSetGlobalTimer("VicBantT","GLOBAL",300) ~
+END
+
+INTERJECT_COPY_TRANS viconi_ 6 SanVicObli2
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2115DO ~RealSetGlobalTimer("VicBantT","GLOBAL",300) ~
+END
+
+INTERJECT viconi_ 8 SanVicObli4
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2116
+== viconi_ IF ~InParty("CVSandr")~THEN @2117DO ~GiveItemCreate("Sanwi1","CVSandr",0,0,0) AddJournalEntry(@60148,QUEST)SetGlobal("IWasKickedOut","LOCALS",1)EscapeAreaMove("BG3304",800,1085,0)~EXIT
+
+INTERJECT_COPY_TRANS  FLAM2 0 DefendVic
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2118
+== FLAM2 IF ~InParty("CVSandr")~THEN @2119
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2120
+== FLAM2 IF ~InParty("CVSandr")~THEN @2121DO ~AddexperienceParty(700) ReputationInc(1)~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2122
+== FLAM2 IF ~InParty("CVSandr")~THEN @2123
+END
+
+CHAIN
+IF WEIGHT #-4~ Dead("FlamingFist2") ReactionLT(LastTalkedToBy,NEUTRAL_LOWER) InParty("CVSandr")~THEN viconi_ Anyway1
+@2124
+== CVSandrJ @2116
+== viconi_ @2117DO ~GiveItemCreate("Sanwi1","CVSandr",0,0,0) AddJournalEntry(@60148,QUEST)SetGlobal("IWasKickedOut","LOCALS",1)EscapeAreaMove("BG3304",800,1085,0)~EXIT
+
+// The Fishermen and Umberlee
+
+INTERJECT SONNER 5  SanUmberbowl
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2125
+==  JEBADO  IF ~InParty("CVSandr")~THEN @2126
+= @2127
+== Sonner IF ~InParty("CVSandr")~THEN @2128
+==  JEBADO  IF ~InParty("CVSandr")~THEN @2129
+== Sonner IF ~InParty("CVSandr")~THEN @2130DO~GiveItem("MISC53",[PC])~
+=@2131DO~AddexperienceParty(300) ActionOverride("Telman",EscapeAreaDestroy(90)) ActionOverride("Jebadoh",EscapeAreaDestroy(90))  EscapeAreaDestroy(90)~
+EXIT
+
+
+// Join Bandits
+
+INTERJECT RAIKEN 0 JoinBandtR
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2132
+== RAIKEN IF ~InParty("CVSandr")~THEN @2133
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2134
+== RAIKEN IF ~InParty("CVSandr")~THEN @2135
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2136
+== RAIKEN IF ~InParty("CVSandr")~THEN @2137
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2138
+END RAIKEN 9
+
+INTERJECT TEVEN 0 JoinBandtT
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2139
+== TEVEN IF ~InParty("CVSandr")~THEN @2133
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2134
+== TEVEN IF ~InParty("CVSandr")~THEN @2135
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2136
+== TEVEN IF ~InParty("CVSandr")~THEN @2137
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2140
+END TEVEN 5
+
+// Bandit Camp
+INTERJECT_COPY_TRANS KIVANJ 242 Kivrevenge
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2141
+== KIVANJ IF ~InParty("CVSandr")~THEN @2142
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2143
+== KIVANJ IF ~InParty("CVSandr")~THEN @2144
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2145
+END
+
+
+
+INTERJECT_COPY_TRANS KNOTT 2 ImoCamp1
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2146
+== KNOTT IF  ~InParty("CVSandr") InParty("Imoen2") Global("SANIMONASHINT","GLOBAL",19)~THEN @2147
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("SANIMONASHINT","GLOBAL",19)~THEN @2148
+== KNOTT IF  ~InParty("CVSandr") InParty("Imoen2") Global("SANIMONASHINT","GLOBAL",19)~THEN @2149
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("SANIMONASHINT","GLOBAL",19)~THEN @2150
+== KNOTT IF  ~InParty("CVSandr") ~THEN @2151
+END
+
+INTERJECT_COPY_TRANS TERSUS 0 ImoCamp2
+== TERSUS IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp","LOCALS",0) Global("SANIMONASHINT","GLOBAL",19)~THEN @2147
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("SANIMONASHINT","GLOBAL",19)~THEN @2148
+== TERSUS IF  ~InParty("CVSandr") InParty("Imoen2") Global("SANIMONASHINT","GLOBAL",19)~THEN @2149
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("SANIMONASHINT","GLOBAL",19)~THEN @2152
+== TERSUS IF  ~InParty("CVSandr") InParty("Imoen2") Global("SANIMONASHINT","GLOBAL",19)~THEN @2151
+END
+
+INTERJECT_COPY_TRANS ENDER 6 ImoCamp6
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2153
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2154
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2155
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2156
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2157
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2158
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2159
+== CVSandrJ IF ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2160
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp13","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2161
+END
+
+INTERJECT_COPY_TRANS ENDER 13 ImoCamp13
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2153
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2154
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2155
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2156
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2157
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2158
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2159
+== CVSandrJ IF ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2160
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2161
+END
+
+
+INTERJECT_COPY_TRANS ENDER 18 ImoCamp18
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp13","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2153
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp13","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2154
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp13","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2155
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp13","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2156
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp18","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2157
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp13","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2158
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp13","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2159
+== CVSandrJ IF ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp13","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2160
+== ENDER IF  ~InParty("CVSandr") InParty("Imoen2") Global("ImoCamp6","GLOBAL",0) Global("ImoCamp13","GLOBAL",0)GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2161
+END
+
+
+INTERJECT_COPY_TRANS IRON2 0 MineInf
+== CVSandrJ IF  ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2162
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2163
+== IRON2 IF~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2164
+== CVSandrJ IF  ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2165
+== IRON2 IF ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2166
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @765
+== CVSandrJ IF  ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2167
+== IRON2 IF ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2168
+== Bimoen IF  ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2169
+== CVSandrJ IF  ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2170
+== IRON2 IF ~InParty("CVSandr") InParty("Imoen2") GlobalGT("SANIMONASHINT","GLOBAL",18)~THEN @2171
+END 
+
+// Return to Candlekeep
+
+INTERJECT_COPY_TRANS WINTHR2 8 ImoDaddy
+== Bimoen IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2172
+== WINTHR2 IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2173
+== Bimoen IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2174
+== WINTHR2 IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2175
+== Bimoen IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2176
+== WINTHR2 IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2177
+== Bimoen IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2178
+== WINTHR2 IF ~InParty("Imoen2") InParty("CVSandr") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2179
+== CVSandrJ IF ~InParty("Imoen2") InParty("CVSandr") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2180
+== WINTHR2 IF ~InParty("Imoen2") InParty("CVSandr") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2181
+== WINTHR2 IF ~InParty("Imoen2") !InParty("CVSandr") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2182
+== Bimoen IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2183
+== WINTHR2 IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2184
+== Bimoen IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2185
+== WINTHR2 IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2186
+== Bimoen IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2187
+== WINTHR2 IF ~InParty("Imoen2") GlobalGT("Formedcloth","GLOBAL",23)~THEN@2188
+END
+
+INTERJECT_COPY_TRANS KOVERA 3 Candletrapa
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2189
+== KOVERA IF ~InParty("CVSandr")~THEN @2190
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2191
+== KOVERA IF ~InParty("CVSandr")~THEN @2192
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2193
+== KOVERA IF ~InParty("CVSandr")~THEN@2194
+END
+
+INTERJECT_COPY_TRANS KOVERA 9 Candletrapb
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2189
+== KOVERA IF ~InParty("CVSandr")~THEN @2190
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2191
+== KOVERA IF ~InParty("CVSandr")~THEN @2192
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2193
+== KOVERA IF ~InParty("CVSandr")~THEN@2194
+END
+
+INTERJECT_COPY_TRANS Tethto3 0 SanOwnDaughN
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2195
+== ELMINS4 IF ~InParty("CVSandr")~THEN @2196
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2197
+END
+
+// Nalin Nashkel Temple
+INTERJECT_COPY_TRANS NALIN 0 AnPries
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2198
+== NALIN IF ~InParty("CVSandr")~THEN @2199
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2200
+== NALIN IF ~InParty("CVSandr")~THEN @2201DO ~IncrementGlobal("ElmHint","GLOBAL",1)~
+END
+
+// Ashen
+INTERJECT ASHEN 0  AsImposter
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2202
+== AJANTJ IF ~InParty("Ajantis") InParty("CVSandr")~THEN @2203
+== ASHEN IF ~InParty("CVSandr")~THEN @2204
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2205
+== ASHEN IF ~InParty("CVSandr")~THEN @2206
+END ASHEN 5
+
+
+// Drizzt
+
+INTERJECT_COPY_TRANS DRIZZT 10 Drowfr
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2207
+== DRIZZT IF ~InParty("CVSandr")~THEN @2208
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2209DO ~IncrementGlobal("ElmHint","GLOBAL",1)~
+END
+
+INTERJECT_COPY_TRANS DRIZZT 19 DrDuMeetUlg
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2210
+== DRIZZT IF ~InParty("CVSandr") Global("SanBranSharDzt","GLOBAL",0)~THEN @2211DO~SetGlobal("SanBranSharDzt","GLOBAL",1) ~
+== DRIZZT IF ~InParty("CVSandr") !Global("SanBranSharDzt","GLOBAL",0)~THEN @2211
+END
+
+INTERJECT_COPY_TRANS IF_FILE_EXISTS F_DRIZZT 0 FDrDuMeetUlg
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2210
+==IF_FILE_EXISTS F_DRIZZT IF ~InParty("CVSandr") Global("SanBranSharDzt","GLOBAL",0)~THEN @2211DO~SetGlobal("SanBranSharDzt","GLOBAL",1) ~
+==IF_FILE_EXISTS F_DRIZZT IF ~InParty("CVSandr") !Global("SanBranSharDzt","GLOBAL",0)~THEN @2211
+END
+
+ADD_STATE_TRIGGER Tranzi 7
+~!InParty("CVSandr")!InParty("Imoen2")~
+
+//Galken at Ulguth's Inn
+REPLACE_STATE_TRIGGER GALKEN 2
+~NumTimesTalkedTo(0) ReactionGT(LastTalkedToBy(Myself),NEUTRAL_UPPER)!InParty("CVSandr")~
+
+REPLACE_STATE_TRIGGER GALKEN 3
+~NumTimesTalkedTo(0) OR(2) ReactionGT(LastTalkedToBy(Myself),HOSTILE_UPPER)InParty("CVSandr")~
+
+REPLACE_STATE_TRIGGER GALKEN 4
+~NumTimesTalkedTo(0) ReactionLT(LastTalkedToBy(Myself),NEUTRAL_LOWER)!InParty("CVSandr")~
+
+ADD_TRANS_TRIGGER GALKEN 3
+~!InParty("CVSandr")~
+
+INTERJECT GALKEN 3 BetterNow
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2212
+== GALKEN IF ~InParty("CVSandr")~THEN @2213
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2214
+== GALKEN IF ~InParty("CVSandr")~THEN @2215DO ~StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~
+EXIT
+
+
+// Shandalar
+
+INTERJECT_COPY_TRANS SHANDAL2 15 UlghMag
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2216
+== SHANDAL2 IF ~InParty("CVSandr")~THEN @2217
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2218DO ~IncrementGlobal("ElmHint","GLOBAL",1)~
+== SHANDAL2 IF ~InParty("CVSandr")~THEN @2219
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2220
+END
+
+// Volo
+
+INTERJECT_COPY_TRANS VOLO 2 Knowbetter
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2221
+== Volo IF ~InParty("CVSandr")~THEN @2222
+= @2223
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2224
+== Volo IF ~InParty("CVSandr")~THEN @2225DO~GiveItemCreate("CVMiHist",Player1,1,0,0)~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2226
+= @2227
+== Volo IF ~InParty("CVSandr")~THEN @2228DO ~IncrementGlobal("ElmHint","GLOBAL",1)~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2229
+== Volo IF ~InParty("CVSandr")~THEN @2230
+END
+
+INTERJECT_COPY_TRANS VOLO 3 Knowbetter3
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2221
+== Volo IF ~InParty("CVSandr")~THEN @2222
+= @2223
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2224
+== Volo IF ~InParty("CVSandr")~THEN @2225DO~GiveItemCreate("CVMiHist",Player1,1,0,0)~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2226
+= @2227
+== Volo IF ~InParty("CVSandr")~THEN @2228DO ~IncrementGlobal("ElmHint","GLOBAL",1)~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2229
+== Volo IF ~InParty("CVSandr")~THEN @2230
+END
+
+//Naskel Mine
+INTERJECT Beldin 1 KivanNotInMine1
+== CVSandrJ IF ~InParty("CVSandr")!InParty("Kivan")Global("X#KivanBeldin","GLOBAL",0)~THEN @2231
+DO ~SetGlobal("X#KivanBeldin","GLOBAL",1) ActionOverride("beldin",JumpToPoint([2180.2739])) CreateCreature("KOBOLDAB",[2227.2390],0) CreateCreature("KOBOLDAB",[2227.2390],0) CreateCreature("KOBOLDAB",[2227.2390],0) CreateCreature("KOBOLDAB",[2227.2390],0)~EXIT
+
+CHAIN
+IF WEIGHT #-2~InParty("CVSandr")!InParty("Kivan")Global("X#KivanBeldin","GLOBAL",1)~THEN Beldin KivanNotInMine2
+@2232
+END
+++ @2233DO ~SetGlobal("X#KivanBeldin","GLOBAL",2)~EXTERN CVSandrJ Beldin1ChainS
+++ @2234DO ~SetGlobal("X#KivanBeldin","GLOBAL",3) GiveItemCreate("MISC18",Player1,1,0,0) ActionOverride("beldin", EscapeArea())~EXIT
+++ @2235DO ~SetGlobal("X#KivanBeldin","GLOBAL",3) ActionOverride("beldin", EscapeArea())~EXIT
+
+CHAIN
+IF~~THEN CVSandrJ Beldin1ChainS
+@2236
+==Beldin@2237DO ~SetGlobal("X#KivanBeldin","GLOBAL",3)ReputationInc(1) ActionOverride("beldin", EscapeArea())~
+EXIT
+
+INTERJECT Elmin3 4 Enhancedag1
+==Elmin3 IF ~InParty("CVSandr") Global("CVGodag","GLOBAL",3)PartyHasItem("Godag01")~THEN @2238
+DO~SetGlobal("CVGodag","GLOBAL",4)TakePartyItem("Godag01") SmallWait(5) ForceSpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT) SmallWait(5) GiveItemCreate("Godag02",Player1,1,1,0) EscapeArea() ~EXIT
+
+INTERJECT Elmin3 5 Enhancedag2
+==Elmin3 IF ~InParty("CVSandr") Global("CVGodag","GLOBAL",3)PartyHasItem("Godag01")~THEN @2238
+DO~SetGlobal("CVGodag","GLOBAL",4)TakePartyItem("Godag01") SmallWait(5) ForceSpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT) SmallWait(5) GiveItemCreate("Godag02",Player1,1,1,0) EscapeArea() ~EXIT
+
+//Dynaheir in Gnoll Prison
+
+INTERJECT_COPY_TRANS DYNAHE 4 Dynaforc4
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2239
+==DYNAHE IF~InParty("CVSandr")~THEN @2240DO ~GiveItemCreate("Sanwi2","CVSandr",0,0,0) ~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2241DO ~SetGlobal("SanNotCloth","GLOBAL",3)~
+==DYNAHE IF~InParty("CVSandr")~THEN @2242
+END
+
+INTERJECT_COPY_TRANS DYNAHE 5 Dynaforc5
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2239
+==DYNAHE IF~InParty("CVSandr")~THEN @2240DO ~GiveItemCreate("Sanwi2","CVSandr",0,0,0) ~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2241DO ~SetGlobal("SanNotCloth","GLOBAL",3)~
+==DYNAHE IF~InParty("CVSandr")~THEN @2242
+END
+
+INTERJECT_COPY_TRANS DYNAHE 23 Dynaforc23
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2239
+== DYNAHE IF~InParty("CVSandr")~THEN @2240DO ~GiveItemCreate("Sanwi2","CVSandr",0,0,0) ~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2241DO ~SetGlobal("SanNotCloth","GLOBAL",3)~
+== DYNAHE IF~InParty("CVSandr")~THEN @2242
+END
+
+
+INTERJECT_COPY_TRANS DYNAHE 21 Dynajoin6
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2243
+== DYNAHE IF ~InParty("CVSandr")~THEN@2244
+== CVSandrJ IF ~InParty("CVSandr")~THEN@2245
+== DYNAHE IF ~InParty("CVSandr")~THEN@2246
+== CVSandrJ IF ~InParty("CVSandr")~THEN@2247
+= @2248
+END
+
+INTERJECT_COPY_TRANS DYNAHE 7 Dynajoin36
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2243
+== DYNAHE IF ~InParty("CVSandr")~THEN@2244
+== CVSandrJ IF ~InParty("CVSandr")~THEN@2245
+== DYNAHE IF ~InParty("CVSandr")~THEN@2246
+== CVSandrJ IF ~InParty("CVSandr")~THEN@2247
+= @2248
+END
+
+INTERJECT_COPY_TRANS DYNAHE 1 Dynajoin31
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2243
+== DYNAHE IF ~InParty("CVSandr")~THEN@2244
+== CVSandrJ IF ~InParty("CVSandr")~THEN@2245
+== DYNAHE IF ~InParty("CVSandr")~THEN@2246
+== CVSandrJ IF ~InParty("CVSandr")~THEN@2247
+= @2248
+END
+
+INTERJECT_COPY_TRANS DYNAHE 0 Dynajoin30
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2243
+== DYNAHE IF ~InParty("CVSandr")~THEN@2244
+== CVSandrJ IF ~InParty("CVSandr")~THEN@2245
+== DYNAHE IF ~InParty("CVSandr")~THEN@2246
+== CVSandrJ IF ~InParty("CVSandr")~THEN@2247
+= @2248
+END
+
+// Meilum Firewine
+INTERJECT_COPY_TRANS MEILUM 0 Thirdpart
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2249
+== MEILUM IF ~InParty("CVSandr")~THEN @2250
+==Imoen2_ IF ~InParty("CVSandr") InParty("Imoen2")~THEN @2251
+== BSHART IF ~InParty("CVSandr") InParty("Sharteel") ~THEN@2252
+== MEILUM IF ~InParty("CVSandr")~THEN @2253DO~GiveItemCreate("Sanwi3","CVSandr",0,0,0) ~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2254
+== MEILUM IF ~InParty("CVSandr")~THEN @2255
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2256
+END
+
+//Drienne Cloudpeaks
+
+INTERJECT_COPY_TRANS DRIENN 1 Catkiller
+== CVSandrJ IF ~InParty("CVSandr") Global("SanNarQ","GLOBAL",2)~THEN @2257
+== DRIENN IF ~InParty("CVSandr") Global("SanNarQ","GLOBAL",2)~THEN @2258DO ~SetGlobal("PixieHint","GLOBAL",1) ~
+END
+
+INTERJECT_COPY_TRANS DRIENN 7 Catkiller2
+== CVSandrJ IF ~InParty("CVSandr") Global("SanNarQ","GLOBAL",2)~THEN @2257
+== DRIENN IF ~InParty("CVSandr") Global("SanNarQ","GLOBAL",2)~THEN @2258DO ~SetGlobal("PixieHint","GLOBAL",1) ~
+END
+
+//Taerom in Beregost
+
+INTERJECT_COPY_TRANS TAEROM 14 TaeAmu
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2259
+== TAEROM IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2260
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2261
+== TAEROM  IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2262
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2263
+== TAEROM IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2264
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2265
+== TAEROM IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2266
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2267
+== TAEROM IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",1)~THEN @2268DO ~SetGlobal("SanHadTae","GLOBAL",2) RealSetGlobalTimer("SanTaeT","GLOBAL",600) ~
+END
+
+INTERJECT_COPY_TRANS TAEROM 14 TaeGir
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",3)~THEN @2269
+== TAEROM IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",3)~THEN @2270
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",3)~THEN @2271
+== TAEROM IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",3)~THEN @2272
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",3)~THEN @2273
+== TAEROM IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",3)~THEN @2274
+== CVSandrJ IF ~InParty("CVSandr") Global("SanHadTae","GLOBAL",3)~THEN @2275
+== TAEROM IF ~InParty("CVSandr") ~THEN @2276DO ~SetGlobal("SanHadTae","GLOBAL",4) ~
+END
+
+// In Baldur's Gate
+
+INTERJECT_COPY_TRANS SCAR 30 SanScar1
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2277
+==SCAR IF ~InParty("CVSandr")~THEN @2278
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2279
+==SCAR IF ~InParty("CVSandr")~THEN @2280DO ~StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~
+END
+
+INTERJECT_COPY_TRANS SCAR 31 SanScar4
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2281
+==SCAR IF ~InParty("CVSandr")~THEN @2282
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2283
+==SCAR IF ~InParty("CVSandr")~THEN @2284
+END
+
+INTERJECT_COPY_TRANS LOBAR 0 LowLatern
+==LOBAR IF ~InParty("CVSandr")~THEN @2285
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2286
+==LOBAR IF ~InParty("CVSandr")~THEN @2287
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2288
+==LOBAR IF ~InParty("CVSandr")~THEN @2289
+END
+
+INTERJECT_COPY_TRANS BORK 5 SanEdBlush
+==CVSandrJ IF ~InParty("CVSandr") InParty("Edwin") GlobalLT("X#EdwinBlushing","GLOBAL",5)~THEN @2290
+==Bedwin_ IF ~InParty("CVSandr") InParty("Edwin") GlobalLT("X#EdwinBlushing","GLOBAL",5)~THEN @2291
+==CVSandrJ IF ~InParty("CVSandr") InParty("Edwin") GlobalLT("X#EdwinBlushing","GLOBAL",5)~THEN @2292DO ~SetGlobal("SanEdBlushTa","GLOBAL",2) ~
+==Bedwin_ IF ~InParty("CVSandr") InParty("Edwin") GlobalLT("X#EdwinBlushing","GLOBAL",5)~THEN @2293
+==CVSandrJ IF ~InParty("CVSandr") InParty("Edwin") GlobalLT("X#EdwinBlushing","GLOBAL",5)~THEN @2294
+==BORK IF ~InParty("CVSandr") InParty("Edwin") GlobalLT("X#EdwinBlushing","GLOBAL",5)~THEN@2295
+END
+
+INTERJECT_COPY_TRANS PHANDA 1 SanBiggPa
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2296
+== PHANDA IF ~InParty("CVSandr") ~THEN @2297DO ~ForceSpell(Myself,CLERIC_SYMBOL_FEAR)~
+END
+
+
+INTERJECT_COPY_TRANS LAOLA 0 SanSharGirlFFist
+== CVSandrJ IF~InParty("Sharteel") InParty("CVSandr") ~THEN @2298
+== BSHART IF~InParty("Sharteel") InParty("CVSandr")~THEN @2299
+== LAOLA IF~InParty("Sharteel") InParty("CVSandr")~THEN @2300
+== BSHART IF~InParty("Sharteel") InParty("CVSandr")~THEN @2301
+== LAOLA IF~InParty("Sharteel") InParty("CVSandr")~THEN @2302
+== BSHART IF~InParty("Sharteel") InParty("CVSandr")~THEN @2303
+== LAOLA IF~InParty("Sharteel") InParty("CVSandr")~THEN @2304
+== BSHART IF~InParty("Sharteel") InParty("CVSandr")~THEN @2305
+== LAOLA IF~InParty("Sharteel") InParty("CVSandr")~THEN @2306
+== BSHART IF~InParty("Sharteel") InParty("CVSandr")~THEN @2307
+END
+
+INTERJECT_COPY_TRANS REGINA 2 Sanbore2
+== CVSandrJ IF ~InParty("CVSandr") ~THEN @2308
+== Bimoen IF ~InParty("Imoen2") ~THEN @2309
+END
+
+
+
+//_________________________________________________
+//APPENDS Go Below
+
+
+APPEND BRANWJ
+IF ~Global("TranzRevBG","LOCALS",0) ~THEN BEGIN TranzRevBG
+SAY @2310
+IF~~THEN REPLY @466DO ~SetGlobal("TranzRevBG","LOCALS",0)~EXIT
+END
+END
+
+APPEND Bimoen
+
+IF ~~THEN BEGIN IntroImoS2
+SAY @2311
+IF ~~THEN EXTERN CVSANDRJ ReturndToImo2
+END
+END
+
+APPEND Bimoen
+
+IF ~~THEN BEGIN IntroImoN2
+SAY @2312
+IF ~~THEN EXIT
+END
+END
+
+APPEND SHARTE
+
+IF ~Global("BeatSharteel","GLOBAL",4) ~THEN BEGIN SanSharBeatJ
+SAY @2313
+IF ~~THEN REPLY @2314DO ~ActionOverride("CVSandr",ForceSpell("Sharteel",CLERIC_CURE_SERIOUS_WOUNDS)~GOTO SanSharBeatJ2
+END
+
+IF ~~THEN BEGIN SanSharBeatJ2
+SAY @2315
+IF~~THEN DO~ DestroyItem("SHARTHP1")
+AddexperienceParty(300)
+ChangeAIScript("SHARTEEL",OVERRIDE)
+SetGlobal("BeatSharteel","GLOBAL",5)
+ReallyForceSpellRES("fjxpmooc",Myself)
+JoinParty() ~EXIT
+END
+END
+
+APPEND Bimoen
+
+IF~~THEN BEGIN BountyHu3
+SAY @2316IF ~~THEN EXTERN CVSANDRJ BountyHu4
+END
+END
+
+APPEND SHANDAL2
+
+IF WEIGHT #-999 ~InParty("CVSandr")
+        PartyHasItem("CLCK22")
+	OR(2)
+        Global("Evilsh","GLOBAL",1)
+        Global("Goodsh","GLOBAL",1)~THEN BEGIN Punish
+SAY @2317
+IF ~~THEN DO ~TakePartyItem("CLCK22")
+                TakePartyItem("MISC2H")
+                AddexperienceParty(900)
+                ForceSpell(Myself,WIZARD_FLAME_ARROW)
+                DisplayStringWait(Myself,@60137)
+                ForceSpell(Myself,WIZARD_AGANNAZAR_SCORCHER)
+                SetGlobal("GoShand","BG1000",1)
+		ForceSpell(Myself,WIZARD_LIGHTNING_BOLT) ~EXIT
+
+END
+END
+
+APPEND IF_FILE_EXISTS NTHAEBAL
+
+IF WEIGHT #-9 ~ !Dead("NTHASDAR")
+!Global("TalkedToReedigInBeard","GLOBAL",1)
+!Global("NTTalkedToReedig","GLOBAL",3)
+InParty("CVSandr")
+Global("SanMageDM","LOCALS",0)
+OR(2)
+PartyHasItem("NTMISC10")
+PartyHasItem("DSGBBOW")
+~THEN BEGIN SanHasItms1
+  SAY  @2318
+IF~~THEN DO~SetGlobal("SanMageDM","LOCALS",1)~EXTERN CVSandrJ SanHasItms2
+END
+END
+
+APPEND KAHRK
+IF WEIGHT #-2  ~Global("SanKahrk","GLOBAL",4)~THEN BEGIN SanDropJar
+SAY@2319
+IF~~THEN DO~SetGlobal("SanKahrk","GLOBAL",5)~GOTO 0
+END
+END
+
+
+
+
+//________________________________________________________________________
+// CHAINS Go Below
+
+// Go To Hell Reactions
+
+CHAIN
+IF~Global("NarHellAfter","GLOBAL",2)~THEN CVSANDRJ NarGoneComm
+@2320
+DO ~SetGlobal("NarHellAfter","GLOBAL",3) ~
+== Bimoen IF~InParty("Imoen2") ~THEN @2321
+== BSHART IF~InParty("Sharteel") ~THEN @2322
+== BVicon  IF~InParty("Viconia") ~THEN @2323
+== BKIVAN  IF~InParty("Kivan") ~THEN @2324
+== IF_FILE_EXISTS BSUFINCH  IF~InParty("Sufinch") ~THEN @2325
+== BAJANT  IF~InParty("Ajantis") ~THEN @2326
+== IF_FILE_EXISTS k-roseB  IF~InParty("k-rose") ~THEN @2327
+==CVJenliJ IF~InParty("CVJenlig")~THEN@2328
+== IF_FILE_EXISTS ~B!GAVINJ~IF ~InParty("B!GAVIN")~THEN @2329
+== IF_FILE_EXISTS BRH#ISRA  IF~InParty("RH#ISRA") ~THEN @2330
+== IF_FILE_EXISTS ACBreB IF~InParty("ACBre") ~THEN  @2331
+== BNeera_ IF~InParty("Neera") ~THEN  @2332
+== BSandr IF~InParty("Neera") ~THEN  @2333
+== BBRANW  IF~InParty("Branwen") ~THEN @2334
+== BXANNN  IF~InParty("Xan") ~THEN @2335
+== Bedwin_  IF~InParty("Edwin") ~THEN @2336
+== BCORAN  IF~InParty("Coran") ~THEN  @2337
+== IF_FILE_EXISTS BGARRI IF~InParty("Garrick") ~THEN  @2338
+== BRasaad_ IF~InParty("Rasaad") ~THEN  @2339
+== BDynah  IF~InParty("Dynaheir") ~THEN @2340
+== BJahei  IF~InParty("Jaheira") ~THEN @2341
+==BDorn_ IF~InParty("Dorn")~THEN@2342
+== BSANDR @2343
+EXIT
+
+CHAIN
+IF ~~THEN CVSANDRJ BaldMaekt15
+@2344
+DO ~SetGlobal("NarHellAfter","GLOBAL",3) ~
+== Bimoen IF~InParty("Imoen2") ~THEN @2345
+== BSHART IF~InParty("Sharteel") ~THEN @2346
+== BVicon  IF~InParty("Viconia") ~THEN @2347
+== BKIVAN  IF~InParty("Kivan") ~THEN @2348
+== BSANDR IF~InParty("Kivan") ~THEN @2349
+== BKIVAN  IF~InParty("Kivan") ~THEN @2350
+== IF_FILE_EXISTS BSUFINCH  IF~InParty("Sufinch") ~THEN @2351
+== BAJANT  IF~InParty("Ajantis") ~THEN @2352
+== IF_FILE_EXISTS k-roseB  IF~InParty("k-rose") ~THEN @2353
+== IF_FILE_EXISTS ~B!GAVINJ~IF ~InParty("B!GAVIN")~THEN @2354
+== IF_FILE_EXISTS ACBreB IF~InParty("ACBre") ~THEN  @2355
+== IF_FILE_EXISTS BRH#ISRA  IF~InParty("RH#ISRA") ~THEN @2356
+==CVJenliJ IF~InParty("CVJenlig")~THEN@2357
+== BBRANW  IF~InParty("Branwen") ~THEN @2358
+== BXANNN  IF~InParty("Xan") ~THEN @2359
+== BSANDR IF~InParty("Xan") ~THEN @2360
+== Bedwin_  IF~InParty("Edwin") ~THEN @2361
+== BCORAN  IF~InParty("Coran") ~THEN  @2362
+== BGARRI IF~InParty("Garrick") ~THEN  @2353
+== BDynah  IF~InParty("Dynaheir") ~THEN @2363
+== BMINSC_ IF ~InParty("Minsc") ~THEN@2364
+== BDynah  IF~InParty("Dynaheir") InParty("Minsc") ~THEN @2365
+== BSANDR IF~InParty("Dynaheir") InParty("Minsc") ~THEN @2366
+== BJahei  IF~InParty("Jaheira") ~THEN @2367
+== BSANDR @2368
+END
+++ @2369
+EXIT
+
+
+CHAIN
+IF~Global("Pid9AnklCmt","LOCALS",1) ~THEN CVSANDRJ Pid9AnklComnts
+@2370
+DO ~SetGlobal("Pid9AnklCmt","LOCALS",2) SetGlobal("Pid9Ankl","LOCALS",1) ~
+== Bimoen IF~InParty("Imoen2") ~THEN @2371
+== BSHART IF~InParty("Sharteel") ~THEN @2372
+== BVicon  IF~InParty("Viconia") ~THEN @2373
+== BKIVAN  IF~InParty("Kivan") ~THEN @2374
+== IF_FILE_EXISTS BSUFINCH  IF~InParty("Sufinch") ~THEN @2375
+== BAJANT  IF~InParty("Ajantis") ~THEN @2376
+== IF_FILE_EXISTS k-roseB  IF~InParty("k-rose") ~THEN @2377
+== IF_FILE_EXISTS ACBreB IF~InParty("ACBre") ~THEN  @2378
+== IF_FILE_EXISTS ~B!GAVINJ~IF ~InParty("B!GAVIN")~THEN @2379
+==CVJenliJ IF~InParty("CVJenlig") ~THEN @2380
+== BBRANW  IF~InParty("Branwen") ~THEN @2381
+== BXANNN  IF~InParty("Xan") ~THEN @2382
+== BCORAN  IF~InParty("Coran") ~THEN  @2383
+== BDynah  IF~InParty("Dynaheir") ~THEN @2384
+== BJahei  IF~InParty("Jaheira") ~THEN @2385
+==BGARRI IF~InParty("Garrick")~THEN@2386
+==Bedwin_ IF~InParty("Edwin")~THEN@2387
+== IF_FILE_EXISTS BRH#ISRA  IF~InParty("RH#ISRA") ~THEN @2388
+== BSANDR @2389
+EXIT
+
+CHAIN
+IF ~Global("SanSplash","GLOBAL",3) AreaCheck("CVSPLA") ~THEN CVSANDRJ Sunsplash2
+@2390
+DO ~SetGlobal("SanSplash","GLOBAL",4)~
+== Bimoen IF~InParty("Imoen2") ~THEN @2391
+== BSHART IF~InParty("Sharteel") ~THEN @2392
+== BVicon  IF~InParty("Viconia") ~THEN @2393
+== BKIVAN  IF~InParty("Kivan") ~THEN @2394
+== IF_FILE_EXISTS BSUFINCH  IF~InParty("Sufinch") ~THEN @2395
+== IF_FILE_EXISTS BRH#ISRA  IF~InParty("RH#ISRA") ~THEN @2396
+== Bneera_  IF~InParty("Neera") ~THEN @2397
+== Bedwin_ IF~InParty("Edwin") ~THEN @2398
+== BMINSC_ IF~InParty("Minsc") ~THEN @2399
+==CVJenliJ IF~InParty("CVJenlig")~THEN@2400
+== BAJANT  IF~InParty("Ajantis") ~THEN @2401
+== IF_FILE_EXISTS k-roseB  IF~InParty("k-rose") ~THEN @2402
+== Brasaad_  IF~InParty("Rasaad") ~THEN @2403
+== IF_FILE_EXISTS ACBreB IF~InParty("ACBre") ~THEN  @2404
+== IF_FILE_EXISTS ~BB!GAVIN~IF~InParty("B!Gavin") ~THEN@2405
+== BBRANW  IF~InParty("Branwen") ~THEN @2406
+== IF_FILE_EXISTS BT2Val IF~InParty("T2Val") ~THEN@2407
+== IF_FILE_EXISTS C0SirenJ IF~InParty("C0Sirene") ~THEN@2408
+== BXANNN  IF~InParty("Xan") ~THEN @2409
+== BCORAN  IF~InParty("Coran") ~THEN  @2410
+== BDynah  IF~InParty("Dynaheir") ~THEN @2411
+== BDorn_  IF~InParty("Dorn") ~THEN @2412
+== BJahei  IF~InParty("Jaheira") ~THEN @2413
+EXIT
+
+// Diary and Cloth Pieces
+
+CHAIN
+IF~Global("SanChildH","GLOBAL",1)~THEN CVSANDRJ ChiHin10
+@2414
+DO ~SetGlobal("SanChildH","GLOBAL",2)~
+== BVicon  IF~InParty("Viconia") ~THEN @2415
+==CVSandrJ IF~InParty("Viconia") ~THEN @2416
+== BDynah  IF~InParty("Dynaheir") ~THEN@2417
+==IF_FILE_EXISTS BSUFINCH  IF~InParty("Sufinch") ~THEN @2418
+==CVSandrJ IF~InParty("Sufinch") ~THEN @2419
+== BSHART IF~InParty("Sharteel") ~THEN @2420
+== Bimoen IF~InParty("Imoen2") ~THEN @2421
+==CVSandrJ @2422
+END
+++ @2423+ ChiHin11
+++ @2424+ ChiHin11
+
+CHAIN
+IF~~THEN CVSANDRJ ChiHin11
+@2425
+= @2426
+END
+++ @2427
+EXIT
+
+CHAIN
+IF ~Global("SanChildH","GLOBAL",3)  ~THEN CVSANDRJ ChiHin20
+@2428
+= @2429
+DO~SetGlobal("SanChildH","GLOBAL",4)~
+== BDynah  IF~InParty("Dynaheir") ~THEN @2430
+== IF_FILE_EXISTS ~B!GAVINJ~IF ~InParty("B!GAVIN")~THEN @2431
+==CVSandrJ IF ~InParty("B!GAVIN")~THEN @2432
+== Bimoen IF~InParty("Imoen2") ~THEN @2433
+== BVicon  IF~InParty("Viconia") ~THEN @2434
+== Bajant  IF~InParty("Ajantis") ~THEN @2435
+==CVSandrJ @2436
+END
+++ @2437+  ChiHin21
+++ @2438+ ChiHin21
+
+CHAIN
+IF~~THEN CVSANDRJ ChiHin21
+@2439
+== BDynah  IF~InParty("Dynaheir") ~THEN @2440
+== BBRANW  IF~InParty("Branwen") ~THEN @2441
+==CVSandrJ IF~InParty("Branwen") ~THEN @2442
+END
+ IF~!InParty("Branwen")~THEN REPLY@2443+ ChiHin22
+ IF~InParty("Branwen")~THEN REPLY@2444+ ChiHin22
+
+CHAIN
+IF~~THEN CVSANDRJ ChiHin22
+@2445
+= @2446
+==IF_FILE_EXISTS BSUFINCH  IF~InParty("Sufinch") ~THEN @2447
+==CVSandrJ IF~InParty("Sufinch") ~THEN @2448
+== BDynah  IF~InParty("Dynaheir")!InParty("Sufinch") ~THEN @2447
+==CVSandrJ IF~InParty("Dynaheir")!InParty("Sufinch") ~THEN @2448
+== BJahei  IF~InParty("Jaheira") !InParty("Dynaheir")!InParty("Sufinch")~THEN @2447
+==CVSandrJ  IF~InParty("Jaheira") !InParty("Dynaheir")!InParty("Sufinch")~THEN @2448
+END
+++@2449
+EXIT
+
+// Waterdeep Temple
+CHAIN
+IF~~THEN CVSANDRJ SanWDTemple1
+@2450
+DO ~SetGlobal("SanWDTempleHint","GLOBAL",2)~
+==SAMYSTP1@2451
+END
+++@2452+ SanWDTemple2
+
+CHAIN
+IF~~THEN CVSANDRJ SanWDTemple2
+@2453
+==SAMYSTP1@2454
+== CVSandrJ @2455
+==SAMYSTP1@2456
+== CVSandrJ @2457
+==SAMYSTP1@2458
+END
+++@2459DO~
+IncrementGlobal("Sanpoints","GLOBAL",-2)~EXIT
+++@2460DO~IncrementGlobal("Sanpoints","GLOBAL",2)~EXIT
+++ @2461DO~IncrementGlobal("Sanpoints","GLOBAL",1)~EXIT
+
+CHAIN
+IF~Global("SanWDTemplWi","GLOBAL",8)~THEN CVSANDRJ SanWDTempleLey
+@2462
+DO~SetGlobal("SanWDTemplWi","GLOBAL",9)~
+==CVLEYG @2463
+== CVSandrJ @2464
+==CVLEYG @2465
+== CVSandrJ @2466
+==CVLEYG @2467
+DO ~AddexperienceParty(6300) RestParty() DestroySelf()~EXIT
+
+CHAIN
+IF WEIGHT #-2~Global("SanXzarDea","GLOBAL",1) Global("SanResurAva","GLOBAL",1) InParty("Xzar")~THEN CVSANDRJ Sanxzarhandsoff
+@2468
+DO~SetGlobal("SanXzarDea","GLOBAL",2) ~
+==BXZAR@2469
+== CVSandrJ @2470
+==BXZAR@2471
+END
+++@2472EXTERN CVSandrJ SanRessur1
+
+CHAIN
+IF~~THEN CVSandrJ FirstWDIntro3
+@2473
+==CVSandrJ IF~!AreaCheck("CVELM1")~THEN@2474
+==CVSandrJ IF~AreaCheck("CVELM1")~THEN@2475
+=@2476
+==CVSandrJ IF~!AreaCheck("CVELM4")~THEN@2477
+==CVSandrJ IF~AreaCheck("CVELM4")~THEN@2478
+==CVSandrJ IF~!AreaCheck("CVROA3")~THEN@2479
+==CVSandrJ IF~AreaCheck("CVROA3")~THEN@2480
+END
+IF~~THEN REPLY@2481DO~SetGlobal("WDIntrotalk","LOCALS",4)~EXIT
+
+
+//Winski First Appearance
+
+CHAIN
+IF ~~THEN CVSANDRJ Winsk1Dis7
+@2482
+DO ~SetGlobal("WinskApp1","GLOBAL",8) ~
+== Bimoen IF~InParty("Imoen2") ~THEN @2483
+== BDynah  IF~InParty("Dynaheir") ~THEN @2484
+==IF_FILE_EXISTS BSUFINCH  IF~InParty("Sufinch") ~THEN @2485
+== BJahei  IF~InParty("Jaheira") ~THEN @2486
+== BSANDR @2487
+END
+++ @2488
+EXIT
+
+CHAIN
+IF ~Global("SaOgmaIn","GLOBAL",2)~THEN CVSANDRJ saogma30
+@2489
+DO ~SetGlobal("SaOgmaIn","GLOBAL",3) ~
+==SAOGMA @2490
+==CVSandrJ @2491
+==SAOGMA @2492
+DO ~StartCutSceneMode()
+SmallWait(7)
+CreateVisualEffectObject("SPFLESHS",Myself)
+Enemy()
+Polymorph(OGRE_MAGE)
+CreateCreatureObject("Ogrema01",Myself,0,0,0)
+CreateCreatureObject("ogrema_a",Myself,0,0,0)
+SmallWait(4)
+EndCutSceneMode()~
+EXIT
+
+CHAIN
+IF ~Global("SANIMONASHINT","GLOBAL",19) Global("OrcimoTalk","GLOBAL",0) OR(2) AreaCheck("arr019") AreaCheck("BG1903") ~THEN CVSANDRJ ImoWoundOrc
+@2493
+DO ~SetGlobal("SANIMONASHINT","GLOBAL",20)~
+== orcimo1 @2494
+== Bimoen@2495
+== orcimo1 @2494
+== CVSandrJ @2496
+== Bimoen@2497
+== CVSandrJ @2498
+== Bimoen@2499
+== CVSandrJ @2500DO ~ForceSpell("orcimo1",CLERIC_HEAL)~
+EXIT
+
+// Sandrah Henning Rescue
+CHAIN
+IF~Global("SanPrisDo","GLOBAL",1)~THEN CVSANDRJ SanPrisDo
+@2501
+DO ~SetGlobal("SanPrisDo","GLOBAL",2)~
+== Bimoen@2502
+== CVSandrJ @2503
+== Bimoen@2504
+END
+++ @2505+ SanPrisDo2
+
+CHAIN
+IF~~THEN CVSANDRJ SanPrisDo2
+@2506
+== Bimoen@2507
+END
+++ @2508
+EXIT
+
+CHAIN
+IF ~Global("OrcPrison","GLOBAL",9) Global("SanImoFiSl","LOCALS",1)~ THEN CVSANDRJ ImoSlay1
+@2509
+END
+++ @2510+ ImoSlay2
+
+CHAIN
+IF ~~THEN CVSANDRJ ImoSlay2
+@2511
+DO ~SetGlobal("SanImoFiSl","LOCALS",2) ~
+== Bimoen@2512
+== CVSandrJ @2513
+== Bimoen@2514
+END
+++ @2515EXIT
+++ @2516+ ImoSlay3
+
+CHAIN
+IF ~~THEN CVSANDRJ ImoSlay3
+@2517
+END
+++ @2518
+EXIT
+
+CHAIN
+IF ~Global("OrcPrison","GLOBAL",13)~THEN CVSANDRJ HenToWD
+@2519
+DO ~SetGlobal("OrcPrison","GLOBAL",14)~
+== Bimoen@2520
+== CVSandrJ @2521
+== Bimoen@2522
+== CVSandrJ @2523
+== Bimoen@2524
+== CVSandrJ @2525
+END
+++ @2526+ HenToWD2
+++@2527+ HenToWD2
+
+CHAIN
+IF ~~THEN CVSANDRJ HenToWD2
+@2528
+== Bimoen@2529
+== CVSandrJ @2530
+END
+++ @2531+ HenToWD3
+++ @2532+ HenToWD4
+
+CHAIN
+IF ~~THEN CVSANDRJ HenToWD3
+@2533
+== Bimoen@2534
+== CVSandrJ @2535
+== Bimoen@2536DO~AddXPObject("Imoen2",10000)IncrementGlobal("Sanpoints","Global",1)~
+EXIT
+
+CHAIN
+IF ~~THEN CVSANDRJ HenToWD4
+@2537
+== Bimoen@2534
+== CVSandrJ @2535
+== Bimoen@2536DO~AddXPObject("Imoen2",10000)IncrementGlobal("Sanpoints","Global",-2)~
+EXIT
+
+// Rejoined in Cloakwood Mines
+
+CHAIN
+IF~Global("OrcPrison","GLOBAL",15)~THEN CVSANDRJ ClckWMines1
+@2538
+DO ~SetGlobal("OrcPrison","GLOBAL",16) AddXPObject("CVSandr",7000)~
+== Bimoen@2539
+== CVSandrJ @2540
+== Bimoen@2541
+END
+++ @2542+ ClckWMines2
+++ @2543+ ClckWMines2
+++ @2544+ ClckWMines2
+
+CHAIN
+IF~~THEN CVSANDRJ ClckWMines2
+@2545
+== Bimoen@2546
+END
+++ @2547
+EXIT
+
+CHAIN
+IF WEIGHT #-6~Global("Chapter","GLOBAL",5)Global("HelpAldeth","GLOBAL",2)InParty("CVSandr") Global("SanAldth","LOCALS",0)~THEN Aldeth SanAldth1
+@2548
+== CVSandrJ @2549
+== ALDETH @2550DO~SetGlobal("SanAldth","LOCALS",1)~
+== CVSandrJ @2551
+== ALDETH @2552
+== CVSandrJ @2553
+== ALDETH @2554
+== CVSandrJ @2555
+== ALDETH @2556
+ DO ~StartCutSceneMode() Wait(2) FadeToColor([30.0],0) Wait(4) FadeFromColor([30.0],0) Wait(2) EndCutSceneMode()~EXIT
+ 
+CHAIN
+IF WEIGHT #-5~Global("SanCldKBo","LOCALS",12)~THEN IF_FILE_EXISTS Emerso EmDrowhint
+@2557
+DO~SetGlobal("SanCldKBo","LOCALS",1)ActionOverride("CVSandr",SetGlobal("SanCldKBo","LOCALS",1)) ~
+== CVSandrJ @2558
+==EMERSO@2559
+== CVSandrJ @2560
+==EMERSO@2561DO~GiveItemCreate("book39","CVSandr",1,0,0)~EXIT
+
+CHAIN
+IF WEIGHT #-4~Global("EmDrow","BG5400",1)~THEN IF_FILE_EXISTS Emerso EmDrowhint2
+@2557
+DO~SetGlobal("EmDrow","BG5400",2) ~
+== CVSandrJ @2558
+==EMERSO@2559
+== CVSandrJ @2562
+==EMERSO@2563EXIT
+
+ADD_TRANS_TRIGGER GALILE 0
+~!InParty("CVSandr")~
+
+EXTEND_BOTTOM GALILE 0
+IF ~InParty("CVSandr")~THEN REPLY @2564GOTO s66
+IF ~InParty("CVSandr")~THEN REPLY @2565GOTO s66
+END
+
+APPEND GALILE
+IF~~THEN BEGIN s66
+SAY@2566
+IF~~THEN REPLY@2567GOTO s67
+END
+
+IF~~THEN BEGIN s67
+SAY@2568
+IF~~THEN REPLY@2569GOTO 2
+END
+END
+
+ADD_TRANS_TRIGGER Keshee 0
+~!InParty("CVSandr")~
+
+EXTEND_BOTTOM Keshee 0
+IF ~InParty("CVSandr")~THEN REPLY @2570GOTO 2
+IF ~InParty("CVSandr")~THEN REPLY @2571GOTO 3
+END
+
+EXTEND_BOTTOM Keshee 2
+IF ~InParty("CVSandr")Global("Homesail","GLOBAL",0)GlobalGT("SanSuBH","GLOBAL",13)~THEN REPLY @2572
+GOTO Keshmurd
+END
+
+APPEND Keshee
+IF~~THEN BEGIN Keshmurd
+SAY@2573
+IF~~THEN DO~
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("CVKesh")~EXIT
+END
+END
+
+ADD_TRANS_TRIGGER ALDETH 28
+~!InParty("CVSandr")~
+
+
+ADD_TRANS_ACTION POGHM9 BEGIN 0 END BEGIN 0 END ~SetGlobal("SanDGHere","BG2627",1)~
+
+ADD_TRANS_ACTION Centeo BEGIN 6 END BEGIN 0 END ~SetGlobal("Centejon","BG2101",1)~
+
+ADD_TRANS_TRIGGER Elmins4 1
+~!InParty("CVSandr")~
+
+EXTEND_BOTTOM Elmins4 1
+IF ~InParty("CVSandr")~THEN REPLY @2574GOTO 2
+IF ~InParty("CVSandr")~THEN REPLY @2575GOTO 3
+IF ~InParty("CVSandr")~THEN REPLY @2576GOTO 5
+END
+
+REPLACE_STATE_TRIGGER Voleta 0
+~Global("SanVolHeal","BG0146",0)~
+
+ADD_TRANS_ACTION Voleta BEGIN 0 END BEGIN 0 1 2 END ~SetGlobal("SanVolHeal","BG0146",1)~
+
+INTERJECT_COPY_TRANS IF_FILE_EXISTS ACQX0004 7 DrglInfiltr
+== CVSandrJ IF ~InParty("CVSandr") InParty("ACBre")~THEN @2577
+== ACBreB IF~InParty("CVSandr") InParty("ACBre") ~THEN  @2578
+== CVSandrJ IF ~InParty("CVSandr") InParty("Kagain")~THEN @2579
+== BKAGAI IF~InParty("CVSandr") InParty("Kagain") ~THEN  @2578
+== CVSandrJ IF ~InParty("CVSandr") InParty("Yeslick")~THEN @2580
+== BYESLI IF~InParty("CVSandr") InParty("Yeslick") ~THEN  @2578
+END
+
+APPEND ACQ40001
+
+IF WEIGHT #-9 ~Global("SanSuBH","GLOBAL",16)~THEN BEGIN BHuntMontHint
+SAY @2581
+IF~~THEN EXTERN BSANDR BHFurlon
+END
+END
+
+CHAIN
+IF~~THEN BSANDR BHFurlon
+@2582
+DO ~SetGlobal("SanSuBH","GLOBAL",17)~
+==ACQ40001 @2583
+== BSANDR @2584
+==ACQ40001 @2585
+== BSANDR @2586
+==ACQ40001 @2587
+== BSANDR @2588DO ~TakePartyGold(500)~
+==ACQ40001 @2589
+== BSANDR @2590
+==ACQ40001 @2591
+== BSANDR @2592
+==ACQ40001 @2593
+== BSANDR @2594
+==ACQ40001 @2595
+== BSANDR @2596
+==ACQ40001 @2597
+== BSANDR @2598
+==ACQ40001 @2599
+== BSANDR @2600
+==ACQ40001 @2601
+== BSANDR @2602
+==ACQ40001 @2603DO ~EscapeArea()~
+END
+++ @2604DO~RealSetGlobalTimer("BloomwT","GLOBAL",300)~EXIT
+
+CHAIN
+IF~~THEN CVJenliJ GithhintJ1
+@2605
+==CVSandrJ@2606
+==CVJenliJ@2607
+==CVSandrJ@2608
+==CVJenliJ@2609EXIT
+
+CHAIN
+IF~~THEN BYESLI SwCoaUWY1
+@2610
+ ==CVSandrJ@2611
+ ==BYESLI@2612
+ ==CVSandrJ@2613
+ ==BYESLI@2614
+ ==CVSandrJ@2615
+ ==BYESLI@2616EXIT
+ 
+ADD_TRANS_TRIGGER Tamoko 23
+~!InParty("CVSandr")~
+
+EXTEND_BOTTOM Tamoko 23
+IF~InParty("CVSandr")~THEN REPLY@2617DO~IncrementGlobal("Sanpoints","Global",4) ReputationInc(1)~GOTO 25
+IF~InParty("CVSandr")~THEN REPLY@2618DO~IncrementGlobal("Sanpoints","Global",-5) ~GOTO 21
+IF~InParty("CVSandr")~THEN REPLY@2619DO~IncrementGlobal("Sanpoints","Global",4) ReputationInc(1)~GOTO 25
+END
+
+EXTEND_BOTTOM Tenya 0
+IF~GlobalGT("Umbowl","GLOBAL",1) PartyHasItem("MISC53")~THEN REPLY@2620GOTO 11
+END
+
+INTERJECT Alyth 2 SanElfGhost
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2621
+== IF_FILE_EXISTS BSUFINCH  IF~InParty("CVSandr") InParty("Sufinch") Global("SuFinchElfsong","GLOBAL",0)~THEN @2622DO~SetGlobal("SuFinchElfsong","GLOBAL",1)~
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2623
+==Alyth IF ~InParty("CVSandr")~THEN @2624
+== CVSandrJ IF ~InParty("CVSandr")~THEN @2625
+END
+++@2626+ SanElfGhost2
+++@2627+ SanElfGhost2
+
+CHAIN
+IF~~THEN Alyth SanElfGhost2
+@2628
+== CVSandrJ @2629
+=@2630
+==Alyth@2631
+== CVSandrJ @2632
+==Alyth@2633
+== CVSandrJ @2634EXIT
