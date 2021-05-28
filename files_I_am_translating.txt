@@ -1,0 +1,20 @@
+Here I am publishing the list of files I am working right now or I am planning to work soon. The initial list is
+made by p_zombie from https://arcanecoast.ru/. Don't take them to translate unless I am dissappeared for some
+time. There is lot of work for other files.
+I mark already translated files with '+'.
+
++ alorasan.tra
++ alorasanbanter.tra
+israsan.tra
+israsan2.tra
+sarahsanbg2.tra
+sarevoksan25.tra
+skiebg1banter.tra
+skiesanbg2.tra
+solaufsan.tra
+solaufsan25.tra
++ tiaxsanbg2.tra
+valeriesan.tra
+xzarsan.tra
+yasraenasan.tra
+yasraenasan25.tra
