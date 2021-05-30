@@ -18,3 +18,7 @@ valeriesan.tra
 xzarsan.tra
 yasraenasan.tra
 yasraenasan25.tra
+
++ sandbook.tra
++ tobpartings.tra
++ turnaroundsummon.tra
