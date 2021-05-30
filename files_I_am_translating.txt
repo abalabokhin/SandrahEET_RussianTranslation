@@ -7,7 +7,7 @@ I mark already translated files with '+'.
 + alorasanbanter.tra
 + israsan.tra
 + israsan2.tra
-sarahsanbg2.tra
++ sarahsanbg2.tra
 sarevoksan25.tra
 skiebg1banter.tra
 skiesanbg2.tra
