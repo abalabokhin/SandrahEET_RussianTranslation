@@ -29,4 +29,8 @@ yasraenasan25.tra
 + cvumcihit.tra
 + tobpartings.tra
 + yasrartf.tra
-
++ cvskys.tra
++ cvumcitz.tra
++ deathknr.tra
++ karisan.tra
++ logansan.tra
