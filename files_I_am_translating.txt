@@ -34,3 +34,8 @@ yasraenasan25.tra
 + deathknr.tra
 + karisan.tra
 + logansan.tra
++ coranbg2c6.tra
++ j#piratsan.tra
++ yselm01app.tra
+
+no changes added to commit (use "git add" and/or "git commit -a")
