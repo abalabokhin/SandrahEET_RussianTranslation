@@ -39,5 +39,24 @@ yasraenasan25.tra
 + yselm01app.tra
 + herbdealbg2.tra
 + cvarch1.tra
-+ ntdexpbzomb.tra
-  
++ ntdexpbzomb.tra  
++ cvdaurodem.tra
++ cvshar1.tra
++ cvbandf3.tra
++ thiefstrongsanorg.tra
++ transbg1cut.tra
+shandals.tra 
+acqxzah1.tra 
+ar5602quest.tra 
+cvrugg.tra 
+acquestsan.tra 
+cvcoper.tra 
+dornsan.tra 
+cvsuelf.tra 
+cvdrizr.tra 
+dswolf1.tra 
+bgiftforsan.tra 
+cvslam.tra 
+vaelasasan.tra 
+sanwins2.tra 
+viconiasantob.tra
