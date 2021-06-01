@@ -45,7 +45,7 @@ yasraenasan25.tra
 + cvbandf3.tra
 + thiefstrongsanorg.tra
 + transbg1cut.tra
-shandals.tra 
++ shandals.tra 
 acqxzah1.tra 
 ar5602quest.tra 
 cvrugg.tra 
