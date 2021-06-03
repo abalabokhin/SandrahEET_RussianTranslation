@@ -50,7 +50,7 @@ yasraenasan25.tra
 + ar5602quest.tra 
 + cvrugg.tra 
 + acquestsan.tra 
-cvcoper.tra 
++ cvcoper.tra 
 dornsan.tra 
 cvsuelf.tra 
 cvdrizr.tra 
