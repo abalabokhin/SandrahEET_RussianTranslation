@@ -1,5 +1,5 @@
-Here I am publishing the list of files I am working right now or I am planning to work soon. The initial list is
-made by p_zombie from https://arcanecoast.ru/. Don't take them to translate unless I am dissappeared for some
+Here I am publishing the list of files I am working right now or I am planning to work soon. The list is
+actually is made from smallest non-translated files. Don't take these files to translate unless I am dissappeared for some
 time. There is lot of work for other files.
 I mark already translated files with '+'.
 
@@ -8,16 +8,7 @@ I mark already translated files with '+'.
 + israsan.tra
 + israsan2.tra
 + sarahsanbg2.tra
-sarevoksan25.tra
-skiebg1banter.tra
-skiesanbg2.tra
-solaufsan.tra
-solaufsan25.tra
 + tiaxsanbg2.tra
-valeriesan.tra
-xzarsan.tra
-yasraenasan.tra
-yasraenasan25.tra
 
 + sandbook.tra
 + tobpartings.tra
@@ -60,12 +51,12 @@ yasraenasan25.tra
 + vaelasasan.tra 
 + sanwins2.tra 
 + viconiasantob.tra
-pobsan.tra
-f_driztjadd.tra
-samelm01.tra
-cvnarga.tra
-mel_ascension.tra
-mel_plain.tra
++ pobsan.tra
++ f_driztjadd.tra
++ samelm01.tra
++ cvnarga.tra
++ mel_ascension.tra
++ mel_plain.tra
 ascalon.tra
 relaransan.tra
 cvqidrn.tra
