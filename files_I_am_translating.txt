@@ -57,6 +57,30 @@ yasraenasan25.tra
 + dswolf1.tra 
 + bgiftforsan.tra 
 + cvslam.tra 
-vaelasasan.tra 
++ vaelasasan.tra 
 sanwins2.tra 
 viconiasantob.tra
+pobsan.tra
+f_driztjadd.tra
+samelm01.tra
+cvnarga.tra
+mel_ascension.tra
+mel_plain.tra
+ascalon.tra
+relaransan.tra
+cvqidrn.tra
+auroratobsan.tra
+xzarsan.tra 
+cvsan25p.tra
+cvsafcit.tra
+cvrevi.tra
+yikarisan.tra
+cvbrage.tra 
+rasaadsanbg1.tra 
+sanseatower.tra 
+sanalror.tra 
+cvajab.tra 
+cvdrud1.tra 
+summsannpcbant.tra 
+bhaalsan.tra 
+cvizzy.tra
