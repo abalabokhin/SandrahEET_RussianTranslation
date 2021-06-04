@@ -55,8 +55,8 @@ yasraenasan25.tra
 + cvsuelf.tra 
 + cvdrizr.tra 
 + dswolf1.tra 
-+bgiftforsan.tra 
-cvslam.tra 
++ bgiftforsan.tra 
++ cvslam.tra 
 vaelasasan.tra 
 sanwins2.tra 
 viconiasantob.tra
