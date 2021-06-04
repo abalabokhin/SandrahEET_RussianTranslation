@@ -58,8 +58,8 @@ yasraenasan25.tra
 + bgiftforsan.tra 
 + cvslam.tra 
 + vaelasasan.tra 
-sanwins2.tra 
-viconiasantob.tra
++ sanwins2.tra 
++ viconiasantob.tra
 pobsan.tra
 f_driztjadd.tra
 samelm01.tra
