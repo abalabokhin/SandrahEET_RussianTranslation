@@ -60,7 +60,7 @@ I mark already translated files with '+'.
 + ascalon.tra
 + relaransan.tra
 + cvqidrn.tra
-auroratobsan.tra
++ auroratobsan.tra
 xzarsan.tra 
 cvsan25p.tra
 cvsafcit.tra
