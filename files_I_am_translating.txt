@@ -59,7 +59,7 @@ I mark already translated files with '+'.
 + mel_plain.tra
 + ascalon.tra
 + relaransan.tra
-cvqidrn.tra
++ cvqidrn.tra
 auroratobsan.tra
 xzarsan.tra 
 cvsan25p.tra
