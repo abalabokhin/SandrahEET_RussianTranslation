@@ -63,7 +63,7 @@ I mark already translated files with '+'.
 + auroratobsan.tra
 + xzarsan.tra 
 + cvsan25p.tra
-cvsafcit.tra
++ cvsafcit.tra
 cvrevi.tra
 yikarisan.tra
 cvbrage.tra 
