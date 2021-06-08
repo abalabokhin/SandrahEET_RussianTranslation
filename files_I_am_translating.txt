@@ -71,7 +71,7 @@ I mark already translated files with '+'.
 + sanseatower.tra 
 + sanalror.tra 
 + cvajab.tra 
-cvdrud1.tra 
++ cvdrud1.tra 
 summsannpcbant.tra 
 bhaalsan.tra 
 cvizzy.tra
