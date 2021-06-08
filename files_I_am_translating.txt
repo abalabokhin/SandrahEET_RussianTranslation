@@ -65,7 +65,7 @@ I mark already translated files with '+'.
 + cvsan25p.tra
 + cvsafcit.tra
 + cvrevi.tra
-yikarisan.tra
++ yikarisan.tra
 cvbrage.tra 
 rasaadsanbg1.tra 
 sanseatower.tra 
