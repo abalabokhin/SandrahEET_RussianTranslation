@@ -1,6 +1,6 @@
 Lady Firehair - леди Огневолосая
 Jen'lig - Джен'лиг
-Midnight - Миднайт
+Midnight - Полночь
 Pelligram - Пеллиграм
 Qilandrha - Киландра
 Divalir - Дивалир
@@ -12,3 +12,4 @@ Drizzt - Дриззт
 Underdark - Андердарк
 Sharkta Fai - Шаркта Фай
 Githyanki - Гитиянки
+Waterdeep - Вотердип
