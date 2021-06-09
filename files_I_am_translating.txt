@@ -75,7 +75,7 @@ I mark already translated files with '+'.
 + summsannpcbant.tra 
 + bhaalsan.tra 
 + cvizzy.tra
-cvleygbg2.tra 
++ cvleygbg2.tra 
 angryrevoltsan.tra 
 salvanasbg2.tra 
 thaelsanbg2.tra 
