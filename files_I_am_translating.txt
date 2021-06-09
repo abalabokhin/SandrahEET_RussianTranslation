@@ -79,7 +79,7 @@ I mark already translated files with '+'.
 + angryrevoltsan.tra 
 + salvanasbg2.tra 
 + thaelsanbg2.tra 
-cvdemog.tra 
++ cvdemog.tra 
 cvhaesar.tra 
 jansanbg2.tra 
 tethirdragoncult.tra 
