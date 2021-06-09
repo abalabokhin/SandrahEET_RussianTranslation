@@ -72,7 +72,7 @@ I mark already translated files with '+'.
 + sanalror.tra 
 + cvajab.tra 
 + cvdrud1.tra 
-summsannpcbant.tra 
++ summsannpcbant.tra 
 bhaalsan.tra 
 cvizzy.tra
 cvleygbg2.tra 
