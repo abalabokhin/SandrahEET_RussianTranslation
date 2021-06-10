@@ -8,7 +8,7 @@ file translated or not, just check in repo.
 + tethirdragoncult.tra 
 + ntprieheldauro.tra 
 + aeriesantob.tra 
-nindesanbg2.tra 
++ nindesanbg2.tra 
 ketosanbg2.tra 
 sangith.tra 
 pelligt.tra 
