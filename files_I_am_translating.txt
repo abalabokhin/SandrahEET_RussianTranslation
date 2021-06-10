@@ -80,8 +80,8 @@ I mark already translated files with '+'.
 + salvanasbg2.tra 
 + thaelsanbg2.tra 
 + cvdemog.tra 
-cvhaesar.tra 
-jansanbg2.tra 
++ cvhaesar.tra 
++ jansanbg2.tra 
 tethirdragoncult.tra 
 ntprieheldauro.tra 
 aeriesantob.tra 
