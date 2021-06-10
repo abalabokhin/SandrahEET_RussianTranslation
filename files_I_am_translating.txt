@@ -1,90 +1,13 @@
 Here I am publishing the list of files I am working right now or I am planning to work soon. The list is
 actually is made from smallest non-translated files. Don't take these files to translate unless I am dissappeared for some
 time. There is lot of work for other files.
-I mark already translated files with '+'.
+Translated files are marked with '+' for some time before to be deleted from the list. To see if an actual
+file translated or not, just check in repo.
 
-+ alorasan.tra
-+ alorasanbanter.tra
-+ israsan.tra
-+ israsan2.tra
-+ sarahsanbg2.tra
-+ tiaxsanbg2.tra
-
-+ sandbook.tra
-+ tobpartings.tra
-+ turnaroundsummon.tra
-+ acq40001.tra
-+ cb513rel.tra
-+ cvboamb.tra
-+ cvleavmc.tra
-+ cvumcihit.tra
-+ tobpartings.tra
-+ yasrartf.tra
-+ cvskys.tra
-+ cvumcitz.tra
-+ deathknr.tra
-+ karisan.tra
-+ logansan.tra
-+ coranbg2c6.tra
-+ j#piratsan.tra
-+ yselm01app.tra
-+ herbdealbg2.tra
-+ cvarch1.tra
-+ ntdexpbzomb.tra  
-+ cvdaurodem.tra
-+ cvshar1.tra
-+ cvbandf3.tra
-+ thiefstrongsanorg.tra
-+ transbg1cut.tra
-+ shandals.tra 
-+ acqxzah1.tra 
-+ ar5602quest.tra 
-+ cvrugg.tra 
-+ acquestsan.tra 
-+ cvcoper.tra 
-+ dornsan.tra 
-+ cvsuelf.tra 
-+ cvdrizr.tra 
-+ dswolf1.tra 
-+ bgiftforsan.tra 
-+ cvslam.tra 
-+ vaelasasan.tra 
-+ sanwins2.tra 
-+ viconiasantob.tra
-+ pobsan.tra
-+ f_driztjadd.tra
-+ samelm01.tra
-+ cvnarga.tra
-+ mel_ascension.tra
-+ mel_plain.tra
-+ ascalon.tra
-+ relaransan.tra
-+ cvqidrn.tra
-+ auroratobsan.tra
-+ xzarsan.tra 
-+ cvsan25p.tra
-+ cvsafcit.tra
-+ cvrevi.tra
-+ yikarisan.tra
-+ cvbrage.tra 
-+ rasaadsanbg1.tra 
-+ sanseatower.tra 
-+ sanalror.tra 
-+ cvajab.tra 
-+ cvdrud1.tra 
-+ summsannpcbant.tra 
-+ bhaalsan.tra 
-+ cvizzy.tra
-+ cvleygbg2.tra 
-+ angryrevoltsan.tra 
-+ salvanasbg2.tra 
-+ thaelsanbg2.tra 
-+ cvdemog.tra 
-+ cvhaesar.tra 
 + jansanbg2.tra 
-tethirdragoncult.tra 
-ntprieheldauro.tra 
-aeriesantob.tra 
++ tethirdragoncult.tra 
++ ntprieheldauro.tra 
++ aeriesantob.tra 
 nindesanbg2.tra 
 ketosanbg2.tra 
 sangith.tra 
