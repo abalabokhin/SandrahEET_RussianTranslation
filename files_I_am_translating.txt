@@ -12,7 +12,7 @@ file translated or not, just check in repo.
 + ketosanbg2.tra 
 + sangith.tra 
 + pelligt.tra 
-ellistraeesan.tra 
++ ellistraeesan.tra 
 ambertob.tra 
 afaaqsan.tra 
 tenyanpc.tra 
