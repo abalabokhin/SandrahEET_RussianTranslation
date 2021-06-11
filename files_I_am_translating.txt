@@ -17,7 +17,7 @@ file translated or not, just check in repo.
 + afaaqsan.tra 
 + tenyanpc.tra 
 + sanpre2.tra 
-cvcatce.tra 
++ cvcatce.tra 
 silverstarsan.tra 
 cvharbor.tra 
 sellswordssan.tra
