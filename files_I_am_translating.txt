@@ -11,7 +11,7 @@ file translated or not, just check in repo.
 + nindesanbg2.tra 
 + ketosanbg2.tra 
 + sangith.tra 
-pelligt.tra 
++ pelligt.tra 
 ellistraeesan.tra 
 ambertob.tra 
 afaaqsan.tra 
