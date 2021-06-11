@@ -13,7 +13,7 @@ file translated or not, just check in repo.
 + sangith.tra 
 + pelligt.tra 
 + ellistraeesan.tra 
-ambertob.tra 
++ ambertob.tra 
 afaaqsan.tra 
 tenyanpc.tra 
 sanpre2.tra 
