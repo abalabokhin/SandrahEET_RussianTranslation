@@ -18,8 +18,8 @@ file translated or not, just check in repo.
 + tenyanpc.tra 
 + sanpre2.tra 
 + cvcatce.tra 
-silverstarsan.tra 
-cvharbor.tra 
++ silverstarsan.tra 
++ cvharbor.tra 
 sellswordssan.tra
 cvshaup.tra 
 tamokomod.tra 
