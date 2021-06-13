@@ -21,7 +21,7 @@ file translated or not, just check in repo.
 + silverstarsan.tra 
 + cvharbor.tra 
 + sellswordssan.tra
-cvshaup.tra 
++ cvshaup.tra 
 tamokomod.tra 
 betanabg2.tra 
 darkhorsan.tra 
