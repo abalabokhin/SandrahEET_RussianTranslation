@@ -24,7 +24,7 @@ file translated or not, just check in repo.
 + cvshaup.tra 
 + tamokomod.tra 
 + betanabg2.tra 
-darkhorsan.tra 
++ darkhorsan.tra 
 tashiasantob.tra 
 aurensan.tra 
 ucmgabrl.tra 
