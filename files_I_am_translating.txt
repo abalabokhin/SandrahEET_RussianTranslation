@@ -25,7 +25,7 @@ file translated or not, just check in repo.
 + tamokomod.tra 
 + betanabg2.tra 
 + darkhorsan.tra 
-tashiasantob.tra 
++ tashiasantob.tra 
 aurensan.tra 
 ucmgabrl.tra 
 henning2.tra 
