@@ -6,7 +6,7 @@ file translated or not, just check in repo.
 
 + aurensan.tra 
 + ucmgabrl.tra 
-henning2.tra 
++ henning2.tra 
 ntkeelorrevisit.tra 
 cultsa7.tra 
 mazzysan.tra 
