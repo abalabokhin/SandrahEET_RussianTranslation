@@ -26,7 +26,7 @@ file translated or not, just check in repo.
 + betanabg2.tra 
 + darkhorsan.tra 
 + tashiasantob.tra 
-aurensan.tra 
++ aurensan.tra 
 ucmgabrl.tra 
 henning2.tra 
 ntkeelorrevisit.tra 
