@@ -23,7 +23,7 @@ file translated or not, just check in repo.
 + sellswordssan.tra
 + cvshaup.tra 
 + tamokomod.tra 
-betanabg2.tra 
++ betanabg2.tra 
 darkhorsan.tra 
 tashiasantob.tra 
 aurensan.tra 
