@@ -4,28 +4,6 @@ time. There is lot of work for other files.
 Translated files are marked with '+' for some time before to be deleted from the list. To see if an actual
 file translated or not, just check in repo.
 
-+ jansanbg2.tra 
-+ tethirdragoncult.tra 
-+ ntprieheldauro.tra 
-+ aeriesantob.tra 
-+ nindesanbg2.tra 
-+ ketosanbg2.tra 
-+ sangith.tra 
-+ pelligt.tra 
-+ ellistraeesan.tra 
-+ ambertob.tra 
-+ afaaqsan.tra 
-+ tenyanpc.tra 
-+ sanpre2.tra 
-+ cvcatce.tra 
-+ silverstarsan.tra 
-+ cvharbor.tra 
-+ sellswordssan.tra
-+ cvshaup.tra 
-+ tamokomod.tra 
-+ betanabg2.tra 
-+ darkhorsan.tra 
-+ tashiasantob.tra 
 + aurensan.tra 
 + ucmgabrl.tra 
 henning2.tra 
@@ -40,3 +18,19 @@ miriamsan.tra
 nathanielsan.tra 
 c0sirenesan.tra 
 cvmonte.tra
+sallinithyl.tra
+nephelesan.tra
+quaylesan.tra
+cvsilv.tra
+arienashauhana.tra
+shartddbg2ext.tra
+cvdauro.tra
+kachikosan.tra
+cvsamhu.tra
+symiazsan.tra
+cbvampirequest.tra
+sanrtfextends.tra
+kelseysanbg2.tra
+soasan.tra
+loured25.tra
+cvcyric.tra
