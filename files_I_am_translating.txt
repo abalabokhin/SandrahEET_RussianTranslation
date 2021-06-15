@@ -10,7 +10,7 @@ file translated or not, just check in the repo.
 + ntkeelorrevisit.tra 
 + cultsa7.tra 
 + mazzysan.tra 
-aranwhitsanbg2.tra 
++ aranwhitsanbg2.tra 
 hannasan.tra 
 arena.tra 
 yasraenasan25.tra 
