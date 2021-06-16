@@ -11,7 +11,7 @@ file translated or not, just check in the repo.
 + cultsa7.tra 
 + mazzysan.tra 
 + aranwhitsanbg2.tra 
-hannasan.tra 
++ hannasan.tra 
 arena.tra 
 yasraenasan25.tra 
 miriamsan.tra 
