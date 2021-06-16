@@ -15,7 +15,7 @@ file translated or not, just check in the repo.
 + arena.tra 
 + yasraenasan25.tra 
 + miriamsan.tra 
-nathanielsan.tra 
++ nathanielsan.tra 
 c0sirenesan.tra 
 cvmonte.tra
 sallinithyl.tra
