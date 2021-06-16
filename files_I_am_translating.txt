@@ -12,8 +12,8 @@ file translated or not, just check in the repo.
 + mazzysan.tra 
 + aranwhitsanbg2.tra 
 + hannasan.tra 
-arena.tra 
-yasraenasan25.tra 
++ arena.tra 
++ yasraenasan25.tra 
 miriamsan.tra 
 nathanielsan.tra 
 c0sirenesan.tra 
