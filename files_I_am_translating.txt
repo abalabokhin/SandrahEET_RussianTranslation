@@ -21,7 +21,7 @@ file translated or not, just check in the repo.
 + sallinithyl.tra
 + nephelesan.tra
 + quaylesan.tra
-cvsilv.tra
++ cvsilv.tra
 arienashauhana.tra
 shartddbg2ext.tra
 cvdauro.tra
