@@ -18,9 +18,9 @@ file translated or not, just check in the repo.
 + nathanielsan.tra 
 + c0sirenesan.tra 
 + cvmonte.tra
-sallinithyl.tra
-nephelesan.tra
-quaylesan.tra
++ sallinithyl.tra
++ nephelesan.tra
++ quaylesan.tra
 cvsilv.tra
 arienashauhana.tra
 shartddbg2ext.tra
