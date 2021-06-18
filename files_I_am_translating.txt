@@ -25,7 +25,7 @@ file translated or not, just check in the repo.
 + arienashauhana.tra
 + shartddbg2ext.tra
 + cvdauro.tra
-kachikosan.tra
++ kachikosan.tra
 cvsamhu.tra
 symiazsan.tra
 cbvampirequest.tra
