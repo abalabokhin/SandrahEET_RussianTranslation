@@ -22,7 +22,7 @@ file translated or not, just check in the repo.
 + nephelesan.tra
 + quaylesan.tra
 + cvsilv.tra
-arienashauhana.tra
++ arienashauhana.tra
 shartddbg2ext.tra
 cvdauro.tra
 kachikosan.tra
