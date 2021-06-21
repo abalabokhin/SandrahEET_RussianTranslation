@@ -28,8 +28,8 @@ file translated or not, just check in the repo.
 + kachikosan.tra
 + cvsamhu.tra
 + symiazsan.tra
-+ cbvampirequest.tra
-sanrtfextends.tra
++ cbvampirequest.tra 
++ sanrtfextends.tra
 kelseysanbg2.tra
 soasan.tra
 loured25.tra
