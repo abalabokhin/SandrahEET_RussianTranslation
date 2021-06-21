@@ -30,7 +30,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + symiazsan.tra
 + cbvampirequest.tra 
 + sanrtfextends.tra
-kelseysanbg2.tra
++ kelseysanbg2.tra
 soasan.tra
 loured25.tra
 cvcyric.tra
