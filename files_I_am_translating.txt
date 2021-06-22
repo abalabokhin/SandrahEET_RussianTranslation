@@ -4,36 +4,6 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
-+ aurensan.tra 
-+ ucmgabrl.tra 
-+ henning2.tra 
-+ ntkeelorrevisit.tra 
-+ cultsa7.tra 
-+ mazzysan.tra 
-+ aranwhitsanbg2.tra 
-+ hannasan.tra 
-+ arena.tra 
-+ yasraenasan25.tra 
-+ miriamsan.tra 
-+ nathanielsan.tra 
-+ c0sirenesan.tra 
-+ cvmonte.tra
-+ sallinithyl.tra
-+ nephelesan.tra
-+ quaylesan.tra
-+ cvsilv.tra
-+ arienashauhana.tra
-+ shartddbg2ext.tra
-+ cvdauro.tra
-+ kachikosan.tra
-+ cvsamhu.tra
-+ symiazsan.tra
-+ cbvampirequest.tra 
-+ sanrtfextends.tra
-+ kelseysanbg2.tra
-+ soasan.tra
-+ loured25.tra
-+ cvcyric.tra
 kindreksanbg2.tra
 bookhuntfurl.tra
 wheelssanappend.tra
