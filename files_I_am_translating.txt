@@ -10,7 +10,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + cvshau.tra
 + cvszas.tra
 + sanvampwd.tra
-hlondeth.tra
++ hlondeth.tra
 viconiasansoa.tra
 simesannpcbant.tra
 drakebg1.tra
