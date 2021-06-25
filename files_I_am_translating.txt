@@ -8,7 +8,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + bookhuntfurl.tra
 + wheelssanappend.tra
 + cvshau.tra
-cvszas.tra
++ cvszas.tra
 sanvampwd.tra
 hlondeth.tra
 viconiasansoa.tra
