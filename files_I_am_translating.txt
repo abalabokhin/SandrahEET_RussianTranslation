@@ -12,7 +12,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + sanvampwd.tra
 + hlondeth.tra
 + viconiasansoa.tra
-drakebg1.tra
++ drakebg1.tra
 bonehillsan.tra
 shaugua.tra
 f_nib.tra
