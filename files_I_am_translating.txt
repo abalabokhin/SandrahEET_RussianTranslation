@@ -13,9 +13,9 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + hlondeth.tra
 + viconiasansoa.tra
 + drakebg1.tra
-+ bonehillsan.tra   - in list but not updated for bg ee
++ bonehillsan.tra
 + shaugua.tra
-f_nib.tra       - drizzt saga, not in list
+f_nib.tra      
 cvarch5.tra
 solaufsan25.tra
 tashi25j_Revised.tra
