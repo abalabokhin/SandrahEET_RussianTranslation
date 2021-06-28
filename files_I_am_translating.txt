@@ -15,7 +15,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + drakebg1.tra
 + bonehillsan.tra
 + shaugua.tra
-f_nib.tra      
++ f_nib.tra      
 cvarch5.tra
 solaufsan25.tra
 tashi25j_Revised.tra
