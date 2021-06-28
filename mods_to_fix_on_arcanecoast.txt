@@ -1,8 +1,8 @@
 Моды которые нужно подкорректировать: 
 
-Ariena - http://www.shsforums.net/topic/17141-ariena-version-22-released/
-Sime - от роксаны с переводом, есть даже тема - https://arcanecoast.ru/forum/viewtopic.php?f=6&t=1632&p=2187767&hilit=sime#p2187767 но не нашел в списке.
-Drake - вообще нигде нет, ни русского перевода ни даже модуля в списке, хотя работает с bgee и sod: https://forums.beamdog.com/discussion/62339/v1-61-drake-a-human-priest-of-tyr-npc-for-bg-ee-and-sod
+Ariena - нет в списке - http://www.shsforums.net/topic/17141-ariena-version-22-released/
+Sime - нет в списке - мод от роксаны с русским переводом, есть тема - https://arcanecoast.ru/forum/viewtopic.php?f=6&t=1632&p=2187767&hilit=sime#p2187767 но не нашел в списке.
+Drake - вообще ничего нет, ни русского перевода, ни самого модуля в базе, хотя работает с bgee и sod: https://forums.beamdog.com/discussion/62339/v1-61-drake-a-human-priest-of-tyr-npc-for-bg-ee-and-sod
 Grey Clan - не обновлен в списке, указывал на это в теме переводы обновлений или типа того.
 drizzt saga - нет в списке, но есть старая тема - https://forums.beamdog.com/discussion/29969/drizzt-saga-v3-released-now-bgee-compatible
-secret of bone hill - есть в списке, но не обновлен до ее, хотя у роксаны есть обновление - https://github.com/RoxanneSHS/BoneHill
+secret of bone hill - есть в списке, но не обновлен до EE, хотя у роксаны есть обновление - https://github.com/RoxanneSHS/BoneHill
