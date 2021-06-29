@@ -4,19 +4,8 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
-+ kindreksanbg2.tra
-+ bookhuntfurl.tra
-+ wheelssanappend.tra
-+ cvshau.tra
-+ cvszas.tra
-+ sanvampwd.tra
-+ hlondeth.tra
-+ viconiasansoa.tra
-+ drakebg1.tra
-+ bonehillsan.tra
-+ shaugua.tra
 + f_nib.tra      
-cvarch5.tra
++ cvarch5.tra
 solaufsan25.tra
 tashi25j_Revised.tra
 vyndsandrah.tra
