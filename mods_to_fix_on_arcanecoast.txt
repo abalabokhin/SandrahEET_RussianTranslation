@@ -6,3 +6,4 @@ Drake - вообще ничего нет, ни русского перевода
 Grey Clan - не обновлен в списке, указывал на это в теме переводы обновлений или типа того.
 drizzt saga - нет в списке, но есть старая тема - https://forums.beamdog.com/discussion/29969/drizzt-saga-v3-released-now-bgee-compatible
 secret of bone hill - есть в списке, но не обновлен до EE, хотя у роксаны есть обновление - https://github.com/RoxanneSHS/BoneHill
+Vynd NPC - нет в списке, русификации тоже нет, совместим с BG:EE - https://gibberlings3.github.io/Documentation/readmes/vyndreadme.html
