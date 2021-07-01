@@ -8,7 +8,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + cvarch5.tra
 + solaufsan25.tra
 + tashi25j_Revised.tra
-vyndsandrah.tra
++ vyndsandrah.tra
 corwinsan.tra
 thiefstrongsan.tra
 cvshabab.tra
