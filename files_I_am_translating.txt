@@ -13,7 +13,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + thiefstrongsan.tra
 + cvshabab.tra
 + luxleysan.tra
-sanarenafight.tra
++ sanarenafight.tra
 hexxatsan.tra
 soubarrolf.tra
 shaorc1.tra
