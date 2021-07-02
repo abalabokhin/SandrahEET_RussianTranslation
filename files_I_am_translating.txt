@@ -12,8 +12,9 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + corwinsan.tra
 + thiefstrongsan.tra
 + cvshabab.tra
-luxleysan.tra
++ luxleysan.tra
 sanarenafight.tra
 hexxatsan.tra
 soubarrolf.tra
 shaorc1.tra
+
