@@ -14,3 +14,7 @@ sanshartcommandq.tra
 adrianbanterbg2.tra
 + tashiasanbg2.tra
 arienasanbg2.tra
+soubardialog.tra
+ninafersan.tra
+xulasanbg2.tra
+capholg.tra
