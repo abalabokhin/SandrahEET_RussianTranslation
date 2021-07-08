@@ -8,7 +8,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + soubarrolf.tra
 + shaorc1.tra
 + cvminsc.tra
-angelosan.tra
++ angelosan.tra
 farensanbg2.tra
 sanshartcommandq.tra
 adrianbanterbg2.tra
