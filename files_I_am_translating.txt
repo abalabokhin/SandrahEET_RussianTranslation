@@ -11,7 +11,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + angelosan.tra
 + farensanbg2.tra
 + sanshartcommandq.tra
-adrianbanterbg2.tra
++ adrianbanterbg2.tra
 + tashiasanbg2.tra
 arienasanbg2.tra
 soubardialog.tra
