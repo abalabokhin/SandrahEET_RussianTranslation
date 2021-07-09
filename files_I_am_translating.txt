@@ -13,7 +13,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 + sanshartcommandq.tra
 + adrianbanterbg2.tra
 + tashiasanbg2.tra
-arienasanbg2.tra
++ arienasanbg2.tra
 soubardialog.tra
 ninafersan.tra
 xulasanbg2.tra
