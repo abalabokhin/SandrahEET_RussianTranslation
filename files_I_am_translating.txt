@@ -4,6 +4,11 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
+files with fixes:
+TRA/russian/cvshau.TRA
+TRA/russian/cvleygbg2.tra
+TRA/russian/pelligt.tra
+
 + hexxatsan.tra
 + soubarrolf.tra
 + shaorc1.tra
