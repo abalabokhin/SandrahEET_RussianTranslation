@@ -20,6 +20,6 @@ TRA/russian/pelligt.tra
 + tashiasanbg2.tra
 + arienasanbg2.tra
 + soubardialog.tra
-ninafersan.tra
++ ninafersan.tra
 xulasanbg2.tra
 capholg.tra
