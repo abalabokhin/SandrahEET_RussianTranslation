@@ -4,7 +4,10 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
-xulasanbg2.tra
+modified files
+TRA/english/xulasanbg2.tra
+
++ xulasanbg2.tra
 capholg.tra
 cvslat.tra
 talostob.tra
