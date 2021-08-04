@@ -4,7 +4,11 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
-modified files
+modified files with patially translation:
+TRA/russian/bsandr.tra
+TRA/russian/cvsandrj.tra
+
+modified files:
 TRA/english/xulasanbg2.tra
 
 + xulasanbg2.tra
@@ -17,3 +21,4 @@ cvshpri.tra
 dacelintonsan.tra
 sandark.tra
 tyrissanbanter.tra
+
