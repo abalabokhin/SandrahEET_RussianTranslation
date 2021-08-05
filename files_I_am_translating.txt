@@ -6,9 +6,10 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files
 TRA/english/xulasanbg2.tra
+TRA/english/capholg.tra
 
 + xulasanbg2.tra
-capholg.tra
++ capholg.tra
 cvslat.tra
 talostob.tra
 nikitasanbg2.tra
