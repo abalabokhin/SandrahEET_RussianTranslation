@@ -14,7 +14,7 @@ TRA/english/capholg.tra
 
 + xulasanbg2.tra
 + capholg.tra
-cvslat.tra
++ cvslat.tra
 talostob.tra
 nikitasanbg2.tra
 cerndsan.tra
