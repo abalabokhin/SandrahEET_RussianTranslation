@@ -11,6 +11,7 @@ TRA/russian/cvsandrj.tra
 modified files:
 TRA/english/xulasanbg2.tra
 TRA/english/capholg.tra
+TRA/russian/darkhorsan.tra
 
 + xulasanbg2.tra
 + capholg.tra
