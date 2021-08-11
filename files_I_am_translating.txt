@@ -13,6 +13,9 @@ TRA/english/xulasanbg2.tra
 TRA/english/capholg.tra
 TRA/russian/darkhorsan.tra
 TRA/english/cerndsan.tra
+TRA/russian/capholg.tra
+TRA/russian/ellistraeesan.tra
+TRA/russian/hlondeth.tra
 
 + xulasanbg2.tra
 + capholg.tra
