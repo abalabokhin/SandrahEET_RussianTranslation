@@ -17,7 +17,7 @@ TRA/russian/darkhorsan.tra
 + capholg.tra
 + cvslat.tra
 + talostob.tra
-nikitasanbg2.tra
++ nikitasanbg2.tra
 cerndsan.tra
 cvshpri.tra
 dacelintonsan.tra
