@@ -22,7 +22,7 @@ TRA/russian/hlondeth.tra
 + cvslat.tra
 + talostob.tra
 + nikitasanbg2.tra
-cerndsan.tra
++ cerndsan.tra
 cvshpri.tra
 dacelintonsan.tra
 sandark.tra
