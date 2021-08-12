@@ -23,7 +23,7 @@ TRA/russian/hlondeth.tra
 + talostob.tra
 + nikitasanbg2.tra
 + cerndsan.tra
-cvshpri.tra
++ cvshpri.tra
 dacelintonsan.tra
 sandark.tra
 tyrissanbanter.tra
