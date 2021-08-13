@@ -16,6 +16,9 @@ TRA/english/cerndsan.tra
 TRA/russian/capholg.tra
 TRA/russian/ellistraeesan.tra
 TRA/russian/hlondeth.tra
+TRA/russian/cvsilv.tra
+TRA/russian/henning2.tra
+
 
 + xulasanbg2.tra
 + capholg.tra
@@ -24,7 +27,7 @@ TRA/russian/hlondeth.tra
 + nikitasanbg2.tra
 + cerndsan.tra
 + cvshpri.tra
-dacelintonsan.tra
++ dacelintonsan.tra
 sandark.tra
 tyrissanbanter.tra
 
