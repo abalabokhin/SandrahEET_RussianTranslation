@@ -29,5 +29,5 @@ TRA/russian/henning2.tra
 + cvshpri.tra
 + dacelintonsan.tra
 + sandark.tra
-tyrissanbanter.tra
++ tyrissanbanter.tra
 
