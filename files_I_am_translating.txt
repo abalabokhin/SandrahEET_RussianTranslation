@@ -4,30 +4,18 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
-modified files with patially translation:
-TRA/russian/bsandr.tra
-TRA/russian/cvsandrj.tra
-
 modified files:
-TRA/english/xulasanbg2.tra
-TRA/english/capholg.tra
-TRA/russian/darkhorsan.tra
-TRA/english/cerndsan.tra
-TRA/russian/capholg.tra
-TRA/russian/ellistraeesan.tra
-TRA/russian/hlondeth.tra
-TRA/russian/cvsilv.tra
-TRA/russian/henning2.tra
 
 
-+ xulasanbg2.tra
-+ capholg.tra
-+ cvslat.tra
-+ talostob.tra
-+ nikitasanbg2.tra
-+ cerndsan.tra
-+ cvshpri.tra
-+ dacelintonsan.tra
-+ sandark.tra
-+ tyrissanbanter.tra
+files to translate:
 
+anomensanbg2.tra
+sanitpoisoncure.tra
+keldornsan.tra
+bhfabiosan.tra
+kagainsandrah.tra
+sanvault.tra
+cvnorthtales.tra
+bsandrashauhaextend.tra
+cvshauq.tra
+cventar.tra
