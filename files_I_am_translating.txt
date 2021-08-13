@@ -28,6 +28,6 @@ TRA/russian/henning2.tra
 + cerndsan.tra
 + cvshpri.tra
 + dacelintonsan.tra
-sandark.tra
++ sandark.tra
 tyrissanbanter.tra
 
