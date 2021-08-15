@@ -5,7 +5,7 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
-
+  TRA/russian/henning2.tra
 
 files to translate:
 
@@ -19,3 +19,5 @@ cvnorthtales.tra
 bsandrashauhaextend.tra
 cvshauq.tra
 cventar.tra
+
+
