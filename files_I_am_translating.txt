@@ -9,7 +9,7 @@ modified files:
 
 files to translate:
 
-anomensanbg2.tra
++ anomensanbg2.tra
 sanitpoisoncure.tra
 keldornsan.tra
 bhfabiosan.tra
