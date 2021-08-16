@@ -6,11 +6,12 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files:
   TRA/russian/henning2.tra
+	TRA/english/sanitpoisoncure.tra
 
 files to translate:
 
 + anomensanbg2.tra
-sanitpoisoncure.tra
++ sanitpoisoncure.tra
 keldornsan.tra
 bhfabiosan.tra
 kagainsandrah.tra
@@ -19,5 +20,4 @@ cvnorthtales.tra
 bsandrashauhaextend.tra
 cvshauq.tra
 cventar.tra
-
 
