@@ -8,12 +8,13 @@ modified files:
   TRA/russian/henning2.tra
   TRA/english/sanitpoisoncure.tra
   TRA/russian/anomensanbg2.tra
+  TRA/english/keldornsan.tra
 
 files to translate:
 
 + anomensanbg2.tra
 + sanitpoisoncure.tra
-keldornsan.tra
++ keldornsan.tra
 bhfabiosan.tra
 kagainsandrah.tra
 sanvault.tra
