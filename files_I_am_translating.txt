@@ -6,7 +6,8 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files:
   TRA/russian/henning2.tra
-	TRA/english/sanitpoisoncure.tra
+  TRA/english/sanitpoisoncure.tra
+  TRA/russian/anomensanbg2.tra
 
 files to translate:
 
