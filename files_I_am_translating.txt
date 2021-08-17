@@ -9,7 +9,8 @@ modified files:
   TRA/english/sanitpoisoncure.tra
   TRA/russian/anomensanbg2.tra
   TRA/english/keldornsan.tra
-	TRA/english/bhfabiosan.tra
+  TRA/english/bhfabiosan.tra
+  TRA/english/kagainsandrah.tra
 
 files to translate:
 
