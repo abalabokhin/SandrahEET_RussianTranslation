@@ -11,6 +11,7 @@ modified files:
   TRA/english/keldornsan.tra
   TRA/english/bhfabiosan.tra
   TRA/english/kagainsandrah.tra
+  TRA/english/cvnorthtales.tra
 
 files to translate:
 
@@ -20,7 +21,7 @@ files to translate:
 + bhfabiosan.tra
 + kagainsandrah.tra
 + sanvault.tra
-cvnorthtales.tra
++ cvnorthtales.tra
 bsandrashauhaextend.tra
 cvshauq.tra
 cventar.tra
