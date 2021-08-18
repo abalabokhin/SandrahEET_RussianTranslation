@@ -19,7 +19,7 @@ files to translate:
 + keldornsan.tra
 + bhfabiosan.tra
 + kagainsandrah.tra
-sanvault.tra
++ sanvault.tra
 cvnorthtales.tra
 bsandrashauhaextend.tra
 cvshauq.tra
