@@ -8,3 +8,4 @@ drizzt saga - нет в списке, но есть старая тема - http
 secret of bone hill - есть в списке, но не обновлен до EE, хотя у роксаны есть обновление - https://github.com/RoxanneSHS/BoneHill
 Vynd NPC - нет в списке, русификации тоже нет, совместим с BG:EE - https://gibberlings3.github.io/Documentation/readmes/vyndreadme.html
 The Undying - есть на сайте - https://arcanecoast.ru/mod/the-undying, но версия старая нужно обновить
+Northern Tales of the Sword Coast - есть на сайте, но старая версия, нужно обновить.
