@@ -6,10 +6,11 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files:
 TRA/russian/bhfabiosan.tra
+TRA/english/bsandrashauhaextend.tra
 
 files to translate:
 
-bsandrashauhaextend.tra
++ bsandrashauhaextend.tra
 cvshauq.tra
 cventar.tra
 cvqidr.tra 
