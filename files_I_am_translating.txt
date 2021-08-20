@@ -11,7 +11,7 @@ TRA/english/bsandrashauhaextend.tra
 files to translate:
 
 + bsandrashauhaextend.tra
-cvshauq.tra
++ cvshauq.tra
 cventar.tra
 cvqidr.tra 
 drireplace.tra 
