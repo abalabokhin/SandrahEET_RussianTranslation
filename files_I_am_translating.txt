@@ -7,12 +7,14 @@ are deleted from the list. To see if an actual file translated or not, just chec
 modified files:
 TRA/russian/bhfabiosan.tra
 TRA/english/bsandrashauhaextend.tra
+TRA/english/cventar.tra
+TRA/russian/cvsafcit.tra
 
 files to translate:
 
 + bsandrashauhaextend.tra
 + cvshauq.tra
-cventar.tra
++ cventar.tra
 cvqidr.tra 
 drireplace.tra 
 solaufsan.tra 
