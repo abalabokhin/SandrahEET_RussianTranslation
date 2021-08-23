@@ -9,6 +9,13 @@ TRA/russian/bhfabiosan.tra
 TRA/english/bsandrashauhaextend.tra
 TRA/english/cventar.tra
 TRA/russian/cvsafcit.tra
+TRA/russian/cvqidrn.tra
+TRA/russian/ellistraeesan.tra
+TRA/russian/loured25.tra
+TRA/russian/sellswordssan.tra
+TRA/russian/setup-Sandr.tra
+TRA/russian/solaufsan25.tra
+TRA/russian/yasraenasan25.tra
 
 files to translate:
 
