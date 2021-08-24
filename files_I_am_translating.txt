@@ -22,7 +22,7 @@ files to translate:
 + bsandrashauhaextend.tra
 + cvshauq.tra
 + cventar.tra
-cvqidr.tra 
++ cvqidr.tra 
 drireplace.tra 
 solaufsan.tra 
 elm25san.tra
