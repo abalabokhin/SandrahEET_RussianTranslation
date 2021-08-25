@@ -16,6 +16,7 @@ TRA/russian/sellswordssan.tra
 TRA/russian/setup-Sandr.tra
 TRA/russian/solaufsan25.tra
 TRA/russian/yasraenasan25.tra
+TRA/english/drireplace.tra
 
 files to translate:
 
@@ -23,7 +24,8 @@ files to translate:
 + cvshauq.tra
 + cventar.tra
 + cvqidr.tra 
-drireplace.tra 
++ drireplace.tra 
 solaufsan.tra 
 elm25san.tra
+
 
