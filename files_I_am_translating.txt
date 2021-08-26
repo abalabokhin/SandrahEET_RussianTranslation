@@ -18,6 +18,7 @@ TRA/russian/solaufsan25.tra
 TRA/russian/yasraenasan25.tra
 TRA/english/drireplace.tra
 TRA/english/solaufsan.tra
+TRA/english/elm25san.tra
 
 files to translate:
 
