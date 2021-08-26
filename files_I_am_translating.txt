@@ -5,28 +5,16 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
-TRA/russian/bhfabiosan.tra
-TRA/english/bsandrashauhaextend.tra
-TRA/english/cventar.tra
-TRA/russian/cvsafcit.tra
-TRA/russian/cvqidrn.tra
-TRA/russian/ellistraeesan.tra
-TRA/russian/loured25.tra
-TRA/russian/sellswordssan.tra
-TRA/russian/setup-Sandr.tra
-TRA/russian/solaufsan25.tra
-TRA/russian/yasraenasan25.tra
-TRA/english/drireplace.tra
-TRA/english/solaufsan.tra
-TRA/english/elm25san.tra
+
 
 files to translate:
 
-+ bsandrashauhaextend.tra
-+ cvshauq.tra
-+ cventar.tra
-+ cvqidr.tra 
-+ drireplace.tra 
-+ solaufsan.tra 
-elm25san.tra
-
+neerasanbg1.tra 
+imoenbg2bsandr.tra 
+skiebg1banter.tra 
+sanmyst.tra 
+edwinsanbg2.tra 
+psmodtalk.tra 
+cvxeph.tra 
+kitanyasan.tra 
+sanparc.tra
