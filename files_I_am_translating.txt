@@ -9,7 +9,7 @@ modified files:
 
 files to translate:
 
-neerasanbg1.tra 
++ neerasanbg1.tra 
 imoenbg2bsandr.tra 
 skiebg1banter.tra 
 sanmyst.tra 
