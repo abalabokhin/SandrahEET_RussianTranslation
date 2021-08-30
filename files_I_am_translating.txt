@@ -11,7 +11,7 @@ modified files:
 files to translate:
 
 + neerasanbg1.tra 
-imoenbg2bsandr.tra 
++ imoenbg2bsandr.tra 
 skiebg1banter.tra 
 sanmyst.tra 
 edwinsanbg2.tra 
