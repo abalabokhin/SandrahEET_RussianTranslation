@@ -12,7 +12,7 @@ files to translate:
 
 + neerasanbg1.tra 
 + imoenbg2bsandr.tra 
-skiebg1banter.tra 
++ skiebg1banter.tra 
 sanmyst.tra 
 edwinsanbg2.tra 
 psmodtalk.tra 
