@@ -14,7 +14,7 @@ files to translate:
 + imoenbg2bsandr.tra 
 + skiebg1banter.tra 
 + sanmyst.tra 
-edwinsanbg2.tra 
++ edwinsanbg2.tra 
 psmodtalk.tra 
 cvxeph.tra 
 kitanyasan.tra 
