@@ -9,3 +9,4 @@ secret of bone hill - есть в списке, но не обновлен до 
 Vynd NPC - нет в списке, русификации тоже нет, совместим с BG:EE - https://gibberlings3.github.io/Documentation/readmes/vyndreadme.html
 The Undying - есть на сайте - https://arcanecoast.ru/mod/the-undying, но версия старая нужно обновить
 Northern Tales of the Sword Coast - есть на сайте, но старая версия, нужно обновить.
+Planar Sphere - русификация не включена в установщик для оригинальной версии а для ее (куда инсталяция включена) - это называется Expanded Mage Stronghold - другая ссылка и название. https://arcanecoast.ru/mod/planar-sphere и https://baldursextendedworld.com/EET-Updates/ соотвественно.

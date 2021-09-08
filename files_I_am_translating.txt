@@ -10,12 +10,13 @@ modified files:
 
 files to translate:
 
-+ neerasanbg1.tra 
-+ imoenbg2bsandr.tra 
-+ skiebg1banter.tra 
-+ sanmyst.tra 
-+ edwinsanbg2.tra 
-psmodtalk.tra 
++ psmodtalk.tra 
 cvxeph.tra 
 kitanyasan.tra 
 sanparc.tra
+aneghsan.tra
+skiesanbg2.tra
+kidosan.tra
+arathsanbg2.tra
+nethaneilsan.tra
+valeriesan.tra
