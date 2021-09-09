@@ -6,12 +6,13 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files:
   TRA/english/imoenbg2bsandr.tra
+  TRA/english/cvxeph.tra
 
 
 files to translate:
 
 + psmodtalk.tra 
-cvxeph.tra 
++ cvxeph.tra 
 kitanyasan.tra 
 sanparc.tra
 aneghsan.tra
@@ -20,3 +21,4 @@ kidosan.tra
 arathsanbg2.tra
 nethaneilsan.tra
 valeriesan.tra
+
