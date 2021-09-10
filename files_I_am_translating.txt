@@ -7,13 +7,15 @@ are deleted from the list. To see if an actual file translated or not, just chec
 modified files:
   TRA/english/imoenbg2bsandr.tra
   TRA/english/cvxeph.tra
+  TRA/russian/cvsuelf.tra
+  TRA/english/kitanyasan.tra
 
 
 files to translate:
 
 + psmodtalk.tra 
 + cvxeph.tra 
-kitanyasan.tra 
++ kitanyasan.tra 
 sanparc.tra
 aneghsan.tra
 skiesanbg2.tra
