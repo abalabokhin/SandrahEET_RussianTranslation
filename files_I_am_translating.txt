@@ -9,18 +9,24 @@ modified files:
   TRA/english/cvxeph.tra
   TRA/russian/cvsuelf.tra
   TRA/english/kitanyasan.tra
-
+  TRA/russian/cvqidr.tra
+  TRA/russian/sanseatower.tra
+  TRA/russian/solaufsan.tra
+  TRA/russian/ucmgabrl.tra
+  TRA/russian/xulasanbg2.tra
 
 files to translate:
 
 + psmodtalk.tra 
 + cvxeph.tra 
 + kitanyasan.tra 
-sanparc.tra
++ sanparc.tra
 aneghsan.tra
 skiesanbg2.tra
 kidosan.tra
 arathsanbg2.tra
 nethaneilsan.tra
 valeriesan.tra
+
+
 
