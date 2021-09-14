@@ -21,7 +21,7 @@ files to translate:
 + cvxeph.tra 
 + kitanyasan.tra 
 + sanparc.tra
-aneghsan.tra
++ aneghsan.tra
 skiesanbg2.tra
 kidosan.tra
 arathsanbg2.tra
