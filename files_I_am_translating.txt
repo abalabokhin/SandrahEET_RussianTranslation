@@ -5,28 +5,17 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
-  TRA/english/imoenbg2bsandr.tra
-  TRA/english/cvxeph.tra
-  TRA/russian/cvsuelf.tra
-  TRA/english/kitanyasan.tra
-  TRA/russian/cvqidr.tra
-  TRA/russian/sanseatower.tra
-  TRA/russian/solaufsan.tra
-  TRA/russian/ucmgabrl.tra
-  TRA/russian/xulasanbg2.tra
 
 files to translate:
 
-+ psmodtalk.tra 
-+ cvxeph.tra 
-+ kitanyasan.tra 
-+ sanparc.tra
-+ aneghsan.tra
-+ skiesanbg2.tra
 kidosan.tra
 arathsanbg2.tra
 nethaneilsan.tra
 valeriesan.tra
-
-
-
+kidosan.tra 
+arathsanbg2.tra 
+nethaneilsan.tra 
+valeriesan.tra 
+naliasanbg2.tra 
+zaiyasan.tra 
+kimsanbg2.tra
