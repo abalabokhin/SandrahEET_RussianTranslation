@@ -22,7 +22,7 @@ files to translate:
 + kitanyasan.tra 
 + sanparc.tra
 + aneghsan.tra
-skiesanbg2.tra
++ skiesanbg2.tra
 kidosan.tra
 arathsanbg2.tra
 nethaneilsan.tra
