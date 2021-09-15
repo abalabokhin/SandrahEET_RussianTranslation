@@ -8,10 +8,6 @@ modified files:
 
 files to translate:
 
-kidosan.tra
-arathsanbg2.tra
-nethaneilsan.tra
-valeriesan.tra
 kidosan.tra 
 arathsanbg2.tra 
 nethaneilsan.tra 
@@ -19,3 +15,9 @@ valeriesan.tra
 naliasanbg2.tra 
 zaiyasan.tra 
 kimsanbg2.tra
+callistosan.tra
+sheenasan.tra
+bg1resolveskie.tra
+cvorwarl.tra
+bsandr25.tra
+haldamirsanbg2.tra
