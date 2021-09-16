@@ -8,7 +8,7 @@ modified files:
 
 files to translate:
 
-kidosan.tra 
++ kidosan.tra 
 arathsanbg2.tra 
 nethaneilsan.tra 
 valeriesan.tra 
