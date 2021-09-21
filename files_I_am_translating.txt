@@ -10,7 +10,7 @@ files to translate:
 
 + kidosan.tra 
 + arathsanbg2.tra 
-nethaneilsan.tra 
++ nethaneilsan.tra 
 valeriesan.tra 
 naliasanbg2.tra 
 zaiyasan.tra 
