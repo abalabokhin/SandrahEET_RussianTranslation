@@ -11,3 +11,4 @@ The Undying - есть на сайте - https://arcanecoast.ru/mod/the-undying,
 Northern Tales of the Sword Coast - есть на сайте, но старая версия, нужно обновить.
 Planar Sphere - русификация не включена в установщик для оригинальной версии а для ее (куда инсталяция включена) - это называется Expanded Mage Stronghold - другая ссылка и название. https://arcanecoast.ru/mod/planar-sphere и https://baldursextendedworld.com/EET-Updates/ соотвественно.
 Kido - нет в списке - только для оригинальной bg2, русификации скорее всего нет http://www.shsforums.net/topic/13972-kido-version-70-is-available/.
+Kiara/Zaiya - есть в списке, вроде бы допереводилась и адаптировалась под EE, но указана совместимость только с оригинальной игрой https://arcanecoast.ru/mod/kiara-zaiya-mod
