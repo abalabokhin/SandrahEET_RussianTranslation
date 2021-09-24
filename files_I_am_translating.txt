@@ -5,15 +5,9 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
-TRA/russian/skiesanbg2.tra
 
 files to translate:
 
-+ kidosan.tra 
-+ arathsanbg2.tra 
-+ nethaneilsan.tra 
-+ valeriesan.tra 
-+ naliasanbg2.tra 
 zaiyasan.tra 
 kimsanbg2.tra
 callistosan.tra
