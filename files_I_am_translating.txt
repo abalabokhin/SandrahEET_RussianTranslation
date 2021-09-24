@@ -13,7 +13,7 @@ files to translate:
 + arathsanbg2.tra 
 + nethaneilsan.tra 
 + valeriesan.tra 
-naliasanbg2.tra 
++ naliasanbg2.tra 
 zaiyasan.tra 
 kimsanbg2.tra
 callistosan.tra
