@@ -8,7 +8,7 @@ modified files:
 
 files to translate:
 
-zaiyasan.tra 
++ zaiyasan.tra 
 kimsanbg2.tra
 callistosan.tra
 sheenasan.tra
