@@ -9,7 +9,7 @@ modified files:
 files to translate:
 
 + zaiyasan.tra 
-kimsanbg2.tra
++ kimsanbg2.tra
 callistosan.tra
 sheenasan.tra
 bg1resolveskie.tra
