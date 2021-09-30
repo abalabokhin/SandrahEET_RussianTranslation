@@ -6,11 +6,13 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files:
 
+TRA/english/callistosan.tra
+
 files to translate:
 
 + zaiyasan.tra 
 + kimsanbg2.tra
-callistosan.tra
++ callistosan.tra
 sheenasan.tra
 bg1resolveskie.tra
 cvorwarl.tra
