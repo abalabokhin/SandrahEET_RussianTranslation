@@ -8,7 +8,7 @@ modified files:
 
 files to translate:
 
-bg1resolveskie.tra
-cvorwarl.tra
++ bg1resolveskie.tra
++ cvorwarl.tra
 bsandr25.tra
 haldamirsanbg2.tra
