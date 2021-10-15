@@ -5,10 +5,11 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
+TRA/english/bsandr25.tra
 
 files to translate:
 
 + bg1resolveskie.tra
 + cvorwarl.tra
-bsandr25.tra
++ bsandr25.tra
 haldamirsanbg2.tra
