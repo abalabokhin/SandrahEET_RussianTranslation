@@ -9,3 +9,12 @@ modified files:
 files to translate:
 
 haldamirsanbg2.tra
+kiyonesan.tra
+acbresan.tra
+tsujathsan.tra
+tddsanbg2.tra
+cvghatle.tra
+vicbg2plot.tra
+aeriesanbg2.tra
+valygarsan.tra
+narqmes.tra
