@@ -8,7 +8,7 @@ modified files:
 
 files to translate:
 
-haldamirsanbg2.tra
++ haldamirsanbg2.tra
 kiyonesan.tra
 acbresan.tra
 tsujathsan.tra
