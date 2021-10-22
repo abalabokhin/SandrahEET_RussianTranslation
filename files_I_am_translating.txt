@@ -10,7 +10,7 @@ TRA/english/kiyonesan.tra
 files to translate:
 
 + kiyonesan.tra
-acbresan.tra
++ acbresan.tra
 tsujathsan.tra
 tddsanbg2.tra
 cvghatle.tra
