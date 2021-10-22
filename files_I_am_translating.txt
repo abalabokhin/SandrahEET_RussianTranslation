@@ -5,10 +5,11 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
+TRA/english/kiyonesan.tra
 
 files to translate:
 
-kiyonesan.tra
++ kiyonesan.tra
 acbresan.tra
 tsujathsan.tra
 tddsanbg2.tra
