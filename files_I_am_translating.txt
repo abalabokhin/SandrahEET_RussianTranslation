@@ -14,7 +14,7 @@ files to translate:
 
 + kiyonesan.tra
 + acbresan.tra
-tsujathsan.tra
++ tsujathsan.tra
 tddsanbg2.tra
 cvghatle.tra
 vicbg2plot.tra
