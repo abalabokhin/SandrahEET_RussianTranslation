@@ -9,7 +9,7 @@ modified files:
 TRA/russian/aneghsan.tra
 TRA/russian/cvxeph.tra
 TRA/russian/psmodtalk.tra
-RA/russian/bsandr.tra
+TRA/russian/bsandr.tra
 
 files to translate:
 
@@ -19,3 +19,9 @@ vicbg2plot.tra
 aeriesanbg2.tra
 valygarsan.tra
 narqmes.tra
+cvtalop1.tra 
+cvsandrp.tra 
+heardasanbg2.tra 
+cvringo.tra 
+saniylos.tra 
+Oasis/oasis-russian.tra
