@@ -6,22 +6,6 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files:
 
-TRA/russian/aneghsan.tra
-TRA/russian/cvxeph.tra
-TRA/russian/psmodtalk.tra
-TRA/russian/bsandr.tra
-TRA/russian/anomensanbg2.tra
-TRA/russian/corwinsan.tra
-TRA/russian/cvarch1.tra
-TRA/russian/cvrevi.tra
-TRA/russian/cvsandrj.tra
-TRA/russian/cvsilv.tra
-TRA/russian/kimsanbg2.tra
-TRA/russian/sanvault.tra
-TRA/russian/soasan.tra
-TRA/russian/soubardialog.tra
-TRA/russian/turnaroundsummon.tra
-
 files to translate:
 
 tddsanbg2.tra
@@ -36,5 +20,4 @@ heardasanbg2.tra
 cvringo.tra 
 saniylos.tra 
 Oasis/oasis-russian.tra
-
 
