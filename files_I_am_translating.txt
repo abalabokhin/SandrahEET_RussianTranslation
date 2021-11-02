@@ -5,10 +5,15 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
+	modified:   TRA/russian/aneghsan.tra
+	modified:   TRA/russian/cvxeph.tra
+	modified:   TRA/russian/drireplace.tra
+	modified:   TRA/russian/psmodtalk.tra
+	modified:   TRA/russian/sellswordssan.tra
 
 files to translate:
 
-tddsanbg2.tra
++ tddsanbg2.tra
 cvghatle.tra
 vicbg2plot.tra
 aeriesanbg2.tra
