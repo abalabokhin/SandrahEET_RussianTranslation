@@ -11,10 +11,10 @@ files to translate:
 aeriesanbg2.tra
 valygarsan.tra
 narqmes.tra
+cvringo.tra 
 cvtalop1.tra 
 cvsandrp.tra 
 heardasanbg2.tra 
-cvringo.tra 
 saniylos.tra 
 Oasis/oasis-russian.tra
 
