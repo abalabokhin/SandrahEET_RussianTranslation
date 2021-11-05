@@ -11,12 +11,13 @@ modified files:
 	modified:   TRA/russian/psmodtalk.tra
 	modified:   TRA/russian/sellswordssan.tra
 	modified:   TRA/russian/cvorwarl.tra
+	modified:   TRA/english/vicbg2plot.tra
 
 files to translate:
 
 + tddsanbg2.tra
 + cvghatle.tra
-vicbg2plot.tra
++ vicbg2plot.tra
 aeriesanbg2.tra
 valygarsan.tra
 narqmes.tra
