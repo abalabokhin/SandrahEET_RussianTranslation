@@ -5,10 +5,11 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
+	modified:   TRA/english/aeriesanbg2.tra
 
 files to translate:
 
-aeriesanbg2.tra
++ aeriesanbg2.tra
 valygarsan.tra
 narqmes.tra
 cvringo.tra 
