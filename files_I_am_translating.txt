@@ -6,13 +6,14 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files:
 	modified:   TRA/english/aeriesanbg2.tra
+	modified:   TRA/russian/cvharbor.tra
 
 files to translate:
 
 + aeriesanbg2.tra
 valygarsan.tra
 narqmes.tra
-cvringo.tra 
++ cvringo.tra 
 cvtalop1.tra 
 cvsandrp.tra 
 heardasanbg2.tra 
