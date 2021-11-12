@@ -12,7 +12,7 @@ modified files:
 files to translate:
 
 + aeriesanbg2.tra
-valygarsan.tra
++ valygarsan.tra
 + narqmes.tra
 + cvringo.tra 
 cvtalop1.tra 
