@@ -5,19 +5,18 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
-	modified:   TRA/english/aeriesanbg2.tra
-	modified:   TRA/russian/cvharbor.tra
-	modified:   TRA/russian/cvarch5.tra
 
 files to translate:
 
-+ aeriesanbg2.tra
-+ valygarsan.tra
-+ narqmes.tra
-+ cvringo.tra 
 cvtalop1.tra 
 cvsandrp.tra 
 heardasanbg2.tra 
 saniylos.tra 
 Oasis/oasis-russian.tra
-
+sarevoksan25.tra
+saeriletmeetsan.tra
+sandrah25extends.tra
+jaheirasanbg2.tra
+bgavinsan.tra
+greyclansan.tra
+cvshauj.tra
