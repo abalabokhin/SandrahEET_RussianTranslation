@@ -10,7 +10,7 @@ modified files:
 files to translate:
 
 + cvtalop1.tra 
-cvsandrp.tra 
++ cvsandrp.tra 
 heardasanbg2.tra 
 saniylos.tra 
 Oasis/oasis-russian.tra
