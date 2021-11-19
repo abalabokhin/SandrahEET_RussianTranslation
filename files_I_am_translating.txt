@@ -5,12 +5,9 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
-	modified:   TRA/english/cvsandrp.tra
 
 files to translate:
 
-+ cvtalop1.tra 
-+ cvsandrp.tra 
 heardasanbg2.tra 
 saniylos.tra 
 Oasis/oasis-russian.tra
