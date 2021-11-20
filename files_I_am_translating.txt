@@ -10,7 +10,7 @@ TRA/russian/bookhuntfurl.tra
 files to translate:
 heardasanbg2.tra 
 saniylos.tra 
-Oasis/oasis-russian.tra
++ Oasis/oasis-russian.tra
 sarevoksan25.tra
 saeriletmeetsan.tra
 sandrah25extends.tra
