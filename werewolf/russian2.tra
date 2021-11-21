@@ -2,22 +2,22 @@
 @-1005= "."
 
 
-@1=~You need to obtain the sea charts if you wish to navigate safely back to the main land.~
-@2=~Spell tweaks~
-@3=~Item tweaks~
+@1=~НП: You need to obtain the sea charts if you wish to navigate safely back to the main land.~
+@2=~НП: Spell tweaks~
+@3=~НП: Item tweaks~
 @4=~Gameplay tweaks~
-@5=~Cosmetic and ease-of-use tweaks~
+@5=~НП: Cosmetic and ease-of-use tweaks~
 @6=~AI enhancements~
 @7=~Ease-of-use party AI~
 @8=~This component requires the core "initialise" component to be installed~
-@9=~This component can take a few minutes to install; please be patient~
+@9=~НП: This component can take a few minutes to install; please be patient~
 @10=~LANGUAGE_CAN_SUBSTITUTE~
 @11=~Allow Spellstrike to take down a Protection from Magic scroll~
 @12=~More consistent Breach spell (always affects liches and rakshasas; doesn't penetrate Spell Turning)~
-@13=~Antimagic attacks penetrate improved invisibility~
+@13=~НП: Antimagic attacks penetrate improved invisibility~
 @14=~Iron Skins behaves like Stoneskin (can be brought down by Breach)~
-@15=~Enemy Harm spells reduce target to 1 hit point; player Harm spells do 150 hp of damage~
-@16=~Enemy and player Harm spells both do 150 hp of damage~
+@15=~НП: Enemy Harm spells reduce target to 1 hit point; player Harm spells do 150 hp of damage~
+@16=~НП: Enemy and player Harm spells both do 150 hp of damage~
 @17=~Modify the Harm spell so it does damage rather than reducing target to 1 hp~
 @18=~Allow individual versions of Spell Immunity to be placed into Contingencies and Spell Triggers~
 @19=~Revert Greater Restoration back to only affecting one creature~
@@ -30,8 +30,8 @@
 @32=~Remove the invisibility power of the Staff of the Magi~
 @33=~Move Vhailor's Helm into Throne of Bhaal~
 @34=~Move the Robe of Vecna into Throne of Bhaal~
-@35=~Replace +1 magical weapons with Fine ones~
-@36=~Replace many +1 magical weapons with Fine ones~
+@35=~НП: Replace +1 magical weapons with Fine ones~
+@36=~НП: Replace many +1 magical weapons with Fine ones~
 
 @41=~Increase the price asked by Gaelan Bayle~
 @42=~Gaelan wants 40,000 gold pieces~
@@ -40,7 +40,7 @@
 @45=~Gaelan wants 100,000 gold pieces~
 @46=~Gaelan wants 120,000 gold pieces~
 @47=~Remove unrealistically helpful items from certain areas~
-@48=~Remove unrealistically convenient ammunition from certain areas~
+@48=~НП: Remove unrealistically convenient ammunition from certain areas~
 @49=~Make Watchers' Keep accessible between SoA and ToB (warning: this will make it inaccessible until the end of SoA)~
 
 @50=~Remove animation from the Cloak of Mirroring (leave it for other spells and effects that use the same graphic)~
@@ -48,34 +48,34 @@
 
 @61=~Smarter general AI~
 @62=~Better calls for help~
-@63=~Improved fiends~
+@63=~НП: Improved fiends~
 
-@66=~Smarter celestials~
+@66=~НП: Smarter celestials~
 
 @69=~Smarter genies~
 
 @72=~Smarter dragons~
 
 @75=~Smarter beholders~
-@76=~Upgrade the beholders found in the hive in the Underdark (borrowed from Quest Pack)~
-@77=~Upgrade the beholders'  AI but don't include a Hive upgrade~
+@76=~НП: Upgrade the beholders found in the hive in the Underdark (borrowed from Quest Pack)~
+@77=~НП: Upgrade the beholders'  AI but don't include a Hive upgrade~
 @78=~Smarter mind flayers~
-@79=~Enemy mages (and Elder Orbs) use Simulacrum and Project Image spells (this component will have no effect unless you install Smarter Mages or Smarter Beholders)~
+@79=~НП: Enemy mages (and Elder Orbs) use Simulacrum and Project Image spells (this component will have no effect unless you install Smarter Mages or Smarter Beholders)~
 @80=~Smarter Mages~
-@81=~Mages cast some short-duration spells instantly at start of combat, to simulate pre-battle casting~
-@82=~Mages only cast short-duration spells instantly at start of combat if they are created in sight of the PC~
-@83=~Mages never cast short-duration spells instantly at start of combat~
+@81=~НП: Mages cast some short-duration spells instantly at start of combat, to simulate pre-battle casting~
+@82=~НП: Mages only cast short-duration spells instantly at start of combat if they are created in sight of the PC~
+@83=~НП: Mages never cast short-duration spells instantly at start of combat~
 @84=~Smarter Priests~
-@85=~Priests cast some short-duration spells instantly at start of combat, to simulate pre-battle casting~
-@86=~Priests only cast short-duration spells instantly at start of combat if they are created in sight of the PC~
-@87=~Priests never cast short-duration spells instantly at start of combat~
+@85=~НП: Priests cast some short-duration spells instantly at start of combat, to simulate pre-battle casting~
+@86=~НП: Priests only cast short-duration spells instantly at start of combat if they are created in sight of the PC~
+@87=~НП: Priests never cast short-duration spells instantly at start of combat~
 
-@88=~Add high-level abilities (HLAs) to spellcasters~
-@89=~Only selected spellcasters in Throne of Bhaal get HLAs~
-@90=~Only selected spellcasters in Throne of Bhaal and Shadows of Amn get HLAs~
-@91=~All eligible spellcasters in Throne of Bhaal get HLAs; none in Shadows of Amn do~
-@92=~All eligible spellcasters in Throne of Bhaal get HLAs; only selected casters in Shadows of Amn do~
-@93=~All eligible spellcasters in Throne of Bhaal and Shadows of Amn get HLAs (very challenging and not really recommended!)~
+@88=~НП: Add high-level abilities (HLAs) to spellcasters~
+@89=~НП: Only selected spellcasters in Throne of Bhaal get HLAs~
+@90=~НП: Only selected spellcasters in Throne of Bhaal and Shadows of Amn get HLAs~
+@91=~НП: All eligible spellcasters in Throne of Bhaal get HLAs; none in Shadows of Amn do~
+@92=~НП: All eligible spellcasters in Throne of Bhaal get HLAs; only selected casters in Shadows of Amn do~
+@93=~НП: All eligible spellcasters in Throne of Bhaal and Shadows of Amn get HLAs (very challenging and not really recommended!)~
 
 @100=~Телекинез~
 @101=~Парализующий стеблеглаз уничтожен~
@@ -94,65 +94,66 @@
 @114=~Стреляющий снарядами стеблеглаз уничтожен~
 @115=~Ослабляющий стеблеглаз уничтожен~
 @151=~Smarter githyanki~
-@152=~Improved minor encounters [almost no content yet]~
-@153=~No need to upgrade the beholders' hive, Quest Pack has already done it~
-@154=~Increase difficulty of level-dependent monster groupings~
-@155=~Mildly increased difficulty~
-@156=~Significantly increased difficulty~
-@157=~Almost-maximum difficulty (maximum for everything except liches)~
+@152=~НП: Improved minor encounters [almost no content yet]~
+@153=~НП: No need to upgrade the beholders' hive, Quest Pack has already done it~
+@154=~НП: Increase difficulty of level-dependent monster groupings~
+@155=~НП: Mildly increased difficulty~
+@156=~НП: Significantly increased difficulty~
+@157=~НП: Almost-maximum difficulty (maximum for everything except liches)~
 @158=~Improved de'Arnise Keep ("Tactics Remix")~
 @159=~Potions for NPCs~
 @160=~Improved Spiders~
-@161=~Enhanced Sendai's Enclave~
-@162=~Give SCS II style AI to Ascension enemies~
-@163=~Recover any items dropped in the final battle in Hell~
+@161=~НП: Enhanced Sendai's Enclave~
+@162=~НП: Give SCS II style AI to Ascension enemies~
+@163=~НП: Recover any items dropped in the final battle in Hell~
 @164=~Make party members less likely to die irreversibly~
-@165=~Skipping this component as an equivalent component is already installed~
+@165=~НП: Skipping this component as an equivalent component is already installed~
 @166=~Faster Bears~
-@167=~Maximum difficulty~
-@168=~Minor tactical tweaks/bugfixes~
+@167=~НП: Maximum difficulty~
+@168=~НП: Minor tactical tweaks/bugfixes~
 @169=~Reduce the power of Inquisitors' Dispel Magic~
 @170=~Inquisitors dispel at 1.5 x their level (not twice their level)~
 @171=~Inquisitors dispel at their level (not twice their level)~
 @172=~Improved Shade Lord~
 @173=~Improved Abazigal's Lair~
-@174=~Illithids have only original-game resistances; Illithids cannot see invisible enemies (matches original game)~
-@175=~Illithids have only original-game resistances; Illithids can see through invisibility~
-@176=~Illithids have enhanced damage resistance; Illithids cannot see invisible enemies~
-@177=~Illithids have enhanced damage resistance; Illithids can see through invisibility (matches Tactics mod)~
-@178=~Spirit trolls have the same powers as in the original game~
-@179=~Enhanced spirit trolls (as in Tactics)~
+@174=~НП: Illithids have only original-game resistances; Illithids cannot see invisible enemies (matches original game)~
+@175=~НП: Illithids have only original-game resistances; Illithids can see through invisibility~
+@176=~НП: Illithids have enhanced damage resistance; Illithids cannot see invisible enemies~
+@177=~НП: Illithids have enhanced damage resistance; Illithids can see through invisibility (matches Tactics mod)~
+@178=~НП: Spirit trolls have the same powers as in the original game~
+@179=~НП: Enhanced spirit trolls (as in Tactics)~
 @180=~Improved Fire Giant temple~
 @181=~Party's items are taken from them in Spellhold~
 @182=~More resilient trolls~
-@183=~Slightly improved Faldorn~
-@184=~All unused potions on dead enemies are retrievable by the party~
-@185=~About half of all unused potions on dead enemies are retrievable by the party (the rest are assumed to break)~
-@186=~No potions on dead enemies are retrievable by the party (they're assumed to break)~
+@183=~НП: Slightly improved Faldorn~
+@184=~НП: All unused potions on dead enemies are retrievable by the party~
+@185=~НП: About half of all unused potions on dead enemies are retrievable by the party (the rest are assumed to break)~
+@186=~НП: No potions on dead enemies are retrievable by the party (they're assumed to break)~
 @187=~Improved Vampires~
-@188=~Improved Bodhi (Tactics Remix)~
-@189=~"Toned-down" version of the original Tactics Improved Bodhi, with SCSII scripting~
-@190=~Original Tactics Improved Bodhi with SCSII scripting~
+@188=~НП: Improved Bodhi (Tactics Remix)~
+@189=~НП: "Toned-down" version of the original Tactics Improved Bodhi, with SCSII scripting~
+@190=~НП: Original Tactics Improved Bodhi with SCSII scripting~
 @191=~Improved Random Encounters~
 @192=~Spellcasting Demiliches~
 @193=~Retrieve Dropped Items from Hell~
 @194=~Improved Sahuagin~
-@195=~Access the Bridge District from the Pocket Plane~
+@195=~НП: Access the Bridge District from the Pocket Plane~
 @196=~Make Freedom scrolls available earlier~
-@197=~Give fiends more staying power by increasing their hit points (this component has no effect unless Improved Fiends is installed)~
+@197=~НП: Give fiends more staying power by increasing their hit points (this component has no effect unless Improved Fiends is installed)~
 @198=~Move the Cloak of Mirroring~
-@199=~Slightly Improved Drow~
-@200=~Slightly Improved Watcher's Keep~
-@201=~
+@199=~НП: Slightly Improved Drow~
+@200=~НП: Slightly Improved Watcher's Keep~
+@201=~НП: 
 
 The spell actually affects a region a few feet across; this allows the caster to target it on invisible creatures. However, since the creature may move before the spell is completed, the caster must take great care not to waste the spell.~
 @202=~НП: Casting Time: ~
 @203=~«Железная кожа», ~
 @204=~, и «Железную кожу».~
 @205=~уменьшает пункты здоровья цели до 1~
-@206=~наносит цели 150 пунктов урона~
-@207=~
-Это ~
+@206=~НП: inflicts 150 hit points of damage on the target~
+@207=~НП: 
+
+This is the ~
 @208=~ вариант заклинания.~
 @209=~за уровень заклинателя (до максимума в 12d6)~
 @210=~за уровень заклинателя~
@@ -173,7 +174,7 @@ The spell actually affects a region a few feet across; this allows the caster to
 
 После произнесения «Слова силы, Ослепить» жертва перестает видеть. Оно продолжается 6 раундов или до развеивания. Жертвы подвержены всем негативным эффектам слепоты, в том числе штрафам к атаке и классу защиты. Также уменьшается зона видимости поражённого персонажа.~
 @217=~Невидимая стена заблокировала дверной проем.~
-@218=~Give dragons more staying power by increasing their hit points~
+@218=~НП: Give dragons more staying power by increasing their hit points~
 @219=~You can't install this component AFTER "Retrieve dropped items from Hell" - if you want both components installed, you need to uninstall "Retrieve dropped items from Hell", then install this component, then reinstall "retrieve dropped items from Hell"~
 @220=~Prevent Simulacra and Projected Images from using magical items~
 @221=~Grant large, flying, non-solid or similar creatures protection from Web and Entangle~
@@ -183,350 +184,376 @@ The spell actually affects a region a few feet across; this allows the caster to
 @302=~Раскол разума~
 @303=~Взрыв разума~
 
-@401 = ~Самым распространенным вариантом боевого топора является трапециевидное лезвие, заточенное с одной стороны, сидящее на крепком древке около четырех футов длиной. Боевые топоры также называют широкими топорами.
+@401 = ~НП: The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
-Этот боевой топор изготовлен необычайно качественно, его идеально сбалансированное лезвие режет, как остро заточенная бритва. Хоть на него не наложены никакие чары, он режет глубже и попадает точнее обычного топора.
+This particular battle axe is unusually finely made, with a perfectly balanced blade sharpened to razor thickness. Though not magical, it will strike more truly and cut more deeply than a lesser axe.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-THAC0: +1 улучшение
-Урон: 1d8 +1
-Тип урона: рубящий
-Фактор скорости: 7
-Оружейный навык: топор
-Тип: одноручное
-Вес: 7
-Требования: сила 10
-Не могут использовать:
- Вор
- Друид
- Маг
- Монах
- Священник
- Хозяин зверей~
+Damage:  1D8 + 1
+THAC0: + 1 bonus
+Damage type:  slashing
+Weight: 7
+Speed Factor: 7
+Proficiency Type: Axe
+Type:  1-handed
+Requires: 10 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Thief
+ Monk
+ Beast Master~
+
 @402 = ~Отличный боевой топор~
-@403 = ~Моргенштерн представляет собой деревянную рукоять, увенчанную металлическим навершием с шипами. Общая длина оружия примерно четыре фута. Навершие может быть круглым, овальным или цилиндрическим. Вне зависимости от формы навершия, оно, как правило, увенчивается длинным шипом, предназначенным для нанесения колющих ударов.
 
-В создание этого моргенштерна было вложенно особенно много труда. Он не содержит никаких чар, но и без этого представляет из себя отличное, смертельное оружие.
+@403 = ~НП: The morning star is a wooden shaft topped with a metal head made up of a spiked iron sheath. Morning stars have an overall length of about four feet. Some such weapons have a round, oval, or cylindrical shaped head studded with spikes. Extending from most morning star heads, regardless of design, is a long point for thrusting.
 
-ПАРАМЕТРЫ:
+Particular care has gone into the manufacture of this particular morning star. It bears no dweomer, but nevertheless is a fine, deadly weapon.
 
-THAC0: +1 улучшение
-Урон: 2d4 +1
-Тип урона: дробящий
-Фактор скорости: 7
-Оружейный навык: цеп/моргенштерн
-Тип: одноручное
-Вес: 12
-Требования: сила 11
-Не могут использовать:
- Вор
- Друид
- Маг
- Монах
- Хозяин зверей~
+STATISTICS:
+
+Damage:  2D4+1
+THAC0: + 1 bonus
+Damage type:  crushing
+Weight: 12
+Speed Factor: 7
+Proficiency Type: Flail/Morningstar
+Type:  1-handed
+Requires: 11 Strength
+Not Usable By:
+ Druid
+ Mage 
+ Thief
+ Monk
+ Beast Master~
+
 @404 = ~Отличный моргенштерн~
-@405 = ~Длинный лук похож на короткий лук за исключением того, что его длина примерно равна росту лучника, обычно от шести до шести с половиной футов. Длинные луки обладают большей точностью при стрельбе по сравнению с короткими луками, но имеют более медленный фактор скорости.
 
-В создание этого лука было вложенно особенно много труда, и даже незачарованный он точнее и сильнее обычного длинного лука.
+@405 = ~НП: The long bow is similar to the short bow, except that the staff is about as high as the archer is, usually 6 to 6.5 feet. It has two advantages over the short bow: better range and hence much more accuracy.
 
-ПАРАМЕТРЫ:
+This particular bow has been made with unusual care, and is even more accurate and powerful than a normal longbow even though it is unenchanted.
 
-THAC0: +2 улучшение
-Фактор скорости: 7
-Оружейный навык: длинный лук
-Тип: двуручное
-Вес: 3
-Требования: сила 6
-Не могут использовать:
- Вор
- Друид
- Кенсай
- Маг
- Монах
- Рыцарь
- Священник~
+STATISTICS:
+
+Damage: +1
+THAC0: +2
+Weight: 3
+Speed Factor: 7
+Proficiency Type: Long Bow
+Type:  2-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Thief
+ Monk
+ Kensai
+ Cavalier~
+
 @406 = ~Отличный длинный лук~
-@407 = ~Короткие луки появились первыми, хотя их раньше так и не называли. В настоящее время это общий термин для тех луков, которые не подходят под определение длинного лука. В среднем длина древка короткого лука около пяти футов. Со временем были предприняты попытки увеличить точность стрельбы луков. Это достигалось либо за счет увеличения длины древка, либо за счет повышения гибкости. Первый путь привел к появлению длинного лука.
 
-Этот лук изготовлен из необычного дерева, растущего в южных странах. Этот материал очень ценится изготовителями луков: короткие луки из этого дерева по точности сравнимы с длинными луками и несколько превосходят их в силе.
+@407 = ~НП: Short bows were the first to be developed, although they were not called such.  This is more of a default term that refers to anything which is not a long bow.  Short bow staves are about 5 feet long on the average.  As the years passed, attempts were made to increase bow ranges.  Bows were either given longer staves or flexibility was increased with no change to the length.  The former resulted in what is now called the long bow.
 
-ПАРАМЕТРЫ:
+This particular bow is made from an unusual wood from southern lands, much sought by bowyers: despite its small size, it is as accurate as a longbow and slightly more powerful.
 
-THAC0: +1 улучшение
-Фактор скорости: 6
-Оружейный навык: короткий лук
-Тип: двуручное
-Вес: 2
-Требования: сила 3
-Не могут использовать:
- Друид
- Кенсай
- Маг
- Монах
- Рыцарь
- Священник~
+STATISTICS:
+
+THAC0:  +1
+Damage:  +1
+Weight: 2
+Speed Factor: 6
+Proficiency Type: Short Bow
+Type:  2-handed
+Requires: 3 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Monk
+ Kensai
+ Cavalier~
+
 @408 = ~Отличный короткий лук~
-@409 = ~У типичного кинжала обычно обоюдоострое лезвие с заточенным концом в отличие от ножа, который имеет одностороннюю заточку и несколько короче.
 
-Этот кинжал выкован мастером-кузнецом. Даже без зачарования это прекрасное и смертельное оружие, благодаря идеальному балансу и острой заточке.
+@409 = ~НП: The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger.
 
-ПАРАМЕТРЫ:
+This dagger is the work of a master craftsman. Though not enchanted, its perfect balance and razor edge make it a beautiful and deadly weapon.
 
-THAC0: +1 улучшение
-Урон: 1d4 +1
-Тип урона: колющий
-Фактор скорости: 2
-Оружейный навык: кинжал
-Тип: одноручное
-Вес: 1
-Требования: сила 3
-Не могут использовать:
- Священник
- Хозяин зверей~
+STATISTICS:
+
+Damage:  1D4+1
+THAC0 : +1 
+Damage type:  piercing
+Weight: 1
+Speed Factor: 2 
+Proficiency Type: Dagger
+Type:  1-handed
+Requires:  3 Strength
+Not Usable By:
+ Cleric
+ Beast Master~
+
 @410 = ~Отличный кинжал~
-@411 = ~Один из самых древних и широко распространенных видов древкового оружия, алебарда, состоит из клинка, похожего на зауженное лезвие топора, и древка длиной примерно в шесть футов. Ударная часть сзади уравновешивается шипом и увенчана острой пикой, как правило, четырехугольного сечения. Иногда вместо пики используется крюк, применяемый для стаскивания всадников с лошадей. Можно сказать, что алебарда - это нечто среднее между копьем и топором.
 
-Эта алебарда сделана с необычайным старанием: рукоять покрыта резьбой, а лезвие начищено до зеркального блеска, и вряд ли можно изготовить лучшее оружие, не используя чары.
+@411 = ~НП: By far the oldest and most often used pole-arm, the halberd consists of a cleaver-like axe blade mounted on a staff averaging six feet in length.  The axe blade is balanced at the rear with a fluke, and surmounted by a sharp spike, usually of quadrangular design.  The fluke is sometimes replaced by a hook used to dismount cavalry.  A halberd can be best described as a cross between a spear and an axe.
 
-ПАРАМЕТРЫ:
+This halberd was made with special care: from the carving on the pole to the mirror brightness of its axe blade, it is as fine a weapon as you could hope to forge without enchantment.
 
-Урон: 1d10 +1
+STATISTICS:
+
+Damage:  1D10+1
 THAC0: +1
-Тип урона: колющий
-Фактор скорости: 9
-Оружейный навык: алебарда
-Тип: двуручное
-Вес: 15
-Требования: сила 13
-Не могут использовать:
- Вор
- Друид
- Маг
- Монах
- Священник
- Хозяин зверей~
+Damage type:  piercing
+Weight: 15
+Speed Factor: 9
+Proficiency Type: Halberd
+Type:  2-handed
+Requires: 13 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Thief
+ Monk
+ Beast Master~
+
 @412 = ~Отличная алебарда~
-@413 = ~Конным рыцарям, сидя в седле, довольно сложно было управляться с оружием на длинной рукояти, и в результате многие виды оружия были оснащены коротким древком, чтобы его можно было держать одной рукой. Первыми примерами стали цепы и булавы, за ними последовали и молоты. Боевой молот конника, является потомком люцернского молота. Он цельнометаллический и оснащен ронделями, которые защищают руку и укрепляют захват. (Рондели - небольшие металлические диски, зачастую имеющие декоративное оформление.) Длина рукояти составляет восемнадцать дюймов.
 
-Этот боевой молот очень качественный. Его навершие сбалансировано так, чтобы вес и сила владельца полностью переносились на цель, поэтому этим молотом можно наносить более точные удары, не жертвуя их силой.
+@413 = ~НП: Mounted knights cannot effectively use long pole weapons while on horseback, and as a result, many weapons have been fitted with shorter shafts so they may be wielded with just one hand.  Maces and flails are two previous examples of this - the war hammer is another.  The horseman's war hammer is the descendent of the Lucerne hammer.  It is made entirely of steel, with rondels protecting and strengthening the grip.  Rondels are small disks of metal, often shaped into decorative designs.  The shaft is about 18 inches long.
 
-ПАРАМЕТРЫ:
+This is a particularly fine war hammer. Its head is balanced perfectly so that the wielders weight and strength are concentrated on the target and so that it can be swung accurately without compromising the force of a blow.
 
-THAC0: +1 улучшение
-Урон: 1d4 +2
-Тип урона: дробящий
-Фактор скорости: 4
-Оружейный навык: боевой молот
-Тип: одноручное
-Вес: 6
-Требования: сила 9
-Не могут использовать:
- Вор
- Друид
- Маг
- Монах
- Хозяин зверей~
+STATISTICS:
+
+Damage:  1D4 + 2
+THAC0: +1
+Damage type:  crushing
+Weight: 6
+Speed Factor: 4
+Proficiency Type: War Hammer
+Type:  1-handed
+Requires: 9 Strength
+Not Usable By:
+ Druid
+ Mage 
+ Thief
+ Monk
+ Beast Master~
+
 @414 = ~Отличный боевой молот~
-@415 = ~Простейшее и скромнейшее из шестообразного оружия, боевой посох - это деревянная палка длиной от шести до девяти футов. Боевые посохи высокого качества делаются из крепкого дуба и оковываются металлом с обоих концов. Для того чтобы владеть боевым посохом, требуются обе руки.
 
-Этот боевой посох сделан из особенно крепкого дерева, тщательно обработанного и усиленного стальными кольцами. При всей его простоте, это крайне мощное оружие.
+@415 = ~НП: The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length.  High quality quarterstaves are made of stout oak and are shod with metal at both ends.  The quarterstaff must be wielded with both hands.
 
-ПАРАМЕТРЫ:
+This quarter staff is made from an unusually strong wood, carved with great care and reinforced with steel bands. For all its simplicity, it is a fairly powerful weapon.
 
-THAC0: +1 улучшение
-Урон: 1d6 +1
-Тип урона: дробящий
-Фактор скорости: 4
-Оружейный навык: посох
-Тип: двуручное
-Вес: 4
-Требования: сила 5
-Не могут использовать:
- Монах~
+STATISTICS:
+
+Damage:  1D6+1
+THAC0: +1
+Damage type:  crushing
+Weight: 4
+Speed Factor: 4
+Proficiency Type: Staff
+Type:  2-handed
+Requires: 5 Strength
+Not Usable By:
+ Monk~
+
 @416 = ~Отличный боевой посох~
-@417 = ~Известный так же, как меч-бастард, полуторный меч обязан своим названием тому, что представляет собой нечто среднее между двуручным и длинным мечом. У него обоюдоострый клинок и длинная рукоять, позволяющая при необходимости использовать двуручный хват. Общая длина таких мечей колеблется от четырех футов до четырех футов десяти дюймов.
 
-Это качественный, отлично сбалансированный полуторный меч; благодаря мастеру-кузнецу, выковавшему этот клинок, он очень эффективен в бою.
+@417 = ~НП: Also known as the hand-and-a-half sword, the bastard sword derives its name from the fact that it is halfway between the two-handed sword and the long sword. The bastard sword has a double-edged blade and a long grip, which can accommodate both hands if preferred.  The overall length of the bastard sword ranges between four feet and four feet ten inches.
 
-ПАРАМЕТРЫ:
+This is a particularly fine, well-balanced bastard sword; its blade, forged by a master smith, will cut deep and accurately.
 
-THAC0: +1 улучшение
-Урон: 2d4 +1
-Тип урона: рубящий
-Фактор скорости: 8
-Оружейный навык: полуторный меч
-Тип: одноручное
-Вес: 10
-Требования: сила 11
-Не могут использовать:
- Вор
- Друид
- Маг
- Монах
- Священник
- Хозяин зверей~
+STATISTICS:
+
+Damage:  2D4+1
+THAC0: +1
+Damage type:  slashing
+Weight: 10
+Speed Factor: 8
+Proficiency Type: Bastard Sword
+Type:  1-handed
+Requires: 11 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Thief
+ Monk
+ Beast Master~
+
 @418 = ~Отличный полуторный меч~
-@419 = ~Такие мечи иногда называют обоюдоострыми, боевыми или солдатскими мечами. Часто лезвие длинных мечей имеет и одностороннюю заточку. Не существует единого стандарта длинного меча, их форма и длина зависит от места, а в большинстве культур и от эпохи изготовления. Одной из наиболее общих характеристик для таких мечей является их длина, она колеблется от тридцати пяти до сорока семи дюймов. В последнем случае лезвие достигает сорока дюймов от общей длины меча. Наиболее широко распространены мечи, имеющие обоюдоострое лезвие, заточенное к концу. Несмотря на это длинные мечи предназначены для рубящих, а не колющих ударов.
 
-Этот длинный меч сделан необычайно качественно. Его баланс почти идеален, а лезвие острое как бритва.
+@419 = ~НП: These swords are usually referred to as doubled-edged swords, war swords, or military swords.  In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era.  Among the most common characteristics of all long swords is their length, which ranges from 35 inches to 47 inches.  In the latter case, the blade is known to take up 40 inches of the total length.  Most long swords have a double-edged blade and a sharp point at the tip.  Despite the tip, the long sword is designed for slashing, not thrusting.
 
-ПАРАМЕТРЫ:
+This particular longsword is unusually finely made. Its balance is near perfect, and its blade runs to an edge of razor sharpness.
 
-THAC0: +1 улучшение
-Урон: 1d8 +1
-Тип урона: рубящий
-Фактор скорости: 5
-Оружейный навык: длинный меч
-Тип: одноручное
-Вес: 4
-Требования: сила 6
-Не могут использовать:
- Друид
- Маг
- Священник
- Хозяин зверей~
+STATISTICS:
+
+Damage:  1D8+1
+THAC0: +1
+Damage type:  slashing
+Weight: 4
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type:  1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Beast Master~
+
 @420 = ~Отличный длинный меч~
-@421 = ~Короткий меч - самый первый из изобретенных мечей. В простейшей терминологии короткий меч рассматривается как кинжал с настолько длинным лезвием, что его больше нельзя называть кинжалом. В официальной классификации мечей этот термин отсутствует. Однако он широко используется для обозначения обоюдоострых клинков длиной около двух футов. Такие мечи имеют заостренный конец, идеально подходящий для нанесения колющих ударов.
 
-Этот короткий меч сделан необычайно качественно. Его баланс почти идеален, а лезвие острое как бритва.
+@421 = ~НП: The short sword is the first type of sword to come into existence.  In the simplest of terms, a short sword can be considered a dagger with a blade so long that it can no longer be called a dagger.  The term short sword does not exist in sword classifications.  However, it has come to be used to describe a double-edged blade about two feet in length.  The sword tip is usually pointed, ideal for thrusting.
 
-ПАРАМЕТРЫ:
+This particular short sword is unusually finely made. Its balance is near perfect, and its blade runs to an edge of razor sharpness.
 
-THAC0: +1 улучшение
-Урон: 1d6 +1
-Тип урона: колющий
-Фактор скорости: 3
-Оружейный навык: короткий меч
-Тип: одноручное
-Вес: 3
-Требования: сила 5
-Не могут использовать:
- Друид
- Маг
- Священник 
- Хозяин зверей~
+
+STATISTICS:
+
+Damage:  1D6 +1
+THAC0: +1
+Damage type:  piercing
+Weight: 3
+Speed Factor: 3
+Proficiency Type: Short Sword
+Type:  1-handed
+Requires: 5 Strength
+Not Usable By:
+ Druid
+ Cleric 
+ Mage
+ Beast Master~
+
 @422 = ~Отличный короткий меч~
-@423 = ~Будучи одним из древнейших видов оружия, известным еще с первобытных времен, первые копья представляли собой обычные деревянные шесты или палки, заостренные с одного конца. Когда разумные существа научились добывать металлы, наконечники копий начали делать из железа и стали. С тех пор оружейники часто экспериментировали с различными формами наконечников, что привело к появлению других разновидностей древкового оружия.
 
-В отличие от большинства копий в широкой продаже, это оружие сделано с небывалым старанием. Его наконечник выкован из высококачественной стали и отлично сбалансирован.
+@423=~НП: One of man's earliest weapons, dating back to the most primitive of times, the first spears were simply wooden poles or sticks sharpened at one end.  When man mastered metals, spearheads were made from iron and steel.  Having reached this end, weaponers began experimenting with different types of spear heads, thus leading to the development of certain polearm types.
 
-ПАРАМЕТРЫ:
+Most spears are crude, mass-produced weapons, but unusual care has been lavished on this one. The head is made of high-quality steel and the balance is very fine.
 
-THAC0: +1 улучшение
-Урон: 1d6 +1
-Тип урона: колющий
-Фактор скорости: 6
-Оружейный навык: копье
-Тип: двуручное
-Вес: 5
-Требования: сила 5
-Не могут использовать:
- Вор
- Маг
- Монах
- Священник
- Хозяин зверей~
-@424 = ~Отличное копье~
-@425 = ~Булава - прямой потомок обычной дубины и представляет собой ничто иное, как деревянную рукоять с каменным или железным навершием.
+STATISTICS:
 
-Навершие этой булавы выковано очень качественно и имеет пирамидальную форму, делая ее эффективнее других даже без зачарования.
+Damage:  1D6+1
+THAC0: +1
+Damage type:  piercing
+Weight: 5
+Speed Factor: 6
+Proficiency Type: Spear 
+Type:  2-handed
+Requires: 5 Strength
+Not Usable By:
+ Cleric
+ Mage
+ Thief
+ Monk
+ Beast Master~
 
-ПАРАМЕТРЫ:
+@424=~Отличное копье~
 
-THAC0: +1 улучшение
-Урон: 1d6 +2
-Тип урона: дробящий
-Фактор скорости: 7
-Оружейный навык: булава
-Тип: одноручное
-Вес: 8
-Требования: сила 10
-Не могут использовать:
- Вор
- Друид
- Маг
- Монах
- Хозяин зверей~
-@426 = ~Отличная булава~
-@427 = ~Двуручный меч произошел от длинного меча. Мастера-оружейники всегда искали способы улучшить оружие. В случае с длинным мечом была сделана попытка удлинить клинок. Чтобы уравновесить конструкцию, рукоять также пришлось сделать длиннее, и в результате такой меч стало возможно держать только двумя руками. Основные функции двуручных мечей - рубить конных рыцарей и ломать строй копейщиков. 
+@425=~НП: The mace is a direct descendant of the basic club, being nothing more than a wooden shaft with an iron head mounted on the end.  In this case, the head is pyramidal and forged with unusual care, making this mace fairly effective in combat for all that it bears no enchantment.
 
-Этот меч, изготовленный из лучшей дварфийской стали, особенно хорош в бою.
+STATISTICS:
 
-ПАРАМЕТРЫ:
+THAC0:  +1
+Damage:  1D6 + 2
+Damage type:  crushing
+Weight: 8
+Speed Factor: 7
+Proficiency Type: Mace
+Type:  1-handed
+Requires: 10 Strength
+Not Usable By:
+ Druid
+ Mage
+ Thief
+ Monk
+ Beast Master~
 
-THAC0: +1 улучшение
-Урон: 1d10 +1
-Тип урона: рубящий
-Фактор скорости: 10
-Оружейный навык: двуручный меч
-Тип: двуручное
-Вес: 12
-Требования: сила 14
-Не могут использовать:
- Вор
- Друид
- Маг 
- Священник~
-@428 = ~Отличный двуручный меч~
-@429 = ~Скимитар или шамшир, как его изначально называли - это изогнутый меч с односторонней заточкой, который оканчивается вытянутым острием. В результате он несколько проигрывает другим схожим видам оружия в скорости, но зато он эффективнее и смертоноснее в бою.
+@426=~Отличная булава~
 
-Это очень качественный клинок, хоть и не зачарованный.
+@427=~НП: The two-handed sword is a derivative of the long sword.  Weaponsmiths have always looked for ways to improve existing weapons.  In an effort to improve the long sword, the blade was lengthened.  Eventually, the handle had to be extended and two hands became necessary to properly swing the sword.  The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.  This one is particularly good at its job, as it has been crafted of the finest dwarven steel.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-THAC0: +1 улучшение
-Урон: 1d8 +1
-Тип урона: рубящий
-Фактор скорости: 5
-Оружейный навык: скимитар/вакизаши/ниндзято
-Тип: одноручное
-Вес: 3
-Требования: сила 10
-Не могут использовать:
- Вор
- Маг
- Священник~
-@430 = ~Отличный скимитар~
-@431 = ~Композитные луки - это длинные или короткие луки, основания которых сделаны из нескольких материалов. Это придает большую гибкость и позволяет стрелам наносить больший урон. Композитные длинные луки были созданы на основе обычных длинных луков.
+THAC0:  +1 bonus
+Damage:  1D10 +1
+Damage type:  slashing
+Weight: 12
+Speed Factor: 10
+Proficiency Type: Two Handed sword
+Type:  2-handed
+Requires: 14 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage 
+ Thief~
 
-Этот лук не обладает магическими свойствами, но сделан из лучших материалов руками очень способного мастера.
+@428=~Отличный двуручный меч~
 
-ПАРАМЕТРЫ:
+@429=~НП: The scimitar, or "shamshir" as it was originally called, has a single-edged blade with a significant curve, and is tapered to an elongated, sharp point.  It is perhaps slower than other weapons of the same type, though it compensates by the amount of damage it is capable of.  This particular weapon is of unusually fine quality despite its lack of enchantment.
 
-THAC0: +2 улучшение
-Урон: +2
-Фактор скорости: 7
-Оружейный навык: длинный лук
-Тип: двуручное
-Вес: 9
-Требования: сила 18
-Не могут использовать:
- Бард
- Вор
- Друид
- Маг
- Священник~
-@432 = ~Отличный композитный лук~
-@433 = ~Цеп - это крепкая деревянная рукоять, соединенная с железным прутом, деревянным шипованным бруском или железным шипованным шаром. Части цепа соединены петлями или цепью.
+STATISTICS:
 
-Это оружие сделано из высококачественной стали и тисового дерева; оно легкое, сбалансированное и очень эффективное, несмотря на отсутствие зачарования.
+THAC0:  +1 bonus
+Damage:  1D8 +1
+Damage type:  slashing
+Weight: 3
+Speed Factor: 5
+Proficiency Type: Scimitar
+Type:  1-handed
+Requires: 10 Strength
+Not Usable By:
+ Cleric
+ Mage
+ Thief~
 
-ПАРАМЕТРЫ:
+@430=~Отличный скимитар~
 
-THAC0: +1 улучшение
-Урон: 1d6 +2
-Тип урона: дробящий
-Фактор скорости: 7
-Оружейный навык: цеп/моргенштерн
-Тип: одноручное
-Вес: 12
-Требования: сила 13
-Не могут использовать:
- Вор
- Друид
- Маг~
-@434 = ~Отличный цеп~
+@431=~НП: Composite bows are long bows or short bows whose staves are made from more than one type of material.  This gives greater flexibility, and thus better range.  These were developed after the normal long bow.  This particular bow, though not magical, has been made with great care from the finest of materials. It requires a strength of 18 to wield.
+
+STATISTICS:
+
+THAC0:  +2 bonus
+Damage:  +1 bonus
+Weight: 9
+Speed Factor: 7
+Proficiency Type: Long Bow
+Type:  2-handed
+Requires: 18 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage 
+ Thief
+ Bard~
+
+@432=~Отличный композитный лук~
+
+@433=~НП: The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link.  The weapon has been made from fine steel and yew; it is light to use, well-balanced, and very effective despite its lack of enchantment.
+
+STATISTICS:
+
+Damage:  1D6 + 2
+THAC0:  +1
+Damage type:  crushing
+Weight: 12
+Speed Factor: 7
+Proficiency Type: Flail
+Type:  1-handed
+Requires: 13 Strength
+Not Usable By:
+ Druid
+ Mage
+ Thief~
+
+@434=~Отличный цеп~
 
 @501=~Волшебник-раб~
 @502=~Боец-раб~
@@ -539,7 +566,7 @@ THAC0: +1 улучшение
 
 
 @605=~Удобный ИИ SCS: ~
-@606=~The AI has 5 functions:
+@606=~НП: The AI has 5 functions:
 
 1) The character will fight, prioritising opponents who are not immobile and helpless, not fighting if they're trying to Turn Undead, and not wasting Melf's Minute Meteors, Energy Blades or 
 Invisibility. You can shift the character between melee (D) and ranged weapons (F) using the hotkeys. If you'd rather that your character did not enter melee, you can toggle melee off by pressing (K). Characters with melee toggled off will fight if enemies are in weapon range but won't be proactive about getting into range.
@@ -560,24 +587,24 @@ Invisibility. You can shift the character between melee (D) and ranged weapons (
 
 @700=~Катана дроу +3~
 
-@701 = ~Катана
-Катана – это слегка изогнутый меч с односторонней заточкой и скошенным острием. Возможно, катана является лучшим из когда-либо существовавших мечей; ее создание – долгий, засекреченный процесс, скорее искусство, чем ремесло. Этот клинок – важный аспект культуры Кара-Тура, и обычно они изготавливаются только оружейниками этой страны. Вы не понимаете, как дроу смогли изготовить такое оружие. Этот предмет, как и большинство снаряжения дроу, создан с использованием адамантина – адамантитового сплава, который быстро превращается в пыль, будучи вынесенным из Андердарка.
+@701=~НП: Katana
+The katana is a single-edged, slightly curved sword that ends with a chisel point. The katana is perhaps one of the finest swords ever made, the steps to its creation a long and secret process, that is more art form than anything else.  This blade is an important facet of Kara-Tur culture, and normally made only by their weaponsmiths; how the drow came to forge this one is beyond you. Like most drow equipment, is created using Adamantine, an alloy of adamantite that quickly turns to dust if removed from the Underdark.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-THAC0: +3 улучшение
-Урон: 1d10 +3
-Тип урона: рубящий
-Фактор скорости: 1
-Оружейный навык: катана
-Тип: одноручное
-Вес: 4
-Требования: сила 6
-Не могут использовать:
- Друид
- Священник
- Маг
- Хозяин зверей~
+Damage:  1D10+3
+THAC0: +3
+Damage type:  slashing
+Weight:  6
+Speed Factor: 1
+Proficiency Type: Katana
+Type:  1-handed
+Requires: 6 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Beast Master~
 
 @1002=~Глотает зелье сопротивления огню~
 @1018=~Глотает зелье поглощения~
@@ -674,7 +701,7 @@ THAC0: +3 улучшение
 @1601=~Пятнадцать тысяч~
 @1602=~Двадцать тысяч~
 
-@2000=~This component only works on Windows installs and does not work on BG:EE~
+@2000=~НП: This component only works on Windows installs and does not work on BG:EE~
 
 @2100=~Пламя погибели~
 @2101=~Сопротивление огню снижено~
@@ -684,13 +711,13 @@ THAC0: +3 улучшение
 @2200=~Хс-с-с! Тебе не покинуть это место живым, отродье Баала. Так приказывает Абазигал!~
 @2201=~Голем-созерцатель~
 
-@2300=~Кажется, эта записка была написана кровью.
+@2300=~Кажется, это записка была написана кровью.
 
-"подарок... в конце концов, игра не может быть слишком простой."~
+"Подарок... в конце концов, игра не может быть слишком простой."~
 
 @2400=~Стая летучих мышей~
 @2401=~Старший вампир~
-@2402=~Древний вампир~
+@2402=~Древный вампир~
 
 @2502 = ~Тьма Бездны~
 @2503 = ~Погребение заживо~
@@ -715,14 +742,14 @@ THAC0: +3 улучшение
 @2610=~Бегите!~
 
 @2700=~Ловушка душ~
-@2701=~Портал Печати~
-@2702=~Огромные глыбы камней перекрыли выход.~
-@2703=~Огромные глыбы камней перекрыли вход.~
+@2701=~НП: Seal Portal~
+@2702=~Огромные глыбы камней завалили выход.~
+@2703=~НП: A vast block of stone has slammed down across the entrance.~
 
 @2800=~Шелайн~
 
-@2900=~Переправь меня в район Моста в Аткатле. У меня остались там незаконченные дела.~
-@2901=~Район Моста в Аткатле~
+@2900=~НП: Take me to the Bridge District of Athkatla. I have unfinished business there.~
+@2901=~НП: Bridge District of Athkatla~
 
 @3000=~Я спрятал веревку в своих одеждах, но рыболюды забрали ее у меня. Они сожгли ее у меня на глазах. *кашляет* Именно тогда я понял, что мне уже никогда не удастся сбежать из этого ужасного места. *кашляет.* Уверен, у жителей Амкетрана обязательно найдется что-нибудь подходящее. *кашляет.*~
 @3001=~Спасибо за совет, простак! А теперь я оставлю тебя здесь и вернусь к своим делам!~
@@ -735,11 +762,10 @@ THAC0: +3 улучшение
 @3008=~Если сейчас же не найдешь мне какую-нибудь веревку, глупец, то ты покойник.~
 @3009=~Эм-м... да, так получилось, что веревка у меня есть.~
 @3010=~Я бы попросил тебя заплатить за нее, но, учитывая то, что ты сделал с бедным Заки, я не стану взимать с тебя плату...~
-@3011 = ~Я обнаружил одного из последователей Балтазара, заключённого здесь. Перед смертью он рассказал мне, как можно найти и уничтожить Абазигала. Мне необходимо найти свиток обращения, чтобы разрушить чары обета, превратившие в раба стерегущего дракона и запечатывающие вход во внутренние покои анклава.
+@3011=~НП: I discovered one of Balthazar's followers imprisoned here.  Before he died the monk explained how I can find and defeat Abazigal.  I need to find the Scroll of Reversal to break the geas that both enslaves a dragon guardian and seals the entrance to Abazigal's inner enclave.
 
-Все пещеры здесь связаны внутренними тунелями. К счастью, у меня осталось немного зелья дыхания, которое позволит мне исследовать эти туннели. Нравится или нет, но думаю, придётся мне заняться спелеологией... как только я смогу найти веревку. Глупо возвращаться в Амкетран из-за такой ерунды, но выбора у меня нет... впрочем, мне уже не привыкать.~ ~Я обнаружила одного из последователей Балтазара, заключённого здесь. Перед смертью он рассказал мне, как можно найти и уничтожить Абазигала. Мне необходимо найти свиток обращения, чтобы разрушить чары обета, превратившие в раба стерегущего дракона и запечатывающие вход во внутренние покои анклава.
+The caverns here are all connected by underwater tunnels.  Luckily I now have some more of the water breathing potion to allow me to explore the various tunnels.  Like it or not, I guess I'm going spelunking... just as soon as I can get hold of a rope. It seems silly to have to trek back to Amkethran for something so mundane, but I guess I don't have a lot of choice... what else is new, though?~
 
-Все пещеры здесь связаны внутренними тунелями. К счастью, у меня осталось немного зелья дыхания, которое позволит мне исследовать эти туннели. Нравится или нет, но думаю, придется мне заняться спелеологией... как только я смогу найти веревку. Глупо возвращаться в Амкетран из-за такой ерунды, но выбора у меня нет... впрочем, мне уже не привыкать.~
 
 @3012   = ~Знаешь, я никогда бы не подумала, что буду сочувствовать дракону, но этот бедняга выглядит просто ужасно.~
 @3013   = ~Тьфу. У нас есть более важные дела, чем разговоры с угнетенным драконом, <PRO_BROTHERSISTER>!~
@@ -747,24 +773,19 @@ THAC0: +3 улучшение
 @3014=~Чешуйки желтого дракона~
 @3015=~Это чешуйки со шкуры желтого дракона Анадраматиса, они сухие и приятные на ощупь... Легенды гласят, что из них можно изготовить мощный доспех.~
 @3016=~Доспех из чешуи желтого дракона~
-@3017=~Доспех из чешуи желтого дракона
+@3017=~НП: Yellow Dragon Scale Armor
 
-Этот доспех был сделан из сцепленных чешуек желтого дракона Анадраматиса. Желтые драконы известны своим песчаным дыханием и сопротивлением колющему оружию.
+This suit of armor is formed from interlocking Yellow Dragon scales. Yellow Dragons are known for their fiery sand attacks and resistance to piercing weapons. 
+This particular suit was forged from the scales of the yellow dragon Anadramatis.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Свойства экипировки:
-– Сопротивление колющему урону: +50%
-– Сопротивление метательному урону: +50%
-
-Класс защиты: -1 (-3 против рубящего, -2 против колющего и метательного)
-Вес: 30
-Требования: сила 6
-Не могут использовать:
- Кенсай
- Маг
- Монах
- Оборотень~
+Bonuses: +50% Resistance to Piercing and Missile Attacks
+Armor Class: -1
+Weight: 30
+Requires: 6 Strength
+Not Usable By:
+ Mage~
 @3018=~Амулет Анадраматиса~
 @3019=~Амулет Анадраматиса
 
@@ -788,53 +809,54 @@ THAC0: +3 улучшение
 @3031 = ~Никто не войдет в святилище великого Абазигала!~
 @3032 = ~Возмездие настигнет убийцу лорда Дракониса!~
 @3033 = ~Два дракона? Бу предлагает отвлечь одного из них, но я не уверен, что это хорошая идея.~
-@3034 = ~Предсказуемо. Даже с высоты в тысячу футов, было очевидно, что эти крокодилы-переростки испортят всё, что можно.~
+@3034 = ~НП: Predictable. Even from a thousand feet up, it was obvious those overgrown crocodiles were making a mess of things.~
 @3035 = ~А теперь, <PRO_RACE>, пади ниц пред владыками мироздания!~
 @3036 = ~Но, Карнифекс, мне может понадобиться твоя помощь. Этот незваный гость может быть потомком Баала!~
 @3037 = ~Ты... прав, конечно же. Готовься к смерти, млекопитающее!~
-@3038 = ~Никогда не посылай ящерицу делать драконью работу, Ити'нассендра.~
-@3039 = ~Ты справишься и без моей помощи, Ити'нассендра, я буду наблюдать за твоим триумфом издалека. Ты вечно пачкаешь мои прекрасные чешуйки своим мерзким ядовитым дыханием.~
+@3038 = ~НП: Never send a lizard to do a dragon's job, Ithy.~
+@3039 = ~НП: You show them, Ithy. I'll be watching your triumph from that crag over there. Those nasty poison clouds of yours will tarnish my lovely scales.~
 @3040 = ~Ити'нассендра, ты дракон или болотная ящерица? Это жалкое млекопитающее, пусть даже и потомок Баала - не сможет справиться даже с одним из нас.~
-@3041 = ~И, даже если это на самом деле потомок Баала, и он сможет тебя победить, не сомневайся, я за тебя отомщу. Веселись!~ ~И, даже если это на самом деле потомок Баала, и она сможет тебя победить, не сомневайся, я за тебя отомщу. Веселись!~
+@3041 = ~НП: And, if it is the Bhaalspawn, and on the off chance it defeats you, I'll be sure to avenge you. Have fun!~
 @3042 = ~Ты действительно потомок Баала. Никто другой не смог бы совершить подобного. Но это не важно. Дитя бога ты или нет, против меня тебе не выстоять.~
 @3043 = ~Эм... похоже, с тобой уже не удастся договориться?~
-@3044 = ~Я не знаю, заметил ли ты, но уже четыре дракона мертвы, включая Дракониса. Почему ты считаешь, что с тобой будет по-другому?~
+@3044 = ~НП: I don't know if you noticed, but there are four dead dragons here, including Draconis. What makes you think you'll be any different?~
 @3045 = ~Тогда покончим с этим.~
 @3046 = ~Это уже пройденный этап, <PRO_RACE>. Тебе нечего предложить мне, а для меня нет иных вариантов, кроме боя. Гнева Абазигала я боюсь даже больше чем смерти.~
 @3047 = ~Ты устал и изранен, а я готов к бою... в любом случае этот вопрос не имеет смысла. Гнева Абазигала я боюсь даже больше, чем смерти.~
 @3048 = ~Хватит разговоров. Ты сгоришь в пламени моей ярости!~
 @3049 = ~Еще драконы? Значит быть битве, как в величайших историях Ордена. Молюсь лишь о том, чтобы мы оказались ее достойны.~
 @3050 = ~Это конец? Если нет, то какая из этого получится песня!~
-@3055 = ~Потомок Баала? Большая честь для меня. Как я понимаю, этот несчастный сородич "Господина" Абазигала больше не с нами?~
+
+@3055 = ~НП: A Bhaalspawn? Well, I am honoured. I take it that "Lord" Abazigal's wretched brat is no longer with us, then?~
 @3056 = ~Да, Драконис мертв.~
 @3057 = ~Забудь о Драконисе. Просто скажи мне, где я могу найти зелье дыхания?~
 @3058 = ~Умри, змий!~
 @3059 = ~Меня восхищает твоя прямота, <PRO_RACE>, но не твои манеры. Так тому и быть - я приветствую все, что может отвлечь меня от этого жалкого положения.~
-@3060 = ~Я рад это слышать. Эта шавка позорила драконий род даже больше, чем его отец-полукровка. А теперь, дитя Баала, что привело тебя в мою пещеру?~
+@3060 = ~НП: I am delighted to hear it. The cur was a disgrace to dragon-kind greater even than his mongrel father. But now, Bhaalspawn, what is it that brings you to my cave?~
 @3061 = ~Ты оказываешь мне честь своими словами, о великий дракон. Я ищу способ дальше исследовать эти пещеры - есть зелье, которое позволило бы мне путешествовать водными путями. Могу ли я надеяться не только на твое великолепное присутствие, но и на небольшую помощь?~
-@3062 = ~Разговоры меня не интересуют. Мне нужно лишь набрать зелье в водоеме позади тебя.~
+@3062 = ~НП: I'm not interested in bantering. I just want to get at that potion pool behind you.~
 @3063 = ~Хватит болтовни, дракон, пришло время умереть!~
 @3064 = ~Ой, похоже я не туда попал. Ты не видел здесь костяных демонов неподалеку, м?~
 @3065 = ~Дитя Баала, даже после того, как меня подчинили и унизили, мой ум не настолько притупился, чтобы меня можно было так просто обмануть. Чего ты хочешь?~
-@3066 = ~Как низко я пал. Меня загнали в эту жалкую, сырую пещеру и заставили защищать какую-то застойную лужу. Теперь я не дракон, а сторожевой пес.~
+@3066 = ~НП: How I have fallen. Banished to this miserable, damp cave, forced to protect a stagnant pool. I am a guard dog, not a dragon.~
 @3067 = ~Ты блистателен даже в этой скудной обстановке, о могучий дракон. Лицезреть такое прекрасное существо - честь для меня.~
 @3068 = ~Твое нытье меня не интересует, змий. Отойди с дороги и дай мне набрать зелье.~
 @3069 = ~Ну, змий, ты стоишь между мной и моей целью. Значит, пришло время умереть!~
-@3070 = ~Раньше твоя лесть была бы мне приятна, <PRO_RACE>. Но теперь я - жалкое создание, побежденное полукровкой; он унизил меня, захватил мой дом, украл мои сокровища и растоптал мою гордость. Меня загнали в эту мерзкую, мокрую пещеру и заставили охранять какую-то застойную лужу. Сейчас я не дракон, а сторожевой пес. А псам лесть не нужна.~
+@3070 = ~НП: Your flattery would once have been welcome to me, <PRO_RACE>. But I am a wretched creature now - defeated and humiliated by a mongrel halfbreed, my home invaded, my hoard stolen away from me, my pride humbled. Now I am banished to this miserable, damp cave, forced to protect this stagnant pool. I am a guard dog, not a dragon, and dogs have no need for flattery.~
 @3071 = ~Я могу вернуть тебе твою гордость, о могучий дракон. Только позволь мне набрать зелья дыхания в водоеме позади тебя, и я убью Абазигала от твоего имени.~
-@3072 = ~Раньше твоя лесть была бы мне приятна, <PRO_RACE>. Но теперь я - жалкое создание, побежденное полукровкой; он оскорблял меня, захватил мой дом, украл мои сокровища и растоптал мою гордость. Псам лесть ни к чему.~
+@3072 = ~НП: Your flattery would once have been welcome to me, <PRO_RACE>. But I am a wretched creature now - defeated and humiliated by a mongrel halfbreed, my hoard stolen away from me, my pride humbled. Dogs have no need for flattery.~
 @3073 = ~Тогда убирайся с моего пути, ты, жалкое подобие дракона.~
-@3074 = ~И у тебя хватило смелости так разговаривать с драконом, <PRO_RACE>? Как бы меня не унижали, мои клыки и когти все еще при мне, и я научу тебя уважать наш вид!~
-@3075 = ~Твои слова учтивы, <PRO_RACE>, и мне хочется в них верить. Но сможешь ли ты победить Абазигала? Уверен, если я отдам тебе зелье, он вскоре узнает об этом. Я... не смогу выстоять перед его гневом.~
-@3076 = ~Что ж, я дам тебе возможность доказать свою силу. Если у тебя есть шанс в бою против полукровки-узурпатора, то и со мной справишься. А если же нет, то битва с захватчиками может отсрочить мои мучения. Защищайся, дитя Баала.~
+@3074 = ~НП: How dare you speak to a dragon that way, <PRO_RACE>? I may be laid low, but I still have my fangs and my claws, and I will teach you to respect our kind!~
+@3075 = ~НП: Your words are courteous, <PRO_RACE>, and I would like to believe them. But can you really defeat Abazigal? If I give you the potion, he will know of it, I am sure.~
+@3076 = ~НП: But I will give you a chance to prove your worth. If you can defeat me in combat, maybe you will have a chance with the mongrel usurper. And if not, then perhaps the diversion of battle will provide some respite to my misery. Defend yourself, Bhaalspawn.~
 @3077 = ~Сдаюсь! Я и в самом деле впечатлен, <PRO_RACE>. Я прожил более тысячи лет и никто из твоей расы на мог тягаться со мной. В конце концов, может ты и справишься с узурпатором. Я исполню свою часть сделки.~
 @3078 = ~Твои слова - честь для меня, великий дракон. Столь могучий противник мне еще не встречался.~
 @3079 = ~Хватит болтать, дракон. Ты проиграл, так что просто отдай мне зелье.~
 @3080 = ~А я так не думаю. Легче тебя просто прикончить - даже если у тебя не осталось сокровищ, твоя шкура мне точно для чего-нибудь сгодится.~
 @3081 = ~Да как ты смеешь так говорить с драконом, <PRO_RACE>? Мне следовало бы порвать тебя на куски... но ты сильнее меня. Будьте вы все прокляты, отродья Баала. Забирай свое дурацкое зелье. Надеюсь, ты им подавишься.~
-@3082 = ~Твоя учтивость не уступает твоей силе, дитя Баала. Возьми зелье и еще вот это, с моим благословлением. А теперь убей этого проклятого полукровку, укравшего мой дом и мою гордость!~
+@3082 = ~НП: As courteous as you are powerful, Bhaalspawn. Take it, then, with my blessing, and take this as well. And slay the wretched mongrel who has stolen my home and my pride away!~
 @3083 = ~Неблагодарное создание! Так умри, отродье Баала, - может мне еще удастся порвать тебя на части.~
-@3084 = ~Полукровка мертв! Сегодня, дитя Баала, ты оказал мне великую услугу. А теперь мне нужно отдохнуть, подумать и, возможно, поспать. Так что покинь это место с моим благословлением.~
+@3084 = ~НП: The mongrel usurper is dead! You have done me a great service this day, Bhaalspawn. But now I wish to rest, and think,and perhaps sleep. Leave this place with my blessing.~
 @3085 = ~У нас больше нет никаких дел, <PRO_RACE>.~
 @3086 = ~Прости, что отвлекаю тебя, могучий дракон.~
 @3087 = ~И это все, что ты можешь мне сказать?~
@@ -856,84 +878,84 @@ THAC0: +3 улучшение
 @3104=~Матрона-мать Финадрил~
 @3105=~Дроу-архимаг~
 @3106=~Тебе не составит проблем разобраться с остальными, после этого путь на поверхность будет чист. Удачи тебе!~
-@3200=~—озерцатель, использу€ телекинез, вырвал щит Ѕалдурана из ваших рук~
-@3201=~—озерцатель, использу€ телекинез, сорвал «еркальный плащ с ваших плеч~
+@3200=~Созерцатель, используя телекинез, вырвал щит Балдурана из ваших рук~
+@3201=~Созерцатель, используя телекинез, сорвал Зеркальный плащ с ваших плеч~
 @3202=~Буря~
 @3203=~Improved Minor Encounters~
-@3204=~Don't upgrade the beholders found in the hive in the Underdark, but do give beholder rays some chance to "burn through" spell protections~
-@3205=~Upgrade the hive (borrowed from Quest Pack) and give beholder rays some chance of burn-through~
-@3206=~No hive upgrade; no chance of of burn-through~
-@3207=~Upgrade the hive; no burn-through~
+@3204=~НП: Don't upgrade the beholders found in the hive in the Underdark, but do give beholder rays some chance to "burn through" spell protections~
+@3205=~НП: Upgrade the hive (borrowed from Quest Pack) and give beholder rays some chance of burn-through~
+@3206=~НП: No hive upgrade; no chance of of burn-through~
+@3207=~НП: Upgrade the hive; no burn-through~
 @3208=~Кислотный плевок~
 @3209=~Smarter Throne of Bhaal final villain~
 @3210=~Указание~
 @3211=~Разделение Морденкайнена~
-@3212=~Give Celestials slightly more staying power~
+@3212=~НП: Give Celestials slightly more staying power~
 
 @3300=~Разбитое зеркало~
 @3301=~Это могущественное Зеркало Противоположности раньше принадлежало сумасшедшей священнице Найали. Оно было разбито в битве с ней, и теперь бесполезно.~
 @3302=~Зеркало Противоположности~
 @3303=~Дыхание фиолетового дракона~
-@3304=~Give beholder rays some chance to "burn through" spell protections; beholder antimagic blocks all spells, including harmful ones, for a round (simulates D&D rules)~
-@3305=~Don't give beholder rays any chance of burning through spell protections; beholder antimagic blocks all spells, including harmful ones, for a round (simulates D&D rules)~
+@3304=~НП: Give beholder rays some chance to "burn through" spell protections; beholder antimagic blocks all spells, including harmful ones, for a round (simulates D&D rules)~
+@3305=~НП: Don't give beholder rays any chance of burning through spell protections; beholder antimagic blocks all spells, including harmful ones, for a round (simulates D&D rules)~
 @3306=~Smarter Illasera~
 @3307=~Smarter Yaga-Shura~
 @3308=~Smarter Abazigal~
 @3309=~The non-Ascension version of Illasera is already improved by the "Smarter Mages" component of SCS~
 @3310=~The non-Ascension version of Yaga-Shura is already improved by the "Smarter General AI" component of SCS~
-@3311=~This component requires "Smarter Dragons" to be installed~
+@3311=~НП: This component requires "Smarter Dragons" to be installed~
 @3312=~Smarter Gromnir~
 @3313=~The non-Ascension version of Gromnir is already improved by the various "Smarter" components of SCS~
 @3314=~This component requires Ascension~
-@3315=~Give Ascension demons SCS scripts and abilities~
-@3316=~This component requires the Ascension mod~
-@3317=~Improved Beholder hive (adapted from Quest Pack)~
+@3315=~НП: Give Ascension demons SCS scripts and abilities~
+@3316=~НП: This component requires the Ascension mod~
+@3317=~НП: Improved Beholder hive (adapted from Quest Pack)~
 @3318=~Prevent resting in the Illithid city~
-@3319=~Upgrade Ust Natha's defences~
-@3320=~Leave Ust Natha's defences alone~
+@3319=~НП: Upgrade Ust Natha's defences~
+@3320=~НП: Leave Ust Natha's defences alone~
 @3321=~Only remove nonmagical ammo from random containers~
 @3322=~Remove ammo up to the +2 level from random containers~
 @3323=~Remove all ammo from random containers~
-@3324=~Give Ascension versions of Irenicus and Sendai SCS scripts and abilities~
+@3324=~НП: Give Ascension versions of Irenicus and Sendai SCS scripts and abilities~
 @3325=~Remove Arrows of Dispelling from stores~
-@3326=~Randomly change the locations of many in-game items~
-@3327=~Spell Thrust, Secret Word and Ruby Ray get areas of effect (legacy option, not recommended)~
-@3328=~All spells that bring down spell protections get areas of effect (legacy option, not recommended)~
+@3326=~НП: Randomly change the locations of many in-game items~
+@3327=~НП: Spell Thrust, Secret Word and Ruby Ray get areas of effect (legacy option, not recommended)~
+@3328=~НП: All spells that bring down spell protections get areas of effect (legacy option, not recommended)~
 @3329=~Slightly weaken insect plague spells, and let fire shields block them~
-@3330=~Allow enemy AI to detect the party's magic items~
-@3331=~Bugfix: Fix the Mirror Image spell so it doesn't block area-effect magic~
-@3332=~Bugfix: Fix the Dispel Magic spell so it correctly allows for caster's level~
+@3330=~НП: Allow enemy AI to detect the party's magic items~
+@3331=~НП: Bugfix: Fix the Mirror Image spell so it doesn't block area-effect magic~
+@3332=~НП: Bugfix: Fix the Dispel Magic spell so it correctly allows for caster's level~
 @3333=~Improved shapeshifting~
 @3334=~Make the starting dungeon slightly harder~
-@3335=~Make the bard stronghold available to all classes~
-@3336=~Make the cleric stronghold available to all classes~
-@3337=~Make the druid stronghold available to all classes~
-@3338=~Make the fighter stronghold available to all classes~
-@3339=~Make the paladin stronghold available to all classes~
-@3340=~Make the ranger stronghold available to all classes~
-@3341=~Make the thief stronghold available to all classes~
-@3342=~Make the wizard stronghold available to all classes~
-@3344=~All of the potions dropped by slain enemies are recoverable~
-@3345=~One third of the potions dropped by slain enemies break and are lost~
-@3346=~Half the potions dropped by slain enemies break and are lost~
-@3347=~Two thirds of the potions dropped by slain enemies break and are lost~
-@3348=~Three quarters of the potions dropped by slain enemies break and are lost~
-@3349=~All of the potions dropped by slain enemies break and are lost~
+@3335=~НП: Make the bard stronghold available to all classes~
+@3336=~НП: Make the cleric stronghold available to all classes~
+@3337=~НП: Make the druid stronghold available to all classes~
+@3338=~НП: Make the fighter stronghold available to all classes~
+@3339=~НП: Make the paladin stronghold available to all classes~
+@3340=~НП: Make the ranger stronghold available to all classes~
+@3341=~НП: Make the thief stronghold available to all classes~
+@3342=~НП: Make the wizard stronghold available to all classes~
+@3344=~НП: All of the potions dropped by slain enemies are recoverable~
+@3345=~НП: One third of the potions dropped by slain enemies break and are lost~
+@3346=~НП: Half the potions dropped by slain enemies break and are lost~
+@3347=~НП: Two thirds of the potions dropped by slain enemies break and are lost~
+@3348=~НП: Three quarters of the potions dropped by slain enemies break and are lost~
+@3349=~НП: All of the potions dropped by slain enemies break and are lost~
 @3350=~This component requires "smarter general AI" to be installed~
 @3351=~Cosmetic change: stop Stoneskins from changing the caster's colour~
-@3352=~Skipping this component, as you have v3 (or later) of "Spell Revisions" installed~
+@3352=~НП: Skipping this component, as you have v3 (or later) of "Spell Revisions" installed~
 @3353=~Slightly increase the power of Mantle, Improved Mantle, and Absolute Immunity~
 @3354=~Make the healing and resurrection powers of the Rod of Resurrection into separate abilities~
-@3355=~Skipping the Item Randomiser as you already have Wisp's version installed~
+@3355=~НП: Skipping the Item Randomiser as you already have Wisp's version installed~
 @3356=~Remove the blur graphic effect from the Cloak of Displacement~
 @3357=~Improved battle with Irenicus in Spellhold~
-@3358=~Improved Irenicus in Hell (Tactics remix)~
-@3359=~Faithful adaptation of the Tactics version~
-@3360=~Tactics-SCS hybrid~
-@3361=~Skipping this component as you have a version of Improved Irenicus installed already~
+@3358=~НП: Improved Irenicus in Hell (Tactics remix)~
+@3359=~НП: Faithful adaptation of the Tactics version~
+@3360=~НП: Tactics-SCS hybrid~
+@3361=~НП: Skipping this component as you have a version of Improved Irenicus installed already~
 @3362=~Change Carsomyr so that its Dispel on contact power grants a saving throw~
-@3363=~Skipping this component, as you have "Item Revisions" installed~
-@3364=~Skipping this component, as you have a multiple-strongholds component from Tactics installed"~
+@3363=~НП: Skipping this component, as you have "Item Revisions" installed~
+@3364=~НП: Skipping this component, as you have a multiple-strongholds component from Tactics installed"~
 @3365=~Randomise the maze in Watcher's Keep~
 @3366=~Increase the price of a license to practise magic in Athkatla~
 @3367=~License costs 10,000 gp~
@@ -944,28 +966,28 @@ THAC0: +3 улучшение
 @3372=~Allow the Cowled Wizards to detect spellcasting in most indoor, above-ground areas in Athkatla~
 @3373=~Delay the arrival of the "bonus merchants" in the Adventurers' Mart and the Copper Coronet~
 @3374=~Improved golems~
-@3375=~Standardise dragon immunities: dragons in Shadows of Amn get the same immunities to vorpal attacks (etc) as their Throne of Bhaal cousins~
+@3375=~НП: Standardise dragon immunities: dragons in Shadows of Amn get the same immunities to vorpal attacks (etc) as their Throne of Bhaal cousins~
 @3376=~Skipping this component, as it is already installed via Item Revisions~
-@3377=~Skipping this component, as Item Revisions renders it obsolete~
-@3378=~This component is now deprecated; use Wisp's Item Randomizer instead~
+@3377=~НП: Skipping this component, as Item Revisions renders it obsolete~
+@3378=~НП: This component is now deprecated; use Wisp's Item Randomizer instead~
 @3379=~Decrease the rate at which reputation improves~
 @3380=~Reputation increases at about 2/3 the normal rate~
 @3381=~Reputation increases at about 1/2 the normal rate~
 @3382=~Reputation increases at about 1/3 the normal rate~
 @3383=~Reputation increases at about 1/4 the normal rate~
-@3384=~More sensible choices of weapon proficiencies and kits for fighters (also fixes some errors in fighter stats)~
-@3385=~Antimagic spells remain single-target, but affect the target creature whether or not it is invisible (default option)~
+@3384=~НП: More sensible choices of weapon proficiencies and kits for fighters (also fixes some errors in fighter stats)~
+@3385=~НП: Antimagic spells remain single-target, but affect the target creature whether or not it is invisible (default option)~
 @3386=~Make spell sequencers, spell triggers, and contingencies learnable by all mages~
 @3387=~Add an extra copy of some hard-to-find spell scrolls~
-@3388=~Give beholder rays some chance to "burn through" spell protections; beholder antimagic removes defences and prevents casting but does not block harmful spells (original game behaviour)~
-@3389=~Don't give beholder rays any chance of burning through spell protections; beholder antimagic removes defences and prevents casting but does not block harmful spells (original game behaviour)~
-@3390=~Fix a bug in Spell Shield so that it works correctly (coded by Ardanis)~
+@3388=~НП: Give beholder rays some chance to "burn through" spell protections; beholder antimagic removes defences and prevents casting but does not block harmful spells (original game behaviour)~
+@3389=~НП: Don't give beholder rays any chance of burning through spell protections; beholder antimagic removes defences and prevents casting but does not block harmful spells (original game behaviour)~
+@3390=~НП: Fix a bug in Spell Shield so that it works correctly (coded by Ardanis)~
 @3391=~Skipping this component as the equivalent ToBEx component is already installed~
 @3392=~True Sight/True Seeing spells protect from magical blindness~
 @3393=~Initialise mod (all other components require this)~
-@3394=~Deprecated (this functionality is now included in the core Initialise component)~
-@3395=~Normal mode (recommended)~
-@3396=~Hardcore mode~
+@3394=~НП: Deprecated (this functionality is now included in the core Initialise component)~
+@3395=~НП: Normal mode (recommended)~
+@3396=~НП: Hardcore mode~
 @3397=~Treat mages' and priests' High-Level Abilities as innate abilities rather than memorisable spells (each may be taken only once)~
 @3398=~Improved Unseeing Eye~
 @3399=~This component requires "Smarter Beholders" to be installed~
@@ -978,73 +1000,60 @@ THAC0: +3 улучшение
 @3501=~НП: I will play for the sword.~
 @3502=~НП: You desire the sword, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend.~ 
 
-@3600=~Some other mod has altered the Rod of Resurrection in a way I don't understand; skipping this component~
+@3600=~НП: Some other mod has altered the Rod of Resurrection in a way I don't understand; skipping this component~
 
-@3700=~:
+@3700=~НП: 
 
-Примечание: Это заклинание удаляет магические защиты с ближайшего (враждебного) существа от точки применения заклинания. Таким образом, это заклинание можно использовать для снятия магических защит даже с тех существ, которых нельзя выбрать целью (например, из-за невидимости).~
+Note: This spell removes the magical protections of the closest (hostile) creature to the point that the spellcaster designates. For this reason, the spell may be used to remove magical protections even from creatures which could not normally be targetted by spells (for instance, because they are invisible).~
 
-@4000=~Tactical challenges~
-@4001=~Core components (it is strongly recommended that all are installed)~
+@4000=~НП: Tactical challenges~
+@4001=~НП: Core components (it is strongly recommended that all are installed)~
 
-@4100 = ~Святая кара: Карсомир
-Карсомир – легендарное оружие, возможно, один из самых могучих клинков, когда-либо выкованных в Фаэруне, хотя его происхождение и история намеренно преданы забвению, чтобы меч не затмевал важности нынешних битв. Он наполнен самой сущностью добродетели и требует того же от любого паладина, который может надеяться получить этот меч. Поистине, все злодеи королевств должны отступить, когда появляется это оружие, ибо его хозяин стойко сопротивляется их магии и может развеять её одним лишь словом. Карсомир также питает особое отвращение к силам зла и хаоса, и такие существа получают от него дополнительный урон в битве.
+@4100=~НП: The Holy Avenger: Carsomyr
+Carsomyr is a weapon of legend, perhaps one of the most powerful blades ever forged on Faerun, though its origin and history is thought purposefully forgotten, such that the sword itself never overshadow the importance of the struggles that must be fought today.  It is infused with the very essence of virtue, and requires as much from any paladin that would hope to wield it.  The evils of the Realms must truly stand aside when this weapon is brought to bear, their magic dispelled with a word, steadfastly resisted with ease.  Carsomyr also harbors a special distaste for the forces of evil and chaos, and such creatures must fear additional damage from its touch in battle.  
 
-ПАРАМЕТРЫ:
+STATISTICS
 
-Свойства экипировки:
-– Сопротивление магии: 50%
+Equipped Abilities: 
+    50% Magic Resistance
+    Dispel magic 3 times per day
+Combat Abilities: 
+    +5 damage to chaotic evil opponents in addition to other bonuses.
+    Dispels magic whenever the sword strikes an opponent (save vs spell to avoid)
+THAC0: +5 bonus
+Damage:  1D12 +5
+Damage type:  slashing
+Weight:  7
+Speed Factor: 5
+Proficiency Type: Two handed sword 
+Type:  2-handed
+Requires: 14 Strength
+Usable By:
+ Paladins~
+ 
+@4101=~НП: The Holy Avenger: Carsomyr
+Even a Holy Relic as powerful as Carsomyr is made even greater when combined with the Eye of Tyr.
 
-Боевые возможности:
-– «Развеять магию» 30-го уровня при попадании по противнику (спасбросок против заклинания отменяет)
+STATISTICS
 
-Свойства зарядов:
-– «Развеять магию» 15-го уровня 3 раза в день
-  Дистанция: 40 футов
-  Зона действия: радиус 15 футов
+Equipped Abilities:
+    50% Magic Resistance
+    Dispel magic 3 times per day
+Combat Abilities: 
+    +6 damage to chaotic evil opponents in addition to other bonuses.
+    Dispels magic whenever the sword strikes an opponent (save vs spell at -2 to avoid)
+THAC0: +6 bonus
+Damage:  1D12 +6
+Damage type:  slashing
+Weight:  6
+Speed Factor: 4
+Proficiency Type: Two handed sword 
+Type:  2-handed
+Requires: 14 Strength
+Usable By:
+ Paladins~
 
-ТНАС0: +5
-Урон: 1d12+5, +5 дополнительного урона хаотично злым существам
-Тип урона: рубящий
-Фактор скорости: 5
-Навык: двуручный меч
-Тип: двуручное
-Вес: 7
-Требования:
- Сила 14
-Могут использовать:
- Паладин~
-
-
-@4101 = ~Святая кара: Карсомир
-Даже такая святая реликвия, как Карсомир, становится ещё сильнее в комбинации с Глазом Тира.
-
-ПАРАМЕТРЫ:
-
-Свойства экипировки:
-– Сопротивление магии: 50%
-
-Боевые возможности:
-– «Развеять магию» уровня 30 при каждом ударе (спасбросок против заклинания с ухудшением -2 отменяет)
-
-Свойства зарядов:
-– «Развеять магию» 15-го уровня 3 раза в день
-  Дистанция: 40 футов
-  Зона действия: радиус 15 футов
-
-ТНАС0: +6
-Урон: 1d12+6, +6 дополнительного урона хаотично злым
-Тип урона: рубящий
-Фактор скорости: 4
-Навык: двуручный меч
-Тип: двуручное
-Вес: 6
-Требования:
- Сила 14
-Могут использовать:
- Паладин~
-
-@4200=~Дневник толстый, он заполнен разнообразными записями. Вначале это разборчивый эльфийский... относительно, если учитывать ужас писавшего, пойманного в лабиринте, его отчаяние от того, что даже возвращаясь по собственным следам через портал, из которого недавно вышел, он не может вернуться туда, откуда пришёл. Писавший, очевидно, был опечален и чувствовал себя виноватым в том, что покинул своих погибших товарищей, и он об этом пишет... однако записи медленно превращаются в безумные каракули, параноидальные бессвязные записи о демонах и дикие, повторяющиеся упоминания «Якман», встречающиеся по всему дневнику.~
+ @4200=~Дневник толстый, он заполнен разнообразными записями. Вначале это разборчивый эльфийский... относительно, если учитывать ужас писавшего, пойманного в лабиринте, его отчаяние от того, что даже возвращаясь по собственным следам через портал, из которого недавно вышел, он не может вернуться туда, откуда пришёл. Писавший, очевидно, был опечален и чувствовал себя виноватым в том, что покинул своих погибших товарищей, и он об этом пишет... однако записи медленно превращаются в безумные каракули, параноидальные бессвязные записи о демонах и дикие, повторяющиеся упоминания «Якман», встречающиеся по всему дневнику.~
 
 @4300=~Узрит~
 @4301=~Члимбия~
@@ -1055,59 +1064,52 @@ THAC0: +3 улучшение
 @4306=~НП: Alyolvoy~
 @4307=~Кто вызывает Альовоя, Принца Воды?~
 
-@5000 = ~Рой насекомых
-(Подчинение/призывание)
 
-Сфера: Животные
-Уровень: 5
-Дистанция: 240 футов
-Длительность: 6 раундов
-Время чтения: 5
-Зона действия: особая
-Спасбросок: особый
 
-Когда заклинатель накладывает это заклинание, туча ползающих, прыгающих и летающих насекомых собирается в рой. Рой атакует сначала указанного заклинателем врага, затем перемещается на всех врагов заклинателя в зоне действия. Невидимость не защищает от этого заклинания.
+@5000=~НП: Insect Plague
+Level: 5
+School: Conjuration
+Sphere: Animal
+Range: Long
+Duration: 6 rounds
+Casting Time: 1 round
+Area of Effect: Target, and enemies within 30'
+Saving Throw: Special
 
-Во время действия заклинания жертвы роя насекомых получают 1 единицу урона каждую секунду и ухудшение -2 к броскам атаки и классу защиты. Вдобавок, каждый раунд жертвы должны сделать спасбросок против дыхания с ухудшением -2, или она не сможет читать заклинания (100% шанс провала). Существа, защищенные от урона, например, с помощью заклинания «Каменная кожа», невосприимчивы ко вторичным эффектам заклинания, пока их защита не будет развеяна.
+When this spell is cast, a mass of creeping, hopping, and flying insects gather and swarm, first attacking the target, and then moving on to all enemies of the caster within the spell's radius. Invisibility is no protection.
 
-Насекомые, призываемые заклинанием, не являются магическими существами, и их нельзя отогнать защитой от магии. Но их укусы считаются немагическими атаками, и они не смогут навредить тем, кого можно ранить только магическим оружием. Насекомые будут избегать нежить и не смогут прорваться через крайне высокие и низкие температуры, создаваемые, например, заклинанием «Огненный щит». «Заклинание смерти» уничтожит всех насекомых в зоне действия.~
+For the duration of the spell, those affected fight with a -2 penalty to attack rolls and armor class. In addition, each round, the victims suffer 2d3 points of damage from insect bites, have a 100% chance of spell failure, and must make saving throws vs. death or run away in fear. If a successful save vs. breath at -4 is made, the target manages to avoid most of the swarm, reducing damage from bites by half and completely negating the spell failure penalty.
 
-@5001 = ~Ползучая смерть
-(Подчинение/призывание)
+This spell is blocked by any form of fire shield.~
 
-Уровень: 7
-Сфера: Животные, Вызов
-Дистанция: 240 футов
-Длительность: 3 раунда
-Время чтения: 5
-Зона действия: особая
-Спасбросок: особый
+@5001=~НП: Creeping Doom
+Level: 7
+School: Conjuration
+Sphere: Animal
+Range: Long
+Duration: 6 rounds
+Casting Time: 1 round
+Area of Effect: Target, and enemies within 30'
+Saving Throw: Special
 
-Заклинатель, прочитавший «Ползучую смерть», вызывает массу ядовитых, кусачих и жалящих созданий – паукообразных, насекомых и многоножек. Этот живой ковёр расползается на большую территорию, атакуя всех враждебных существ в радиусе 30 футов от точки, указанной заклинателем. Невидимость не защищает от этого заклинания.
+When the caster utters the spell Creeping Doom, he calls forth a horde of venomous biting and stinging arachnids, insects, and myriapods. This carpet-like mass swarms over a large area, spreading to all creatures within 30 feet of the target. Invisibility is no protection.
 
-Осаждённые членистоногими получают 2 единицы колющего урона в секунду и ухудшение -2 к броскам атаки и классу защиты. Каждый раунд жертвы, остающиеся в зоне поражения, должны сделать спасбросок против дыхания с ухудшением -2; если он не удался, они не смогут читать заклинания (100% шанс провала); и спасбросок против заклинания с ухудшением -2; если он не удался, они бегут в панике. Существа, защищенные от урона, например, с помощью заклинания «Каменная кожа», невосприимчивы ко вторичным эффектам заклинания, пока их защита не будет развеяна.
+For the duration of the spell, those affected fight with a -2 penalty to attack rolls and armor class. In addition, each round, the victims suffer 2d6 points of damage from insect bites, have a 100% chance of spell failure, and must make saving throws vs. death at -2 or run away in fear. If a successful save vs. breath at -6 is made, the target manages to avoid most of the swarm, reducing damage from bites by half and completely negating the spell failure penalty.
 
-Создания, призываемые заклинанием, не являются магическими существами, и их нельзя отогнать защитой от магии. Но их укусы считаются немагическими атаками, и они не смогут навредить тем, кого можно ранить только магическим оружием. Создания будут избегать нежить и не смогут прорваться через крайне высокие и низкие температуры, создаваемые, например, заклинанием «Огненный щит». «Заклинание смерти» уничтожит всех насекомых в зоне действия.~
+This spell is blocked by any form of fire shield.~
+
+
 
 @5019=~Насекомые были уничтожены огнем~
 
-@5100 = ~Скипетр воскрешения
+@5100=~НП: Rod of Resurrection
+This rod enables anyone to resurrect the dead and heal the injured as if they were of high enough level to cast the raise dead and heal spells and as if they were a priest. No rest is required, as the rod bestows the life giving effects.  Each use of the rod expends one charge.
 
-Этот скипетр позволяет кому угодно воскрешать мёртвых и исцелять раненых так, как если бы он был священником достаточно высокого уровня, чтобы читать заклинания воскрешения и исцеления. Отдых не требуется, поскольку энергию для возвращения к жизни дарует скипетр. Каждое использование скипетра тратит один заряд.
+STATISTICS
 
-ПАРАМЕТРЫ:
-
-Свойства зарядов:
-– Воскрешение
-  Особенности: воскрешает объект с одним пунктом здоровья
-  Дистанция: неограничена
-  Зона действия: 1 существо
-– Исцеление
-  Особенности: полностью исцеляет объект
-  Дистанция: прикосновение
-  Зона действия: 1 существо
-
-Вес: 3~
+Special Abilities (one charge):  
+Raise Dead
+Heal~
 
 @5200=~Вы быстро просыпаетесь от грохота тяжелых ботинок, раздающемся по коридорам. Кажется, отдыхать в этом месте больше не безопасно...~
 
@@ -1159,209 +1161,185 @@ THAC0: +3 улучшение
 @5407 = ~НП: Irenicus the Slayer~
 @5408 = ~НП: Irenicus, the Shattered One~
 
-@13100=~Shapeshifts Lesser Werewolf~
+@13100=~НП: Shapeshifts Lesser Werewolf~
 
 
 
-@13120=~Cимвол смены формы: Малый вервольф~
-@13121=~Cимвол смены формы: Вервольф~
-@13122=~Cимвол смены формы: Большой вервольф~
-@13123=~Cимвол смены формы: Бурый медведь~
-@13124=~Cимвол смены формы: Волк~
-@13125=~Cимвол смены формы: Виверна~
-@13126=~Cимвол смены формы: Саламандра~
-@13127=~Cимвол смены формы: Паук~
-@13128=~Cимвол смены формы: Элементаль огня~
-@13129=~Cимвол смены формы: Элементаль земли~
+@13120=~Символ смены формы: Малый вервольф~
+@13121=~Символ смены формы: Вервольф~
+@13122=~Символ смены формы: Большой вервольф~
+@13123=~Символ смены формы: Бурый медведь~
+@13124=~Символ смены формы: Волк~
+@13125=~Символ смены формы: Виверна~
+@13126=~Символ смены формы: Саламандра~
+@13127=~Символ смены формы: Паук~
+@13128=~Символ смены формы: Элементаль огня~
+@13129=~Символ смены формы: Элементаль земли~
 
 
 
-@13140 = ~Используя этот символ, друид-оборотень может принять облик малого вервольфа. Друид не может раговаривать и читать заклинания, пока находится в этой форме, но получает потрясающую силу и скорость вервольфа. Однако, в отличие от настоящих вервольфов, друид может быть ранен немагическим оружием. Символ смены формы может использовать только его создатель.
+@13140=~НП: This token enables the shapeshifter druid who created it to shapeshift at will into a lesser werewolf. While in that form, the druid is unable to speak or cast spells, but gains the prodigious strength and speed of the werewolf. Unlike a true werewolf, however, the druid is still affected by nonmagical weapons.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC 4
+Strength 18/76
+Dexterity 16
+1 attack
+Damage 1d6
+Magic Resistance 10%
 
-Характеристики формы:
- Базовый класс защиты: 4
- Сила: 18/76
- Ловкость: 16
- Атак за раунд: 1
- Урон от атаки: 1d6 (рубящий)
- Сопротивление магии: 10%
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13141 = ~Используя этот символ, друид-оборотень может принять облик вервольфа. Друид не может разговаривать и читать заклинания, пока находится в этой форме, но получает потрясающую силу и скорость вервольфа. Однако, в отличие от настоящих вервольфов, друид может быть ранен немагическим оружием. Символ смены формы может использовать только его создатель.
+@13141=~НП: This token enables the shapeshifter druid who created it to shapeshift at will into a werewolf. While in that form, the druid is unable to speak or cast spells, but gains the prodigious strength and speed of the werewolf. Unlike a true werewolf, however, the druid is still affected by nonmagical weapons.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC 1
+Strength 19
+Dexterity 17
+2 attacks
+Damage 1d8 (attacks count as +1)
+Magic Resistance 20%
+Hasted
 
-Характеристики формы:
- Базовый класс защиты: 1
- Сила: 19
- Ловкость: 17
- Атак за раунд: 2
- Урон от атаки: 1d8 (рубящий), бьет как оружие +1
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
- Сопротивление магии: 20%
- Спешка
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13142 = ~Используя этот символ, друид-оборотень может принять облик большого вервольфа. Друид не может разговаривать и читать заклинания, пока находится в этой форме, но получает потрясающую силу и скорость вервольфа. Однако, в отличие от настоящих вервольфов, друид может быть ранен немагическим оружием. Символ смены формы может использовать только его создатель.
+@13142=~НП: This token enables the shapeshifter druid who created it to shapeshift at will into a greater werewolf. While in that form, the druid is unable to speak or cast spells, but gains the prodigious strength and speed of the werewolf. Unlike a true werewolf, however, the druid is still affected by nonmagical weapons.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC -4
+Strength 21
+Dexterity 20
+2 attacks
+Damage 2d6 (attacks count as +3)
+Magic Resistance 40%
+Fire Resistance 50%
+Electrical Resistance 50%
+Acid Resistance 50%
+Cold Resistance 50%
+Hasted
+Regenerate 6 hp per round
 
-Характеристики формы:
- Базовый класс защиты: -4
- Сила: 21
- Ловкость: 20
- Атак за раунд: 2
- Урон от атаки: 2d6 (рубящий), бьет как оружие +3
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
- Регенерирует 6 пунктов здоровья в секунду
- Спешка
- Сопротивление магии: 40%
- Сопротивление огню: 50%
- Сопротивление электричеству: 50%
- Сопротивление кислоте: 50%
- Сопротивление холоду: 50%
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13143 = ~Используя этот символ, друид-оборотень может принять облик бурого медведя. Друид не может разговаривать и читать заклинания, пока находится в этой форме. Символ смены формы может использовать только его создатель.
+@13143=~НП: This token enables the druid who created it to shapeshift at will into a brown bear. While in that form, the druid is unable to speak or cast spells.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC 7
+Strength 18/00
+Dexterity 12
+2 attacks
+Damage 1d6
 
-Характеристики формы:
- Базовый класс защиты: 7
- Сила: 18/00
- Ловкость: 12
- Атак за раунд: 2
- Урон от атаки: 1d6 (рубящий)
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13144 = ~Используя этот символ, друид-оборотень может принять облик волка. Друид не может разговаривать и читать заклинания, пока находится в этой форме. Символ смены формы может использовать только его создатель.
+@13144=~НП: This token enables the druid who created it to shapeshift at will into a wolf. While in that form, the druid is unable to speak or cast spells.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC 6
+Strength 17
+Dexterity 18
+2 attacks
+Damage 1d8
+Increased movement rate
 
-Характеристики формы:
- Базовый класс защиты: 6
- Сила: 17
- Ловкость: 18
- Атак за раунд: 2
- Урон от атаки: 1d8 (колющий)
- Увеличенная скорость передвижения
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13145 = ~Используя этот символ, друид-оборотень может принять облик маленькой виверны. Друид не может разговаривать и читать заклинания, пока находится в этой форме. Символ смены формы может использовать только его создатель.
+@13145=~НП: This token enables the avenger druid who created it to shapeshift at will into a small wyvern. While in that form, the druid is unable to speak or cast spells.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC 3
+Strength 18/76
+Dexterity 17
+2 attacks
+Damage 2d4 + 25% chance of 3 points of poison damage
 
-Характеристики формы:
- Базовый класс защиты: 3
- Сила: 18/76
- Ловкость: 17
- Атак за раунд: 2
- Урон от атаки: 2d4 (колющий), бьет как оружие +2, с вероятностью 25% наносит дополнительно 3 единицы урона ядом
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13146 = ~Используя этот символ, друид-оборотень может принять облик огненной саламандры. Друид не может разговаривать и читать заклинания, пока находится в этой форме. Символ смены формы может использовать только его создатель.
+@13146=~НП: This token enables the avenger druid who created it to shapeshift at will into a fire salamander. While in that form, the druid is unable to speak or cast spells.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC 2
+Strength 18/76
+Dexterity 19
+1 attack
+Damage 1d8
+100% fire resistance
+Hasted
+Fire Shield
 
-Характеристики формы:
- Базовый класс защиты: 2
- Сила: 18/76
- Ловкость: 19
- Атак за раунд: 1
- Урон от атаки: 1d8 (колющий), бьет как оружие +2
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
- Спешка
- Огненный щит
- Сопротивление огню: 100%
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13147 = ~Используя этот символ, друид-оборотень может принять облик гигантского паука. Друид не может разговаривать и читать заклинания, пока находится в этой форме. Символ смены формы может использовать только его создатель.
+@13147=~НП: This token enables the avenger druid who created it to shapeshift at will into a giant spider. While in that form, the druid is unable to speak or cast spells.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC 2
+Strength 16
+Dexterity 16
+3 attacks
+Damage 1d4+poison (save vs. poison or take 2 hp damage per round for six rounds)
+Hasted
+Immunity to webs
 
-Характеристики формы:
- Базовый класс защиты: 2
- Сила: 16
- Ловкость: 16
- Атак за раунд: 3
- Урон от атаки: 1d4 (колющий), бьет как оружие +2, отравление (2 единицы урона каждый раунд в течение 5 раундов, спасбросок против яда отменяет)
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
- Спешка
- Ое застревает в паутине
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13148 = ~Используя этот символ, друид может принять облик гигантского элементаля огня. Друид не может разговаривать и читать заклинания, пока находится в этой форме. Символ смены формы может использовать только его создатель.
+@13148=~НП: This token enables the druid who created it to shapeshift at will into a giant fire elemental. While in that form, the druid is unable to speak or cast spells.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC -5
+Strength 22
+Dexterity 25
+2 attacks
+Damage 1d10 crushing + 1d10 fire
+Movement rate increased
+Immunity to fire
+Fire shield
 
-Характеристики формы:
- Базовый класс защиты: -5
- Сила: 22
- Ловкость: 25
- Атак за раунд: 2
- Урон от атаки: 1d10 (дробящий), бьет как оружие +4, +1d10 урона огнем
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
- Увеличенная скорость передвижения
- Иммунитет к огню
- Огненный щит
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13149 = ~Используя этот символ, друид может принять облик гигантского элементаля земли. Друид не может разговаривать и читать заклинания, пока находится в этой форме. Символ смены формы может использовать только его создатель.
+@13149=~НП: This token enables the druid who created it to shapeshift at will into a giant earth elemental. While in that form, the druid is unable to speak or cast spells.
 
-ПАРАМЕТРЫ:
+STATISTICS:
 
-Использование: поместить в ячейку оружия
+In shapeshifted form:
+Base AC -5
+Strength 25
+Dexterity 10
+2 attacks
+Damage 2d10 crushing
+Movement rate decreased
+50% immunity to physical damage
 
-Характеристики формы:
- Базовый класс защиты: -5
- Сила: 25
- Ловкость: 10
- Атак за раунд: 2
- Урон от атаки: 2d10 (дробящий), бьет как оружие +4
- Иммунитет ко всем эффектам, изменяющим силу или ловкость
- Увеличенная скорость передвижения
- Сопротивление рубящему урону: 50%
- Сопротивление колющему урону: 50%
- Сопротивление дробящему урону: 50%
- Сопротивление метательному урону: 50%
+Usable only by its creator (equip as a weapon to use)~
 
-Вес: 0~
-@13150 = ~Превращение в элементаля огня
+@13150=~НП: Fire Elemental Transformation
 
-Взывая к силам огня, друид использует эту мощную способность изменения формы, чтобы принять облик элементаля огня огромной силы, имеющего 24-ый уровень здоровья.
+Harnessing the power of fire, this powerful shapechange ability allows the druid to become a 24HD fire elemental of immense strength. The elemental form has an AC of -5, a THAC0 of 2 and does 1D10 normal and 1D10 fire damage with its attacks.  The elemental has a Strength of 22, a Dexterity of 25, is 100% immune to fire, and causes fire damage to any attacker.
+~
 
-Элементальная форма имеет класс защиты -5, THAC0 2 и наносит 1d10 единиц обычного и 1d10 единиц огненного урона каждой атакой. Элементаль имеет силу 22, ловкость 25, 100% иммунитет к огню и наносит огненный урон оппоненту, который атакует элементаля.~
-@13151 = ~Превращение в элементаля земли
+@13151=~НП: Earth Elemental Transformation
 
-Взывая к силам земли, друид использует эту мощную способность изменения формы, чтобы принять облик элементаля земли огромной силы, имеющего 24-ый уровень здоровья.
+Harnessing the power of the earth, this powerful shapechange ability allows the druid to become a 24HD earth elemental of immense strength. The elemental form has an AC of -5, a THAC0 of 2 and does 2D10 crushing damage with its attacks. The elemental has a Strength of 25, a Dexterity of 10, and is 50% immune to all melee and missile attacks.
+~
 
-Элементальная форма имеет класс защиты -5, THAC0 2 и наносит 2d10 дробящего урона каждой атакой. Элементаль имеет силу 25, ловкость 10, и 50% сопротивления рубящему, колющему, дробящему и метательному урону.~
-
-@14000=~The massive dungeon of Watcher's Keep can be accessed once you start Throne of Bhaal.~
+@14000=~НП: The massive dungeon of Watcher's Keep can be accessed once you start Throne of Bhaal.~
 
 @14100=~(Проявление)~
 @14101=~(Воплощение/проявление)~
@@ -1385,31 +1363,33 @@ THAC0: +3 улучшение
 
 @14600=~Призыв тирана смерти~
 
-@14700=~You appear to have SCSII's "Item Redistributor" installed. This component is deprecated as of version 16 of SCSII (use Wisp's "item randomizer" instead), but uninstalling it will break your saved games. Do you want to keep it? (Y/N)~
+@14700=~НП: You appear to have SCSII's "Item Redistributor" installed. This component is deprecated as of version 16 of SCSII (use Wisp's "item randomizer" instead), but uninstalling it will break your saved games. Do you want to keep it? (Y/N)~
 
-@14800=~Skipping this component as you already have aTweaks' "Revised Fiends" component installed. (If you want a combination of both, you need to install SCS first, aTweaks second.) ~
+@14800=~НП: Skipping this component as you already have aTweaks' "Revised Fiends" component installed. (If you want a combination of both, you need to install SCS first, aTweaks second.) ~
 
 
 @15999=~Skipping this component as it does not apply to the Enhanced Edition~
 @16000=~Skipping this component as it only applies to BG2~
 @16001=~Skipping this component as it only applies to BG1~
-@16002=~Skipping this component as it only applies to BG1TUTU~
-@16003=~Replace BG1-style elemental arrows with BG2 versions~
+@16002=~НП: Skipping this component as it only applies to BG1TUTU~
+@16003=~НП: Replace BG1-style elemental arrows with BG2 versions~
 @16004=~Protection from Normal Missiles also blocks Arrows of Fire/Cold/Acid and similar projectiles without pluses~
 @16005=~Reduce the number of Arrows of Dispelling in stores~
 @16006=~Stores sell a maximum of 5 Arrows of Dispelling~
-@16007=~Replace +1 arrows with nonmagical "fine" ones~
+@16007=~НП: Replace +1 arrows with nonmagical "fine" ones~
 @16008=~НП: Potion of Extra Healing~
 @16009=~НП: When wholly consumed, this potion restores 27 hit points to the person.  The effect is instantaneous and the potion is destroyed in the process.~
-@16010 = ~Эта стрела покрыта кислотой, так что при попадании она не только пронзает тело врага, но и начинает разъедать края раны, усиливая и углубляя повреждения.
+@16010=~НП: This arrow is coated in acid so that when it strikes an enemy, it will not only pierce its flesh but also begin to eat away at the wound, enlarging and deepening its severity.
 
-ПАРАМЕТРЫ:
 
-THAC0: +1
-Урон: 1d6 +1, 1d3 кислотой
-Тип урона: метательный (колющий)
-Вес: 0
-Оружие: лук~
+STATISTICS:
+
+Damage:  1D6 + 1
+THACO:  +1
+Damage type:  missile (piercing)
+Special:  1D3 acid damage (no save)
+Weight: 0
+Launcher:  Bow~
 @16011=~Огненная стрела – магическая стрела, которая вспыхивает после попадания в цель. Действует примерно так же, как если бы её окунули в масло и подожгли.
 
 ПАРАМЕТРЫ:
@@ -1427,10 +1407,10 @@ THAC0: +1
 Вес: 0
 Оружие: лук~
 
-@16013=~Mages in BG1 cast short-duration spells instantly at start of combat; mages in BG2 only do so if they are created in sight of the PC~
-@16014=~Priests in BG1 cast short-duration spells instantly at start of combat; priests in BG2 only do so if they are created in sight of the PC~
-@16015=~Mages cast short-duration spells instantly at start of combat on difficulty settings of Hard or higher~
-@16016=~Priests cast short-duration spells instantly at start of combat on difficulty settings of Hard or higher~
+@16013=~НП: Mages in BG1 cast short-duration spells instantly at start of combat; mages in BG2 only do so if they are created in sight of the PC~
+@16014=~НП: Priests in BG1 cast short-duration spells instantly at start of combat; priests in BG2 only do so if they are created in sight of the PC~
+@16015=~НП: Mages cast short-duration spells instantly at start of combat on difficulty settings of Hard or higher~
+@16016=~НП: Priests cast short-duration spells instantly at start of combat on difficulty settings of Hard or higher~
 
 @16020=~Ослабляющие раны предотвращают магическое исцеление~
 @16021=~НП: Spell Sequencer~
@@ -1443,28 +1423,28 @@ THAC0: +1
 @16028=~Skip the Candlekeep tutorial sections~
 @16029=~Remove the tutorial NPCs from Candlekeep~
 @16030=~Skip Candlekeep altogether (warning: breaks the 4th wall!)~
-@16031=~Allow invisibility spells to hide the visual effects of protective spells (like Spell Turning and Fire Shield)~
-@16032=~Fiends have about 50 percent more hit points than normal~
-@16033=~Fiends have normal hit points~
-@16034=~Celestials have about 50 percent more hit points than normal~
-@16035=~Celestials have normal hit points~
-@16036=~Dragons have a substantial hit point increase~
-@16037=~Dragons have normal hit points~
+@16031=~НП: Allow invisibility spells to hide the visual effects of protective spells (like Spell Turning and Fire Shield)~
+@16032=~НП: Fiends have about 50 percent more hit points than normal~
+@16033=~НП: Fiends have normal hit points~
+@16034=~НП: Celestials have about 50 percent more hit points than normal~
+@16035=~НП: Celestials have normal hit points~
+@16036=~НП: Dragons have a substantial hit point increase~
+@16037=~НП: Dragons have normal hit points~
 @16038=~Ослабление~
 @16039=~Обжигающий луч~
-@16040=~Tactical Challenges - BG1~
-@16041=~Tactical Challenges - BG2~
+@16040=~НП: Tactical Challenges - BG1~
+@16041=~НП: Tactical Challenges - BG2~
 @16042=~Доппельгангер-маг~
 @16043=~Доппельгангер-шаман~
 @16044=~Доппельгангер-ассассин~
-@16045=~This component is obsolete on a ToBEx install~
+@16045=~НП: This component is obsolete on a ToBEx install~
 @16046=~This component requires "Smarter Mages" to be installed~
 @16047=~This component requires "Smarter Priests" to be installed~
 @16048=~В этом месте защита от нежити не помогает~
 @16049=~This component requires "Improved Vampires" to be installed~
 @16050=~Анадраматис~
-@16051=~Genies have about 50 percent more hit points than normal~
-@16052=~Genies have normal hit points~
+@16051=~НП: Genies have about 50 percent more hit points than normal~
+@16052=~НП: Genies have normal hit points~
 @16053=~Не могут использовать:~ // note to translators: this must be whatever string precedes the list of usability information in (non-EE) items
 @16054=~Могут использовать:~ // note to translators: this must be whatever string precedes the list of usability information in (non-EE) items
 
@@ -1477,12 +1457,12 @@ THAC0: +1
 @20012=~NPCs go to inns~
 @20014=~Allow Yeslick to use axes~
 @20016=~Move NPCs to more convenient locations~
-@20027=~Dark Side-based kobold upgrade~
+@20027=~НП: Dark Side-based kobold upgrade~
 @20028=~Smarter sirines and dryads~
-@20029=~Slightly harder carrion crawlers~
+@20029=~НП: Slightly harder carrion crawlers~
 @20030=~Smarter basilisks~
 @20031=~Improved doppelgangers~
-@20032=~Skip Candlekeep~
+@20032=~НП: Skip Candlekeep~
 @20033=~Tougher Black Talons and Iron Throne guards~
 @20034=~Relocated bounty hunters~
 @20035=~Improved Ulcaster~
@@ -1495,23 +1475,23 @@ THAC0: +1
 @20043=~Tougher chapter-three end battle~
 @20044=~Tougher chapter-four end battle~
 @20045=~Tougher chapter-five end battle~
-@20046=~Tougher chapter-six end battle~
+@20046=~НП: Tougher chapter-six end battle~
 @20047=~Improved final battle~
 
-@20066=~The BG1NPC version of "NPCs wait at inn" is already installed, so the SCS version cannot be installed~
+@20066=~НП: The BG1NPC version of "NPCs wait at inn" is already installed, so the SCS version cannot be installed~
 @20070=~Improved deployment for parties of assassins~
 @20071=~Ensure Shar-Teel doesn't die in the original challenge~
 @20072=~Fine weapons are affected by the iron crisis~
 @20073=~Fine weapons are immune to the iron crisis~
 @20074=~Remove spells not in BG1~
-@20076=~Standardise spells: BG1 vs BG2~
+@20076=~НП: Standardise spells: BG1 vs BG2~
 @20077=~Introduce BG2 spell scrolls into BG1~
 
 @20089=~Improved Cloakwood Druids~
 @20090=~Improved Bassilus~
 @20091=~Improved Drasus party~
 @20092=~Improved Red Wizards~
-@20093=~Improved Undercity party~
+@20093=~НП: Improved Undercity party~
 
 
 @20301= ~НП: This arrow is twisted and black, almost radiating evil as if possessed by something larger then itself.  It was made specifically to kill one type of creature and one type only.  In this case the unlucky being is the Ogre Mage.
@@ -1570,30 +1550,33 @@ Area of Effect: Creature touched
 Saving Throw: None
 By means of this spell, the wizard bestows total invulnerability to hurled and projected missiles such as arrows, axes, bolts, javelins, and small stones.  Note, however, that this spell does not convey any protection from such magical attacks as fireballs, lightning bolts, and magic missiles.~
 @20305=~Отличная стрела~
-@20306 = ~Эта стрела предназначена для стрельбы на дальние расстояния. Она почти ничего не весит и часто используется для охоты. Как правило, большинство таких стрел делают из ясеня или березы, и они имеют длину от тридцати до сорока дюймов. Эта стрела, в отличие от других, сделана необычайно качественно.
+@20306=~НП: The flight arrow, as its name implies, is built for distance.  These are lightweight arrows and are often used for hunting.  Most of these arrows are made of ash or birch and are 30 to 40 inches long. This arrow, however, is of unusually high-quality workmanship.
 
-ПАРАМЕТРЫ:
 
-THAC0: +1 улучшение
-Урон: 1d6 +1
-Тип урона: метательный (колющий)
-Вес: 0
-Оружие: лук
-Не могут использовать:
- Друид
- Маг
- Священник~
-@20307 = ~Отличный болт~
-@20308 = ~Болт или арбалетная стрела, используется для стрельбы из арбалетов любых размеров. Этот болт, в отличие от других, сделан необычайно качественно.
+STATISTICS:
 
-ПАРАМЕТРЫ:
+Damage:  1D6 + 1
+THAC0:  +1 bonus
+Damage Type:  missile (piercing)
+Weight: 0
+Launcher:  Bow
+Not Usable By:
+Cleric
+Druid
+Mage~
+@20307=~Отличный болт~
+@20308=~НП: Quarrels or bolts are the ammunition fired by crossbows regardless of the weapon's size.  However, this bolt is of unusually high-quality workmanship.
 
-THAC0: +1 улучшение
-Урон: 1d8 +1
-Тип урона: метательный (колющий)
-Вес: 0
-Оружие: арбалет~
-@20309 = ~Отличный дротик~
+
+STATISTICS:
+
+Damage:  1D8 +1
+THAC0:  +1
+Damage type:  missile (piercing)
+Weight:  0
+Launcher:  Crossbow~
+
+@20309=~Отличный дротик~
 
 @20310=~НП: The dart is a small, easily concealable missile weapon that is thrown rather than fired from a bow or other launcher. This dart is of unusually high-quality workmanship.
 
