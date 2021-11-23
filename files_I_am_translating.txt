@@ -9,6 +9,7 @@ modified files:
 TRA/russian/bookhuntfurl.tra
 TRA/russian/elminsa.tra
 TRA/russian/setup-Sandr.tra
+modified:   TRA/english/heardasanbg2.tra
 
 files to translate:
 
