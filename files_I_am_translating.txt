@@ -9,12 +9,13 @@ modified files:
 TRA/russian/bookhuntfurl.tra
 TRA/russian/elminsa.tra
 TRA/russian/setup-Sandr.tra
-modified:   TRA/english/heardasanbg2.tra
+TRA/english/heardasanbg2.tra
+TRA/russian/saniwd_dialogues.tra
 
 files to translate:
 
-heardasanbg2.tra 
-saniylos.tra 
++ heardasanbg2.tra
+saniylos.tra
 sarevoksan25.tra
 saeriletmeetsan.tra
 sandrah25extends.tra
