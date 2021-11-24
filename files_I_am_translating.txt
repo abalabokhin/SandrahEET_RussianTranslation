@@ -11,6 +11,8 @@ TRA/russian/elminsa.tra
 TRA/russian/setup-Sandr.tra
 TRA/english/heardasanbg2.tra
 TRA/russian/saniwd_dialogues.tra
+TRA/russian/bsandr.tra
+TRA/russian/cvsandrj.tra
 
 files to translate:
 
