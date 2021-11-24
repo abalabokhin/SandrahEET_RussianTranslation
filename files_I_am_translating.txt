@@ -6,17 +6,8 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 modified files:
 
-TRA/russian/bookhuntfurl.tra
-TRA/russian/elminsa.tra
-TRA/russian/setup-Sandr.tra
-TRA/english/heardasanbg2.tra
-TRA/russian/saniwd_dialogues.tra
-TRA/russian/bsandr.tra
-TRA/russian/cvsandrj.tra
-
 files to translate:
 
-+ heardasanbg2.tra
 saniylos.tra
 sarevoksan25.tra
 saeriletmeetsan.tra
