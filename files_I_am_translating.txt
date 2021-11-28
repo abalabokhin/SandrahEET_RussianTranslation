@@ -5,15 +5,56 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
+modified:   TRA/english/greyclansan.tra
+modified:   TRA/russian/acbresan.tra
+modified:   TRA/russian/aurensan.tra
+modified:   TRA/russian/bhfabiosan.tra
+modified:   TRA/russian/bsandr.tra
+modified:   TRA/russian/bsandrbg2.tra
+modified:   TRA/russian/bsandrpkivan.tra
+modified:   TRA/russian/bshauha.tra
+modified:   TRA/russian/chloesan.tra
+modified:   TRA/russian/cvcoper.tra
+modified:   TRA/russian/cvghatle.tra
+modified:   TRA/russian/cvizzy.tra
+modified:   TRA/russian/cvsan25j.tra
+modified:   TRA/russian/cvsandrjbg2.tra
+modified:   TRA/russian/cvsandrp.tra
+modified:   TRA/russian/cvshauj.tra
+modified:   TRA/russian/cvshpri.tra
+modified:   TRA/russian/cvtalop1.tra
+modified:   TRA/russian/drireplace.tra
+modified:   TRA/russian/greyclansan.tra
+modified:   TRA/russian/heardasanbg2.tra
+modified:   TRA/russian/kimsanbg2.tra
+modified:   TRA/russian/luxleysan.tra
+modified:   TRA/russian/ninafersan.tra
+modified:   TRA/russian/pelligt.tra
+modified:   TRA/russian/sanitpoisoncure.tra
+modified:   TRA/russian/sanrtfextends.tra
+modified:   TRA/russian/sanshartcommandq.tra
+modified:   TRA/russian/sarevoksan25.tra
+modified:   TRA/russian/shartddbg2ext.tra
+modified:   TRA/russian/skiebg1banter.tra
+modified:   TRA/russian/skiesanbg2.tra
+modified:   TRA/russian/soasan.tra
+modified:   TRA/russian/soubardialog.tra
+modified:   TRA/russian/tashiasanbg2.tra
+modified:   TRA/russian/tddsanbg2.tra
+modified:   TRA/russian/thiefstrongsan.tra
+modified:   TRA/russian/valeriesan.tra
+modified:   TRA/russian/viconiasansoa.tra
+modified:   TRA/russian/yasraenasan.tra
 
 files to translate:
 
++ greyclansan.tra
+bgavinsan.tra
 saniylos.tra
 sarevoksan25.tra
 saeriletmeetsan.tra
 sandrah25extends.tra
 jaheirasanbg2.tra
-bgavinsan.tra
-greyclansan.tra
 cvshauj.tra
+
 
