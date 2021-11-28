@@ -45,6 +45,7 @@ modified:   TRA/russian/thiefstrongsan.tra
 modified:   TRA/russian/valeriesan.tra
 modified:   TRA/russian/viconiasansoa.tra
 modified:   TRA/russian/yasraenasan.tra
+modified:   TRA/russian/sanflirt.tra
 
 files to translate:
 
@@ -56,5 +57,4 @@ saeriletmeetsan.tra
 sandrah25extends.tra
 jaheirasanbg2.tra
 cvshauj.tra
-
 
