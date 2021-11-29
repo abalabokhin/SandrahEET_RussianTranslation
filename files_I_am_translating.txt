@@ -50,7 +50,7 @@ modified:   TRA/russian/sanflirt.tra
 files to translate:
 
 + greyclansan.tra
-bgavinsan.tra
++ bgavinsan.tra
 saniylos.tra
 sarevoksan25.tra
 saeriletmeetsan.tra
