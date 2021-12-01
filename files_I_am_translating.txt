@@ -5,6 +5,12 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
+	modified:   TRA/russian/bg1resolveskie.tra
+	modified:   TRA/russian/bsandr.tra
+	modified:   TRA/russian/corwinsan.tra
+	modified:   TRA/russian/cvbrage.tra
+	modified:   TRA/russian/sandrahsodtalk.tra
+	modified:   TRA/russian/setup-Sandr.tra
 
 files to translate:
 
