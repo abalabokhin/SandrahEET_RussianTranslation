@@ -5,23 +5,6 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
-	modified:   TRA/russian/bg1resolveskie.tra
-	modified:   TRA/russian/bsandr.tra
-	modified:   TRA/russian/corwinsan.tra
-	modified:   TRA/russian/cvbrage.tra
-	modified:   TRA/russian/sandrahsodtalk.tra
-	modified:   TRA/russian/setup-Sandr.tra
-	modified:   D/BSandrPKivan.d
-	modified:   TRA/english/bsandrpkivan.tra
-	modified:   TRA/russian/angelosan.tra
-	modified:   TRA/russian/aranwhitsanbg2.tra
-	modified:   TRA/russian/bg1resolveskie.tra
-	modified:   TRA/russian/bookhuntfurl.tra
-	modified:   TRA/russian/cvsafcit.tra
-	modified:   TRA/russian/cvsamhu.tra
-	modified:   TRA/russian/kimsanbg2.tra
-	modified:   TRA/russian/nathanielsan.tra
-	modified:   TRA/russian/relaransan.tra
 
 files to translate:
 
