@@ -9,6 +9,7 @@ modified files:
 	modified:   sanpre2.tra
 	modified:   tamokomod.tra
 	modified:   TRA/russian/bsandr25.tra
+	english/sarevoksan25.tra
 
 files to translate:
 
