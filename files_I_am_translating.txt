@@ -27,7 +27,7 @@ modified files:
 files to translate:
 
 + saniylos.tra
-sarevoksan25.tra
++ sarevoksan25.tra
 saeriletmeetsan.tra
 sandrah25extends.tra
 jaheirasanbg2.tra
