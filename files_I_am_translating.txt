@@ -4,6 +4,8 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
+TODO: поправить везде Горион на Горайон
+
 modified files:
 	modified:   nathanielsan.tra
 	modified:   sanpre2.tra
