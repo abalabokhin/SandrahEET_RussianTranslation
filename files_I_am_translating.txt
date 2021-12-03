@@ -4,30 +4,10 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
-TODO: поправить везде Горион на Горайон
-
 modified files:
-	english/sarevoksan25.tra
-	modified:   nathanielsan.tra
-	modified:   sanpre2.tra
-	modified:   tamokomod.tra
-	modified:   TRA/russian/bsandr25.tra
-	modified:   TRA/russian/aneghsan.tra
-	modified:   TRA/russian/angelosan.tra
-	modified:   TRA/russian/anomensanbg2.tra
-	modified:   TRA/russian/cvshabab.tra
-	modified:   TRA/russian/elm25san.tra
-	modified:   TRA/russian/ntkeelorrevisit.tra
-	modified:   TRA/russian/samelm01.tra
-	modified:   TRA/russian/shartddbg2ext.tra
-	modified:   TRA/russian/sheenasan.tra
-	modified:   TRA/russian/soasan.tra
-	modified:   TRA/russian/wheelssanappend.tra
 
 files to translate:
 
-+ saniylos.tra
-+ sarevoksan25.tra
 saeriletmeetsan.tra
 sandrah25extends.tra
 jaheirasanbg2.tra
