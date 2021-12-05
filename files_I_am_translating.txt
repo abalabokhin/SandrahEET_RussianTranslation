@@ -9,7 +9,7 @@ modified files:
 
 files to translate:
 
-saeriletmeetsan.tra
++ saeriletmeetsan.tra
 sandrah25extends.tra
 jaheirasanbg2.tra
 cvshauj.tra
