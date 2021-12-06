@@ -5,13 +5,10 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 modified files:
-	modified:   TRA/english/saeriletmeetsan.tra
-	modified:   TRA/english/sandrah25extends.tra
 
 files to translate:
 
-+ saeriletmeetsan.tra
-+ sandrah25extends.tra
 jaheirasanbg2.tra
+yasraenasan.tra
 cvshauj.tra
-
+chloesan.tra
