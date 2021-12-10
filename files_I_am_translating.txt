@@ -6,9 +6,9 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 files to translate:
 	modified:   TRA/russian/bsandr.tra
+	modified:   TRA/english/yasraenasan.tra
 
 yasraenasan.tra
 cvshauj.tra
 chloesan.tra
-
 
