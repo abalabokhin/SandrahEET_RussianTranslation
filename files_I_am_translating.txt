@@ -5,18 +5,7 @@ Translated files are marked with '+' before they are synchronized with the origi
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
 files to translate:
-	modified:   TRA/russian/bsandr.tra
-	modified:   TRA/english/yasraenasan.tra
-	modified:   TRA/russian/bsandrbg2.tra
-	modified:   TRA/russian/cvarch5.tra
-	modified:   TRA/russian/ellistraeesan.tra
-	modified:   TRA/russian/elm25san.tra
-	modified:   TRA/russian/sarevoksan25.tra
-	modified:   TRA/russian/tddsanbg2.tra
-	modified:   TRA/russian/yasraenasan25.tra
 
-
-+ yasraenasan.tra
 cvshauj.tra
 chloesan.tra
 
