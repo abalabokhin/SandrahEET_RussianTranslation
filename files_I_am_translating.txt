@@ -10,6 +10,7 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 files to translate:
 
-cvshauj.tra
++ cvshauj.tra
+bshauha.tra
 chloesan.tra
 
