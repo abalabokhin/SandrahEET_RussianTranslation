@@ -4,13 +4,8 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
-	modified:   TRA/english/cvshauj.tra
-	modified:   TRA/russian/cvskys.tra
-	modified:   TRA/russian/setup-Sandr.tra
-
 files to translate:
 
-+ cvshauj.tra
 bshauha.tra
 chloesan.tra
 
