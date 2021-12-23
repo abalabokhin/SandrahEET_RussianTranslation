@@ -14,7 +14,7 @@ modified:   TRA/english/bshauha.tra
 
 files to translate:
 
-bshauha.tra
++ bshauha.tra
 chloesan.tra
 
 On branch main
