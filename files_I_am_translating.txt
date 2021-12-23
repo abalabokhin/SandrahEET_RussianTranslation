@@ -4,19 +4,8 @@ time. There is lot of work for other files.
 Translated files are marked with '+' before they are synchronized with the original repository. After it, they
 are deleted from the list. To see if an actual file translated or not, just check in the repo.
 
-modified by p_zombie:   cvsandrj.tra
-modified by p_zombie:   cvsandrjbg2.tra
-
-modified:   TRA/russian/bsandr.tra
-modified:   TRA/russian/bsandrbg2.tra
-modified:   TRA/russian/cvsandrj.tra
-modified:   TRA/english/bshauha.tra
-
 files to translate:
 
-+ bshauha.tra
 chloesan.tra
 
-On branch main
-Your branch is up to date with 'origin/main'.
 
