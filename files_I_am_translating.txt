@@ -6,9 +6,8 @@ are deleted from the list. To see if an actual file translated or not, just chec
 
 cvsandrjbg2.tra
 saeriletmeetsan.tra
+modified:   TRA/english/chloesan.tra
 
 files to translate:
-
 chloesan.tra
-
 
